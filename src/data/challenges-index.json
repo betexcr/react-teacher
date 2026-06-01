@@ -1,0 +1,984 @@
+{
+  "easy": [
+    {
+      "slug": "01-counter-component",
+      "title": "Counter Component",
+      "acceptance": [
+        "Count updates on each click",
+        "Reset works from any value",
+        "Decrement disabled at 0"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useState – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "02-shopping-cart-state",
+      "title": "Shopping Cart State",
+      "acceptance": [
+        "Add/merge works",
+        "Totals correct",
+        "Remove works"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useState – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "03-use-previous-hook",
+      "title": "usePrevious Hook",
+      "acceptance": [
+        "First render undefined",
+        "Subsequent renders show previous"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useRef – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "04-event-handling",
+      "title": "Event Handling",
+      "acceptance": [
+        "Digits append",
+        "Clear and backspace work"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "SyntheticEvent – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "05-controlled-input-field",
+      "title": "Controlled Input Field",
+      "acceptance": [
+        "Preview mirrors inputs",
+        "Validation visible",
+        "Submit prevented default"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "controlled components – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "06-fetching-data",
+      "title": "Fetching Data",
+      "acceptance": [
+        "Loading shows first",
+        "Errors readable",
+        "Refetch works"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useEffect – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "07-dynamic-list-rendering",
+      "title": "Dynamic List Rendering",
+      "acceptance": [
+        "Add/remove work",
+        "Stable keys",
+        "Duplicate prevention"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "lists – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "08-use-interval-hook",
+      "title": "useInterval Hook",
+      "acceptance": [
+        "Ticks regularly",
+        "Pause works",
+        "No memory leaks"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useEffect – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "09-component-composition",
+      "title": "Component Composition",
+      "acceptance": [
+        "Composable API",
+        "Article example renders"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "children – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "10-focus-input-useref",
+      "title": "Focus an Input with useRef",
+      "acceptance": [
+        "Mount focus works",
+        "Button focuses correct field"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useRef – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "11-refactor-to-props",
+      "title": "Refactor to Props",
+      "acceptance": [
+        "Two users render from array",
+        "Follow button calls callback"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "props – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "12-build-a-clock",
+      "title": "Build a Clock",
+      "acceptance": [
+        "Updates live",
+        "Format toggle works",
+        "Interval cleared on unmount"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useEffect – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "13-progress-bar-component",
+      "title": "Progress Bar Component",
+      "acceptance": [
+        "Determinate and indeterminate modes",
+        "Accessible"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "props – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "14-performance-monitoring",
+      "title": "Performance Monitoring",
+      "acceptance": [
+        "Profiler wired",
+        "Threshold logging",
+        "UI shows metric"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "Profiler API – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "15-mouse-tracker",
+      "title": "MouseTracker",
+      "acceptance": [
+        "Coords accurate",
+        "Inside/outside indicator",
+        "Listener removed"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "events – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "16-simple-theme-switcher",
+      "title": "Simple Theme Switcher",
+      "acceptance": [
+        "Toggle works",
+        "Persists across refresh",
+        "Styles change globally"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useState – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "17-temperature-converter",
+      "title": "Temperature Converter",
+      "acceptance": [
+        "Bidirectional sync",
+        "No infinite loops",
+        "Empty allowed"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "controlled inputs – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "18-theme-toggle",
+      "title": "Theme Toggle",
+      "acceptance": [
+        "ARIA correct",
+        "Keyboard works",
+        "Theme applies"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useState – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "19-use-toggle-hook",
+      "title": "useToggle Hook",
+      "acceptance": [
+        "All methods work",
+        "Handlers stable across renders"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "custom hooks – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    }
+  ],
+  "medium": [
+    {
+      "slug": "01-todo-list-manager",
+      "title": "Todo List Manager",
+      "acceptance": [
+        "All CRUD works",
+        "Filters correct",
+        "Clear completed"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useState – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "02-image-carousel",
+      "title": "Image Carousel",
+      "acceptance": [
+        "Navigation works",
+        "Autoplay pauses",
+        "Keyboard support"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "state – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "03-event-delegation",
+      "title": "Event Delegation",
+      "acceptance": [
+        "One delegated handler",
+        "Dynamic items work"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "events – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "04-memoizing-expensive-calculation",
+      "title": "Memoizing Expensive Calculation",
+      "acceptance": [
+        "Memoized path smooth",
+        "Changing unrelated state does not recompute"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useMemo – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "05-form-validation",
+      "title": "Form Validation",
+      "acceptance": [
+        "Errors accurate",
+        "Submit blocked when invalid"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "forms – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "06-nested-state-manager",
+      "title": "Nested State Manager",
+      "acceptance": [
+        "Leaf updates isolated",
+        "No mutation warnings"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "immutable updates – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "07-state-history-manager",
+      "title": "State History Manager",
+      "acceptance": [
+        "Undo/redo correct",
+        "Branching history cleared"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useReducer – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "08-advanced-theme-manager",
+      "title": "Advanced Theme Manager",
+      "acceptance": [
+        "Preview differs from applied until Apply",
+        "Reset works"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "themes – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "09-use-async-hook",
+      "title": "useAsync Hook",
+      "acceptance": [
+        "Race safe",
+        "Reset clears",
+        "Deps change refetches optional"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "custom hooks – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "10-use-reducer-implementation",
+      "title": "useReducer Implementation",
+      "acceptance": [
+        "All transitions via dispatch",
+        "State consistent"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useReducer – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "11-pagination-implementation",
+      "title": "Pagination Implementation",
+      "acceptance": [
+        "Page changes refetch",
+        "Bounds respected"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "pagination – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "12-theme-context",
+      "title": "Theme Context",
+      "acceptance": [
+        "Deep tree consumes theme",
+        "Toggle updates all"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "Context API – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "13-radiogroup-component",
+      "title": "RadioGroup Component",
+      "acceptance": [
+        "Keyboard navigation",
+        "ARIA correct"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "a11y – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "14-fallback-ui-class-components",
+      "title": "Fallback UI (Class Components)",
+      "acceptance": [
+        "Fallback shows on throw",
+        "Retry recovers"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "ErrorBoundary – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "15-handling-api-errors",
+      "title": "Handling API Errors",
+      "acceptance": [
+        "Statuses mapped",
+        "Retry limited"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "fetch – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "16-cache-management",
+      "title": "Cache Management",
+      "acceptance": [
+        "Second mount uses cache",
+        "Invalidate refetches"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "cache – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "17-reusable-tabs-component",
+      "title": "Build a Reusable Tabs Component",
+      "acceptance": [
+        "Keyboard works",
+        "Controlled mode works"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "composition – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "18-share-state-with-context",
+      "title": "Share State with Context",
+      "acceptance": [
+        "Any depth reads user",
+        "Logout clears"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "Context – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "19-memo-prevent-rerenders",
+      "title": "Memo Usage: Prevent Unnecessary Re-renders",
+      "acceptance": [
+        "Counter updates do not rerender list",
+        "Item change does rerender"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "React.memo – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "20-multi-step-form-persistent-state",
+      "title": "Multi-step Form with Persistent State",
+      "acceptance": [
+        "Back preserves",
+        "Refresh restores draft"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "forms – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "21-multiple-contexts",
+      "title": "Multiple Contexts",
+      "acceptance": [
+        "Both contexts work",
+        "Independent updates"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "Context – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "22-reusable-input-component",
+      "title": "Build a Reusable Input Component",
+      "acceptance": [
+        "Ref focuses input",
+        "A11y wired"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "components – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "23-reusable-button-component",
+      "title": "Build a Reusable Button Component",
+      "acceptance": [
+        "Loading prevents double submit",
+        "Variants distinct"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "components – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "24-reusable-drawer-component",
+      "title": "Build a Reusable Drawer Component",
+      "acceptance": [
+        "Portal renders",
+        "Escape closes",
+        "Overlay click closes"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "portals – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "25-tic-tac-toe-game",
+      "title": "Build a Tic-Tac-Toe Game",
+      "acceptance": [
+        "Win detected",
+        "Cannot play after win",
+        "History jump works"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "state – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "26-multi-theme-manager",
+      "title": "Multi-Theme Manager",
+      "acceptance": [
+        "System tracks OS",
+        "Tabs stay in sync"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "Context – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    }
+  ],
+  "hard": [
+    {
+      "slug": "01-timer-controls",
+      "title": "Timer Controls",
+      "acceptance": [
+        "Pause accurate",
+        "Laps recorded",
+        "Reset works"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "useReducer – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "02-multi-step-form-branching",
+      "title": "Multi-step Form with Branching Logic",
+      "acceptance": [
+        "Branches differ",
+        "Review shows all captured fields"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "forms – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "03-prevent-unnecessary-rerenders",
+      "title": "Prevent Unnecessary Re-renders",
+      "acceptance": [
+        "Profiler shows fewer child commits",
+        "Functionality unchanged"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "memo – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "04-dynamic-form-fields",
+      "title": "Dynamic Form Fields",
+      "acceptance": [
+        "Dynamic types render correct input",
+        "Submit blocked if invalid"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "forms – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "05-art-drawing-tool",
+      "title": "Art Drawing Tool",
+      "acceptance": [
+        "Draws smoothly",
+        "Export downloads file",
+        "Clear works"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "canvas – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    }
+  ],
+  "very-hard": [
+    {
+      "slug": "01-connect-four",
+      "title": "Connect Four",
+      "acceptance": [
+        "Win/draw detected",
+        "Illegal moves prevented"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "game logic – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "02-advanced-custom-hooks",
+      "title": "Advanced Custom Hooks",
+      "acceptance": [
+        "Hooks reusable",
+        "No hydration mismatch",
+        "System changes propagate"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "custom hooks – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    },
+    {
+      "slug": "03-list-virtualization",
+      "title": "List Virtualization: Manual Virtual Scrolling",
+      "acceptance": [
+        "100k items scroll smoothly",
+        "DOM node count ~ viewport/rowHeight"
+      ],
+      "resources": [
+        {
+          "title": "React docs – Quick Start",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "title": "performance – React Reference",
+          "url": "https://react.dev/reference/react"
+        }
+      ]
+    }
+  ]
+}

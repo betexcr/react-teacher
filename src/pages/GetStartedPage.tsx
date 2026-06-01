@@ -1,0 +1,330 @@
+import { Link } from 'react-router-dom';
+import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
+
+export function GetStartedPage() {
+  useRouteScrollTop();
+
+  return (
+    <article className="get-started">
+      <header className="get-started-hero">
+        <h1 className="page-title">Get Started</h1>
+        <p className="get-started-lead">
+          <strong>ReactTeacher</strong> is a website you use in your browser — challenges, flashcards,
+          and system design guides all work here with no install. Your progress is saved in this browser
+          (no account needed).
+        </p>
+        <p className="get-started-lead get-started-lead--secondary">
+          If you want to <strong>write code</strong> for the coding challenges, you will also set up a
+          project folder on your computer. That is optional for reading flashcards and system design.
+        </p>
+      </header>
+
+      <section className="get-started-section get-started-path">
+        <h2>Two ways to use ReactTeacher</h2>
+        <div className="get-started-path-grid">
+          <div className="get-started-path-card">
+            <h3>In the browser</h3>
+            <p>
+              Read challenges, study flashcards, and explore system design — right here. Use the sidebar to
+              navigate. Nothing to download for this part.
+            </p>
+            <p className="get-started-path-cta">
+              <Link to="/flashcards">Try flashcards</Link> or{' '}
+              <Link to="/challenges">browse challenges</Link>.
+            </p>
+          </div>
+          <div className="get-started-path-card">
+            <h3>Coding challenges on your computer</h3>
+            <p>
+              You need your own project folder (clone this repo or create a new React app). You write code
+              in an editor like Cursor, run a local dev server, and read the challenge text here in the
+              browser.
+            </p>
+            <p className="get-started-path-cta">
+              Follow the steps below when you are ready to code.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="get-started-section">
+        <h2>Using ReactTeacher in the browser</h2>
+        <ol className="get-started-steps">
+          <li>
+            Use the sidebar: <Link to="/challenges">React Challenges</Link>,{' '}
+            <Link to="/flashcards">Flashcards</Link>, <Link to="/system-design">System Design</Link>.
+          </li>
+          <li>
+            For challenges: read the problem and acceptance criteria here. Check off criteria as you
+            finish (saved in this browser). Open the solution only when stuck.
+          </li>
+          <li>
+            For flashcards: study questions and explanations; mark cards complete or filter to uncompleted
+            only.
+          </li>
+        </ol>
+      </section>
+
+      <section className="get-started-section get-started-section--local">
+        <h2>Coding challenges on your computer</h2>
+        <p className="get-started-section-intro">
+          The sections below are only if you want to run and edit code locally. Skip them if you are only
+          studying in the browser for now.
+        </p>
+
+        <div className="get-started-install-block">
+          <h3>What you need to install</h3>
+          <p>Install once. Pick the notes for your operating system.</p>
+
+          <h4 className="get-started-install-sub">Node.js (LTS)</h4>
+          <p>
+            Runs JavaScript on your machine. <strong>npm</strong> (installs packages) comes with it.{' '}
+            <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
+              Download Node.js LTS
+            </a>
+          </p>
+          <p className="get-started-install-note">Optional version managers:</p>
+          <ul className="get-started-os-list">
+            <li>
+              <strong>Windows:</strong>{' '}
+              <a
+                href="https://github.com/coreybutler/nvm-windows"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                nvm-windows
+              </a>
+            </li>
+            <li>
+              <strong>Mac / Linux:</strong>{' '}
+              <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener noreferrer">
+                nvm
+              </a>
+            </li>
+          </ul>
+
+          <h4 className="get-started-install-sub">Cursor (recommended editor)</h4>
+          <p>
+            <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer">
+              Download Cursor
+            </a>{' '}
+            — includes AI Chat and Agent to help while you code.
+          </p>
+
+          <h4 className="get-started-install-sub">Git (optional but recommended)</h4>
+          <ul className="get-started-os-list">
+            <li>
+              <strong>Windows:</strong>{' '}
+              <a
+                href="https://git-scm.com/download/win"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                git-scm.com/download/win
+              </a>
+            </li>
+            <li>
+              <strong>Mac:</strong> <code>xcode-select --install</code> or{' '}
+              <a
+                href="https://git-scm.com/download/mac"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Git for Mac
+              </a>
+            </li>
+            <li>
+              <strong>Linux:</strong> <code>sudo apt install git</code> (or your package manager) —{' '}
+              <a
+                href="https://git-scm.com/download/linux"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                more options
+              </a>
+            </li>
+          </ul>
+
+          <div className="get-started-verify">
+            <p>
+              <strong>Verify Node</strong> — in any terminal:
+            </p>
+            <pre className="get-started-code-block">
+              <code>node -v</code>
+              {'\n'}
+              <code>npm -v</code>
+            </pre>
+            <p className="get-started-verify-hint">
+              You should see version numbers. Restart the terminal after installing if a command is not
+              found.
+            </p>
+          </div>
+        </div>
+
+        <div className="get-started-install-block">
+          <h3>Get the project on your machine</h3>
+          <p>Choose one way to get a folder you can open in Cursor:</p>
+          <ul className="get-started-os-list">
+            <li>
+              <strong>Clone this repo:</strong>{' '}
+              <code>git clone https://github.com/betexcr/react-teacher.git</code>
+              <br />
+              <span className="get-started-install-note">
+                SSH: <code>git clone git@github.com:betexcr/react-teacher.git</code>
+              </span>
+            </li>
+            <li>
+              <strong>Download ZIP:</strong>{' '}
+              <a
+                href="https://github.com/betexcr/react-teacher/archive/refs/heads/main.zip"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/betexcr/react-teacher
+              </a>{' '}
+              (Code → Download ZIP), unzip, and open the folder.
+            </li>
+            <li>
+              <strong>Start fresh:</strong>{' '}
+              <code>npm create vite@latest my-react-app -- --template react-ts</code> — use your own app
+              and implement challenges there; read prompts in ReactTeacher in the browser.
+            </li>
+          </ul>
+          <p>Example locations (yours will differ):</p>
+          <ul className="get-started-os-list">
+            <li>
+              <strong>Windows:</strong> <code>C:\Users\You\Projects\react-teacher</code>
+            </li>
+            <li>
+              <strong>macOS / Linux:</strong> <code>~/Projects/react-teacher</code>
+            </li>
+          </ul>
+        </div>
+
+        <div className="get-started-install-block">
+          <h3>Open your project folder in Cursor</h3>
+          <p>
+            Open the folder you downloaded or created — not the ReactTeacher website tab. In Cursor:
+          </p>
+          <ul className="get-started-os-list">
+            <li>
+              <strong>Windows:</strong> <code>File → Open Folder</code> → choose your project (e.g.{' '}
+              <code>react-teacher</code>).
+            </li>
+            <li>
+              <strong>macOS:</strong> <code>File → Open…</code> → select the folder; or drag the folder
+              onto the Cursor icon in the Dock.
+            </li>
+            <li>
+              <strong>Linux:</strong> <code>File → Open Folder</code> → select your project path.
+            </li>
+          </ul>
+        </div>
+
+        <div className="get-started-install-block">
+          <h3>Open a terminal</h3>
+          <ul className="get-started-os-list">
+            <li>
+              <strong>Windows:</strong> in Cursor, <code>View → Terminal</code> or press{' '}
+              <kbd>Ctrl</kbd>+<kbd>`</kbd>. Or use Windows Terminal from the Start menu.
+            </li>
+            <li>
+              <strong>macOS:</strong> Cursor integrated terminal (<code>View → Terminal</code> or{' '}
+              <kbd>Ctrl</kbd>+<kbd>`</kbd>) or Terminal.app.
+            </li>
+            <li>
+              <strong>Linux:</strong> Cursor integrated terminal or <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+
+              <kbd>T</kbd> for your system terminal.
+            </li>
+          </ul>
+        </div>
+
+        <div className="get-started-install-block">
+          <h3>Run the dev server (your code project)</h3>
+          <p>In the terminal, go to your project folder if you are not already there:</p>
+          <pre className="get-started-code-block">
+            <code>cd path/to/your-project</code>
+            {'\n'}
+            <code>npm install</code>
+            {'\n'}
+            <code>npm run dev</code>
+          </pre>
+          <p>
+            Open the <strong>localhost URL</strong> shown in the terminal (often{' '}
+            <code>http://localhost:5173</code>) — that is <em>your</em> app where you edit code.
+          </p>
+          <p className="get-started-install-note">
+            ReactTeacher in the browser (this site) is separate: use it to read challenges, flashcards,
+            and system design. You can have both tabs open — study here, code on localhost.
+          </p>
+          <p>
+            In Cursor, use <strong>Chat</strong> or <strong>Agent</strong> when stuck — paste the challenge
+            text from ReactTeacher; avoid opening solutions too early.
+          </p>
+        </div>
+
+        <div className="get-started-install-block">
+          <h3>How coding challenges fit together</h3>
+          <ol className="get-started-steps">
+            <li>
+              On ReactTeacher: <Link to="/challenges">pick a challenge</Link> and read the problem here.
+            </li>
+            <li>
+              In your local project: create files under{' '}
+              <code>src/challenges/&lt;difficulty&gt;/&lt;slug&gt;/</code> (or anywhere you like).
+            </li>
+            <li>
+              Run your app with <code>npm run dev</code> and test your UI on localhost.
+            </li>
+            <li>
+              Back on ReactTeacher: check off <strong>Acceptance criteria</strong> when done (saved in this
+              browser).
+            </li>
+            <li>Open <strong>Solution</strong> here only when you need help.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="get-started-section">
+        <h2>Official docs</h2>
+        <ul className="get-started-links">
+          <li>
+            <a href="https://react.dev/learn" target="_blank" rel="noopener noreferrer">
+              React — Learn React
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.typescriptlang.org/docs/handbook/react.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TypeScript — React handbook
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section className="get-started-section get-started-section--compact">
+        <h2>Other sections</h2>
+        <ul className="get-started-pointers">
+          <li>
+            <Link to="/flashcards">Flashcards</Link> — interview Q&amp;A; works entirely in the browser.
+          </li>
+          <li>
+            <Link to="/system-design">System Design</Link> — architecture guides; no local setup required.
+          </li>
+        </ul>
+      </section>
+
+      <footer className="get-started-cta">
+        <Link to="/challenges" className="get-started-cta-btn primary">
+          Browse Challenges
+        </Link>
+        <Link to="/flashcards" className="get-started-cta-btn">
+          Study Flashcards
+        </Link>
+      </footer>
+    </article>
+  );
+}
