@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { CodeBlock } from '../components/CodeBlock';
 import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
 
 export function GetStartedPage() {
@@ -124,7 +125,7 @@ export function GetStartedPage() {
               </a>
             </li>
             <li>
-              <strong>Mac:</strong> <code>xcode-select --install</code> or{' '}
+              <strong>Mac:</strong> run in Terminal (or install{' '}
               <a
                 href="https://git-scm.com/download/mac"
                 target="_blank"
@@ -132,15 +133,18 @@ export function GetStartedPage() {
               >
                 Git for Mac
               </a>
+              ):
+              <CodeBlock code="xcode-select --install" />
             </li>
             <li>
-              <strong>Linux:</strong> <code>sudo apt install git</code> (or your package manager) —{' '}
+              <strong>Linux:</strong> (Debian/Ubuntu example; use your package manager if different)
+              <CodeBlock code="sudo apt install git" />
               <a
                 href="https://git-scm.com/download/linux"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                more options
+                More install options
               </a>
             </li>
           </ul>
@@ -149,11 +153,7 @@ export function GetStartedPage() {
             <p>
               <strong>Verify Node</strong> — in any terminal:
             </p>
-            <pre className="get-started-code-block">
-              <code>node -v</code>
-              {'\n'}
-              <code>npm -v</code>
-            </pre>
+            <CodeBlock code={`node -v\nnpm -v`} />
             <p className="get-started-verify-hint">
               You should see version numbers. Restart the terminal after installing if a command is not
               found.
@@ -164,14 +164,14 @@ export function GetStartedPage() {
         <div className="get-started-install-block">
           <h3>Get the project on your machine</h3>
           <p>Choose one way to get a folder you can open in Cursor:</p>
-          <ul className="get-started-os-list">
+          <ul className="get-started-os-list get-started-os-list--blocks">
             <li>
-              <strong>Clone this repo:</strong>{' '}
-              <code>git clone https://github.com/betexcr/react-teacher.git</code>
-              <br />
-              <span className="get-started-install-note">
-                SSH: <code>git clone git@github.com:betexcr/react-teacher.git</code>
-              </span>
+              <strong>Clone this repo (HTTPS):</strong>
+              <CodeBlock code="git clone https://github.com/betexcr/react-teacher.git" />
+            </li>
+            <li>
+              <strong>Clone with SSH:</strong>
+              <CodeBlock code="git clone git@github.com:betexcr/react-teacher.git" />
             </li>
             <li>
               <strong>Download ZIP:</strong>{' '}
@@ -185,20 +185,20 @@ export function GetStartedPage() {
               (Code → Download ZIP), unzip, and open the folder.
             </li>
             <li>
-              <strong>Start fresh:</strong>{' '}
-              <code>npm create vite@latest my-react-app -- --template react-ts</code> — use your own app
-              and implement challenges there; read prompts in ReactTeacher in the browser.
+              <strong>Start fresh:</strong> create a new React + TypeScript app, then read challenge prompts
+              here in the browser:
+              <CodeBlock code="npm create vite@latest my-react-app -- --template react-ts" />
             </li>
           </ul>
-          <p>Example locations (yours will differ):</p>
-          <ul className="get-started-os-list">
-            <li>
-              <strong>Windows:</strong> <code>C:\Users\You\Projects\react-teacher</code>
-            </li>
-            <li>
-              <strong>macOS / Linux:</strong> <code>~/Projects/react-teacher</code>
-            </li>
-          </ul>
+          <p>Example folder paths (yours will differ):</p>
+          <p className="get-started-install-note">
+            <strong>Windows</strong>
+          </p>
+          <CodeBlock code="C:\Users\You\Projects\react-teacher" />
+          <p className="get-started-install-note">
+            <strong>macOS / Linux</strong>
+          </p>
+          <CodeBlock code="~/Projects/react-teacher" />
         </div>
 
         <div className="get-started-install-block">
@@ -242,13 +242,18 @@ export function GetStartedPage() {
         <div className="get-started-install-block">
           <h3>Run the dev server (your code project)</h3>
           <p>In the terminal, go to your project folder if you are not already there:</p>
-          <pre className="get-started-code-block">
-            <code>cd path/to/your-project</code>
-            {'\n'}
-            <code>npm install</code>
-            {'\n'}
-            <code>npm run dev</code>
-          </pre>
+          <CodeBlock
+            code={`cd path/to/your-project\nnpm install\nnpm run dev`}
+          />
+          <p>Examples for <code>cd</code> (use your real path):</p>
+          <p className="get-started-install-note">
+            <strong>Windows</strong>
+          </p>
+          <CodeBlock code="cd C:\Users\You\Projects\react-teacher" />
+          <p className="get-started-install-note">
+            <strong>macOS / Linux</strong>
+          </p>
+          <CodeBlock code="cd ~/Projects/react-teacher" />
           <p>
             Open the <strong>localhost URL</strong> shown in the terminal (often{' '}
             <code>http://localhost:5173</code>) — that is <em>your</em> app where you edit code.
@@ -274,7 +279,8 @@ export function GetStartedPage() {
               <code>src/challenges/&lt;difficulty&gt;/&lt;slug&gt;/</code> (or anywhere you like).
             </li>
             <li>
-              Run your app with <code>npm run dev</code> and test your UI on localhost.
+              Run your app and test your UI on localhost:
+              <CodeBlock code="npm run dev" />
             </li>
             <li>
               Back on ReactTeacher: check off <strong>Acceptance criteria</strong> when done (saved in this
