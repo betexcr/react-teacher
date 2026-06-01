@@ -20,7 +20,7 @@ Wrap a heavy child tree with React `<Profiler>` and log phases where duration ex
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/14-performance-monitoring/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/14-performance-monitoring/`. Reference write-ups in this repo live under `challenges/easy/14-performance-monitoring/` (not loaded by the app).
 
 ```tsx
 <Profiler id="Heavy" onRender={onRender}>...</Profiler>
@@ -39,5 +39,6 @@ Create your work in `src/challenges/easy/14-performance-monitoring/` or a sandbo
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [Profiler API – React Reference](https://react.dev/reference/react)
+- [Profiler – Reference](https://react.dev/reference/react/Profiler)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)
+- [React Performance tools](https://react.dev/learn/react-developer-tools)

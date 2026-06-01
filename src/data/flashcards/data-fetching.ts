@@ -14,8 +14,8 @@ export const dataFetchingDeck: FlashcardDeck = {
       "explanation": "Caching, deduping, background refetch, staleTime, mutations, optimistic updates.\n\nIn Data Fetching & Management interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
-      "question": "What is staleTime vs cacheTime?",
-      "explanation": "staleTime: data fresh period; gcTime: unused cache retention before garbage collect.\n\nIn Data Fetching & Management interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "question": "What is staleTime vs gcTime?",
+      "explanation": "staleTime: how long data is fresh before background refetch; gcTime (formerly cacheTime in v4): how long unused cache stays in memory after unmount.\n\nIn Data Fetching & Management interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is SWR pattern?",
@@ -55,7 +55,7 @@ export const dataFetchingDeck: FlashcardDeck = {
     },
     {
       "question": "What is Suspense for data?",
-      "explanation": "Throw promise in render; Suspense boundary shows fallback until resolved.\n\nIn Data Fetching & Management interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Suspense shows fallback while children suspend; React 19 can read promises with use(promise) under a boundary, or use library helpers like useSuspenseQuery.\n\nIn Data Fetching & Management interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is RSC data fetching?",

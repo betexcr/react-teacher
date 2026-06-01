@@ -10,12 +10,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Adding Interactivity",
+          "url": "https://react.dev/learn/adding-interactivity"
         },
         {
-          "title": "useState – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
+        },
+        {
+          "title": "Responding to Events",
+          "url": "https://react.dev/learn/responding-to-events"
         }
       ]
     },
@@ -29,12 +33,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Updating Arrays in State",
+          "url": "https://react.dev/learn/updating-arrays-in-state"
         },
         {
-          "title": "useState – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
+        },
+        {
+          "title": "Updating Objects in State",
+          "url": "https://react.dev/learn/updating-objects-in-state"
         }
       ]
     },
@@ -47,12 +55,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Referencing Values with Refs",
+          "url": "https://react.dev/learn/referencing-values-with-refs"
         },
         {
-          "title": "useRef – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useRef – Reference",
+          "url": "https://react.dev/reference/react/useRef"
+        },
+        {
+          "title": "Reusing Logic with Custom Hooks",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks"
         }
       ]
     },
@@ -65,12 +77,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Responding to Events",
+          "url": "https://react.dev/learn/responding-to-events"
         },
         {
-          "title": "SyntheticEvent – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "React event objects",
+          "url": "https://react.dev/reference/react-dom/components/common#react-event-object"
+        },
+        {
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
         }
       ]
     },
@@ -84,12 +100,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Controlled inputs",
+          "url": "https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable"
         },
         {
-          "title": "controlled components – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Textarea & select (controlled)",
+          "url": "https://react.dev/reference/react-dom/components/textarea"
+        },
+        {
+          "title": "Forms – React DOM",
+          "url": "https://react.dev/reference/react-dom/components/form"
         }
       ]
     },
@@ -103,12 +123,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Fetching data with Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects#fetching-data"
         },
         {
-          "title": "useEffect – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
+        },
+        {
+          "title": "You Might Not Need an Effect",
+          "url": "https://react.dev/learn/you-might-not-need-an-effect"
         }
       ]
     },
@@ -122,12 +146,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Rendering Lists",
+          "url": "https://react.dev/learn/rendering-lists"
         },
         {
-          "title": "lists – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Keys in lists",
+          "url": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key"
+        },
+        {
+          "title": "Conditional rendering",
+          "url": "https://react.dev/learn/conditional-rendering"
         }
       ]
     },
@@ -141,12 +169,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Synchronizing with Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects"
         },
         {
-          "title": "useEffect – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Reusing Logic with Custom Hooks",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks"
+        },
+        {
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
         }
       ]
     },
@@ -159,12 +191,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Props to a Component",
+          "url": "https://react.dev/learn/passing-props-to-a-component"
         },
         {
-          "title": "children – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Passing JSX as children",
+          "url": "https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children"
+        },
+        {
+          "title": "Your UI as a tree",
+          "url": "https://react.dev/learn/understanding-your-ui-as-a-tree"
         }
       ]
     },
@@ -177,12 +213,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Manipulating the DOM with Refs",
+          "url": "https://react.dev/learn/manipulating-the-dom-with-refs"
         },
         {
-          "title": "useRef – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useRef – Reference",
+          "url": "https://react.dev/reference/react/useRef"
+        },
+        {
+          "title": "Referencing Values with Refs",
+          "url": "https://react.dev/learn/referencing-values-with-refs"
         }
       ]
     },
@@ -195,12 +235,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Props to a Component",
+          "url": "https://react.dev/learn/passing-props-to-a-component"
         },
         {
-          "title": "props – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Sharing State Between Components",
+          "url": "https://react.dev/learn/sharing-state-between-components"
+        },
+        {
+          "title": "Thinking in React",
+          "url": "https://react.dev/learn/thinking-in-react"
         }
       ]
     },
@@ -214,12 +258,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Synchronizing with Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects"
         },
         {
-          "title": "useEffect – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
+        },
+        {
+          "title": "Removing Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed"
         }
       ]
     },
@@ -232,12 +280,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Props to a Component",
+          "url": "https://react.dev/learn/passing-props-to-a-component"
         },
         {
-          "title": "props – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "ARIA: progressbar role",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role"
+        },
+        {
+          "title": "Conditional rendering",
+          "url": "https://react.dev/learn/conditional-rendering"
         }
       ]
     },
@@ -251,12 +303,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Profiler – Reference",
+          "url": "https://react.dev/reference/react/Profiler"
         },
         {
-          "title": "Profiler API – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
+        },
+        {
+          "title": "React Performance tools",
+          "url": "https://react.dev/learn/react-developer-tools"
         }
       ]
     },
@@ -270,12 +326,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Adding Event Listeners in Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects#adding-a-window-event-listener"
         },
         {
-          "title": "events – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
+        },
+        {
+          "title": "Responding to Events",
+          "url": "https://react.dev/learn/responding-to-events"
         }
       ]
     },
@@ -289,12 +349,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
         },
         {
-          "title": "useState – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "CSS custom properties (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties"
+        },
+        {
+          "title": "Conditional rendering",
+          "url": "https://react.dev/learn/conditional-rendering"
         }
       ]
     },
@@ -308,12 +372,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Derived state (when to calculate during render)",
+          "url": "https://react.dev/learn/you-might-not-need-an-effect#updating-state-based-on-props-or-state"
         },
         {
-          "title": "controlled inputs – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Controlled inputs",
+          "url": "https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable"
+        },
+        {
+          "title": "Sharing State Between Components",
+          "url": "https://react.dev/learn/sharing-state-between-components"
         }
       ]
     },
@@ -327,12 +395,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
         },
         {
-          "title": "useState – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Conditional rendering",
+          "url": "https://react.dev/learn/conditional-rendering"
+        },
+        {
+          "title": "Styling with class names",
+          "url": "https://react.dev/learn/adding-interactivity#updating-the-dom-based-on-state"
         }
       ]
     },
@@ -345,12 +417,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Reusing Logic with Custom Hooks",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks"
         },
         {
-          "title": "custom hooks – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useCallback – Reference",
+          "url": "https://react.dev/reference/react/useCallback"
+        },
+        {
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
         }
       ]
     }
@@ -366,12 +442,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Updating Arrays in State",
+          "url": "https://react.dev/learn/updating-arrays-in-state"
         },
         {
-          "title": "useState – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Managing State",
+          "url": "https://react.dev/learn/managing-state"
+        },
+        {
+          "title": "Controlled inputs",
+          "url": "https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable"
         }
       ]
     },
@@ -385,12 +465,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Synchronizing with Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects"
         },
         {
-          "title": "state – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
+        },
+        {
+          "title": "ARIA: carousel pattern",
+          "url": "https://www.w3.org/WAI/ARIA/apg/patterns/carousel/"
         }
       ]
     },
@@ -403,12 +487,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Responding to Events",
+          "url": "https://react.dev/learn/responding-to-events"
         },
         {
-          "title": "events – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Event delegation (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling"
+        },
+        {
+          "title": "React event objects",
+          "url": "https://react.dev/reference/react-dom/components/common#react-event-object"
         }
       ]
     },
@@ -421,12 +509,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "useMemo – Reference",
+          "url": "https://react.dev/reference/react/useMemo"
         },
         {
-          "title": "useMemo – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Keeping Components Pure",
+          "url": "https://react.dev/learn/keeping-components-pure"
+        },
+        {
+          "title": "You Might Not Need an Effect",
+          "url": "https://react.dev/learn/you-might-not-need-an-effect"
         }
       ]
     },
@@ -439,12 +531,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Forms – React DOM",
+          "url": "https://react.dev/reference/react-dom/components/form"
         },
         {
-          "title": "forms – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Controlled inputs",
+          "url": "https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable"
+        },
+        {
+          "title": "Managing State",
+          "url": "https://react.dev/learn/managing-state"
         }
       ]
     },
@@ -457,12 +553,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Updating Objects in State",
+          "url": "https://react.dev/learn/updating-objects-in-state"
         },
         {
-          "title": "immutable updates – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Immutable update patterns",
+          "url": "https://react.dev/learn/updating-objects-in-state#write-immutable-update-logic-with-spread-syntax"
+        },
+        {
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
         }
       ]
     },
@@ -475,12 +575,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Extracting State Logic into a Reducer",
+          "url": "https://react.dev/learn/extracting-state-logic-into-a-reducer"
         },
         {
-          "title": "useReducer – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useReducer – Reference",
+          "url": "https://react.dev/reference/react/useReducer"
+        },
+        {
+          "title": "Managing State",
+          "url": "https://react.dev/learn/managing-state"
         }
       ]
     },
@@ -493,12 +597,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "CSS custom properties (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties"
         },
         {
-          "title": "themes – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useState – Reference",
+          "url": "https://react.dev/reference/react/useState"
+        },
+        {
+          "title": "Updating Objects in State",
+          "url": "https://react.dev/learn/updating-objects-in-state"
         }
       ]
     },
@@ -512,12 +620,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Reusing Logic with Custom Hooks",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks"
         },
         {
-          "title": "custom hooks – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Fetching data with Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects#fetching-data"
+        },
+        {
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
         }
       ]
     },
@@ -530,12 +642,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Extracting State Logic into a Reducer",
+          "url": "https://react.dev/learn/extracting-state-logic-into-a-reducer"
         },
         {
-          "title": "useReducer – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useReducer – Reference",
+          "url": "https://react.dev/reference/react/useReducer"
+        },
+        {
+          "title": "Typing useReducer (TypeScript)",
+          "url": "https://react.dev/learn/typescript#typing-usereducer"
         }
       ]
     },
@@ -548,12 +664,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Fetching data with Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects#fetching-data"
         },
         {
-          "title": "pagination – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
+        },
+        {
+          "title": "Managing State",
+          "url": "https://react.dev/learn/managing-state"
         }
       ]
     },
@@ -566,12 +686,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Data Deeply with Context",
+          "url": "https://react.dev/learn/passing-data-deeply-with-context"
         },
         {
-          "title": "Context API – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useContext – Reference",
+          "url": "https://react.dev/reference/react/useContext"
+        },
+        {
+          "title": "createContext – Reference",
+          "url": "https://react.dev/reference/react/createContext"
         }
       ]
     },
@@ -584,12 +708,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Accessibility in React",
+          "url": "https://react.dev/learn/accessibility"
         },
         {
-          "title": "a11y – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "ARIA: radio group pattern",
+          "url": "https://www.w3.org/WAI/ARIA/apg/patterns/radio/"
+        },
+        {
+          "title": "Passing Props to a Component",
+          "url": "https://react.dev/learn/passing-props-to-a-component"
         }
       ]
     },
@@ -602,12 +730,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Error Boundaries",
+          "url": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary"
         },
         {
-          "title": "ErrorBoundary – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Class components – legacy API",
+          "url": "https://react.dev/reference/react/Component"
+        },
+        {
+          "title": "React error handling (learn)",
+          "url": "https://react.dev/learn/error-boundaries"
         }
       ]
     },
@@ -620,12 +752,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Fetching data with Effects",
+          "url": "https://react.dev/learn/synchronizing-with-effects#fetching-data"
         },
         {
-          "title": "fetch – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Conditional rendering",
+          "url": "https://react.dev/learn/conditional-rendering"
+        },
+        {
+          "title": "useEffect – Reference",
+          "url": "https://react.dev/reference/react/useEffect"
         }
       ]
     },
@@ -638,12 +774,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Referencing Values with Refs",
+          "url": "https://react.dev/learn/referencing-values-with-refs"
         },
         {
-          "title": "cache – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "You Might Not Need an Effect",
+          "url": "https://react.dev/learn/you-might-not-need-an-effect"
+        },
+        {
+          "title": "Caching with useMemo",
+          "url": "https://react.dev/reference/react/useMemo"
         }
       ]
     },
@@ -656,12 +796,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing JSX as children",
+          "url": "https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children"
         },
         {
-          "title": "composition – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "ARIA: tabs pattern",
+          "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/"
+        },
+        {
+          "title": "Accessibility in React",
+          "url": "https://react.dev/learn/accessibility"
         }
       ]
     },
@@ -674,12 +818,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Data Deeply with Context",
+          "url": "https://react.dev/learn/passing-data-deeply-with-context"
         },
         {
-          "title": "Context – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Sharing State Between Components",
+          "url": "https://react.dev/learn/sharing-state-between-components"
+        },
+        {
+          "title": "useContext – Reference",
+          "url": "https://react.dev/reference/react/useContext"
         }
       ]
     },
@@ -692,12 +840,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "memo – Reference",
+          "url": "https://react.dev/reference/react/memo"
         },
         {
-          "title": "React.memo – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useCallback – Reference",
+          "url": "https://react.dev/reference/react/useCallback"
+        },
+        {
+          "title": "useMemo – Reference",
+          "url": "https://react.dev/reference/react/useMemo"
         }
       ]
     },
@@ -710,12 +862,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Managing State",
+          "url": "https://react.dev/learn/managing-state"
         },
         {
-          "title": "forms – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Forms – React DOM",
+          "url": "https://react.dev/reference/react-dom/components/form"
+        },
+        {
+          "title": "Lifting state up",
+          "url": "https://react.dev/learn/sharing-state-between-components"
         }
       ]
     },
@@ -728,12 +884,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Data Deeply with Context",
+          "url": "https://react.dev/learn/passing-data-deeply-with-context"
         },
         {
-          "title": "Context – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Scaling up with reducer and context",
+          "url": "https://react.dev/learn/scaling-up-with-reducer-and-context"
+        },
+        {
+          "title": "useContext – Reference",
+          "url": "https://react.dev/reference/react/useContext"
         }
       ]
     },
@@ -746,12 +906,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "forwardRef – Reference",
+          "url": "https://react.dev/reference/react/forwardRef"
         },
         {
-          "title": "components – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Controlled inputs",
+          "url": "https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable"
+        },
+        {
+          "title": "Passing Props to a Component",
+          "url": "https://react.dev/learn/passing-props-to-a-component"
         }
       ]
     },
@@ -764,12 +928,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Props to a Component",
+          "url": "https://react.dev/learn/passing-props-to-a-component"
         },
         {
-          "title": "components – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "TypeScript: typing components",
+          "url": "https://react.dev/learn/typescript#typing-component-props"
+        },
+        {
+          "title": "Accessibility in React",
+          "url": "https://react.dev/learn/accessibility"
         }
       ]
     },
@@ -783,12 +951,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "createPortal – Reference",
+          "url": "https://react.dev/reference/react-dom/createPortal"
         },
         {
-          "title": "portals – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "ARIA: dialog modal pattern",
+          "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+        },
+        {
+          "title": "Accessibility in React",
+          "url": "https://react.dev/learn/accessibility"
         }
       ]
     },
@@ -802,12 +974,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Tutorial: Tic-Tac-Toe",
+          "url": "https://react.dev/learn/tutorial-tic-tac-toe"
         },
         {
-          "title": "state – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Managing State",
+          "url": "https://react.dev/learn/managing-state"
+        },
+        {
+          "title": "Immutable board updates",
+          "url": "https://react.dev/learn/tutorial-tic-tac-toe#checking-for-a-winner"
         }
       ]
     },
@@ -820,12 +996,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Passing Data Deeply with Context",
+          "url": "https://react.dev/learn/passing-data-deeply-with-context"
         },
         {
-          "title": "Context – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "CSS custom properties (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties"
+        },
+        {
+          "title": "useContext – Reference",
+          "url": "https://react.dev/reference/react/useContext"
         }
       ]
     }
@@ -841,12 +1021,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Extracting State Logic into a Reducer",
+          "url": "https://react.dev/learn/extracting-state-logic-into-a-reducer"
         },
         {
-          "title": "useReducer – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useReducer – Reference",
+          "url": "https://react.dev/reference/react/useReducer"
+        },
+        {
+          "title": "useRef – Reference",
+          "url": "https://react.dev/reference/react/useRef"
         }
       ]
     },
@@ -859,12 +1043,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Managing State",
+          "url": "https://react.dev/learn/managing-state"
         },
         {
-          "title": "forms – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Forms – React DOM",
+          "url": "https://react.dev/reference/react-dom/components/form"
+        },
+        {
+          "title": "Choosing the State Structure",
+          "url": "https://react.dev/learn/choosing-the-state-structure"
         }
       ]
     },
@@ -877,12 +1065,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "memo – Reference",
+          "url": "https://react.dev/reference/react/memo"
         },
         {
-          "title": "memo – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "useContext – Reference",
+          "url": "https://react.dev/reference/react/useContext"
+        },
+        {
+          "title": "Profiler – Reference",
+          "url": "https://react.dev/reference/react/Profiler"
         }
       ]
     },
@@ -895,12 +1087,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Updating Arrays in State",
+          "url": "https://react.dev/learn/updating-arrays-in-state"
         },
         {
-          "title": "forms – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Choosing the State Structure",
+          "url": "https://react.dev/learn/choosing-the-state-structure"
+        },
+        {
+          "title": "Forms – React DOM",
+          "url": "https://react.dev/reference/react-dom/components/form"
         }
       ]
     },
@@ -914,12 +1110,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Manipulating the DOM with Refs",
+          "url": "https://react.dev/learn/manipulating-the-dom-with-refs"
         },
         {
-          "title": "canvas – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Canvas API (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
+        },
+        {
+          "title": "Responding to Events",
+          "url": "https://react.dev/learn/responding-to-events"
         }
       ]
     }
@@ -934,12 +1134,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Tutorial: Tic-Tac-Toe (state patterns)",
+          "url": "https://react.dev/learn/tutorial-tic-tac-toe"
         },
         {
-          "title": "game logic – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Choosing the State Structure",
+          "url": "https://react.dev/learn/choosing-the-state-structure"
+        },
+        {
+          "title": "Updating Arrays in State",
+          "url": "https://react.dev/learn/updating-arrays-in-state"
         }
       ]
     },
@@ -953,12 +1157,16 @@
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Reusing Logic with Custom Hooks",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks"
         },
         {
-          "title": "custom hooks – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Rules of Hooks",
+          "url": "https://react.dev/reference/rules/rules-of-hooks"
+        },
+        {
+          "title": "Passing Props to a Component",
+          "url": "https://react.dev/learn/passing-props-to-a-component"
         }
       ]
     },
@@ -966,17 +1174,21 @@
       "slug": "03-list-virtualization",
       "title": "List Virtualization: Manual Virtual Scrolling",
       "acceptance": [
-        "100k items scroll smoothly",
-        "DOM node count ~ viewport/rowHeight"
+        "Large list (e.g. 100k items) scrolls without lag",
+        "DOM node count stays O(visible rows), not total items"
       ],
       "resources": [
         {
-          "title": "React docs – Quick Start",
-          "url": "https://react.dev/learn"
+          "title": "Rendering large lists (react-window)",
+          "url": "https://github.com/bvaughn/react-window"
         },
         {
-          "title": "performance – React Reference",
-          "url": "https://react.dev/reference/react"
+          "title": "Rendering Lists",
+          "url": "https://react.dev/learn/rendering-lists"
+        },
+        {
+          "title": "useMemo – Reference",
+          "url": "https://react.dev/reference/react/useMemo"
         }
       ]
     }

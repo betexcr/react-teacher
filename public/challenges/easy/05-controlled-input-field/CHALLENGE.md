@@ -20,7 +20,7 @@ Create a profile form with controlled inputs: name, email, and bio (textarea). S
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/05-controlled-input-field/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/05-controlled-input-field/`. Reference write-ups in this repo live under `challenges/easy/05-controlled-input-field/` (not loaded by the app).
 
 ```tsx
 export function ProfileForm() {
@@ -42,5 +42,6 @@ export function ProfileForm() {
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [controlled components – React Reference](https://react.dev/reference/react)
+- [Controlled inputs](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)
+- [Textarea & select (controlled)](https://react.dev/reference/react-dom/components/textarea)
+- [Forms – React DOM](https://react.dev/reference/react-dom/components/form)

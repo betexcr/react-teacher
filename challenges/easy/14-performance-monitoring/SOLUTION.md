@@ -6,7 +6,7 @@ Profiler reports actualDuration; parent stores metrics for display.
 
 ## Key concepts
 
-- **Profiler**: Measures subtree render time in development builds.
+- **Profiler**: Measures subtree render/commit time; works in production with overhead—DevTools Profiler is the main workflow in dev.
 - **actualDuration**: Time spent rendering the committed update.
 
 ## Solution code

@@ -22,7 +22,7 @@ Full Connect Four: drop discs in columns, gravity fills lowest slot, detect 4 in
 
 ## Starter hint
 
-Create your work in `src/challenges/very-hard/01-connect-four/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/very-hard/01-connect-four/`. Reference write-ups in this repo live under `challenges/very-hard/01-connect-four/` (not loaded by the app).
 
 ```tsx
 const ROWS = 6, COLS = 7;
@@ -40,5 +40,6 @@ const ROWS = 6, COLS = 7;
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [game logic – React Reference](https://react.dev/reference/react)
+- [Tutorial: Tic-Tac-Toe (state patterns)](https://react.dev/learn/tutorial-tic-tac-toe)
+- [Choosing the State Structure](https://react.dev/learn/choosing-the-state-structure)
+- [Updating Arrays in State](https://react.dev/learn/updating-arrays-in-state)

@@ -20,7 +20,7 @@ Build a keypad UI: clicking digits appends to a display; Clear wipes it; Backspa
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/04-event-handling/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/04-event-handling/`. Reference write-ups in this repo live under `challenges/easy/04-event-handling/` (not loaded by the app).
 
 ```tsx
 export function Keypad() {
@@ -41,5 +41,6 @@ export function Keypad() {
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [SyntheticEvent – React Reference](https://react.dev/reference/react)
+- [Responding to Events](https://react.dev/learn/responding-to-events)
+- [React event objects](https://react.dev/reference/react-dom/components/common#react-event-object)
+- [useState – Reference](https://react.dev/reference/react/useState)

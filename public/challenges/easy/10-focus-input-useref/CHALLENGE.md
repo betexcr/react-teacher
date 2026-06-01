@@ -20,7 +20,7 @@ Login form: autofocus email on mount; "Forgot password?" focuses email; successf
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/10-focus-input-useref/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/10-focus-input-useref/`. Reference write-ups in this repo live under `challenges/easy/10-focus-input-useref/` (not loaded by the app).
 
 ```tsx
 const emailRef = useRef<HTMLInputElement>(null);
@@ -38,5 +38,6 @@ const emailRef = useRef<HTMLInputElement>(null);
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useRef – React Reference](https://react.dev/reference/react)
+- [Manipulating the DOM with Refs](https://react.dev/learn/manipulating-the-dom-with-refs)
+- [useRef – Reference](https://react.dev/reference/react/useRef)
+- [Referencing Values with Refs](https://react.dev/learn/referencing-values-with-refs)

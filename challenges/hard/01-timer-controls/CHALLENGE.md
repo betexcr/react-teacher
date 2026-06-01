@@ -21,7 +21,7 @@ Build a stopwatch with start, pause, reset, and lap recording. Elapsed time must
 
 ## Starter hint
 
-Create your work in `src/challenges/hard/01-timer-controls/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/hard/01-timer-controls/`. Reference write-ups in this repo live under `challenges/hard/01-timer-controls/` (not loaded by the app).
 
 ```tsx
 type State = { running: boolean; elapsed: number; laps: number[] };
@@ -40,5 +40,6 @@ type State = { running: boolean; elapsed: number; laps: number[] };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useReducer – React Reference](https://react.dev/reference/react)
+- [Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
+- [useReducer – Reference](https://react.dev/reference/react/useReducer)
+- [useRef – Reference](https://react.dev/reference/react/useRef)

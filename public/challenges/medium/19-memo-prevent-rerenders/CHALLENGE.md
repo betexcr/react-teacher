@@ -20,7 +20,7 @@ Parent with fast-updating counter and expensive child list. Use React.memo + use
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/19-memo-prevent-rerenders/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/19-memo-prevent-rerenders/`. Reference write-ups in this repo live under `challenges/medium/19-memo-prevent-rerenders/` (not loaded by the app).
 
 ```tsx
 const List = React.memo(function List(...) {});
@@ -38,5 +38,6 @@ const List = React.memo(function List(...) {});
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [React.memo – React Reference](https://react.dev/reference/react)
+- [memo – Reference](https://react.dev/reference/react/memo)
+- [useCallback – Reference](https://react.dev/reference/react/useCallback)
+- [useMemo – Reference](https://react.dev/reference/react/useMemo)

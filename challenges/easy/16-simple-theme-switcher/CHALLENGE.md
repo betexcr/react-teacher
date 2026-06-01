@@ -20,7 +20,7 @@ App shell with theme toggle. Persist choice in localStorage. Apply `data-theme` 
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/16-simple-theme-switcher/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/16-simple-theme-switcher/`. Reference write-ups in this repo live under `challenges/easy/16-simple-theme-switcher/` (not loaded by the app).
 
 ```tsx
 type Theme = 'light' | 'dark';
@@ -39,5 +39,6 @@ type Theme = 'light' | 'dark';
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useState – React Reference](https://react.dev/reference/react)
+- [useState – Reference](https://react.dev/reference/react/useState)
+- [CSS custom properties (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [Conditional rendering](https://react.dev/learn/conditional-rendering)

@@ -27,7 +27,7 @@ export const performanceOptimizationDeck: FlashcardDeck = {
     },
     {
       "question": "What is Profiler API?",
-      "explanation": "<Profiler onRender> measures commit time in dev to find slow subtrees.\n\nIn Performance Optimization interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "<Profiler onRender> reports commit timings (works in prod with overhead); DevTools Profiler is the main dev workflow.\n\nIn Performance Optimization interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Avoid premature optimization?",
@@ -59,7 +59,7 @@ export const performanceOptimizationDeck: FlashcardDeck = {
     },
     {
       "question": "What is Server Components perf?",
-      "explanation": "Zero client JS for server-only UI; fetch on server close to data.\n\nIn Performance Optimization interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Server-only components avoid shipping their implementation JS; pages still load client boundaries, hydration, and RSC payload.\n\nIn Performance Optimization interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Hydration cost?",

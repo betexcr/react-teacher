@@ -37,7 +37,15 @@ export function GetStartedPage() {
           <div className="get-started-path-card">
             <h3>Coding challenges on your computer</h3>
             <p>
-              You need your own project folder (clone this repo or create a new React app). You write code
+              You need your own project folder (
+              <a
+                href="https://github.com/betexcr/react-teacher"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                clone this repo
+              </a>{' '}
+              or create a new React app). You write code
               in an editor like Cursor, run a local dev server, and read the challenge text here in the
               browser.
             </p>
@@ -76,6 +84,24 @@ export function GetStartedPage() {
         <div className="get-started-install-block">
           <h3>What you need to install</h3>
           <p>Install once. Pick the notes for your operating system.</p>
+          <p className="get-started-install-note">
+            <strong>Windows:</strong> use{' '}
+            <a
+              href="https://learn.microsoft.com/en-us/windows/package-manager/winget/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              winget
+            </a>{' '}
+            in PowerShell or Terminal for the commands below (built into Windows 10 and 11).
+          </p>
+          <p className="get-started-install-note">
+            <strong>Mac / Linux:</strong> use Terminal —{' '}
+            <a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">
+              Homebrew
+            </a>{' '}
+            on Mac, or your distro package manager on Linux (examples below).
+          </p>
 
           <h4 className="get-started-install-sub">Node.js (LTS)</h4>
           <p>
@@ -83,6 +109,21 @@ export function GetStartedPage() {
             <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
               Download Node.js LTS
             </a>
+          </p>
+          <p className="get-started-install-note">
+            <strong>Windows (terminal):</strong>
+          </p>
+          <CodeBlock code="winget install OpenJS.NodeJS.LTS -e" />
+          <p className="get-started-install-note">
+            <strong>Mac (terminal):</strong> with Homebrew installed —
+          </p>
+          <CodeBlock code="brew install node" />
+          <p className="get-started-install-note">
+            <strong>Linux (terminal):</strong> Debian/Ubuntu example —
+          </p>
+          <CodeBlock code="sudo apt update && sudo apt install -y nodejs npm" />
+          <p className="get-started-install-note">
+            Distro packages can lag behind LTS; <strong>nvm</strong> below is often better on Linux.
           </p>
           <p className="get-started-install-note">Optional version managers:</p>
           <ul className="get-started-os-list">
@@ -94,13 +135,23 @@ export function GetStartedPage() {
                 rel="noopener noreferrer"
               >
                 nvm-windows
-              </a>
+              </a>{' '}
+              or:
+              <CodeBlock code="winget install CoreyButler.NVMforWindows -e" />
             </li>
             <li>
               <strong>Mac / Linux:</strong>{' '}
               <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener noreferrer">
                 nvm
-              </a>
+              </a>{' '}
+              — install in Terminal:
+              <CodeBlock
+                code={`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+
+# Restart the terminal, then install Node LTS:
+nvm install --lts
+nvm use --lts`}
+              />
             </li>
           </ul>
 
@@ -111,6 +162,14 @@ export function GetStartedPage() {
             </a>{' '}
             — includes AI Chat and Agent to help while you code.
           </p>
+          <p className="get-started-install-note">
+            <strong>Windows (terminal):</strong>
+          </p>
+          <CodeBlock code="winget install Anysphere.Cursor -e" />
+          <p className="get-started-install-note">
+            <strong>Mac (terminal):</strong> with Homebrew —
+          </p>
+          <CodeBlock code="brew install --cask cursor" />
 
           <h4 className="get-started-install-sub">Git (optional but recommended)</h4>
           <ul className="get-started-os-list">
@@ -122,19 +181,24 @@ export function GetStartedPage() {
                 rel="noopener noreferrer"
               >
                 git-scm.com/download/win
-              </a>
+              </a>{' '}
+              or in PowerShell / Terminal:
+              <CodeBlock code="winget install Git.Git -e" />
             </li>
             <li>
-              <strong>Mac:</strong> run in Terminal (or install{' '}
+              <strong>Mac:</strong> in Terminal — Xcode Command Line Tools (includes Git):
+              <CodeBlock code="xcode-select --install" />
+              Or with Homebrew:
+              <CodeBlock code="brew install git" />
+              Or install{' '}
               <a
                 href="https://git-scm.com/download/mac"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Git for Mac
-              </a>
-              ):
-              <CodeBlock code="xcode-select --install" />
+              </a>{' '}
+              from the website.
             </li>
             <li>
               <strong>Linux:</strong> (Debian/Ubuntu example; use your package manager if different)
@@ -276,7 +340,7 @@ export function GetStartedPage() {
             </li>
             <li>
               In your local project: create files under{' '}
-              <code>src/challenges/&lt;difficulty&gt;/&lt;slug&gt;/</code> (or anywhere you like).
+              <code>src/practice/&lt;difficulty&gt;/&lt;slug&gt;/</code> in your local React app (or any folder you prefer).
             </li>
             <li>
               Run your app and test your UI on localhost:

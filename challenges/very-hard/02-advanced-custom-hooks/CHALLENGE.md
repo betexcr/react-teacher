@@ -20,7 +20,7 @@ Build `useMediaQuery`, `useLocalStorage`, and compose them into `usePrefersDarkM
 
 ## Starter hint
 
-Create your work in `src/challenges/very-hard/02-advanced-custom-hooks/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/very-hard/02-advanced-custom-hooks/`. Reference write-ups in this repo live under `challenges/very-hard/02-advanced-custom-hooks/` (not loaded by the app).
 
 ```tsx
 export function useMediaQuery(query: string) {}
@@ -39,5 +39,6 @@ export function useMediaQuery(query: string) {}
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [custom hooks – React Reference](https://react.dev/reference/react)
+- [Reusing Logic with Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)

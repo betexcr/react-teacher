@@ -20,7 +20,7 @@ Button supports variants primary/ghost/danger, sizes sm/md/lg, loading spinner d
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/23-reusable-button-component/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/23-reusable-button-component/`. Reference write-ups in this repo live under `challenges/medium/23-reusable-button-component/` (not loaded by the app).
 
 ```tsx
 type ButtonProps = { variant?: 'primary' | 'ghost'; loading?: boolean };
@@ -38,5 +38,6 @@ type ButtonProps = { variant?: 'primary' | 'ghost'; loading?: boolean };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [components – React Reference](https://react.dev/reference/react)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
+- [TypeScript: typing components](https://react.dev/learn/typescript#typing-component-props)
+- [Accessibility in React](https://react.dev/learn/accessibility)

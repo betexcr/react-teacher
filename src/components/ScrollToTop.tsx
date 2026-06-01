@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { useMainScrollRef } from '../context/MainScrollContext';
 import { scrollMainToTop } from '../utils/scroll';
 
-/** Scrolls the main content pane to top on every route change. */
+/** Scrolls the main content pane (and window) to top on every route change. */
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const location = useLocation();
   const mainRef = useMainScrollRef();
 
   const scroll = useCallback(() => {
@@ -14,15 +14,20 @@ export function ScrollToTop() {
 
   useLayoutEffect(() => {
     scroll();
-  }, [pathname, scroll]);
+  }, [location.key, scroll]);
 
   useEffect(() => {
-    const id1 = requestAnimationFrame(() => {
+    scroll();
+    const raf = requestAnimationFrame(() => {
       scroll();
       requestAnimationFrame(scroll);
     });
-    return () => cancelAnimationFrame(id1);
-  }, [pathname, scroll]);
+    const timeout = window.setTimeout(scroll, 0);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(timeout);
+    };
+  }, [location.key, scroll]);
 
   return null;
 }

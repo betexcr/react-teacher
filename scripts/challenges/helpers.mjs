@@ -11,6 +11,8 @@ export function titleFromUrl(url) {
   }
 }
 
+import { getChallengeResources } from './resources.mjs';
+
 export function normalizeResource(r) {
   if (typeof r === 'object' && r !== null && 'url' in r) {
     const url = String(r.url);
@@ -51,13 +53,7 @@ export function challenge({
 }) {
   const normalizedResources = (resources.length
     ? resources
-    : [
-        { title: 'React docs – Quick Start', url: 'https://react.dev/learn' },
-        {
-          title: `${topics[0] || 'Hooks'} – React Reference`,
-          url: 'https://react.dev/reference/react',
-        },
-      ]
+    : getChallengeResources(difficulty, slug, topics)
   ).map(normalizeResource);
 
   return {

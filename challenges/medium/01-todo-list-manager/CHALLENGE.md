@@ -21,7 +21,7 @@ Full todo app: add, toggle complete, delete, filter All/Active/Completed, and sh
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/01-todo-list-manager/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/01-todo-list-manager/`. Reference write-ups in this repo live under `challenges/medium/01-todo-list-manager/` (not loaded by the app).
 
 ```tsx
 type Todo = { id: string; text: string; done: boolean };
@@ -40,5 +40,6 @@ type Todo = { id: string; text: string; done: boolean };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useState – React Reference](https://react.dev/reference/react)
+- [Updating Arrays in State](https://react.dev/learn/updating-arrays-in-state)
+- [Managing State](https://react.dev/learn/managing-state)
+- [Controlled inputs](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)

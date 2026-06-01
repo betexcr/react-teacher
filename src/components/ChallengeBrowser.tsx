@@ -32,7 +32,7 @@ function HomePage() {
         ))}
       </div>
       <p className="hint">
-        Work in <code>src/challenges/&lt;difficulty&gt;/&lt;slug&gt;/</code> or your own files. Open{' '}
+        Implement in your own React app (e.g. <code>src/practice/&lt;difficulty&gt;/&lt;slug&gt;/</code>). Open{' '}
         <code>CHALLENGE.md</code> in the repo or use this browser.
       </p>
     </section>

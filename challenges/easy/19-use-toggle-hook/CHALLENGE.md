@@ -21,7 +21,7 @@ Implement `useToggle(initial)` returning `[value, { toggle, set, on, off }]`. Us
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/19-use-toggle-hook/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/19-use-toggle-hook/`. Reference write-ups in this repo live under `challenges/easy/19-use-toggle-hook/` (not loaded by the app).
 
 ```tsx
 export function useToggle(initial = false) {}
@@ -39,5 +39,6 @@ export function useToggle(initial = false) {}
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [custom hooks – React Reference](https://react.dev/reference/react)
+- [Reusing Logic with Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [useCallback – Reference](https://react.dev/reference/react/useCallback)
+- [useState – Reference](https://react.dev/reference/react/useState)

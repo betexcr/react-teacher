@@ -11,7 +11,7 @@ export const nextFrameworkDeck: FlashcardDeck = {
     },
     {
       "question": "What is layout.tsx?",
-      "explanation": "Shared UI wrapping segments; persists state across navigations within segment.\n\nIn Next Framework interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Shared UI for a segment; client state in the layout persists across child navigations; Server Components in layouts re-fetch unless cached.\n\nIn Next Framework interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is loading.tsx?",
@@ -31,7 +31,7 @@ export const nextFrameworkDeck: FlashcardDeck = {
     },
     {
       "question": "What is Middleware?",
-      "explanation": "middleware.ts runs on edge before request; auth, redirects, headers.\n\nIn Next Framework interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "middleware.ts intercepts requests (auth, redirects, headers); defaults to Edge runtime; Node.js runtime supported in some versions—check current Next docs.\n\nIn Next Framework interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Image component?",

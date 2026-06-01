@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { PageMeta } from './components/PageMeta';
 import { AppLayout } from './layout/AppLayout';
 import { ChallengeDetailPage } from './pages/ChallengeDetailPage';
 import { ChallengesPage } from './pages/ChallengesPage';
@@ -11,7 +12,9 @@ import './styles/app.css';
 
 function App() {
   return (
-    <Routes>
+    <>
+      <PageMeta />
+      <Routes>
       <Route element={<AppLayout />}>
         <Route index element={<Navigate to="/get-started" replace />} />
         <Route path="get-started" element={<GetStartedPage />} />
@@ -23,6 +26,7 @@ function App() {
         <Route path="system-design/:slug" element={<SystemDesignDetailPage />} />
       </Route>
     </Routes>
+    </>
   );
 }
 

@@ -21,7 +21,7 @@ Classic tic-tac-toe with move history list and jump to any past move (time trave
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/25-tic-tac-toe-game/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/25-tic-tac-toe-game/`. Reference write-ups in this repo live under `challenges/medium/25-tic-tac-toe-game/` (not loaded by the app).
 
 ```tsx
 function calculateWinner(squares: (string|null)[])
@@ -40,5 +40,6 @@ function calculateWinner(squares: (string|null)[])
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [state – React Reference](https://react.dev/reference/react)
+- [Tutorial: Tic-Tac-Toe](https://react.dev/learn/tutorial-tic-tac-toe)
+- [Managing State](https://react.dev/learn/managing-state)
+- [Immutable board updates](https://react.dev/learn/tutorial-tic-tac-toe#checking-for-a-winner)

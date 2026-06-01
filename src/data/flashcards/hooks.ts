@@ -31,7 +31,11 @@ export const hooksDeck: FlashcardDeck = {
     },
     {
       "question": "What is useMemo / useCallback?",
-      "explanation": "Performance optimization; cache values/functions when deps stable.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Cache values/functions when deps stable—use after profiling or to stabilize props for memo children; React Compiler can reduce manual memo.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+    },
+    {
+      "question": "What is useImperativeHandle?",
+      "explanation": "Customizes the ref value a parent receives; works with ref-as-prop in React 19 or forwardRef for older patterns.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is useLayoutEffect?",
@@ -40,10 +44,6 @@ export const hooksDeck: FlashcardDeck = {
     {
       "question": "What is useId?",
       "explanation": "Stable unique IDs for accessibility associations SSR-safe.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
-    },
-    {
-      "question": "What is useImperativeHandle?",
-      "explanation": "Customize ref value exposed to parent with forwardRef.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is useDebugValue?",

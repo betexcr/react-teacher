@@ -20,7 +20,7 @@ Shopping checkout flow: cart items, step (cart → shipping → payment), and di
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/10-use-reducer-implementation/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/10-use-reducer-implementation/`. Reference write-ups in this repo live under `challenges/medium/10-use-reducer-implementation/` (not loaded by the app).
 
 ```tsx
 type State = { step: number; items: Item[]; coupon: string | null };
@@ -38,5 +38,6 @@ type State = { step: number; items: Item[]; coupon: string | null };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useReducer – React Reference](https://react.dev/reference/react)
+- [Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
+- [useReducer – Reference](https://react.dev/reference/react/useReducer)
+- [Typing useReducer (TypeScript)](https://react.dev/learn/typescript#typing-usereducer)

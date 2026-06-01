@@ -20,7 +20,7 @@ Analog or digital clock that updates every second. Toggle 12h/24h format. Show d
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/12-build-a-clock/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/12-build-a-clock/`. Reference write-ups in this repo live under `challenges/easy/12-build-a-clock/` (not loaded by the app).
 
 ```tsx
 export function Clock() {
@@ -41,5 +41,6 @@ export function Clock() {
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useEffect – React Reference](https://react.dev/reference/react)
+- [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)
+- [Removing Effects](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed)

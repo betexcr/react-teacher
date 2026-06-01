@@ -20,7 +20,7 @@ Controlled RadioGroup with options `{ value, label, disabled }`. Only one select
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/13-radiogroup-component/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/13-radiogroup-component/`. Reference write-ups in this repo live under `challenges/medium/13-radiogroup-component/` (not loaded by the app).
 
 ```tsx
 type Option = { value: string; label: string; disabled?: boolean };
@@ -38,5 +38,6 @@ type Option = { value: string; label: string; disabled?: boolean };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [a11y – React Reference](https://react.dev/reference/react)
+- [Accessibility in React](https://react.dev/learn/accessibility)
+- [ARIA: radio group pattern](https://www.w3.org/WAI/ARIA/apg/patterns/radio/)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)

@@ -20,7 +20,7 @@ Canvas-like editor storing shapes array. Support Undo, Redo, and new actions tha
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/07-state-history-manager/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/07-state-history-manager/`. Reference write-ups in this repo live under `challenges/medium/07-state-history-manager/` (not loaded by the app).
 
 ```tsx
 type HistoryState<T> = { past: T[]; present: T; future: T[] };
@@ -38,5 +38,6 @@ type HistoryState<T> = { past: T[]; present: T; future: T[] };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useReducer – React Reference](https://react.dev/reference/react)
+- [Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
+- [useReducer – Reference](https://react.dev/reference/react/useReducer)
+- [Managing State](https://react.dev/learn/managing-state)

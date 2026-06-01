@@ -21,7 +21,7 @@ HTML canvas drawing app: pencil tool, color picker, brush size slider, eraser, c
 
 ## Starter hint
 
-Create your work in `src/challenges/hard/05-art-drawing-tool/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/hard/05-art-drawing-tool/`. Reference write-ups in this repo live under `challenges/hard/05-art-drawing-tool/` (not loaded by the app).
 
 ```tsx
 const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -40,5 +40,6 @@ const canvasRef = useRef<HTMLCanvasElement>(null);
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [canvas – React Reference](https://react.dev/reference/react)
+- [Manipulating the DOM with Refs](https://react.dev/learn/manipulating-the-dom-with-refs)
+- [Canvas API (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+- [Responding to Events](https://react.dev/learn/responding-to-events)

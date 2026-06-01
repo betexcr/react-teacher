@@ -22,7 +22,7 @@ Virtual list of 100,000 items (fixed row height 40px). Compute visible start/end
 
 ## Starter hint
 
-Create your work in `src/challenges/very-hard/03-list-virtualization/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/very-hard/03-list-virtualization/`. Reference write-ups in this repo live under `challenges/very-hard/03-list-virtualization/` (not loaded by the app).
 
 ```tsx
 const itemHeight = 40; const totalHeight = items.length * itemHeight;
@@ -35,10 +35,11 @@ const itemHeight = 40; const totalHeight = items.length * itemHeight;
 
 ## Acceptance criteria
 
-- [ ] 100k items scroll smoothly
-- [ ] DOM node count ~ viewport/rowHeight
+- [ ] Large list (e.g. 100k items) scrolls without lag
+- [ ] DOM node count stays O(visible rows), not total items
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [performance – React Reference](https://react.dev/reference/react)
+- [Rendering large lists (react-window)](https://github.com/bvaughn/react-window)
+- [Rendering Lists](https://react.dev/learn/rendering-lists)
+- [useMemo – Reference](https://react.dev/reference/react/useMemo)

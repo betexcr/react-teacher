@@ -20,7 +20,7 @@ Data hook that distinguishes 404 vs 500 vs network error. UI shows message and R
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/15-handling-api-errors/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/15-handling-api-errors/`. Reference write-ups in this repo live under `challenges/medium/15-handling-api-errors/` (not loaded by the app).
 
 ```tsx
 class ApiError extends Error { status: number }
@@ -38,5 +38,6 @@ class ApiError extends Error { status: number }
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [fetch – React Reference](https://react.dev/reference/react)
+- [Fetching data with Effects](https://react.dev/learn/synchronizing-with-effects#fetching-data)
+- [Conditional rendering](https://react.dev/learn/conditional-rendering)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)

@@ -183,7 +183,7 @@ export function usePrefersDarkMode() {
     requirements: ['Smooth scroll', 'O(visible) DOM nodes', 'Scroll to index API', 'Overscan 5 rows'],
     starter: `const itemHeight = 40; const totalHeight = items.length * itemHeight;`,
     hints: ['startIndex = floor(scrollTop / itemHeight)', 'transform translateY(startIndex * itemHeight)'],
-    acceptance: ['100k items scroll smoothly', 'DOM node count ~ viewport/rowHeight'],
+    acceptance: ['Large list (e.g. 100k items) scrolls without lag', 'DOM node count stays O(visible rows), not total items'],
     solutionApproach: 'Scroll container with inner height spacer; translate visible slice.',
     concepts: [
       { term: 'Windowing', detail: 'Only mount rows in viewport plus overscan buffer.' },

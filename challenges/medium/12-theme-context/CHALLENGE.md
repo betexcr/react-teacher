@@ -20,7 +20,7 @@ Create ThemeProvider, useTheme hook, and themed Button/Text children without pro
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/12-theme-context/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/12-theme-context/`. Reference write-ups in this repo live under `challenges/medium/12-theme-context/` (not loaded by the app).
 
 ```tsx
 const ThemeContext = createContext(null);
@@ -38,5 +38,6 @@ const ThemeContext = createContext(null);
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [Context API – React Reference](https://react.dev/reference/react)
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
+- [useContext – Reference](https://react.dev/reference/react/useContext)
+- [createContext – Reference](https://react.dev/reference/react/createContext)

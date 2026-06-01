@@ -20,7 +20,7 @@ Settings panel: `user.profile.name`, `user.profile.avatar`, `user.preferences.no
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/06-nested-state-manager/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/06-nested-state-manager/`. Reference write-ups in this repo live under `challenges/medium/06-nested-state-manager/` (not loaded by the app).
 
 ```tsx
 const [user, setUser] = useState({ profile: { name: '', avatar: '' }, preferences: { notifications: { email: true } } });
@@ -38,5 +38,6 @@ const [user, setUser] = useState({ profile: { name: '', avatar: '' }, preference
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [immutable updates – React Reference](https://react.dev/reference/react)
+- [Updating Objects in State](https://react.dev/learn/updating-objects-in-state)
+- [Immutable update patterns](https://react.dev/learn/updating-objects-in-state#write-immutable-update-logic-with-spread-syntax)
+- [useState – Reference](https://react.dev/reference/react/useState)

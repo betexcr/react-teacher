@@ -11,7 +11,7 @@ export const typescriptInReactDeck: FlashcardDeck = {
     },
     {
       "question": "React.FC vs function signature?",
-      "explanation": "Prefer explicit props type on function; React.FC adds implicit children and is less common now.\n\nIn TypeScript in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Prefer explicit props types on plain functions. Modern @types/react no longer adds implicit children to FC; FC is rarely needed.\n\nIn TypeScript in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Typing useState?",
@@ -54,8 +54,8 @@ export const typescriptInReactDeck: FlashcardDeck = {
       "explanation": "createContext<Auth | null>(null); custom hook throws if null to enforce provider.\n\nIn TypeScript in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
-      "question": "What is forwardRef generics?",
-      "explanation": "forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => ...)\n\nIn TypeScript in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "question": "What is Ref as prop (React 19)?",
+      "explanation": "Function components can accept ref as a normal prop; forwardRef is optional for older React or library interop.\n\nIn TypeScript in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Module augmentation?",

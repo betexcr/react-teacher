@@ -20,7 +20,7 @@ Implement `useAsync(asyncFn, deps)` returning `{ status, data, error, execute, r
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/09-use-async-hook/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/09-use-async-hook/`. Reference write-ups in this repo live under `challenges/medium/09-use-async-hook/` (not loaded by the app).
 
 ```tsx
 export function useAsync<T>(fn: () => Promise<T>, deps: unknown[]) {}
@@ -39,5 +39,6 @@ export function useAsync<T>(fn: () => Promise<T>, deps: unknown[]) {}
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [custom hooks – React Reference](https://react.dev/reference/react)
+- [Reusing Logic with Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [Fetching data with Effects](https://react.dev/learn/synchronizing-with-effects#fetching-data)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)

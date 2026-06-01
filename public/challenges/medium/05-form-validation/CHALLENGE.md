@@ -20,7 +20,7 @@ Registration form: username (3+ chars), email, password (8+ with number), confir
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/05-form-validation/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/05-form-validation/`. Reference write-ups in this repo live under `challenges/medium/05-form-validation/` (not loaded by the app).
 
 ```tsx
 type Errors = Partial<Record<'username' | 'email' | 'password' | 'confirm', string>>;
@@ -38,5 +38,6 @@ type Errors = Partial<Record<'username' | 'email' | 'password' | 'confirm', stri
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [forms – React Reference](https://react.dev/reference/react)
+- [Forms – React DOM](https://react.dev/reference/react-dom/components/form)
+- [Controlled inputs](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)
+- [Managing State](https://react.dev/learn/managing-state)

@@ -20,7 +20,7 @@ Insurance-style wizard: Q1 type (individual/business) branches to different step
 
 ## Starter hint
 
-Create your work in `src/challenges/hard/02-multi-step-form-branching/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/hard/02-multi-step-form-branching/`. Reference write-ups in this repo live under `challenges/hard/02-multi-step-form-branching/` (not loaded by the app).
 
 ```tsx
 const flow = { individual: ['age', 'review'], business: ['size', 'review'] };
@@ -38,5 +38,6 @@ const flow = { individual: ['age', 'review'], business: ['size', 'review'] };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [forms – React Reference](https://react.dev/reference/react)
+- [Managing State](https://react.dev/learn/managing-state)
+- [Forms – React DOM](https://react.dev/reference/react-dom/components/form)
+- [Choosing the State Structure](https://react.dev/learn/choosing-the-state-structure)

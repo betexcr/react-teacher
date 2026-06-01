@@ -20,7 +20,7 @@ Input with label, hint, error message, optional left icon, sizes, and disabled s
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/22-reusable-input-component/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/22-reusable-input-component/`. Reference write-ups in this repo live under `challenges/medium/22-reusable-input-component/` (not loaded by the app).
 
 ```tsx
 export const Input = forwardRef<HTMLInputElement, InputProps>(...)
@@ -38,5 +38,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(...)
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [components – React Reference](https://react.dev/reference/react)
+- [forwardRef – Reference](https://react.dev/reference/react/forwardRef)
+- [Controlled inputs](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)

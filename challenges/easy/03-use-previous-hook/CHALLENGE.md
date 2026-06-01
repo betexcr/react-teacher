@@ -20,7 +20,7 @@ Implement `usePrevious(value)` that returns the value from the **previous** rend
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/03-use-previous-hook/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/03-use-previous-hook/`. Reference write-ups in this repo live under `challenges/easy/03-use-previous-hook/` (not loaded by the app).
 
 ```tsx
 export function usePrevious<T>(value: T): T | undefined {
@@ -40,5 +40,6 @@ export function usePrevious<T>(value: T): T | undefined {
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useRef – React Reference](https://react.dev/reference/react)
+- [Referencing Values with Refs](https://react.dev/learn/referencing-values-with-refs)
+- [useRef – Reference](https://react.dev/reference/react/useRef)
+- [Reusing Logic with Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)

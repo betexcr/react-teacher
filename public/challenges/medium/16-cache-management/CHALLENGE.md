@@ -20,7 +20,7 @@ Simple in-memory cache Map for API responses. `useCachedFetch(key, fetcher)` ret
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/16-cache-management/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/16-cache-management/`. Reference write-ups in this repo live under `challenges/medium/16-cache-management/` (not loaded by the app).
 
 ```tsx
 const cache = new Map<string, { data: unknown; ts: number }>();
@@ -38,5 +38,6 @@ const cache = new Map<string, { data: unknown; ts: number }>();
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [cache – React Reference](https://react.dev/reference/react)
+- [Referencing Values with Refs](https://react.dev/learn/referencing-values-with-refs)
+- [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
+- [Caching with useMemo](https://react.dev/reference/react/useMemo)

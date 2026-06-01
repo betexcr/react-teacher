@@ -20,7 +20,7 @@ Class-based ErrorBoundary wrapping a component that throws. Show fallback with r
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/14-fallback-ui-class-components/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/14-fallback-ui-class-components/`. Reference write-ups in this repo live under `challenges/medium/14-fallback-ui-class-components/` (not loaded by the app).
 
 ```tsx
 class ErrorBoundary extends React.Component
@@ -38,5 +38,6 @@ class ErrorBoundary extends React.Component
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [ErrorBoundary – React Reference](https://react.dev/reference/react)
+- [Error Boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)
+- [Class components – legacy API](https://react.dev/reference/react/Component)
+- [React error handling (learn)](https://react.dev/learn/error-boundaries)

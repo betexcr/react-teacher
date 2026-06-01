@@ -1,15 +1,9 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { DifficultyBadge } from '../components/DifficultyBadge';
 import challengeIndex from '../data/challenges-index.json';
 import { isChallengeCompleted } from '../hooks/useChallengeProgress';
-import type { ChallengeMeta, Difficulty } from '../lib/challenges';
-
-const labels: Record<Difficulty, string> = {
-  easy: 'Easy',
-  medium: 'Medium',
-  hard: 'Hard',
-  'very-hard': 'Very Hard',
-};
+import { DIFFICULTY_LABELS, type ChallengeMeta, type Difficulty } from '../lib/challenges';
 
 type IndexedChallenge = ChallengeMeta & { difficulty: Difficulty };
 
@@ -34,14 +28,14 @@ export function ChallengesPage() {
         <button type="button" className={filter === 'all' ? 'active' : ''} onClick={() => setFilter('all')}>
           All
         </button>
-        {(Object.keys(labels) as Difficulty[]).map((d) => (
+        {(Object.keys(DIFFICULTY_LABELS) as Difficulty[]).map((d) => (
           <button
             key={d}
             type="button"
-            className={filter === d ? 'active' : ''}
+            className={`challenge-filters__btn--${d} ${filter === d ? 'active' : ''}`}
             onClick={() => setFilter(d)}
           >
-            {labels[d]}
+            {DIFFICULTY_LABELS[d]}
           </button>
         ))}
       </div>
@@ -52,7 +46,7 @@ export function ChallengesPage() {
             <li key={`${c.difficulty}-${c.slug}`}>
               <Link to={`/challenges/${c.difficulty}/${c.slug}`} className="challenge-list-card">
                 <div className="challenge-list-card-top">
-                  <span className="difficulty-tag">{labels[c.difficulty]}</span>
+                  <DifficultyBadge difficulty={c.difficulty} />
                   {completed && (
                     <span className="challenge-completed-badge challenge-completed-badge--small">
                       Completed

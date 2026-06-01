@@ -11,7 +11,7 @@ export const reactFundamentalsDeck: FlashcardDeck = {
     },
     {
       "question": "What is JSX, and how does it relate to React.createElement?",
-      "explanation": "JSX is a syntax extension that looks like HTML embedded in JavaScript. The compiler (Babel/SWC) transforms JSX into React.createElement(type, props, ...children) calls—or the automatic runtime equivalent—so the runtime receives plain element objects.\n\nJSX must evaluate to a single root per return (or a Fragment). It is not required—you can write createElement directly—but JSX improves readability for nested UI trees and is the industry default.\n\nTypeScript adds typing for intrinsic elements (div, input) and your components. Interview tip: JSX is syntactic sugar; reconciliation still works on the element objects JSX produces."
+      "explanation": "JSX is a syntax extension that looks like HTML embedded in JavaScript. The compiler (Babel/SWC) transforms JSX into React.createElement(type, props, ...children) calls—or the automatic JSX runtime equivalent—so React receives plain element objects.\n\nA component must return one expression: a single element, Fragment (<>...</>), array, or null. Fragments group siblings without an extra DOM node. JSX is optional—you can call createElement directly.\n\nTypeScript adds typing for intrinsic elements (div, input) and your components. Interview tip: JSX is syntactic sugar; reconciliation still works on the element objects JSX produces."
     },
     {
       "question": "What is the virtual DOM, and why does React use it?",

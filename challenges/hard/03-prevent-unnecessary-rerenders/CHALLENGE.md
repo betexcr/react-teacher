@@ -20,7 +20,7 @@ Parent updates unrelated state every 100ms. Optimize children with memo, useMemo
 
 ## Starter hint
 
-Create your work in `src/challenges/hard/03-prevent-unnecessary-rerenders/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/hard/03-prevent-unnecessary-rerenders/`. Reference write-ups in this repo live under `challenges/hard/03-prevent-unnecessary-rerenders/` (not loaded by the app).
 
 ```tsx
 // SlowChild renders 500 divs
@@ -38,5 +38,6 @@ Create your work in `src/challenges/hard/03-prevent-unnecessary-rerenders/` or a
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [memo – React Reference](https://react.dev/reference/react)
+- [memo – Reference](https://react.dev/reference/react/memo)
+- [useContext – Reference](https://react.dev/reference/react/useContext)
+- [Profiler – Reference](https://react.dev/reference/react/Profiler)

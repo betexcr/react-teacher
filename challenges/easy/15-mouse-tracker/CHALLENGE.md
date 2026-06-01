@@ -20,7 +20,7 @@ Track cursor position relative to a box. Show coordinates and whether pointer is
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/15-mouse-tracker/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/15-mouse-tracker/`. Reference write-ups in this repo live under `challenges/easy/15-mouse-tracker/` (not loaded by the app).
 
 ```tsx
 const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -39,5 +39,6 @@ const [pos, setPos] = useState({ x: 0, y: 0 });
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [events – React Reference](https://react.dev/reference/react)
+- [Adding Event Listeners in Effects](https://react.dev/learn/synchronizing-with-effects#adding-a-window-event-listener)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)
+- [Responding to Events](https://react.dev/learn/responding-to-events)

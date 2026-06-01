@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { useMainScrollRef } from '../context/MainScrollContext';
 import { scrollMainToTop } from '../utils/scroll';
 
-/** Scroll main content to top when this route mounts or pathname changes. */
+/** Scroll main content to top when this route mounts or the location changes. */
 export function useRouteScrollTop() {
-  const { pathname } = useLocation();
+  const { key } = useLocation();
   const mainRef = useMainScrollRef();
 
   const scroll = useCallback(() => {
@@ -14,7 +14,7 @@ export function useRouteScrollTop() {
 
   useLayoutEffect(() => {
     scroll();
-    const id = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(id);
-  }, [pathname, scroll]);
+    const raf = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(raf);
+  }, [key, scroll]);
 }

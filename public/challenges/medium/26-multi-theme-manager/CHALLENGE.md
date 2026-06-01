@@ -20,7 +20,7 @@ Theme manager: light, dark, system, plus custom user theme from color pickers. L
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/26-multi-theme-manager/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/26-multi-theme-manager/`. Reference write-ups in this repo live under `challenges/medium/26-multi-theme-manager/` (not loaded by the app).
 
 ```tsx
 type ThemeMode = 'light' | 'dark' | 'system' | 'custom';
@@ -38,5 +38,6 @@ type ThemeMode = 'light' | 'dark' | 'system' | 'custom';
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [Context – React Reference](https://react.dev/reference/react)
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
+- [CSS custom properties (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [useContext – Reference](https://react.dev/reference/react/useContext)

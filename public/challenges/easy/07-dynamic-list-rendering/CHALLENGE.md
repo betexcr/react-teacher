@@ -20,7 +20,7 @@ Build a tag editor: input + Add button creates tags; each tag has remove; list r
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/07-dynamic-list-rendering/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/07-dynamic-list-rendering/`. Reference write-ups in this repo live under `challenges/easy/07-dynamic-list-rendering/` (not loaded by the app).
 
 ```tsx
 type Tag = { id: string; label: string };
@@ -39,5 +39,6 @@ type Tag = { id: string; label: string };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [lists – React Reference](https://react.dev/reference/react)
+- [Rendering Lists](https://react.dev/learn/rendering-lists)
+- [Keys in lists](https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key)
+- [Conditional rendering](https://react.dev/learn/conditional-rendering)

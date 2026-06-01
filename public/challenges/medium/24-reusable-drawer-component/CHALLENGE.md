@@ -21,7 +21,7 @@ Drawer opens from right; portals to document.body; traps focus; restores focus o
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/24-reusable-drawer-component/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/24-reusable-drawer-component/`. Reference write-ups in this repo live under `challenges/medium/24-reusable-drawer-component/` (not loaded by the app).
 
 ```tsx
 import { createPortal } from 'react-dom';
@@ -40,5 +40,6 @@ import { createPortal } from 'react-dom';
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [portals – React Reference](https://react.dev/reference/react)
+- [createPortal – Reference](https://react.dev/reference/react-dom/createPortal)
+- [ARIA: dialog modal pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+- [Accessibility in React](https://react.dev/learn/accessibility)

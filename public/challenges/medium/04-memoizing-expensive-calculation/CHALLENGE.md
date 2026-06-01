@@ -20,7 +20,7 @@ Given a slow `fibonacci(n)` and slider input n, display result. Without useMemo 
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/04-memoizing-expensive-calculation/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/04-memoizing-expensive-calculation/`. Reference write-ups in this repo live under `challenges/medium/04-memoizing-expensive-calculation/` (not loaded by the app).
 
 ```tsx
 function fib(n: number): number { /* iterative slow */ }
@@ -38,5 +38,6 @@ function fib(n: number): number { /* iterative slow */ }
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useMemo – React Reference](https://react.dev/reference/react)
+- [useMemo – Reference](https://react.dev/reference/react/useMemo)
+- [Keeping Components Pure](https://react.dev/learn/keeping-components-pure)
+- [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)

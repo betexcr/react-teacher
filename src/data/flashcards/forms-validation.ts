@@ -55,7 +55,7 @@ export const formsValidationDeck: FlashcardDeck = {
     },
     {
       "question": "What is Server Actions forms?",
-      "explanation": "React 19 form action prop; progressive enhancement without client JS.\n\nIn Forms & Validation interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "<form action={serverAction}> can work with minimal JS; pending UI, useActionState, and useOptimistic need client components.\n\nIn Forms & Validation interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Prevent double submit?",

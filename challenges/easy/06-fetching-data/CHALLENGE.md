@@ -20,7 +20,7 @@ Fetch a list of users from `https://jsonplaceholder.typicode.com/users` (or mock
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/06-fetching-data/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/06-fetching-data/`. Reference write-ups in this repo live under `challenges/easy/06-fetching-data/` (not loaded by the app).
 
 ```tsx
 export function UserList() {
@@ -42,5 +42,6 @@ export function UserList() {
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useEffect – React Reference](https://react.dev/reference/react)
+- [Fetching data with Effects](https://react.dev/learn/synchronizing-with-effects#fetching-data)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)
+- [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)

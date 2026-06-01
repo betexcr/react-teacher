@@ -20,7 +20,7 @@ Tabs, TabList, Tab, TabPanels pattern. Support controlled `activeIndex` and defa
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/17-reusable-tabs-component/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/17-reusable-tabs-component/`. Reference write-ups in this repo live under `challenges/medium/17-reusable-tabs-component/` (not loaded by the app).
 
 ```tsx
 const TabsContext = createContext(...);
@@ -38,5 +38,6 @@ const TabsContext = createContext(...);
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [composition – React Reference](https://react.dev/reference/react)
+- [Passing JSX as children](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
+- [ARIA: tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)
+- [Accessibility in React](https://react.dev/learn/accessibility)

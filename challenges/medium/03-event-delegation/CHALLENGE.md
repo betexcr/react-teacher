@@ -20,7 +20,7 @@ Render a dynamic list of buttons (add/remove). Use **one** click handler on `<ul
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/03-event-delegation/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/03-event-delegation/`. Reference write-ups in this repo live under `challenges/medium/03-event-delegation/` (not loaded by the app).
 
 ```tsx
 <ul onClick={handleListClick}>
@@ -38,5 +38,6 @@ Create your work in `src/challenges/medium/03-event-delegation/` or a sandbox fi
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [events – React Reference](https://react.dev/reference/react)
+- [Responding to Events](https://react.dev/learn/responding-to-events)
+- [Event delegation (MDN)](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
+- [React event objects](https://react.dev/reference/react-dom/components/common#react-event-object)

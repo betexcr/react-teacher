@@ -20,7 +20,7 @@ Build a `Card` with `Card.Header`, `Card.Body`, and `Card.Footer` using composit
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/09-component-composition/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/09-component-composition/`. Reference write-ups in this repo live under `challenges/easy/09-component-composition/` (not loaded by the app).
 
 ```tsx
 export function Card({ children }: { children: React.ReactNode }) {}
@@ -38,5 +38,6 @@ export function Card({ children }: { children: React.ReactNode }) {}
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [children – React Reference](https://react.dev/reference/react)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
+- [Passing JSX as children](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
+- [Your UI as a tree](https://react.dev/learn/understanding-your-ui-as-a-tree)

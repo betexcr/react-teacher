@@ -20,7 +20,7 @@ You are given a monolithic `UserCard` with hardcoded name/avatar/role. Refactor 
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/11-refactor-to-props/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/11-refactor-to-props/`. Reference write-ups in this repo live under `challenges/easy/11-refactor-to-props/` (not loaded by the app).
 
 ```tsx
 // Before: function UserCard() { return <div>Jane Doe</div> }
@@ -38,5 +38,6 @@ Create your work in `src/challenges/easy/11-refactor-to-props/` or a sandbox fil
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [props – React Reference](https://react.dev/reference/react)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
+- [Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
+- [Thinking in React](https://react.dev/learn/thinking-in-react)

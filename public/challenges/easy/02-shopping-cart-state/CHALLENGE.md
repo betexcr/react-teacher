@@ -21,7 +21,7 @@ Model a mini cart: each item has id, name, price, and quantity. Users can add it
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/02-shopping-cart-state/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/02-shopping-cart-state/`. Reference write-ups in this repo live under `challenges/easy/02-shopping-cart-state/` (not loaded by the app).
 
 ```tsx
 type Item = { id: string; name: string; price: number; qty: number };
@@ -47,5 +47,6 @@ export function ShoppingCart() {
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useState – React Reference](https://react.dev/reference/react)
+- [Updating Arrays in State](https://react.dev/learn/updating-arrays-in-state)
+- [useState – Reference](https://react.dev/reference/react/useState)
+- [Updating Objects in State](https://react.dev/learn/updating-objects-in-state)

@@ -54,8 +54,8 @@ export const stylingDeck: FlashcardDeck = {
       "explanation": "Collect critical CSS or use zero-runtime to avoid FOUC.\n\nIn Styling in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
-      "question": "What is Purge/content config?",
-      "explanation": "Tailwind scans src for class names; wrong paths bloat or strip needed.\n\nIn Styling in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "question": "What is Tailwind content scanning?",
+      "explanation": "v3: content paths in tailwind.config. v4: @source globs in CSS—wrong paths cause missing styles or leftover CSS.\n\nIn Styling in React interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Component variants?",

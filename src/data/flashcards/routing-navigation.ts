@@ -6,8 +6,8 @@ export const routingNavigationDeck: FlashcardDeck = {
   "title": "Routing & Navigation",
   "cards": [
     {
-      "question": "What is React Router v6 basics?",
-      "explanation": "BrowserRouter, Routes, Route path element, Link, NavLink, useNavigate.\n\nIn Routing & Navigation interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "question": "What is React Router 7 basics?",
+      "explanation": "createBrowserRouter + RouterProvider, or <BrowserRouter> with Routes/Route element, Link, NavLink, useNavigate (RR 6/7 patterns).\n\nIn Routing & Navigation interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Nested routes?",
@@ -55,7 +55,7 @@ export const routingNavigationDeck: FlashcardDeck = {
     },
     {
       "question": "What is Next.js App Router?",
-      "explanation": "File-system routes; layouts.js; server components by default.\n\nIn Routing & Navigation interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "File-system routes under app/ with layout.tsx, page.tsx, loading.tsx; Server Components by default, \"use client\" for boundaries.\n\nIn Routing & Navigation interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Deep linking?",

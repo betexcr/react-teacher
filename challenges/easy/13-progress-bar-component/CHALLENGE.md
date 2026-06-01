@@ -20,7 +20,7 @@ Reusable `ProgressBar` with `value`, `max`, optional `label`. Animate width chan
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/13-progress-bar-component/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/13-progress-bar-component/`. Reference write-ups in this repo live under `challenges/easy/13-progress-bar-component/` (not loaded by the app).
 
 ```tsx
 type ProgressBarProps = { value: number | null; max?: number; label?: string };
@@ -38,5 +38,6 @@ type ProgressBarProps = { value: number | null; max?: number; label?: string };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [props – React Reference](https://react.dev/reference/react)
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
+- [ARIA: progressbar role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role)
+- [Conditional rendering](https://react.dev/learn/conditional-rendering)

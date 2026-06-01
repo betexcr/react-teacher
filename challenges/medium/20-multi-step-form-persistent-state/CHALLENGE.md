@@ -20,7 +20,7 @@
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/20-multi-step-form-persistent-state/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/20-multi-step-form-persistent-state/`. Reference write-ups in this repo live under `challenges/medium/20-multi-step-form-persistent-state/` (not loaded by the app).
 
 ```tsx
 type FormData = { email: string; name: string; plan: string };
@@ -38,5 +38,6 @@ type FormData = { email: string; name: string; plan: string };
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [forms – React Reference](https://react.dev/reference/react)
+- [Managing State](https://react.dev/learn/managing-state)
+- [Forms – React DOM](https://react.dev/reference/react-dom/components/form)
+- [Lifting state up](https://react.dev/learn/sharing-state-between-components)

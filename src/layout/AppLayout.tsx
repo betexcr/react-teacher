@@ -62,9 +62,9 @@ export function AppLayout() {
           </button>
         </aside>
         <main ref={mainRef} className="main-content">
+          <ScrollToTop />
           <Outlet />
         </main>
-        <ScrollToTop />
       </div>
     </MainScrollContext.Provider>
   );

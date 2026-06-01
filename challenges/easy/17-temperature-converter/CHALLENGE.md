@@ -20,7 +20,7 @@ Two linked inputs: Celsius and Fahrenheit. Editing one updates the other using c
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/17-temperature-converter/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/17-temperature-converter/`. Reference write-ups in this repo live under `challenges/easy/17-temperature-converter/` (not loaded by the app).
 
 ```tsx
 // Pick one canonical unit or track "last edited" field
@@ -39,5 +39,6 @@ Create your work in `src/challenges/easy/17-temperature-converter/` or a sandbox
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [controlled inputs – React Reference](https://react.dev/reference/react)
+- [Derived state (when to calculate during render)](https://react.dev/learn/you-might-not-need-an-effect#updating-state-based-on-props-or-state)
+- [Controlled inputs](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)
+- [Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)

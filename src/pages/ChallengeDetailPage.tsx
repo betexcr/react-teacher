@@ -1,13 +1,13 @@
 import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AcceptanceChecklist } from '../components/AcceptanceChecklist';
+import { DifficultyBadge } from '../components/DifficultyBadge';
 import { MarkdownView } from '../components/MarkdownView';
 import { ResourceList } from '../components/ResourceList';
 import { useChallengeProgress } from '../hooks/useChallengeProgress';
 import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
 import { stripInteractiveSections } from '../lib/challengeBody';
 import {
-  DIFFICULTY_LABELS,
   findChallenge,
   getChallengeMarkdown,
   getSolutionMarkdown,
@@ -47,20 +47,21 @@ export function ChallengeDetailPage() {
     );
   }
 
-  const diffLabel = DIFFICULTY_LABELS[difficulty];
-
   return (
     <div className="challenge-detail">
       <nav className="challenge-breadcrumbs">
         <Link to="/challenges">Challenges</Link>
         <span aria-hidden> / </span>
-        <span>{diffLabel}</span>
+        <DifficultyBadge difficulty={difficulty} />
         <span aria-hidden> / </span>
         <span>{meta.title}</span>
       </nav>
 
       <header className="challenge-detail-header">
-        <h1 className="page-title">{meta.title}</h1>
+        <div className="challenge-detail-title-row">
+          <h1 className="page-title">{meta.title}</h1>
+          <DifficultyBadge difficulty={difficulty} className="difficulty-badge--detail" />
+        </div>
         {isComplete && (
           <span className="challenge-completed-badge" aria-label="Challenge completed">
             Completed

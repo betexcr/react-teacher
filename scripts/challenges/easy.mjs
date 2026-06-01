@@ -729,7 +729,7 @@ export function ProgressBar({ value, max = 100, label }: ProgressBarProps) {
     acceptance: ['Profiler wired', 'Threshold logging', 'UI shows metric'],
     solutionApproach: 'Profiler reports actualDuration; parent stores metrics for display.',
     concepts: [
-      { term: 'Profiler', detail: 'Measures subtree render time in development builds.' },
+      { term: 'Profiler', detail: 'Measures subtree render/commit time; works in production with overhead—DevTools Profiler is the main workflow in dev.' },
       { term: 'actualDuration', detail: 'Time spent rendering the committed update.' },
     ],
     solution: `import { Profiler, ProfilerOnRenderCallback, useState } from 'react';

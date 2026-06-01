@@ -20,7 +20,7 @@ Form builder: users add "field rows" choosing type (text, number, select). Each 
 
 ## Starter hint
 
-Create your work in `src/challenges/hard/04-dynamic-form-fields/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/hard/04-dynamic-form-fields/`. Reference write-ups in this repo live under `challenges/hard/04-dynamic-form-fields/` (not loaded by the app).
 
 ```tsx
 type FieldRow = { id: string; type: 'text' | 'number' | 'select'; label: string; options?: string };
@@ -38,5 +38,6 @@ type FieldRow = { id: string; type: 'text' | 'number' | 'select'; label: string;
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [forms – React Reference](https://react.dev/reference/react)
+- [Updating Arrays in State](https://react.dev/learn/updating-arrays-in-state)
+- [Choosing the State Structure](https://react.dev/learn/choosing-the-state-structure)
+- [Forms – React DOM](https://react.dev/reference/react-dom/components/form)

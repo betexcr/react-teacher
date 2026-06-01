@@ -20,7 +20,7 @@ Auth context: user, login, logout. Navbar shows user; Profile page edits name—
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/18-share-state-with-context/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/18-share-state-with-context/`. Reference write-ups in this repo live under `challenges/medium/18-share-state-with-context/` (not loaded by the app).
 
 ```tsx
 type User = { id: string; name: string } | null;
@@ -37,5 +37,6 @@ type User = { id: string; name: string } | null;
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [Context – React Reference](https://react.dev/reference/react)
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
+- [Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
+- [useContext – Reference](https://react.dev/reference/react/useContext)

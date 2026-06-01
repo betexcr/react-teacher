@@ -21,7 +21,7 @@ Build a counter that displays a number and has **Increment**, **Decrement**, and
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/01-counter-component/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/01-counter-component/`. Reference write-ups in this repo live under `challenges/easy/01-counter-component/` (not loaded by the app).
 
 ```tsx
 export function Counter() {
@@ -48,5 +48,6 @@ export function Counter() {
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useState – React Reference](https://react.dev/reference/react)
+- [Adding Interactivity](https://react.dev/learn/adding-interactivity)
+- [useState – Reference](https://react.dev/reference/react/useState)
+- [Responding to Events](https://react.dev/learn/responding-to-events)

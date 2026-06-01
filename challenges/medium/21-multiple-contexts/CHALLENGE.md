@@ -20,7 +20,7 @@ App uses ThemeContext and LocaleContext (en/es). Components may consume one or b
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/21-multiple-contexts/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/21-multiple-contexts/`. Reference write-ups in this repo live under `challenges/medium/21-multiple-contexts/` (not loaded by the app).
 
 ```tsx
 export function AppProviders({ children }) { ... }
@@ -38,5 +38,6 @@ export function AppProviders({ children }) { ... }
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [Context – React Reference](https://react.dev/reference/react)
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
+- [Scaling up with reducer and context](https://react.dev/learn/scaling-up-with-reducer-and-context)
+- [useContext – Reference](https://react.dev/reference/react/useContext)

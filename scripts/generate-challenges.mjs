@@ -27,7 +27,7 @@ ${c.requirements.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
 ## Starter hint
 
-Create your work in \`src/challenges/${c.difficulty}/${c.slug}/\` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. \`src/practice/${c.difficulty}/${c.slug}/\`. Reference write-ups in this repo live under \`challenges/${c.difficulty}/${c.slug}/\` (not loaded by the app).
 
 \`\`\`tsx
 ${c.starter.trim()}

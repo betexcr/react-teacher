@@ -43,12 +43,13 @@ export function PaginatedPosts() {
 
 ## Walkthrough
 
-Effect refetches when page changes; buttons disabled at edges.
+Effect refetches when page changes; buttons disabled at edges. JSONPlaceholder may omit X-Total-Count—use a sensible fallback total for the demo.
 
 ## Common mistakes
 
 - Client slicing huge dataset
 - Off-by-one on total pages
+- Assuming every API sends X-Total-Count
 
 ## Stretch goals
 

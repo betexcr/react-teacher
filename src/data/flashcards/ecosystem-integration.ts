@@ -7,7 +7,7 @@ export const ecosystemIntegrationDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is State libraries comparison?",
-      "explanation": "Redux: predictable global. Zustand: minimal. Jotai/Recoil: atoms. Query: server cache.\n\nIn React Ecosystem & Integration interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Redux Toolkit: global predictable state. Zustand/Jotai: light client stores. TanStack Query: server/async cache. Recoil is largely unmaintained.\n\nIn React Ecosystem & Integration interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Zustand?",
@@ -42,8 +42,8 @@ export const ecosystemIntegrationDeck: FlashcardDeck = {
       "explanation": "Renderer process UI; watch IPC security; contextIsolation.\n\nIn React Ecosystem & Integration interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
-      "question": "What is React Native bridge?",
-      "explanation": "Share business logic; platform-specific UI components.\n\nIn React Ecosystem & Integration interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "question": "What is React Native architecture?",
+      "explanation": "React renders to native views; New Architecture (Fabric, TurboModules, JSI) replaces the legacy async bridge for most paths.\n\nIn React Ecosystem & Integration interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
     },
     {
       "question": "What is Storybook?",

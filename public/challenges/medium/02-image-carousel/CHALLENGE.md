@@ -20,7 +20,7 @@ Carousel with images, indicators, prev/next, keyboard arrows, and autoplay every
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/02-image-carousel/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/02-image-carousel/`. Reference write-ups in this repo live under `challenges/medium/02-image-carousel/` (not loaded by the app).
 
 ```tsx
 const slides = [{ src, alt, title }];
@@ -39,5 +39,6 @@ const slides = [{ src, alt, title }];
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [state – React Reference](https://react.dev/reference/react)
+- [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects)
+- [useState – Reference](https://react.dev/reference/react/useState)
+- [ARIA: carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/)

@@ -20,7 +20,7 @@ Fetch paginated posts (?_page=&_limit=) from JSONPlaceholder. Show page numbers,
 
 ## Starter hint
 
-Create your work in `src/challenges/medium/11-pagination-implementation/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/medium/11-pagination-implementation/`. Reference write-ups in this repo live under `challenges/medium/11-pagination-implementation/` (not loaded by the app).
 
 ```tsx
 const [page, setPage] = useState(1);
@@ -38,5 +38,6 @@ const [page, setPage] = useState(1);
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [pagination – React Reference](https://react.dev/reference/react)
+- [Fetching data with Effects](https://react.dev/learn/synchronizing-with-effects#fetching-data)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)
+- [Managing State](https://react.dev/learn/managing-state)

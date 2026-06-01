@@ -20,7 +20,7 @@ Implement `useInterval(callback, delayMs | null)`. When delay is null, pause. Us
 
 ## Starter hint
 
-Create your work in `src/challenges/easy/08-use-interval-hook/` or a sandbox file of your choice.
+Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g. `src/practice/easy/08-use-interval-hook/`. Reference write-ups in this repo live under `challenges/easy/08-use-interval-hook/` (not loaded by the app).
 
 ```tsx
 export function useInterval(cb: () => void, delay: number | null) {}
@@ -39,5 +39,6 @@ export function useInterval(cb: () => void, delay: number | null) {}
 
 ## Resources
 
-- [React docs – Quick Start](https://react.dev/learn)
-- [useEffect – React Reference](https://react.dev/reference/react)
+- [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects)
+- [Reusing Logic with Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [useEffect – Reference](https://react.dev/reference/react/useEffect)
