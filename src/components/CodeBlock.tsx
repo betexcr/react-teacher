@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { highlightCodePhrases } from '../utils/highlightCodePhrases';
 
 type CodeBlockProps = {
   /** Raw text to display and copy (trimmed for copy, preserved for display). */
   code: string;
   className?: string;
+  /** Substrings to pulse-highlight (e.g. guided tutorial). */
+  highlightPhrases?: string[];
 };
 
-export function CodeBlock({ code, className = '' }: CodeBlockProps) {
+export function CodeBlock({ code, className = '', highlightPhrases }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -61,8 +64,8 @@ export function CodeBlock({ code, className = '' }: CodeBlockProps) {
         )}
         <span className="code-block-copy-label">{copied ? 'Copied!' : 'Copy'}</span>
       </button>
-      <pre className="code-block-pre">
-        <code>{text}</code>
+      <pre className={`code-block-pre${highlightPhrases?.length ? ' code-block-pre--highlighted' : ''}`}>
+        <code>{highlightCodePhrases(text, highlightPhrases)}</code>
       </pre>
     </div>
   );

@@ -33,9 +33,14 @@ const slides = [{ src, alt, title }];
 
 ## Acceptance criteria
 
-- [ ] Navigation works
-- [ ] Autoplay pauses
-- [ ] Keyboard support
+- [ ] **Navigation works**
+  Use next/previous buttons or dots and confirm the visible slide changes with the correct image and caption. Index state should wrap or clamp per the spec.
+
+- [ ] **Autoplay pauses**
+  When autoplay runs, hover or focus the carousel (or press pause if provided) and confirm slides stop advancing until you resume. Users need control over motion.
+
+- [ ] **Keyboard support**
+  Use arrow keys (and Home/End if required) to change slides when the carousel is focused. Keyboard support is required for accessible carousels.
 
 ## Resources
 

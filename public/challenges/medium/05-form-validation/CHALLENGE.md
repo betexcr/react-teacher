@@ -33,8 +33,11 @@ type Errors = Partial<Record<'username' | 'email' | 'password' | 'confirm', stri
 
 ## Acceptance criteria
 
-- [ ] Errors accurate
-- [ ] Submit blocked when invalid
+- [ ] **Errors accurate**
+  Submit or blur fields with bad values and confirm each error message matches the rule (required, min length, email format, etc.). Errors should appear next to the right field.
+
+- [ ] **Submit blocked when invalid**
+  Try submitting with errors present and confirm the form does not call onSuccess or reset valid-looking data. Invalid forms should stay on screen until fixed.
 
 ## Resources
 

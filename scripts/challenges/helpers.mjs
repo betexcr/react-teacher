@@ -11,7 +11,23 @@ export function titleFromUrl(url) {
   }
 }
 
+import { getAcceptanceCriteria } from './acceptance.mjs';
 import { getChallengeResources } from './resources.mjs';
+
+export function normalizeAcceptance(acceptance, difficulty, slug) {
+  const curated = getAcceptanceCriteria(difficulty, slug);
+  const list = curated?.length ? curated : acceptance;
+  return list.map((item) => {
+    if (typeof item === 'object' && item !== null && 'summary' in item) {
+      return {
+        summary: String(item.summary),
+        detail: String(item.detail ?? ''),
+      };
+    }
+    const summary = String(item);
+    return { summary, detail: `Check that: ${summary}` };
+  });
+}
 
 export function normalizeResource(r) {
   if (typeof r === 'object' && r !== null && 'url' in r) {
@@ -66,7 +82,7 @@ export function challenge({
     requirements,
     starter,
     hints,
-    acceptance,
+    acceptance: normalizeAcceptance(acceptance, difficulty, slug),
     resources: normalizedResources,
     solutionApproach,
     concepts,

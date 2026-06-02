@@ -34,9 +34,14 @@ const canvasRef = useRef<HTMLCanvasElement>(null);
 
 ## Acceptance criteria
 
-- [ ] Draws smoothly
-- [ ] Export downloads file
-- [ ] Clear works
+- [ ] **Draws smoothly**
+  Click and drag on the canvas and confirm continuous strokes without large gaps. Mouse or pointer events should stream points while the button is held.
+
+- [ ] **Export downloads file**
+  Click export and confirm a PNG (or required format) downloads with your drawing visible. toDataURL or similar should capture the current canvas pixels.
+
+- [ ] **Clear works**
+  Draw something, press Clear, and confirm the canvas is empty and you can draw again from scratch. Clear should reset both pixels and any stroke state in memory.
 
 ## Resources
 

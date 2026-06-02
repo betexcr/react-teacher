@@ -33,8 +33,11 @@ function fib(n: number): number { /* iterative slow */ }
 
 ## Acceptance criteria
 
-- [ ] Memoized path smooth
-- [ ] Changing unrelated state does not recompute
+- [ ] **Memoized path smooth**
+  Run the expensive calculation with useMemo and confirm the UI stays responsive when inputs change slowly. You should not see long freezes on every keystroke if only relevant deps changed.
+
+- [ ] **Changing unrelated state does not recompute**
+  Update state that does not affect the calculation (for example a unrelated counter) and confirm the heavy work does not run again (log inside the calculation or watch devtools). useMemo should skip work when deps are unchanged.
 
 ## Resources
 

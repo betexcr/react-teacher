@@ -33,9 +33,14 @@ Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g
 
 ## Acceptance criteria
 
-- [ ] ARIA correct
-- [ ] Keyboard works
-- [ ] Theme applies
+- [ ] **ARIA correct**
+  The toggle should expose accessible name and state (for example aria-pressed or aria-checked) so screen readers know whether dark mode is on. Check attributes in devtools.
+
+- [ ] **Keyboard works**
+  Tab to the control and activate it with Space or Enter. Keyboard users should get the same theme change as mouse users without needing to click.
+
+- [ ] **Theme applies**
+  After toggling, confirm visual styles (background, text color, etc.) update across the UI. ARIA and keyboard only matter if the theme actually changes when activated.
 
 ## Resources
 

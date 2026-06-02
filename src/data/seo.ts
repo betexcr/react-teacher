@@ -28,6 +28,11 @@ const SECTION_FALLBACK: Record<string, PageMeta> = {
     description: 'Setup, study paths, and how to get the most from ReactTeacher.',
     ogImageId: 'get-started',
   },
+  '/js-basics': {
+    title: 'JS Basics · ReactTeacher',
+    description: 'Minimal JavaScript you need before the easy React coding challenges.',
+    ogImageId: 'js-basics',
+  },
   '/challenges': {
     title: 'React Challenges · ReactTeacher',
     description:
@@ -75,6 +80,7 @@ export function getPageMeta(pathname: string): PageMeta {
   if (path.startsWith('/challenges/')) return SECTION_FALLBACK['/challenges'];
   if (path.startsWith('/system-design/')) return SECTION_FALLBACK['/system-design'];
   if (path.startsWith('/get-started')) return SECTION_FALLBACK['/get-started'];
+  if (path.startsWith('/js-basics')) return SECTION_FALLBACK['/js-basics'];
 
   return DEFAULT_META;
 }

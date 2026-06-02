@@ -33,9 +33,14 @@ type Tag = { id: string; label: string };
 
 ## Acceptance criteria
 
-- [ ] Add/remove work
-- [ ] Stable keys
-- [ ] Duplicate prevention
+- [ ] **Add/remove work**
+  Add several items and remove one; the list should update immediately with no stale rows left behind. Each action should change only what you expect.
+
+- [ ] **Stable keys**
+  Each list item should use a unique, stable key (like an id), not the array index alone. Add and remove items and confirm inputs or checkboxes stay tied to the correct row.
+
+- [ ] **Duplicate prevention**
+  Try adding the same item twice when duplicates are not allowed and confirm the app blocks it or shows a message. This protects data quality in real apps.
 
 ## Resources
 

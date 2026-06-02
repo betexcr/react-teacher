@@ -34,9 +34,14 @@ type State = { running: boolean; elapsed: number; laps: number[] };
 
 ## Acceptance criteria
 
-- [ ] Pause accurate
-- [ ] Laps recorded
-- [ ] Reset works
+- [ ] **Pause accurate**
+  Run the timer, pause, wait several seconds, resume, and confirm elapsed time does not include the paused interval. Pause should stop counting without resetting unless reset is pressed.
+
+- [ ] **Laps recorded**
+  Record multiple laps while running and confirm each lap time and total elapsed list correctly. Laps are snapshots of elapsed time at the moment you tap lap.
+
+- [ ] **Reset works**
+  After running and adding laps, reset should clear elapsed time and lap list back to the starting state. Reset must stop any running interval too.
 
 ## Resources
 

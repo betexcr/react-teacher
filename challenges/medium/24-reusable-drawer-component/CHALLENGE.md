@@ -34,9 +34,14 @@ import { createPortal } from 'react-dom';
 
 ## Acceptance criteria
 
-- [ ] Portal renders
-- [ ] Escape closes
-- [ ] Overlay click closes
+- [ ] **Portal renders**
+  Open the drawer and inspect the DOM; content should render under document.body via createPortal, not trapped inside a parent with overflow hidden.
+
+- [ ] **Escape closes**
+  With the drawer open, press Escape and confirm it closes and focus returns sensibly. Modal dialogs must be dismissible by keyboard.
+
+- [ ] **Overlay click closes**
+  Click the dimmed backdrop and confirm the drawer closes; clicking inside the panel should not close it. Distinguish overlay target from panel content in the handler.
 
 ## Resources
 

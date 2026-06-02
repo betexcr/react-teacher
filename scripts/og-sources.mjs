@@ -93,6 +93,18 @@ export function buildOgSources() {
       pageDescription: 'Setup, study paths, and how to get the most from ReactTeacher.',
     },
     {
+      id: 'js-basics',
+      badge: 'For starters',
+      title: 'JS Basics',
+      subtitle: 'Minimal JavaScript before easy React challenges',
+      accent: '#fbbf24',
+      accent2: '#f59e0b',
+      icon: '{ }',
+      pathname: '/js-basics',
+      pageTitle: 'JS Basics · ReactTeacher',
+      pageDescription: 'Minimal JavaScript you need before the easy React coding challenges.',
+    },
+    {
       id: 'challenges',
       badge: 'React challenges',
       title: 'Code challenges',

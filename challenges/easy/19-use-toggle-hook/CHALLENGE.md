@@ -34,8 +34,11 @@ export function useToggle(initial = false) {}
 
 ## Acceptance criteria
 
-- [ ] All methods work
-- [ ] Handlers stable across renders
+- [ ] **All methods work**
+  Test toggle, setTrue, and setFalse (or the API your challenge defines) and confirm the boolean state matches each call. The hook should encapsulate all ways to change the flag.
+
+- [ ] **Handlers stable across renders**
+  Log or compare function identity between renders; toggle/set handlers from useToggle should stay the same reference when using useCallback inside the hook. Stable handlers help memoized children avoid extra renders.
 
 ## Resources
 

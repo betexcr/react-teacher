@@ -33,8 +33,11 @@ const emailRef = useRef<HTMLInputElement>(null);
 
 ## Acceptance criteria
 
-- [ ] Mount focus works
-- [ ] Button focuses correct field
+- [ ] **Mount focus works**
+  When the page first loads, the intended input should already have focus (cursor blinking inside it). useRef lets you call focus on the real DOM node after mount.
+
+- [ ] **Button focuses correct field**
+  Click a "focus name" or "focus email" button and confirm the matching field receives focus, not the other one. Each button should target the ref you wired to that input.
 
 ## Resources
 

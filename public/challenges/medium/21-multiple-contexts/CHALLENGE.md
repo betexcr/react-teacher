@@ -33,8 +33,11 @@ export function AppProviders({ children }) { ... }
 
 ## Acceptance criteria
 
-- [ ] Both contexts work
-- [ ] Independent updates
+- [ ] **Both contexts work**
+  Use theme context and user context (or the pair in your spec) in the same tree and confirm each provides the right values. Multiple providers can nest without conflict.
+
+- [ ] **Independent updates**
+  Change only theme and confirm user context consumers do not get unrelated updates, and vice versa. Separate contexts keep concerns isolated.
 
 ## Resources
 

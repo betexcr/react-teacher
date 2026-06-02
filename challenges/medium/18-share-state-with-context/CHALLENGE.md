@@ -32,8 +32,11 @@ type User = { id: string; name: string } | null;
 
 ## Acceptance criteria
 
-- [ ] Any depth reads user
-- [ ] Logout clears
+- [ ] **Any depth reads user**
+  Log in or set a user in context and confirm a deeply nested component shows the same name without props through every layer. Context shares auth-like data globally.
+
+- [ ] **Logout clears**
+  Logout should set user to null and hide protected UI everywhere at once. All consumers must see the cleared user on the next render.
 
 ## Resources
 

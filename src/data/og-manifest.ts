@@ -6,6 +6,11 @@ export const ogManifest = {
       "description": "Setup, study paths, and how to get the most from ReactTeacher.",
       "ogImageId": "get-started"
     },
+    "/js-basics": {
+      "title": "JS Basics · ReactTeacher",
+      "description": "Minimal JavaScript you need before the easy React coding challenges.",
+      "ogImageId": "js-basics"
+    },
     "/challenges": {
       "title": "React Challenges · ReactTeacher",
       "description": "Hands-on React coding challenges from easy to very hard with acceptance criteria.",

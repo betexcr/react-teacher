@@ -41,9 +41,14 @@ export function ShoppingCart() {
 
 ## Acceptance criteria
 
-- [ ] Add/merge works
-- [ ] Totals correct
-- [ ] Remove works
+- [ ] **Add/merge works**
+  Add the same product twice and confirm the cart shows one line with quantity 2 instead of two duplicate rows. Merging by product id keeps the cart easy to read.
+
+- [ ] **Totals correct**
+  Add a few items with different prices and quantities, then check that subtotal and total match what you get by hand. Wrong math here means your state updates are off.
+
+- [ ] **Remove works**
+  Remove an item from the cart and confirm it disappears and the totals update right away. The list and totals should always stay in sync.
 
 ## Resources
 

@@ -36,8 +36,11 @@ export function Keypad() {
 
 ## Acceptance criteria
 
-- [ ] Digits append
-- [ ] Clear and backspace work
+- [ ] **Digits append**
+  Click digit buttons and confirm the display builds the number left to right, like a calculator. Each new digit should attach to the end without clearing what was already there.
+
+- [ ] **Clear and backspace work**
+  Clear should reset the display to empty or zero. Backspace should remove only the last digit. Try both after entering several digits so you know undo and reset behave correctly.
 
 ## Resources
 

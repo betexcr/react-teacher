@@ -33,8 +33,11 @@ export function Card({ children }: { children: React.ReactNode }) {}
 
 ## Acceptance criteria
 
-- [ ] Composable API
-- [ ] Article example renders
+- [ ] **Composable API**
+  Build small pieces (like Card, Card.Header, Card.Body) that fit together in JSX the way the challenge describes. Parents should pass children or slots instead of one giant component with dozens of props.
+
+- [ ] **Article example renders**
+  Render the sample article layout from the challenge and confirm title, body, and optional footer all show in the right places. If the example looks right, your composition pattern works.
 
 ## Resources
 

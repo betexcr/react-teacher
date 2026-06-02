@@ -7,10 +7,15 @@ export type ChallengeResource = {
   url: string
 }
 
+export type AcceptanceCriterion = {
+  summary: string
+  detail: string
+}
+
 export type ChallengeMeta = {
   slug: string
   title: string
-  acceptance: string[]
+  acceptance: AcceptanceCriterion[]
   resources: ChallengeResource[]
 }
 

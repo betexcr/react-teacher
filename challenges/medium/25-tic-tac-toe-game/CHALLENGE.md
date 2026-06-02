@@ -34,9 +34,14 @@ function calculateWinner(squares: (string|null)[])
 
 ## Acceptance criteria
 
-- [ ] Win detected
-- [ ] Cannot play after win
-- [ ] History jump works
+- [ ] **Win detected**
+  Play until three in a row and confirm the game announces the winner and stops accepting moves on filled lines. Win check should run after each valid move.
+
+- [ ] **Cannot play after win**
+  After someone wins, clicking empty squares should do nothing. State should be terminal until you start a new game.
+
+- [ ] **History jump works**
+  Make several moves, jump back in the move history, and confirm the board shows that past position. Time travel requires immutable board copies per move.
 
 ## Resources
 

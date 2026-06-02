@@ -33,8 +33,11 @@ type Option = { value: string; label: string; disabled?: boolean };
 
 ## Acceptance criteria
 
-- [ ] Keyboard navigation
-- [ ] ARIA correct
+- [ ] **Keyboard navigation**
+  Tab into the group and move selection with arrow keys per the radio pattern. Focus should move between options and update the selected value.
+
+- [ ] **ARIA correct**
+  Confirm role="radiogroup", each option has role="radio", and aria-checked reflects selection. Screen readers should announce the group label and which option is selected.
 
 ## Resources
 

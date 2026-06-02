@@ -10,13 +10,14 @@ export function GetStartedPage() {
       <header className="get-started-hero">
         <h1 className="page-title">Get Started</h1>
         <p className="get-started-lead">
-          <strong>ReactTeacher</strong> is a website you use in your browser — challenges, flashcards,
-          and system design guides all work here with no install. Your progress is saved in this browser
-          (no account needed).
+          <strong>ReactTeacher</strong> is React interview prep you can start immediately — challenges,
+          flashcards, and system design walkthroughs, no install required. Your progress saves in this
+          browser; no account needed.
         </p>
         <p className="get-started-lead get-started-lead--secondary">
-          If you want to <strong>write code</strong> for the coding challenges, you will also set up a
-          project folder on your computer. That is optional for reading flashcards and system design.
+          New to React or JavaScript? Skim <Link to="/js-basics">JS Basics</Link> first, then try the{' '}
+          <Link to="/challenges">easy challenges</Link>. To write code locally, set up a project on your
+          machine — flashcards and system design work fully here without that step.
         </p>
       </header>
 
@@ -24,10 +25,10 @@ export function GetStartedPage() {
         <h2>Two ways to use ReactTeacher</h2>
         <div className="get-started-path-grid">
           <div className="get-started-path-card">
-            <h3>In the browser</h3>
+            <h3>Study here</h3>
             <p>
-              Read challenges, study flashcards, and explore system design — right here. Use the sidebar to
-              navigate. Nothing to download for this part.
+              Read challenges, study flashcards, and explore system design in the sidebar. No download
+              required.
             </p>
             <p className="get-started-path-cta">
               <Link to="/flashcards">Try flashcards</Link> or{' '}
@@ -60,7 +61,8 @@ export function GetStartedPage() {
         <h2>Using ReactTeacher in the browser</h2>
         <ol className="get-started-steps">
           <li>
-            Use the sidebar: <Link to="/challenges">React Challenges</Link>,{' '}
+            Use the sidebar: <Link to="/js-basics">JS Basics</Link>,{' '}
+            <Link to="/challenges">React Challenges</Link>,{' '}
             <Link to="/flashcards">Flashcards</Link>, <Link to="/system-design">System Design</Link>.
           </li>
           <li>

@@ -35,8 +35,11 @@ const ROWS = 6, COLS = 7;
 
 ## Acceptance criteria
 
-- [ ] Win/draw detected
-- [ ] Illegal moves prevented
+- [ ] **Win/draw detected**
+  Play until four in a row and confirm the winner is announced; fill the board with no winner and confirm a draw message. Game should end in a terminal state.
+
+- [ ] **Illegal moves prevented**
+  Try dropping in a full column or clicking after game over and confirm nothing changes. Valid moves only keep game state trustworthy.
 
 ## Resources
 

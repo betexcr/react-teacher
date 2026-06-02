@@ -33,9 +33,14 @@ export function useAsync<T>(fn: () => Promise<T>, deps: unknown[]) {}
 
 ## Acceptance criteria
 
-- [ ] Race safe
-- [ ] Reset clears
-- [ ] Deps change refetches optional
+- [ ] **Race safe**
+  Trigger two requests in a row quickly (change id or search fast) and confirm only the latest result is shown, not an older slow response. Ignore or abort stale responses inside the hook.
+
+- [ ] **Reset clears**
+  Call reset on the hook and confirm data, error, and loading return to idle initial state. Reset lets parents clear async state when closing a modal or form.
+
+- [ ] **Deps change refetches optional**
+  If your hook accepts dependencies, change them and confirm a new fetch runs; if deps are omitted, document that behavior. Optional refetch on dep change matches useEffect mental model.
 
 ## Resources
 

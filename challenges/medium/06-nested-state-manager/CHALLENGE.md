@@ -33,8 +33,11 @@ const [user, setUser] = useState({ profile: { name: '', avatar: '' }, preference
 
 ## Acceptance criteria
 
-- [ ] Leaf updates isolated
-- [ ] No mutation warnings
+- [ ] **Leaf updates isolated**
+  Change a nested field (for example a todo inside a project) and confirm only that branch updates while siblings stay the same. Immutable updates copy each level you change.
+
+- [ ] **No mutation warnings**
+  Use React Strict Mode and confirm the console never warns about mutating state directly. Always replace objects and arrays with new copies when updating nested data.
 
 ## Resources
 

@@ -33,8 +33,11 @@ Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g
 
 ## Acceptance criteria
 
-- [ ] One delegated handler
-- [ ] Dynamic items work
+- [ ] **One delegated handler**
+  Attach a single click handler on the list container instead of one per row. Click different rows and confirm the handler still identifies which item was clicked via event.target or closest.
+
+- [ ] **Dynamic items work**
+  Add a new row after load and click it; the same delegated handler should work without rebinding listeners. Delegation scales when the list changes often.
 
 ## Resources
 

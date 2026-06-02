@@ -33,9 +33,14 @@ Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g
 
 ## Acceptance criteria
 
-- [ ] Profiler wired
-- [ ] Threshold logging
-- [ ] UI shows metric
+- [ ] **Profiler wired**
+  Wrap the slow part of your tree in React Profiler with an onRender callback. When the child renders, your callback should run so you can measure render time.
+
+- [ ] **Threshold logging**
+  When a render takes longer than your threshold (for example 16ms), log a warning to the console. This mimics how teams spot slow components in development.
+
+- [ ] **UI shows metric**
+  Show the last render duration (or similar) on screen so you can see it change when you trigger a slow update. Visible metrics make profiling easier than console-only logs.
 
 ## Resources
 

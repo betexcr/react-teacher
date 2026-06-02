@@ -39,7 +39,12 @@ ${c.hints.map((h, i) => `${i + 1}. ${h}`).join('\n')}
 
 ## Acceptance criteria
 
-${c.acceptance.map((a) => `- [ ] ${a}`).join('\n')}
+${c.acceptance
+  .map(
+    (item) =>
+      `- [ ] **${item.summary}**\n  ${item.detail}`
+  )
+  .join('\n\n')}
 
 ## Resources
 
@@ -94,7 +99,10 @@ const index = challenges.reduce(
     acc[c.difficulty].push({
       slug: c.slug,
       title: c.title,
-      acceptance: c.acceptance,
+      acceptance: c.acceptance.map((item) => ({
+        summary: item.summary,
+        detail: item.detail,
+      })),
       resources: c.resources.map(normalizeResource),
     });
     return acc;

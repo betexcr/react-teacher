@@ -34,9 +34,14 @@ type Todo = { id: string; text: string; done: boolean };
 
 ## Acceptance criteria
 
-- [ ] All CRUD works
-- [ ] Filters correct
-- [ ] Clear completed
+- [ ] **All CRUD works**
+  Add todos, mark them complete, edit them, and delete them. Every action should update the list immediately with no ghost items.
+
+- [ ] **Filters correct**
+  Switch between All, Active, and Completed and confirm only the right todos show. Filtering should read from state, not hide items in the DOM only.
+
+- [ ] **Clear completed**
+  Mark several todos done, run Clear completed, and confirm finished items disappear while active ones remain. Bulk actions should update state in one step.
 
 ## Resources
 

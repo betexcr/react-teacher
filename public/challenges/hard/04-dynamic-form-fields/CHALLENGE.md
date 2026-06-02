@@ -33,8 +33,11 @@ type FieldRow = { id: string; type: 'text' | 'number' | 'select'; label: string;
 
 ## Acceptance criteria
 
-- [ ] Dynamic types render correct input
-- [ ] Submit blocked if invalid
+- [ ] **Dynamic types render correct input**
+  Add fields of type text, number, checkbox, or select from your schema and confirm each renders the right HTML control and label. Type in config should drive which component mounts.
+
+- [ ] **Submit blocked if invalid**
+  Leave required dynamic fields empty or invalid and confirm submit is blocked with errors. Validation rules should apply per field type, not only on static fields.
 
 ## Resources
 

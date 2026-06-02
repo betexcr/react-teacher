@@ -33,8 +33,11 @@ class ApiError extends Error { status: number }
 
 ## Acceptance criteria
 
-- [ ] Statuses mapped
-- [ ] Retry limited
+- [ ] **Statuses mapped**
+  Simulate 404, 500, and network failure and confirm the user sees different, helpful messages (not one generic string). Mapping status codes guides users on what to do next.
+
+- [ ] **Retry limited**
+  Use retry and confirm it stops after a max count or shows that limit is reached. Unlimited retries can hammer a failing API and confuse users.
 
 ## Resources
 

@@ -33,8 +33,11 @@ const List = React.memo(function List(...) {});
 
 ## Acceptance criteria
 
-- [ ] Counter updates do not rerender list
-- [ ] Item change does rerender
+- [ ] **Counter updates do not rerender list**
+  Increment a parent counter while list items are memoized; list rows should not re-render if their props did not change (React DevTools highlight helps). memo skips render when props are shallow-equal.
+
+- [ ] **Item change does rerender**
+  Edit one list item and confirm only that row (or rows with changed props) re-renders. memo should not block updates when item data actually changes.
 
 ## Resources
 

@@ -33,9 +33,14 @@ export function useMediaQuery(query: string) {}
 
 ## Acceptance criteria
 
-- [ ] Hooks reusable
-- [ ] No hydration mismatch
-- [ ] System changes propagate
+- [ ] **Hooks reusable**
+  Use each custom hook in at least two components and confirm behavior is identical without copying effect logic. Hooks should accept clear parameters and return a stable API.
+
+- [ ] **No hydration mismatch**
+  If a hook reads window or localStorage, confirm server HTML matches first client render (defer read to useEffect or gate rendering). Mismatches cause React hydration errors in SSR apps.
+
+- [ ] **System changes propagate**
+  Change OS theme, online status, or media query (per your hooks) and confirm all subscribers update. Listeners in effects should subscribe and clean up correctly.
 
 ## Resources
 

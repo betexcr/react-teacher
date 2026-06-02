@@ -33,8 +33,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(...)
 
 ## Acceptance criteria
 
-- [ ] Ref focuses input
-- [ ] A11y wired
+- [ ] **Ref focuses input**
+  Parent holds a ref on your Input wrapper and call focus(); the inner native input should receive focus. forwardRef passes the ref to the DOM element.
+
+- [ ] **A11y wired**
+  Wire id, label htmlFor, aria-invalid, and aria-describedby for errors. Reusable inputs should not force parents to redo basic accessibility every time.
 
 ## Resources
 

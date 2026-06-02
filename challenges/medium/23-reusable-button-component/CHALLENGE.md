@@ -33,8 +33,11 @@ type ButtonProps = { variant?: 'primary' | 'ghost'; loading?: boolean };
 
 ## Acceptance criteria
 
-- [ ] Loading prevents double submit
-- [ ] Variants distinct
+- [ ] **Loading prevents double submit**
+  Click submit while loading is true and confirm only one action fires (button disabled or ignore clicks). Prevents duplicate orders or duplicate API posts.
+
+- [ ] **Variants distinct**
+  Render primary, secondary, and danger (or your variants) side by side and confirm each looks clearly different. Variants should be prop-driven, not copy-pasted styles.
 
 ## Resources
 

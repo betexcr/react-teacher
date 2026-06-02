@@ -33,9 +33,14 @@ export function useInterval(cb: () => void, delay: number | null) {}
 
 ## Acceptance criteria
 
-- [ ] Ticks regularly
-- [ ] Pause works
-- [ ] No memory leaks
+- [ ] **Ticks regularly**
+  Start the timer or counter and confirm it updates on a steady schedule (for example every second). The interval callback should fire repeatedly while running.
+
+- [ ] **Pause works**
+  Pause the timer and confirm the value stops changing until you resume. Pause should clear or stop the interval without resetting the count unless you ask for that.
+
+- [ ] **No memory leaks**
+  Start and stop the timer several times, then leave the page or unmount the component. Open the browser console and confirm there are no errors about updating unmounted components. Cleanup in useEffect prevents leaked intervals.
 
 ## Resources
 

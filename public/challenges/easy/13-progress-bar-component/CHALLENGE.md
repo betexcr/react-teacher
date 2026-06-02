@@ -33,8 +33,11 @@ type ProgressBarProps = { value: number | null; max?: number; label?: string };
 
 ## Acceptance criteria
 
-- [ ] Determinate and indeterminate modes
-- [ ] Accessible
+- [ ] **Determinate and indeterminate modes**
+  With a percent prop, the bar should fill to match (for example 50% half full). In indeterminate mode, show a moving or pulsing animation when progress is unknown. Both modes should look distinct.
+
+- [ ] **Accessible**
+  Inspect the bar in devtools or a screen reader and confirm role="progressbar", aria-valuenow (when determinate), and aria-valuemin/max or aria-busy (when indeterminate) are set. Assistive tech needs these to describe progress.
 
 ## Resources
 

@@ -33,8 +33,11 @@ const ThemeContext = createContext(null);
 
 ## Acceptance criteria
 
-- [ ] Deep tree consumes theme
-- [ ] Toggle updates all
+- [ ] **Deep tree consumes theme**
+  Place theme provider high and read theme from a deeply nested component without prop drilling. Changing theme there should not require passing props through every level.
+
+- [ ] **Toggle updates all**
+  Toggle theme from a child button and confirm every consumer in the tree re-renders with the new colors or class. Context broadcasts one value to all subscribers.
 
 ## Resources
 

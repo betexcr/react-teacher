@@ -33,8 +33,11 @@ Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g
 
 ## Acceptance criteria
 
-- [ ] Two users render from array
-- [ ] Follow button calls callback
+- [ ] **Two users render from array**
+  Map over a users array and confirm two (or more) profile cards render with the correct names and avatars from data. Lists of components should come from data, not copy-pasted JSX.
+
+- [ ] **Follow button calls callback**
+  Click Follow on a user card and confirm the parent receives the user id or name (console log or updated parent state is fine). The child should not own global follow state unless the challenge says so.
 
 ## Resources
 

@@ -33,8 +33,11 @@ class ErrorBoundary extends React.Component
 
 ## Acceptance criteria
 
-- [ ] Fallback shows on throw
-- [ ] Retry recovers
+- [ ] **Fallback shows on throw**
+  Render a child that throws during render and confirm the error boundary shows your fallback UI instead of a white screen. Only class error boundaries catch render errors in React.
+
+- [ ] **Retry recovers**
+  Click retry or reset state so the child can render again without a full page reload. Recovery should clear the error flag and attempt a normal render.
 
 ## Resources
 

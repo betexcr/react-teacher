@@ -35,8 +35,11 @@ export function usePrevious<T>(value: T): T | undefined {
 
 ## Acceptance criteria
 
-- [ ] First render undefined
-- [ ] Subsequent renders show previous
+- [ ] **First render shows no previous value**
+  On the very first paint, usePrevious has nothing stored yet, so it should return undefined. If your UI has a "before" line, it should show empty, a dash, or "none" — not a number. That is expected, not a bug.
+
+- [ ] **Later renders show the last value**
+  Change the count (or whatever value you track), then confirm the "before" line shows the value from the previous render, one step behind the current count. After each change, "before" should lag by exactly one update.
 
 ## Resources
 

@@ -33,8 +33,11 @@ const [page, setPage] = useState(1);
 
 ## Acceptance criteria
 
-- [ ] Page changes refetch
-- [ ] Bounds respected
+- [ ] **Page changes refetch**
+  Click next page or a page number and confirm a new network request runs (network tab) and new rows appear. Page index in state should drive which slice or API page loads.
+
+- [ ] **Bounds respected**
+  On the first page, previous should be disabled; on the last page, next should be disabled. Page numbers should not go below 1 or above total pages.
 
 ## Resources
 

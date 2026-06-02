@@ -33,8 +33,11 @@ type ThemeMode = 'light' | 'dark' | 'system' | 'custom';
 
 ## Acceptance criteria
 
-- [ ] System tracks OS
-- [ ] Tabs stay in sync
+- [ ] **System tracks OS**
+  Set theme to system and change OS light/dark preference; the app should follow without a manual toggle. matchMedia listens for prefers-color-scheme changes.
+
+- [ ] **Tabs stay in sync**
+  Open two tabs, change theme in one, and confirm the other updates (storage event or broadcast). Shared persistence keeps experience consistent across tabs.
 
 ## Resources
 

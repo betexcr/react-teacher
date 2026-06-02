@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { inlineFormat } from '../lib/inlineMarkdown'
 
 type Block =
   | { type: 'h1' | 'h2' | 'h3'; text: string }
@@ -94,19 +95,6 @@ function parseMarkdown(source: string): Block[] {
 
   flushCode()
   return blocks
-}
-
-function inlineFormat(text: string) {
-  const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g)
-  return parts.map((part, idx) => {
-    if (part.startsWith('`') && part.endsWith('`')) {
-      return <code key={idx}>{part.slice(1, -1)}</code>
-    }
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={idx}>{part.slice(2, -2)}</strong>
-    }
-    return <span key={idx}>{part}</span>
-  })
 }
 
 export function MarkdownView({ source }: { source: string }) {

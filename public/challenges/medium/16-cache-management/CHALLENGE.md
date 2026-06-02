@@ -33,8 +33,11 @@ const cache = new Map<string, { data: unknown; ts: number }>();
 
 ## Acceptance criteria
 
-- [ ] Second mount uses cache
-- [ ] Invalidate refetches
+- [ ] **Second mount uses cache**
+  Fetch data once, unmount, mount again within cache lifetime, and confirm data appears without a loading flash or duplicate fetch. Cache avoids redundant network work.
+
+- [ ] **Invalidate refetches**
+  Call invalidate (or similar) and confirm fresh data loads and replaces stale cache. Invalidation is how you refresh after a mutation.
 
 ## Resources
 

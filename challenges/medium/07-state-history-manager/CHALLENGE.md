@@ -33,8 +33,11 @@ type HistoryState<T> = { past: T[]; present: T; future: T[] };
 
 ## Acceptance criteria
 
-- [ ] Undo/redo correct
-- [ ] Branching history cleared
+- [ ] **Undo/redo correct**
+  Make several edits, undo step by step, then redo and confirm each state matches what you had at that point. History stacks should mirror user actions in order.
+
+- [ ] **Branching history cleared**
+  Undo a few steps, make a new edit, and confirm redo history after that point is discarded. New actions should fork history instead of mixing old redo with new changes.
 
 ## Resources
 

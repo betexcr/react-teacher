@@ -33,8 +33,11 @@ const flow = { individual: ['age', 'review'], business: ['size', 'review'] };
 
 ## Acceptance criteria
 
-- [ ] Branches differ
-- [ ] Review shows all captured fields
+- [ ] **Branches differ**
+  Answer a branching question (for example "Are you a business?") and confirm later steps show different fields than the other branch. Only one branch path should be required to finish.
+
+- [ ] **Review shows all captured fields**
+  Reach the review step and confirm every answer from every visited step appears correctly, including branch-specific fields. Review proves state was stored per step, not lost on navigation.
 
 ## Resources
 

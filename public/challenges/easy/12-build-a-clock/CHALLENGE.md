@@ -35,9 +35,14 @@ export function Clock() {
 
 ## Acceptance criteria
 
-- [ ] Updates live
-- [ ] Format toggle works
-- [ ] Interval cleared on unmount
+- [ ] **Updates live**
+  Leave the clock open and confirm the time changes every second without refreshing the page. An interval or effect should keep the display in sync with real time.
+
+- [ ] **Format toggle works**
+  Switch between 12-hour and 24-hour (or similar) and confirm the display format changes while the time stays correct. Toggle is just state driving how you format the same Date.
+
+- [ ] **Interval cleared on unmount**
+  Navigate away or unmount the clock and confirm no console warnings about setState on unmounted components. Return a cleanup function from useEffect that clears the interval.
 
 ## Resources
 

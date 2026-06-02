@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ScrollToTop } from '../components/ScrollToTop';
 import { MainScrollContext } from '../context/MainScrollContext';
 
@@ -15,9 +15,17 @@ export function AppLayout() {
     <MainScrollContext.Provider value={mainRef}>
       <div className="app-shell">
         <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-          <div className="sidebar-brand">
-            <span>ReactTeacher</span>
-          </div>
+          <Link to="/get-started" className="sidebar-brand" aria-label="ReactTeacher home">
+            <img
+              src="/mascot.png"
+              alt=""
+              className="sidebar-brand-mascot"
+              width={36}
+              height={36}
+              decoding="async"
+            />
+            <span className="sidebar-brand-title">ReactTeacher</span>
+          </Link>
           <ul className="nav-list">
             <li className="nav-item">
               <NavLink to="/get-started" end className={({ isActive }) => (isActive ? 'active' : '')}>
@@ -25,6 +33,14 @@ export function AppLayout() {
                   ✦
                 </span>
                 <span className="nav-label">Get Started</span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/js-basics" className={({ isActive }) => (isActive ? 'active' : '')}>
+                <span className="nav-icon" aria-hidden>
+                  {'{ }'}
+                </span>
+                <span className="nav-label">JS Basics</span>
               </NavLink>
             </li>
             <li className="nav-item">

@@ -1,7 +1,8 @@
 import type { ChallengeProgress } from '../hooks/useChallengeProgress';
+import type { AcceptanceCriterion } from '../lib/challenges';
 
 type Props = {
-  criteria: string[];
+  criteria: AcceptanceCriterion[];
   progress: ChallengeProgress;
   isChecked: (index: number) => boolean;
   onToggle: (index: number) => void;
@@ -29,11 +30,14 @@ export function AcceptanceChecklist({
           </span>
         )}
       </div>
+      <p className="challenge-acceptance-intro">
+        Check each box when your app behaves as described. The notes explain what to look for.
+      </p>
       <p className="challenge-acceptance-progress" aria-live="polite">
         {doneCount}/{criteria.length} complete
       </p>
       <ul className="challenge-acceptance-list">
-        {criteria.map((text, index) => (
+        {criteria.map((criterion, index) => (
           <li key={index}>
             <label className="challenge-acceptance-item">
               <input
@@ -41,7 +45,12 @@ export function AcceptanceChecklist({
                 checked={isChecked(index)}
                 onChange={() => onToggle(index)}
               />
-              <span>{text}</span>
+              <span className="challenge-acceptance-text">
+                <span className="challenge-acceptance-summary">{criterion.summary}</span>
+                {criterion.detail ? (
+                  <span className="challenge-acceptance-detail">{criterion.detail}</span>
+                ) : null}
+              </span>
             </label>
           </li>
         ))}

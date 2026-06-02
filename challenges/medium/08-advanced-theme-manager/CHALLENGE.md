@@ -33,8 +33,11 @@ const presets = { ocean: { '--bg': '#0af' }, ... };
 
 ## Acceptance criteria
 
-- [ ] Preview differs from applied until Apply
-- [ ] Reset works
+- [ ] **Preview differs from applied until Apply**
+  Adjust colors or tokens in the editor and confirm the live preview updates, but the rest of the app keeps the old theme until you click Apply. Draft vs applied theme prevents accidental global changes.
+
+- [ ] **Reset works**
+  Change several settings, click Reset, and confirm preview and applied theme return to defaults. Reset should restore known baseline values in state.
 
 ## Resources
 

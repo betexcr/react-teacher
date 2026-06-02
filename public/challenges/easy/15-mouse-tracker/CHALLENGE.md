@@ -33,9 +33,14 @@ const [pos, setPos] = useState({ x: 0, y: 0 });
 
 ## Acceptance criteria
 
-- [ ] Coords accurate
-- [ ] Inside/outside indicator
-- [ ] Listener removed
+- [ ] **Coords accurate**
+  Move the mouse inside the tracked area and confirm x and y update and roughly match the pointer position. Coordinates should feel responsive, not stuck.
+
+- [ ] **Inside/outside indicator**
+  Move the pointer in and out of the box and confirm the UI clearly says whether the mouse is inside or outside. This proves your hit area matches the element bounds.
+
+- [ ] **Listener removed**
+  Unmount the component or toggle tracking off and confirm listeners are removed (no duplicate updates, no errors after unmount). Effect cleanup should remove mousemove or related listeners.
 
 ## Resources
 

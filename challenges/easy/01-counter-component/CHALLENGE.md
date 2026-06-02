@@ -42,9 +42,14 @@ export function Counter() {
 
 ## Acceptance criteria
 
-- [ ] Count updates on each click
-- [ ] Reset works from any value
-- [ ] Decrement disabled at 0
+- [ ] **Count updates on each click**
+  Click the increment button several times and confirm the number on screen goes up by one each time. This shows your state updates correctly when the user interacts with the app.
+
+- [ ] **Reset works from any value**
+  Set the count to a non-zero number, then press Reset and confirm it returns to zero. Reset should work no matter how high the count got.
+
+- [ ] **Decrement disabled at 0**
+  When the count is 0, the decrement button should be disabled or do nothing so the count never goes below zero. Try clicking it at 0 to confirm it cannot make the number negative.
 
 ## Resources
 

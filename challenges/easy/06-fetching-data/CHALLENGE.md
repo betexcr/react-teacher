@@ -36,9 +36,14 @@ export function UserList() {
 
 ## Acceptance criteria
 
-- [ ] Loading shows first
-- [ ] Errors readable
-- [ ] Refetch works
+- [ ] **Loading shows first**
+  When data is being fetched, you should see a loading message or spinner before results appear. That tells users the app is working, not broken.
+
+- [ ] **Errors readable**
+  Trigger a failed request (wrong URL or offline) and confirm a clear error message appears instead of a blank screen. Beginners should understand what went wrong without opening the console.
+
+- [ ] **Refetch works**
+  Use the retry or refetch control and confirm loading shows again, then new data or a new error appears. Refetch proves your effect or handler can run more than once safely.
 
 ## Resources
 

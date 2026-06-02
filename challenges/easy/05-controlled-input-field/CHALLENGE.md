@@ -36,9 +36,14 @@ export function ProfileForm() {
 
 ## Acceptance criteria
 
-- [ ] Preview mirrors inputs
-- [ ] Validation visible
-- [ ] Submit prevented default
+- [ ] **Preview mirrors inputs**
+  Type in the form fields and confirm the live preview updates as you type with the same text. In a controlled input, React state is the single source of truth for what appears on screen.
+
+- [ ] **Validation visible**
+  Enter invalid data (for example too short a name or a bad email) and confirm error messages appear near the fields. Users need clear feedback before they can fix mistakes.
+
+- [ ] **Submit prevented default**
+  Submit the form with invalid data and confirm the page does not reload and errors stay visible. Call preventDefault on submit so React can handle validation instead of the browser refreshing.
 
 ## Resources
 

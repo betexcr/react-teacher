@@ -35,8 +35,11 @@ const itemHeight = 40; const totalHeight = items.length * itemHeight;
 
 ## Acceptance criteria
 
-- [ ] Large list (e.g. 100k items) scrolls without lag
-- [ ] DOM node count stays O(visible rows), not total items
+- [ ] **Large list scrolls without lag**
+  Render on the order of 100k items and scroll quickly; the UI should stay smooth with no multi-second freezes. Only visible rows should do heavy work each frame.
+
+- [ ] **DOM node count stays small**
+  Inspect the list container in devtools while scrolling and confirm only roughly viewport plus overscan rows exist, not one node per item in the full dataset. Virtualization trades a few DOM nodes for huge lists.
 
 ## Resources
 

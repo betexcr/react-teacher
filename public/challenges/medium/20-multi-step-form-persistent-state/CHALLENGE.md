@@ -33,8 +33,11 @@ type FormData = { email: string; name: string; plan: string };
 
 ## Acceptance criteria
 
-- [ ] Back preserves
-- [ ] Refresh restores draft
+- [ ] **Back preserves**
+  Fill step 1, go to step 2, go back, and confirm step 1 fields still have your entries. Step state should live above individual step components.
+
+- [ ] **Refresh restores draft**
+  Fill part of the form, refresh the page, and confirm saved draft values return from localStorage (or your storage). Users should not lose long forms on accident.
 
 ## Resources
 

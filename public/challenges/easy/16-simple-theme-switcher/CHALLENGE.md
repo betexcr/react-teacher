@@ -33,9 +33,14 @@ type Theme = 'light' | 'dark';
 
 ## Acceptance criteria
 
-- [ ] Toggle works
-- [ ] Persists across refresh
-- [ ] Styles change globally
+- [ ] **Toggle works**
+  Click the theme control and confirm light and dark (or similar) switch immediately on screen. State should drive which theme class or variables are active.
+
+- [ ] **Persists across refresh**
+  Pick a theme, refresh the browser, and confirm the same theme is still active. Save the choice in localStorage (or similar) so users do not lose their preference.
+
+- [ ] **Styles change globally**
+  Confirm background, text, and other tokens change across the whole page, not just one small box. Theme variables or classes on a root element should affect the entire layout.
 
 ## Resources
 

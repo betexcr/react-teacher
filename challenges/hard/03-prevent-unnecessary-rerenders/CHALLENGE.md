@@ -33,8 +33,11 @@ Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g
 
 ## Acceptance criteria
 
-- [ ] Profiler shows fewer child commits
-- [ ] Functionality unchanged
+- [ ] **Profiler shows fewer child commits**
+  Use React Profiler before and after memoization or context splits and confirm expensive children render less often when unrelated parent state changes. Fewer commits means less wasted work.
+
+- [ ] **Functionality unchanged**
+  Walk through all user flows and confirm behavior matches the unoptimized version. Performance fixes must not break features users rely on.
 
 ## Resources
 

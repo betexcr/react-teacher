@@ -33,8 +33,11 @@ type State = { step: number; items: Item[]; coupon: string | null };
 
 ## Acceptance criteria
 
-- [ ] All transitions via dispatch
-- [ ] State consistent
+- [ ] **All transitions via dispatch**
+  Every state change should go through dispatch with a typed action, not setState scattered in components. Search your code for direct state assignment on reducer state and remove it.
+
+- [ ] **State consistent**
+  Run through add, toggle, delete, and filter flows and confirm counts and lists always match what actions imply. Reducer returns should be predictable for the same action sequence.
 
 ## Resources
 

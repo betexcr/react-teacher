@@ -33,9 +33,14 @@ Implement in **your own** React project (Vite, Next.js, etc.) or a sandbox—e.g
 
 ## Acceptance criteria
 
-- [ ] Bidirectional sync
-- [ ] No infinite loops
-- [ ] Empty allowed
+- [ ] **Bidirectional sync**
+  Type Celsius and confirm Fahrenheit updates, then type Fahrenheit and confirm Celsius updates. Only one field should be the "source" per edit so both stay mathematically consistent.
+
+- [ ] **No infinite loops**
+  Edit either field quickly and confirm the app does not freeze or flicker from endless updates. Guard conversions so updating one field does not immediately re-trigger the same change in a loop.
+
+- [ ] **Empty allowed**
+  Clear one input and confirm the other can show empty or placeholder instead of NaN or 0 forced incorrectly. Empty is valid while the user is still typing.
 
 ## Resources
 
