@@ -1,3 +1,5 @@
+import { getCodeExample, isMostlyCode, splitBackIntoProseAndCode } from './code-examples.mjs';
+
 /** Build interview-style question + multi-paragraph explanation from a topic seed. */
 export function interviewCard(question, ...paragraphs) {
   return {
@@ -40,7 +42,7 @@ const DECK_INTERVIEW_HINT = {
     'Interview tip: reference an app/ file or convention (layout, loader, metadata) and what it replaced from Pages Router.',
   'React Internals':
     'Interview tip: connect to render/commit, Fiber, or scheduling—keep it high level unless they go deeper.',
-  'Accessibility':
+  Accessibility:
     'Interview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences.',
   'Styling in React':
     'Interview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed.',
@@ -48,15 +50,30 @@ const DECK_INTERVIEW_HINT = {
     'Interview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition.',
 };
 
-export function enrichCard(deckTitle, front, back) {
+function formatCodeBlock(code) {
+  return '```tsx\n' + code.trim() + '\n```';
+}
+
+export function enrichCard(deckTitle, deckId, front, back, explicitCode) {
   const question = front.trim().endsWith('?')
     ? front.trim()
     : front.trim().endsWith('.')
       ? front.trim().slice(0, -1) + '?'
       : `What is ${front.trim()}?`;
 
-  const core = back.trim();
-  const hint = DECK_INTERVIEW_HINT[deckTitle];
+  const code = explicitCode ?? getCodeExample(deckId, front, back);
+  const { prose: splitProse } = splitBackIntoProseAndCode(back);
+  let core = back.trim();
+  if (code) {
+    if (splitProse) {
+      core = splitProse.trim();
+    } else if (isMostlyCode(back)) {
+      core = null;
+    }
+  }
 
-  return hint ? interviewCard(question, core, hint) : interviewCard(question, core);
+  const hint = DECK_INTERVIEW_HINT[deckTitle];
+  const parts = [core, code ? formatCodeBlock(code) : null, hint].filter(Boolean);
+
+  return interviewCard(question, ...parts);
 }

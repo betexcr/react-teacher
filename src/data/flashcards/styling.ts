@@ -7,11 +7,11 @@ export const stylingDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is CSS Modules?",
-      "explanation": "import styles from \"./X.module.css\" — locally scoped class names.\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
+      "explanation": "```tsx\nimport styles from './Card.module.css';\n\nexport function Card() {\n  return <article className={styles.card}>...</article>;\n}\n```\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
     },
     {
       "question": "What is Tailwind CSS?",
-      "explanation": "Utility classes in JSX; @apply for extracts; tree-shake unused.\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
+      "explanation": "Utility classes in JSX; @apply for extracts; tree-shake unused.\n\n```tsx\n<button className=\"rounded-lg bg-violet-600 px-4 py-2 text-white hover:bg-violet-500\">\n  Save\n</button>\n```\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
     },
     {
       "question": "What is CSS-in-JS (styled-components)?",
@@ -23,11 +23,11 @@ export const stylingDeck: FlashcardDeck = {
     },
     {
       "question": "What is Inline styles?",
-      "explanation": "style={{ }} object; camelCase props; good for dynamic values only.\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
+      "explanation": "style={{ }} object; camelCase props; good for dynamic values only.\n\n```tsx\n<div style={{ transform: `translateX(${x}px)` }} />\n```\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
     },
     {
       "question": "What is clsx / cn utility?",
-      "explanation": "Conditional class merging: cn(\"btn\", isActive && \"active\").\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
+      "explanation": "Conditional class merging: cn(\"btn\", isActive && \"active\").\n\n```tsx\nimport { cn } from '@/lib/utils';\n\n<button className={cn('btn', isActive && 'btn-active')} />\n```\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
     },
     {
       "question": "What is Design systems?",
@@ -59,7 +59,7 @@ export const stylingDeck: FlashcardDeck = {
     },
     {
       "question": "What is Component variants?",
-      "explanation": "cva() defines variant maps type-safely.\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
+      "explanation": "cva() defines variant maps type-safely.\n\n```tsx\nconst button = cva('btn', {\n  variants: { size: { sm: 'btn-sm', md: 'btn-md' } },\n});\n```\n\nInterview tip: note scope (module, utility, CSS-in-JS) and any SSR or token tradeoff you weighed."
     },
     {
       "question": "What is Scoped vs global?",

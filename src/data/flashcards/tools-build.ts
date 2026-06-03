@@ -7,7 +7,7 @@ export const toolsBuildDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is Vite?",
-      "explanation": "Dev: native ESM + esbuild.prebundle. Prod: Rollup. Fast HMR.\n\nInterview tip: link this to a script in CI or a local dev pain (HMR, types, lint) you actually hit."
+      "explanation": "Dev: native ESM + esbuild.prebundle. Prod: Rollup. Fast HMR.\n\n```tsx\n// vite.config.ts\nexport default defineConfig({\n  plugins: [react()],\n});\n```\n\nInterview tip: link this to a script in CI or a local dev pain (HMR, types, lint) you actually hit."
     },
     {
       "question": "What is Webpack role?",
@@ -27,7 +27,7 @@ export const toolsBuildDeck: FlashcardDeck = {
     },
     {
       "question": "What is Environment variables?",
-      "explanation": "VITE_ prefix exposed in Vite; never prefix secrets.\n\nInterview tip: link this to a script in CI or a local dev pain (HMR, types, lint) you actually hit."
+      "explanation": "VITE_ prefix exposed in Vite; never prefix secrets.\n\n```tsx\nconst apiUrl = import.meta.env.VITE_API_URL;\n```\n\nInterview tip: link this to a script in CI or a local dev pain (HMR, types, lint) you actually hit."
     },
     {
       "question": "What is Source maps?",
@@ -43,7 +43,7 @@ export const toolsBuildDeck: FlashcardDeck = {
     },
     {
       "question": "What is Vitest?",
-      "explanation": "Vite-native test runner; compatible with Jest API via vi.\n\nInterview tip: link this to a script in CI or a local dev pain (HMR, types, lint) you actually hit."
+      "explanation": "Vite-native test runner; compatible with Jest API via vi.\n\n```tsx\nimport { describe, it, expect } from 'vitest';\n\ndescribe('sum', () => {\n  it('adds', () => expect(1 + 1).toBe(2));\n});\n```\n\nInterview tip: link this to a script in CI or a local dev pain (HMR, types, lint) you actually hit."
     },
     {
       "question": "What is CI pipeline?",

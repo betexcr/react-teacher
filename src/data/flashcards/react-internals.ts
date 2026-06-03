@@ -27,7 +27,7 @@ export const reactInternalsDeck: FlashcardDeck = {
     },
     {
       "question": "What is Hooks linked list?",
-      "explanation": "Hooks stored on fiber in call order—why hooks rules exist.\n\nInterview tip: connect to render/commit, Fiber, or scheduling—keep it high level unless they go deeper."
+      "explanation": "Hooks stored on fiber in call order—why hooks rules exist.\n\n```tsx\n// Same component, same hook order every render\nuseState();\nuseEffect();\nuseContext(ThemeContext);\n```\n\nInterview tip: connect to render/commit, Fiber, or scheduling—keep it high level unless they go deeper."
     },
     {
       "question": "What is Synthetic events legacy?",

@@ -7,15 +7,15 @@ export const dataFetchingDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is useEffect fetch pitfalls?",
-      "explanation": "Race conditions, no cache, loading flicker—use cleanup/AbortController.\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
+      "explanation": "Race conditions, no cache, loading flicker—use cleanup/AbortController.\n\n```tsx\nuseEffect(() => {\n  const ctrl = new AbortController();\n  fetch(url, { signal: ctrl.signal }).then(setData);\n  return () => ctrl.abort();\n}, [url]);\n```\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
     },
     {
       "question": "What is TanStack Query benefits?",
-      "explanation": "Caching, deduping, background refetch, staleTime, mutations, optimistic updates.\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
+      "explanation": "Caching, deduping, background refetch, staleTime, mutations, optimistic updates.\n\n```tsx\nconst { data, isLoading, error } = useQuery({\n  queryKey: ['todos', userId],\n  queryFn: () => fetchTodos(userId),\n  staleTime: 60_000,\n});\n```\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
     },
     {
       "question": "What is staleTime vs gcTime?",
-      "explanation": "staleTime: how long data is fresh before background refetch; gcTime (formerly cacheTime in v4): how long unused cache stays in memory after unmount.\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
+      "explanation": "staleTime: how long data is fresh before background refetch; gcTime (formerly cacheTime in v4): how long unused cache stays in memory after unmount.\n\n```tsx\nuseQuery({\n  queryKey: ['posts'],\n  queryFn: fetchPosts,\n  staleTime: 30_000,\n  gcTime: 5 * 60_000,\n});\n```\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
     },
     {
       "question": "What is SWR pattern?",
@@ -27,7 +27,7 @@ export const dataFetchingDeck: FlashcardDeck = {
     },
     {
       "question": "What is Optimistic updates?",
-      "explanation": "Update UI before server confirms; rollback on error.\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
+      "explanation": "Update UI before server confirms; rollback on error.\n\n```tsx\nuseMutation({\n  mutationFn: updateTodo,\n  onMutate: async (next) => {\n    await qc.cancelQueries({ queryKey: ['todos'] });\n    qc.setQueryData(['todos'], (old) => [...old, next]);\n  },\n});\n```\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
     },
     {
       "question": "What is Pagination patterns?",
@@ -43,7 +43,7 @@ export const dataFetchingDeck: FlashcardDeck = {
     },
     {
       "question": "What is Mutations?",
-      "explanation": "useMutation with onSuccess invalidateQueries to refresh lists.\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
+      "explanation": "```tsx\nuseMutation with onSuccess invalidateQueries to refresh lists.\n```\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
     },
     {
       "question": "What is GraphQL with React?",
@@ -51,7 +51,7 @@ export const dataFetchingDeck: FlashcardDeck = {
     },
     {
       "question": "What is WebSockets?",
-      "explanation": "useEffect subscription; update cache or local state on message.\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
+      "explanation": "```tsx\nuseEffect subscription; update cache or local state on message.\n```\n\nInterview tip: contrast this with a raw useEffect fetch—caching, race handling, or stale UI you avoided."
     },
     {
       "question": "What is Suspense for data?",

@@ -7,15 +7,15 @@ export const formsValidationDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is Controlled form fields?",
-      "explanation": "value + onChange tied to state; single source of truth.\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
+      "explanation": "value + onChange tied to state; single source of truth.\n\n```tsx\nconst [email, setEmail] = useState('');\n\n<input value={email} onChange={(e) => setEmail(e.target.value)} />\n```\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
     },
     {
       "question": "What is react-hook-form?",
-      "explanation": "Uncontrolled refs + register(); less re-renders; resolver for schema validation.\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
+      "explanation": "Uncontrolled refs + register(); less re-renders; resolver for schema validation.\n\n```tsx\nconst { register, handleSubmit, formState: { errors } } = useForm({\n  resolver: zodResolver(schema),\n});\n\n<input {...register('email')} />\n```\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
     },
     {
       "question": "What is Zod + forms?",
-      "explanation": "Schema defines shape; zodResolver validates; inferred TypeScript types.\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
+      "explanation": "Schema defines shape; zodResolver validates; inferred TypeScript types.\n\n```tsx\nconst schema = z.object({ email: z.string().email() });\ntype FormData = z.infer<typeof schema>;\n```\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
     },
     {
       "question": "What is Field-level vs form-level validation?",
@@ -51,11 +51,11 @@ export const formsValidationDeck: FlashcardDeck = {
     },
     {
       "question": "What is Dynamic fields?",
-      "explanation": "useFieldArray (RHF) or array state with map for repeatable sections.\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
+      "explanation": "```tsx\nuseFieldArray (RHF) or array state with map for repeatable sections.\n```\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
     },
     {
       "question": "What is Server Actions forms?",
-      "explanation": "<form action={serverAction}> can work with minimal JS; pending UI, useActionState, and useOptimistic need client components.\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
+      "explanation": "```tsx\n'use client';\n<form action={formAction}>\n  <SubmitButton />\n</form>\n```\n\nInterview tip: explain controlled vs uncontrolled choice and when errors surface (blur, submit, async)."
     },
     {
       "question": "What is Prevent double submit?",

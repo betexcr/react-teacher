@@ -19,7 +19,7 @@ export const applicationArchitectureDeck: FlashcardDeck = {
     },
     {
       "question": "What is URL as state?",
-      "explanation": "Shareable/bookmarkable UI state via route params and searchParams.\n\nInterview tip: describe where this lived in a feature folder or app shell and what coupling it reduced."
+      "explanation": "Shareable/bookmarkable UI state via route params and searchParams.\n\n```tsx\nconst [params] = useSearchParams();\nconst tab = params.get('tab') ?? 'overview';\n```\n\nInterview tip: describe where this lived in a feature folder or app shell and what coupling it reduced."
     },
     {
       "question": "What is Global vs local state?",
@@ -27,7 +27,7 @@ export const applicationArchitectureDeck: FlashcardDeck = {
     },
     {
       "question": "What is Error boundaries placement?",
-      "explanation": "Wrap route sections or risky widgets—not every component.\n\nInterview tip: describe where this lived in a feature folder or app shell and what coupling it reduced."
+      "explanation": "Wrap route sections or risky widgets—not every component.\n\n```tsx\n<Route path=\"billing/*\" element={\n  <ErrorBoundary fallback={<BillingError />}>\n    <BillingRoutes />\n  </ErrorBoundary>\n} />\n```\n\nInterview tip: describe where this lived in a feature folder or app shell and what coupling it reduced."
     },
     {
       "question": "What is Composition root?",

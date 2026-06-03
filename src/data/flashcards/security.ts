@@ -7,7 +7,7 @@ export const securityDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is XSS in React?",
-      "explanation": "Default escaping in JSX. Danger: dangerouslySetInnerHTML—sanitize with DOMPurify.\n\nInterview tip: state the threat (XSS, CSRF, token leak) and whether the fix belongs on client, server, or both."
+      "explanation": "Default escaping in JSX. Danger: dangerouslySetInnerHTML—sanitize with DOMPurify.\n\n```tsx\n// Safe by default\n<p>{userBio}</p>\n\n// Dangerous — sanitize first\n<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }} />\n```\n\nInterview tip: state the threat (XSS, CSRF, token leak) and whether the fix belongs on client, server, or both."
     },
     {
       "question": "What is CSRF?",
@@ -19,7 +19,7 @@ export const securityDeck: FlashcardDeck = {
     },
     {
       "question": "What is Auth token storage?",
-      "explanation": "httpOnly cookies preferred over localStorage for XSS resilience.\n\nInterview tip: state the threat (XSS, CSRF, token leak) and whether the fix belongs on client, server, or both."
+      "explanation": "httpOnly cookies preferred over localStorage for XSS resilience.\n\n```tsx\n// Prefer httpOnly cookie set by server\n// Avoid: localStorage.setItem('token', jwt)\n```\n\nInterview tip: state the threat (XSS, CSRF, token leak) and whether the fix belongs on client, server, or both."
     },
     {
       "question": "What is Content Security Policy?",

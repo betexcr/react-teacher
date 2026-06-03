@@ -7,11 +7,11 @@ export const serverComponentsSsrDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is Server Component?",
-      "explanation": "Runs on server; can async fetch; no hooks/state/events. Code is not client-bundled; output streams as RSC payload alongside client JS.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
+      "explanation": "Runs on server; can async fetch; no hooks/state/events. Code is not client-bundled; output streams as RSC payload alongside client JS.\n\n```tsx\n// app/page.tsx — no 'use client'\nexport default async function Page() {\n  const data = await db.query();\n  return <List items={data} />;\n}\n```\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is \"use client\"?",
-      "explanation": "Marks client boundary—bundle includes hooks, effects, browser APIs.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
+      "explanation": "Marks client boundary—bundle includes hooks, effects, browser APIs.\n\n```tsx\n'use client';\n\nexport function Counter() {\n  const [n, setN] = useState(0);\n  return <button onClick={() => setN(n + 1)}>{n}</button>;\n}\n```\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is SSR vs SSG?",
@@ -39,7 +39,7 @@ export const serverComponentsSsrDeck: FlashcardDeck = {
     },
     {
       "question": "What is Server Actions?",
-      "explanation": "Async functions run on server; invoked from forms/client with secure boundaries.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
+      "explanation": "Async functions run on server; invoked from forms/client with secure boundaries.\n\n```tsx\nasync function addItem(formData: FormData) {\n  'use server';\n  await db.items.create({ name: formData.get('name') });\n}\n```\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Caching in Next?",
@@ -55,7 +55,7 @@ export const serverComponentsSsrDeck: FlashcardDeck = {
     },
     {
       "question": "What is Client-only libraries?",
-      "explanation": "dynamic(() => import(...), { ssr: false }) for chart/map libs.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
+      "explanation": "dynamic(() => import(...), { ssr: false }) for chart/map libs.\n\n```tsx\nconst Map = dynamic(() => import('./Map'), { ssr: false });\n```\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Partial Prerendering?",

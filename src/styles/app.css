@@ -1454,6 +1454,15 @@ body.js-basics-tutorial-open {
   margin-bottom: 0;
 }
 
+.flashcard-explanation-body .flashcard-explanation-code {
+  margin: 0 0 1rem;
+  max-width: 42rem;
+}
+
+.flashcard-explanation-body .flashcard-explanation-code:last-child {
+  margin-bottom: 0;
+}
+
 .flashcard-study-footer {
   display: flex;
   align-items: center;

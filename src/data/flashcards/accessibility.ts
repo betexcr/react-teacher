@@ -7,11 +7,11 @@ export const accessibilityDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is Semantic HTML first?",
-      "explanation": "button, nav, main, heading hierarchy before ARIA overrides.\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
+      "explanation": "button, nav, main, heading hierarchy before ARIA overrides.\n\n```tsx\n<nav aria-label=\"Main\">\n  <button type=\"button\">Save</button>\n</nav>\n```\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
     },
     {
       "question": "What is Accessible name?",
-      "explanation": "Visible text, aria-label, or aria-labelledby must name interactive elements.\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
+      "explanation": "Visible text, aria-label, or aria-labelledby must name interactive elements.\n\n```tsx\n<button aria-label=\"Close dialog\">×</button>\n```\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
     },
     {
       "question": "What is Keyboard navigation?",
@@ -19,11 +19,11 @@ export const accessibilityDeck: FlashcardDeck = {
     },
     {
       "question": "What is Focus management?",
-      "explanation": "Trap focus in modals; restore focus on close; autofocus intentionally.\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
+      "explanation": "Trap focus in modals; restore focus on close; autofocus intentionally.\n\n```tsx\nuseEffect(() => {\n  dialogRef.current?.focus();\n  return () => triggerRef.current?.focus();\n}, []);\n```\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
     },
     {
       "question": "What is aria-live?",
-      "explanation": "Announces dynamic updates (polite/assertive) for toasts/status.\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
+      "explanation": "Announces dynamic updates (polite/assertive) for toasts/status.\n\n```tsx\n<div aria-live=\"polite\" role=\"status\">{toastMessage}</div>\n```\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
     },
     {
       "question": "What is Color contrast?",
@@ -35,7 +35,7 @@ export const accessibilityDeck: FlashcardDeck = {
     },
     {
       "question": "What is Form labels?",
-      "explanation": "Every input has associated label; placeholders are not labels.\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
+      "explanation": "Every input has associated label; placeholders are not labels.\n\n```tsx\n<label htmlFor=\"email\">Email</label>\n<input id=\"email\" name=\"email\" type=\"email\" />\n```\n\nInterview tip: describe the assistive-tech or keyboard path—what a screen reader or tab user experiences."
     },
     {
       "question": "What is Skip links?",

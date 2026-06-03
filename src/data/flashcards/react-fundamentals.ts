@@ -11,7 +11,7 @@ export const reactFundamentalsDeck: FlashcardDeck = {
     },
     {
       "question": "What is JSX, and how does it relate to React.createElement?",
-      "explanation": "JSX is a syntax extension that looks like HTML embedded in JavaScript. The compiler (Babel/SWC) transforms JSX into React.createElement(type, props, ...children) calls—or the automatic JSX runtime equivalent—so React receives plain element objects.\n\nA component must return one expression: a single element, Fragment (<>...</>), array, or null. Fragments group siblings without an extra DOM node. JSX is optional—you can call createElement directly.\n\nTypeScript adds typing for intrinsic elements (div, input) and your components. Interview tip: JSX is syntactic sugar; reconciliation still works on the element objects JSX produces."
+      "explanation": "JSX is a syntax extension that looks like HTML embedded in JavaScript. The compiler (Babel/SWC) transforms JSX into React.createElement(type, props, ...children) calls—or the automatic JSX runtime equivalent—so React receives plain element objects.\n\n```tsx\nconst element = <h1 className=\"title\">Hello</h1>;\n// Compiles to: React.createElement(\"h1\", { className: \"title\" }, \"Hello\");\n```\n\nA component must return one expression: a single element, Fragment (<>...</>), array, or null. Fragments group siblings without an extra DOM node. JSX is optional—you can call createElement directly.\n\nTypeScript adds typing for intrinsic elements (div, input) and your components. Interview tip: JSX is syntactic sugar; reconciliation still works on the element objects JSX produces."
     },
     {
       "question": "What is the virtual DOM, and why does React use it?",
@@ -19,11 +19,11 @@ export const reactFundamentalsDeck: FlashcardDeck = {
     },
     {
       "question": "What is the difference between controlled and uncontrolled components?",
-      "explanation": "A controlled component has its form value driven by React state: you pass value (or checked) and update via onChange/onInput. React is the single source of truth.\n\nAn uncontrolled component stores value in the DOM; you read it via a ref when needed (e.g., on submit). Controlled inputs enable live validation and dependent UI; uncontrolled can reduce re-renders for simple forms.\n\nReact Hook Form often uses refs internally for performance while still exposing validation APIs—a hybrid pattern worth mentioning when discussing form architecture."
+      "explanation": "A controlled component has its form value driven by React state: you pass value (or checked) and update via onChange/onInput. React is the single source of truth.\n\n```tsx\nconst [email, setEmail] = useState(\"\");\n<input value={email} onChange={(e) => setEmail(e.target.value)} />\n\nconst inputRef = useRef<HTMLInputElement>(null);\n<input ref={inputRef} defaultValue=\"\" /> // uncontrolled\n```\n\nAn uncontrolled component stores value in the DOM; you read it via a ref when needed (e.g., on submit). Controlled inputs enable live validation and dependent UI; uncontrolled can reduce re-renders for simple forms.\n\nReact Hook Form often uses refs internally for performance while still exposing validation APIs—a hybrid pattern worth mentioning when discussing form architecture."
     },
     {
       "question": "What are props in React, and how are they different from state?",
-      "explanation": "Props are read-only inputs passed from parent to child. They describe how a child should render or behave. Changing props in a parent triggers a child re-render.\n\nState is owned by the component that declares it and can change over time via setState/useState. Props flow down; state is local unless lifted or shared via context.\n\nFor objects and functions passed as props, referential equality matters for memoization—stable references (useCallback/useMemo) prevent unnecessary child renders."
+      "explanation": "Props are read-only inputs passed from parent to child. They describe how a child should render or behave. Changing props in a parent triggers a child re-render.\n\n```tsx\nfunction Parent() {\n  const [count, setCount] = useState(0);\n  return <Child count={count} onIncrement={() => setCount((c) => c + 1)} />;\n}\n```\n\nState is owned by the component that declares it and can change over time via setState/useState. Props flow down; state is local unless lifted or shared via context.\n\nFor objects and functions passed as props, referential equality matters for memoization—stable references (useCallback/useMemo) prevent unnecessary child renders."
     },
     {
       "question": "What is state in React, and what happens when you update it?",
@@ -31,7 +31,7 @@ export const reactFundamentalsDeck: FlashcardDeck = {
     },
     {
       "question": "Why are keys important when rendering lists?",
-      "explanation": "Keys help React identify which items changed, were added, or removed across renders. Stable keys preserve component state and DOM nodes when the list reorders.\n\nUsing array index as key can break when items are inserted, deleted, or reordered—inputs may show wrong values or animations misfire. Prefer stable IDs from your data model.\n\nKeys are hints, not global identifiers—they only need to be unique among siblings. Mention keys in the same breath as reconciliation for a complete interview answer."
+      "explanation": "Keys help React identify which items changed, were added, or removed across renders. Stable keys preserve component state and DOM nodes when the list reorders.\n\n```tsx\n{todos.map((todo) => (\n  <TodoRow key={todo.id} todo={todo} />\n))}\n```\n\nUsing array index as key can break when items are inserted, deleted, or reordered—inputs may show wrong values or animations misfire. Prefer stable IDs from your data model.\n\nKeys are hints, not global identifiers—they only need to be unique among siblings. Mention keys in the same breath as reconciliation for a complete interview answer."
     },
     {
       "question": "What does \"lifting state up\" mean?",
@@ -51,11 +51,11 @@ export const reactFundamentalsDeck: FlashcardDeck = {
     },
     {
       "question": "What is a React Fragment and when should you use it?",
-      "explanation": "A Fragment lets you group multiple children without adding an extra DOM node—<>...</> or <Fragment key={...}>.\n\nUse it when a component must return multiple siblings (table rows, list items) or to avoid wrapper divs that break layout/CSS (flex/grid).\n\nFragments can take a key when mapping lists of groups—unlike the shorthand <> syntax, which cannot accept props."
+      "explanation": "A Fragment lets you group multiple children without adding an extra DOM node—<>...</> or <Fragment key={...}>.\n\n```tsx\nreturn (\n  <>\n    <Title />\n    <Content />\n  </>\n);\n```\n\nUse it when a component must return multiple siblings (table rows, list items) or to avoid wrapper divs that break layout/CSS (flex/grid).\n\nFragments can take a key when mapping lists of groups—unlike the shorthand <> syntax, which cannot accept props."
     },
     {
       "question": "What are common patterns for conditional rendering?",
-      "explanation": "Early return null for guard clauses; ternary for two branches; && for simple show/hide when the left side is boolean (beware 0 rendering); switch or object maps for many states.\n\nExtract heavy branches into child components so hooks stay valid and trees stay readable. Co-locate loading/error/empty states with data-fetch UI.\n\nFor async data, prefer explicit status enums (idle/loading/error/success) over nested ternaries—easier to test and extend."
+      "explanation": "Early return null for guard clauses; ternary for two branches; && for simple show/hide when the left side is boolean (beware 0 rendering); switch or object maps for many states.\n\n```tsx\nif (!user) return null;\nreturn isEditing ? <Form /> : <View />;\n{error && <Alert>{error}</Alert>}\n```\n\nExtract heavy branches into child components so hooks stay valid and trees stay readable. Co-locate loading/error/empty states with data-fetch UI.\n\nFor async data, prefer explicit status enums (idle/loading/error/success) over nested ternaries—easier to test and extend."
     },
     {
       "question": "What is the difference between a React element and a component?",

@@ -11,11 +11,11 @@ export const ecosystemIntegrationDeck: FlashcardDeck = {
     },
     {
       "question": "What is Zustand?",
-      "explanation": "Simple store hook; no Provider required; middleware for persist/devtools.\n\nInterview tip: name the library and the responsibility you did not reimplement in React state."
+      "explanation": "Simple store hook; no Provider required; middleware for persist/devtools.\n\n```tsx\nconst useStore = create((set) => ({\n  count: 0,\n  inc: () => set((s) => ({ count: s.count + 1 })),\n}));\n```\n\nInterview tip: name the library and the responsibility you did not reimplement in React state."
     },
     {
       "question": "What is Redux Toolkit?",
-      "explanation": "createSlice, configureStore, RTK Query for data—less boilerplate.\n\nInterview tip: name the library and the responsibility you did not reimplement in React state."
+      "explanation": "createSlice, configureStore, RTK Query for data—less boilerplate.\n\n```tsx\nconst slice = createSlice({\n  name: 'cart',\n  initialState: { items: [] },\n  reducers: { add(state, action) { state.items.push(action.payload); } },\n});\n```\n\nInterview tip: name the library and the responsibility you did not reimplement in React state."
     },
     {
       "question": "What is Framer Motion?",

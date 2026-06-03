@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { CodeBlock } from '../components/CodeBlock';
 import { HiddenCardsTooltip } from '../components/HiddenCardsTooltip';
 import { getDeckBySlug } from '../data/flashcards';
 import { useDeckProgress } from '../hooks/useDeckProgress';
@@ -9,14 +10,19 @@ import {
   readUncompletedOnlyFilter,
   writeUncompletedOnlyFilter,
 } from '../utils/flashcardFilter';
+import { parseFlashcardExplanation } from '../utils/parseFlashcardExplanation';
 
 function ExplanationBody({ text }: { text: string }) {
-  const paragraphs = text.split(/\n\n+/).filter(Boolean);
+  const blocks = parseFlashcardExplanation(text);
   return (
     <div className="flashcard-explanation-body">
-      {paragraphs.map((p, i) => (
-        <p key={i}>{p}</p>
-      ))}
+      {blocks.map((block, i) =>
+        block.type === 'code' ? (
+          <CodeBlock key={i} code={block.code} className="flashcard-explanation-code" />
+        ) : (
+          <p key={i}>{block.text}</p>
+        )
+      )}
     </div>
   );
 }

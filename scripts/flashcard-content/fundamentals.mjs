@@ -10,6 +10,7 @@ export const fundamentalsCards = [
   interviewCard(
     'What is JSX, and how does it relate to React.createElement?',
     'JSX is a syntax extension that looks like HTML embedded in JavaScript. The compiler (Babel/SWC) transforms JSX into React.createElement(type, props, ...children) calls—or the automatic JSX runtime equivalent—so React receives plain element objects.',
+    '```tsx\nconst element = <h1 className="title">Hello</h1>;\n// Compiles to: React.createElement("h1", { className: "title" }, "Hello");\n```',
     'A component must return one expression: a single element, Fragment (<>...</>), array, or null. Fragments group siblings without an extra DOM node. JSX is optional—you can call createElement directly.',
     'TypeScript adds typing for intrinsic elements (div, input) and your components. Interview tip: JSX is syntactic sugar; reconciliation still works on the element objects JSX produces.'
   ),
@@ -22,12 +23,14 @@ export const fundamentalsCards = [
   interviewCard(
     'What is the difference between controlled and uncontrolled components?',
     'A controlled component has its form value driven by React state: you pass value (or checked) and update via onChange/onInput. React is the single source of truth.',
+    '```tsx\nconst [email, setEmail] = useState("");\n<input value={email} onChange={(e) => setEmail(e.target.value)} />\n\nconst inputRef = useRef<HTMLInputElement>(null);\n<input ref={inputRef} defaultValue="" /> // uncontrolled\n```',
     'An uncontrolled component stores value in the DOM; you read it via a ref when needed (e.g., on submit). Controlled inputs enable live validation and dependent UI; uncontrolled can reduce re-renders for simple forms.',
     'React Hook Form often uses refs internally for performance while still exposing validation APIs—a hybrid pattern worth mentioning when discussing form architecture.'
   ),
   interviewCard(
     'What are props in React, and how are they different from state?',
     'Props are read-only inputs passed from parent to child. They describe how a child should render or behave. Changing props in a parent triggers a child re-render.',
+    '```tsx\nfunction Parent() {\n  const [count, setCount] = useState(0);\n  return <Child count={count} onIncrement={() => setCount((c) => c + 1)} />;\n}\n```',
     'State is owned by the component that declares it and can change over time via setState/useState. Props flow down; state is local unless lifted or shared via context.',
     'For objects and functions passed as props, referential equality matters for memoization—stable references (useCallback/useMemo) prevent unnecessary child renders.'
   ),
@@ -40,6 +43,7 @@ export const fundamentalsCards = [
   interviewCard(
     'Why are keys important when rendering lists?',
     'Keys help React identify which items changed, were added, or removed across renders. Stable keys preserve component state and DOM nodes when the list reorders.',
+    '```tsx\n{todos.map((todo) => (\n  <TodoRow key={todo.id} todo={todo} />\n))}\n```',
     'Using array index as key can break when items are inserted, deleted, or reordered—inputs may show wrong values or animations misfire. Prefer stable IDs from your data model.',
     'Keys are hints, not global identifiers—they only need to be unique among siblings. Mention keys in the same breath as reconciliation for a complete interview answer.'
   ),
@@ -70,12 +74,14 @@ export const fundamentalsCards = [
   interviewCard(
     'What is a React Fragment and when should you use it?',
     'A Fragment lets you group multiple children without adding an extra DOM node—<>...</> or <Fragment key={...}>.',
+    '```tsx\nreturn (\n  <>\n    <Title />\n    <Content />\n  </>\n);\n```',
     'Use it when a component must return multiple siblings (table rows, list items) or to avoid wrapper divs that break layout/CSS (flex/grid).',
     'Fragments can take a key when mapping lists of groups—unlike the shorthand <> syntax, which cannot accept props.'
   ),
   interviewCard(
     'What are common patterns for conditional rendering?',
     'Early return null for guard clauses; ternary for two branches; && for simple show/hide when the left side is boolean (beware 0 rendering); switch or object maps for many states.',
+    '```tsx\nif (!user) return null;\nreturn isEditing ? <Form /> : <View />;\n{error && <Alert>{error}</Alert>}\n```',
     'Extract heavy branches into child components so hooks stay valid and trees stay readable. Co-locate loading/error/empty states with data-fetch UI.',
     'For async data, prefer explicit status enums (idle/loading/error/success) over nested ternaries—easier to test and extend.'
   ),
