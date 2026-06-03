@@ -450,7 +450,7 @@ const processedDecks = decks.map((d) => ({
   cards:
     d.id === 'react-fundamentals'
       ? fundamentalsCards
-      : d.cards.map((c) => enrichCard(d.title, d.id, c.front, c.back, c.code)),
+      : d.cards.map((c) => enrichCard(d.title, d.id, c.front, c.back, c)),
 }));
 
 fs.mkdirSync(outDir, { recursive: true });

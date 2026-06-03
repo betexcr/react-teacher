@@ -23,8 +23,6 @@ function isMostlyCode(text) {
   return symbols / t.length > 0.1 && t.length < 160 && /\b(function|const|use[A-Z]|<[A-Z])/i.test(t);
 }
 
-export { isMostlyCode };
-
 /** Pull a trailing API snippet off prose+code backs. */
 export function splitBackIntoProseAndCode(back) {
   const text = back.trim();
@@ -42,6 +40,207 @@ export function splitBackIntoProseAndCode(back) {
   }
 
   return { prose: text, code: null };
+}
+
+export { isMostlyCode };
+
+const REACT_RUNTIME = [
+  'useState',
+  'useEffect',
+  'useContext',
+  'createContext',
+  'useReducer',
+  'useRef',
+  'useMemo',
+  'useCallback',
+  'useImperativeHandle',
+  'useLayoutEffect',
+  'useId',
+  'useDebugValue',
+  'useTransition',
+  'useDeferredValue',
+  'useSyncExternalStore',
+  'useActionState',
+  'useOptimistic',
+  'use',
+  'lazy',
+  'Suspense',
+  'memo',
+  'Fragment',
+  'StrictMode',
+];
+
+const REACT_TYPES = [
+  ['React\\.FC\\b', 'FC'],
+  ['React\\.ReactNode\\b', 'ReactNode'],
+  ['React\\.ChangeEvent\\b', 'ChangeEvent'],
+  ['React\\.MouseEvent\\b', 'MouseEvent'],
+  ['React\\.Ref\\b', 'Ref'],
+  ['React\\.ElementType\\b', 'ElementType'],
+  ['React\\.ComponentProps\\b', 'ComponentProps'],
+  ['React\\.ComponentType\\b', 'ComponentType'],
+  ['React\\.ComponentPropsWithoutRef\\b', 'ComponentPropsWithoutRef'],
+  ['\\bRef<HTMLInputElement>', 'Ref'],
+];
+
+function hasImportFrom(source, pkg) {
+  return new RegExp(`from ['"]${pkg.replace('/', '\\/')}['"]`).test(source);
+}
+
+function collectMatches(code, entries) {
+  const found = new Set();
+  for (const [pattern, name] of entries) {
+    if (new RegExp(pattern).test(code)) found.add(name);
+  }
+  return found;
+}
+
+/** Prepend standard imports when a snippet uses APIs but omits import lines. */
+export function ensureSnippetImports(code) {
+  const trimmed = code.trim();
+  if (!trimmed) return trimmed;
+
+  let directivePrefix = '';
+  let body = trimmed;
+  const directiveMatch = trimmed.match(/^((?:['"]use (?:client|server)['"];\s*\n?)+)/);
+  if (directiveMatch) {
+    directivePrefix = directiveMatch[1].endsWith('\n') ? directiveMatch[1] : `${directiveMatch[1]}\n`;
+    body = trimmed.slice(directiveMatch[0].length).trim();
+  }
+
+  const imports = [];
+
+  if (!hasImportFrom(body, 'react')) {
+    const runtime = collectMatches(
+      body,
+      REACT_RUNTIME.map((name) => [`\\b${name}\\b`, name])
+    );
+    const types = collectMatches(body, REACT_TYPES);
+    const usesReactNamespace = /\bReact\./.test(body);
+
+    if (usesReactNamespace) {
+      imports.push(`import React from 'react';`);
+    } else if (runtime.size > 0) {
+      imports.push(`import { ${[...runtime].sort().join(', ')} } from 'react';`);
+    } else if (/<[A-Za-z]/.test(body)) {
+      imports.push(`import React from 'react';`);
+    }
+
+    if (types.size > 0) {
+      imports.push(`import type { ${[...types].sort().join(', ')} } from 'react';`);
+    }
+  }
+
+  if (/\bcreatePortal\b/.test(body) && !hasImportFrom(body, 'react-dom')) {
+    imports.push(`import { createPortal } from 'react-dom';`);
+  }
+
+  const router = collectMatches(body, [
+    ['\\bcreateBrowserRouter\\b', 'createBrowserRouter'],
+    ['\\bRouterProvider\\b', 'RouterProvider'],
+    ['\\bRoute\\b', 'Route'],
+    ['\\bNavigate\\b', 'Navigate'],
+    ['\\buseParams\\b', 'useParams'],
+    ['\\buseSearchParams\\b', 'useSearchParams'],
+    ['\\buseNavigate\\b', 'useNavigate'],
+    ['\\bLink\\b', 'Link'],
+    ['\\bOutlet\\b', 'Outlet'],
+  ]);
+  if (router.size > 0 && !hasImportFrom(body, 'react-router-dom')) {
+    imports.push(`import { ${[...router].sort().join(', ')} } from 'react-router-dom';`);
+  }
+
+  if (/\buseQuery\b/.test(body) && !hasImportFrom(body, '@tanstack/react-query')) {
+    imports.push(`import { useQuery } from '@tanstack/react-query';`);
+  }
+  if (/\buseInfiniteQuery\b/.test(body) && !hasImportFrom(body, '@tanstack/react-query')) {
+    imports.push(`import { useInfiniteQuery } from '@tanstack/react-query';`);
+  }
+  if (/\buseSWR\b/.test(body) && !hasImportFrom(body, 'swr')) {
+    imports.push(`import useSWR from 'swr';`);
+  }
+  if (/\buseMutation\b/.test(body) && !hasImportFrom(body, '@tanstack/react-query')) {
+    const parts = ['useMutation'];
+    if (/\bqc\.|QueryClient\b/.test(body)) parts.push('useQueryClient');
+    if (/\bQueryClientProvider\b/.test(body)) parts.push('QueryClientProvider');
+    imports.push(`import { ${parts.join(', ')} } from '@tanstack/react-query';`);
+  }
+
+  if (/\brenderHook\b/.test(body) && !hasImportFrom(body, '@testing-library/react')) {
+    const rtl = ['renderHook', 'act'];
+    if (/\brender\(/.test(body)) rtl.unshift('render');
+    if (/\bscreen\b/.test(body)) rtl.push('screen');
+    if (/\bwaitFor\b/.test(body)) rtl.push('waitFor');
+    imports.push(`import { ${rtl.join(', ')} } from '@testing-library/react';`);
+  } else if (/\brender\(/.test(body) && /\bscreen\b/.test(body) && !hasImportFrom(body, '@testing-library/react')) {
+    const rtl = ['render', 'screen'];
+    if (/\bwaitFor\b/.test(body)) rtl.push('waitFor');
+    imports.push(`import { ${rtl.join(', ')} } from '@testing-library/react';`);
+  }
+
+  if (/\buserEvent\b/.test(body) && !hasImportFrom(body, '@testing-library/user-event')) {
+    imports.push(`import userEvent from '@testing-library/user-event';`);
+  }
+
+  if (/\bexpect\(/.test(body) && !hasImportFrom(body, 'vitest') && !hasImportFrom(body, '@jest/globals')) {
+    if (/\bdescribe\(/.test(body) || /\bit\(/.test(body)) {
+      imports.push(`import { describe, it, expect } from 'vitest';`);
+    } else {
+      imports.push(`import { expect } from 'vitest';`);
+    }
+  }
+
+  if (/\buseForm\b/.test(body) && !hasImportFrom(body, 'react-hook-form')) {
+    const rhf = ['useForm'];
+    if (/\buseFieldArray\b/.test(body)) rhf.push('useFieldArray');
+    imports.push(`import { ${rhf.join(', ')} } from 'react-hook-form';`);
+  }
+  if (/\bzodResolver\b/.test(body) && !hasImportFrom(body, '@hookform/resolvers/zod')) {
+    imports.push(`import { zodResolver } from '@hookform/resolvers/zod';`);
+  }
+  if (/\bz\.object\b/.test(body) && !hasImportFrom(body, 'zod')) {
+    imports.push(`import { z } from 'zod';`);
+  }
+
+  if (/\bcreateSlice\b/.test(body) && !hasImportFrom(body, '@reduxjs/toolkit')) {
+    imports.push(`import { createSlice } from '@reduxjs/toolkit';`);
+  }
+  if (
+    /\bcreate\(\s*\(set\)/.test(body) &&
+    !/\bcreateSlice\b/.test(body) &&
+    !hasImportFrom(body, 'zustand')
+  ) {
+    imports.push(`import { create } from 'zustand';`);
+  }
+
+  if (/\bdefineConfig\b/.test(body) && !hasImportFrom(body, 'vite')) {
+    imports.push(`import { defineConfig } from 'vite';`);
+    if (/\breact\(\)/.test(body) && !hasImportFrom(body, '@vitejs/plugin-react')) {
+      imports.push(`import react from '@vitejs/plugin-react';`);
+    }
+  }
+
+  if (/\bcva\(/.test(body) && !hasImportFrom(body, 'class-variance-authority')) {
+    imports.push(`import { cva } from 'class-variance-authority';`);
+  }
+
+  if (/\bdynamic\(/.test(body) && !hasImportFrom(body, 'next/dynamic')) {
+    imports.push(`import dynamic from 'next/dynamic';`);
+  }
+
+  if (/\bDOMPurify\b/.test(body) && !hasImportFrom(body, 'dompurify')) {
+    imports.push(`import DOMPurify from 'dompurify';`);
+  }
+
+  if (imports.length === 0) return trimmed;
+
+  const existingImportBlock = body.match(/^(?:import .+\n)+/);
+  if (existingImportBlock) {
+    const rest = body.slice(existingImportBlock[0].length).trimStart();
+    return `${directivePrefix}${existingImportBlock[0].trimEnd()}\n${imports.join('\n')}\n\n${rest}`.trim();
+  }
+
+  return `${directivePrefix}${imports.join('\n')}\n\n${body}`.trim();
 }
 
 const BY_DECK = {
@@ -530,8 +729,6 @@ const tab = params.get('tab') ?? 'overview';`,
 export function getCodeExample(deckId, front, back) {
   const key = front.trim().replace(/\?$/, '');
   const explicit = BY_DECK[deckId]?.[key] ?? BY_DECK[deckId]?.[front.trim()];
-  if (explicit) return explicit;
-
-  const { code } = splitBackIntoProseAndCode(back);
-  return code;
+  const raw = explicit ?? splitBackIntoProseAndCode(back).code;
+  return raw ? ensureSnippetImports(raw) : null;
 }
