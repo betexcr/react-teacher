@@ -35,6 +35,13 @@ const SYSTEM_DESIGN_ACCENTS = [
   { accent: '#47bfff', accent2: '#5b9fd4' },
 ];
 
+const REACT_PATTERNS_ACCENTS = [
+  { accent: '#a78bfa', accent2: '#863bff' },
+  { accent: '#c084fc', accent2: '#a78bfa' },
+  { accent: '#47bfff', accent2: '#5b9fd4' },
+  { accent: '#34d399', accent2: '#5b9fd4' },
+];
+
 const systemDesignProblems = [
   { slug: 'infinite-scroll', title: 'Twitter Feed', subtitle: 'Infinite Scroll Feed' },
   { slug: 'form-builder', title: 'Form Builder', subtitle: 'Dynamic Form Generation and Validation' },
@@ -44,6 +51,25 @@ const systemDesignProblems = [
   { slug: 'google-docs-clone', title: 'Google Docs Clone', subtitle: 'Real-time Collaboration Editor' },
   { slug: 'video-player', title: 'Video Player', subtitle: 'Custom Video Player' },
   { slug: 'kanban-board', title: 'Kanban Board', subtitle: 'Complex Drag-and-Drop Interactions' },
+];
+
+const reactPatterns = [
+  { slug: 'compound-components', title: 'Compound Components', subtitle: 'Shared implicit state via context' },
+  { slug: 'custom-hooks', title: 'Custom Hooks', subtitle: 'Reusable stateful logic' },
+  { slug: 'container-presentational', title: 'Container / Presentational', subtitle: 'Separate data from UI' },
+  { slug: 'provider-context', title: 'Provider / Context', subtitle: 'Share values without prop drilling' },
+  { slug: 'controlled-uncontrolled', title: 'Controlled vs Uncontrolled', subtitle: 'Who owns form input state' },
+  { slug: 'composition', title: 'Composition', subtitle: 'Children and slot props' },
+  { slug: 'state-reducer', title: 'State Reducer', subtitle: 'Predictable state transitions' },
+  { slug: 'render-props', title: 'Render Props', subtitle: 'Inject state into JSX via functions' },
+  { slug: 'higher-order-components', title: 'Higher-Order Components', subtitle: 'Enhance components with wrappers' },
+  { slug: 'polymorphic-components', title: 'Polymorphic Components', subtitle: 'Flexible as prop rendering' },
+  { slug: 'headless-ui', title: 'Headless UI', subtitle: 'Behavior without prescribed markup' },
+  { slug: 'portals', title: 'Portals', subtitle: 'Render outside the parent DOM tree' },
+  { slug: 'error-boundaries', title: 'Error Boundaries', subtitle: 'Isolate render failures' },
+  { slug: 'lazy-suspense', title: 'Lazy Loading & Suspense', subtitle: 'Code-split routes and features' },
+  { slug: 'lifting-state-up', title: 'Lifting State Up', subtitle: 'Shared state in a common ancestor' },
+  { slug: 'optimistic-ui', title: 'Optimistic UI', subtitle: 'Instant feedback before the server confirms' },
 ];
 
 function loadFlashcardDecks() {
@@ -129,6 +155,19 @@ export function buildOgSources() {
       pathname: '/flashcards',
       pageTitle: 'Flashcards · ReactTeacher',
       pageDescription: 'Quick-review flashcards for hooks, patterns, performance, Next.js, and more.',
+    },
+    {
+      id: 'react-patterns',
+      badge: 'React patterns',
+      title: 'Patterns',
+      subtitle: 'Compound components, hooks, context, portals & more',
+      accent: '#a78bfa',
+      accent2: '#863bff',
+      icon: '◈',
+      pathname: '/react-patterns',
+      pageTitle: 'React Patterns · ReactTeacher',
+      pageDescription:
+        'React component and state patterns with examples for interviews and production code.',
     },
     {
       id: 'system-design',
@@ -240,6 +279,28 @@ export function buildOgSources() {
     routes[pathname] = {
       title: `${problem.title} · System Design`,
       description: `Frontend system design: ${problem.subtitle}. Interview walkthrough on ReactTeacher.`,
+      ogImageId: id,
+    };
+  });
+
+  reactPatterns.forEach((pattern, i) => {
+    const colors = REACT_PATTERNS_ACCENTS[i % REACT_PATTERNS_ACCENTS.length];
+    const id = `react-patterns/${pattern.slug}`;
+    const pathname = `/react-patterns/${pattern.slug}`;
+    images.push({
+      id,
+      badge: 'React patterns',
+      title: pattern.title,
+      subtitle: pattern.subtitle,
+      icon: '◈',
+      ...colors,
+      pathname,
+      pageTitle: `${pattern.title} · React Patterns`,
+      pageDescription: `React pattern guide: ${pattern.subtitle}. Examples and tradeoffs on ReactTeacher.`,
+    });
+    routes[pathname] = {
+      title: `${pattern.title} · React Patterns`,
+      description: `React pattern guide: ${pattern.subtitle}. Examples and tradeoffs on ReactTeacher.`,
       ogImageId: id,
     };
   });

@@ -21,6 +21,11 @@ export const ogManifest = {
       "description": "Quick-review flashcards for hooks, patterns, performance, Next.js, and more.",
       "ogImageId": "flashcards"
     },
+    "/react-patterns": {
+      "title": "React Patterns · ReactTeacher",
+      "description": "React component and state patterns with examples for interviews and production code.",
+      "ogImageId": "react-patterns"
+    },
     "/system-design": {
       "title": "System Design · ReactTeacher",
       "description": "Frontend system design problems and interview walkthroughs.",
@@ -450,6 +455,86 @@ export const ogManifest = {
       "title": "Kanban Board · System Design",
       "description": "Frontend system design: Complex Drag-and-Drop Interactions. Interview walkthrough on ReactTeacher.",
       "ogImageId": "system-design/kanban-board"
+    },
+    "/react-patterns/compound-components": {
+      "title": "Compound Components · React Patterns",
+      "description": "React pattern guide: Shared implicit state via context. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/compound-components"
+    },
+    "/react-patterns/custom-hooks": {
+      "title": "Custom Hooks · React Patterns",
+      "description": "React pattern guide: Reusable stateful logic. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/custom-hooks"
+    },
+    "/react-patterns/container-presentational": {
+      "title": "Container / Presentational · React Patterns",
+      "description": "React pattern guide: Separate data from UI. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/container-presentational"
+    },
+    "/react-patterns/provider-context": {
+      "title": "Provider / Context · React Patterns",
+      "description": "React pattern guide: Share values without prop drilling. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/provider-context"
+    },
+    "/react-patterns/controlled-uncontrolled": {
+      "title": "Controlled vs Uncontrolled · React Patterns",
+      "description": "React pattern guide: Who owns form input state. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/controlled-uncontrolled"
+    },
+    "/react-patterns/composition": {
+      "title": "Composition · React Patterns",
+      "description": "React pattern guide: Children and slot props. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/composition"
+    },
+    "/react-patterns/state-reducer": {
+      "title": "State Reducer · React Patterns",
+      "description": "React pattern guide: Predictable state transitions. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/state-reducer"
+    },
+    "/react-patterns/render-props": {
+      "title": "Render Props · React Patterns",
+      "description": "React pattern guide: Inject state into JSX via functions. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/render-props"
+    },
+    "/react-patterns/higher-order-components": {
+      "title": "Higher-Order Components · React Patterns",
+      "description": "React pattern guide: Enhance components with wrappers. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/higher-order-components"
+    },
+    "/react-patterns/polymorphic-components": {
+      "title": "Polymorphic Components · React Patterns",
+      "description": "React pattern guide: Flexible as prop rendering. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/polymorphic-components"
+    },
+    "/react-patterns/headless-ui": {
+      "title": "Headless UI · React Patterns",
+      "description": "React pattern guide: Behavior without prescribed markup. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/headless-ui"
+    },
+    "/react-patterns/portals": {
+      "title": "Portals · React Patterns",
+      "description": "React pattern guide: Render outside the parent DOM tree. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/portals"
+    },
+    "/react-patterns/error-boundaries": {
+      "title": "Error Boundaries · React Patterns",
+      "description": "React pattern guide: Isolate render failures. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/error-boundaries"
+    },
+    "/react-patterns/lazy-suspense": {
+      "title": "Lazy Loading & Suspense · React Patterns",
+      "description": "React pattern guide: Code-split routes and features. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/lazy-suspense"
+    },
+    "/react-patterns/lifting-state-up": {
+      "title": "Lifting State Up · React Patterns",
+      "description": "React pattern guide: Shared state in a common ancestor. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/lifting-state-up"
+    },
+    "/react-patterns/optimistic-ui": {
+      "title": "Optimistic UI · React Patterns",
+      "description": "React pattern guide: Instant feedback before the server confirms. Examples and tradeoffs on ReactTeacher.",
+      "ogImageId": "react-patterns/optimistic-ui"
     }
   }
 } as const;

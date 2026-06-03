@@ -11,7 +11,7 @@ export function GetStartedPage() {
         <h1 className="page-title">Get Started</h1>
         <p className="get-started-lead">
           <strong>ReactTeacher</strong> is React interview prep you can start immediately — challenges,
-          flashcards, and system design walkthroughs, no install required. Your progress saves in this
+          flashcards, React patterns, and system design walkthroughs, no install required. Your progress saves in this
           browser; no account needed.
         </p>
         <p className="get-started-lead get-started-lead--secondary">
@@ -27,7 +27,7 @@ export function GetStartedPage() {
           <div className="get-started-path-card">
             <h3>Study here</h3>
             <p>
-              Read challenges, study flashcards, and explore system design in the sidebar. No download
+              Read challenges, study flashcards, explore React patterns, and browse system design in the sidebar. No download
               required.
             </p>
             <p className="get-started-path-cta">
@@ -63,7 +63,8 @@ export function GetStartedPage() {
           <li>
             Use the sidebar: <Link to="/js-basics">JS Basics</Link>,{' '}
             <Link to="/challenges">React Challenges</Link>,{' '}
-            <Link to="/flashcards">Flashcards</Link>, <Link to="/system-design">System Design</Link>.
+            <Link to="/flashcards">Flashcards</Link>, <Link to="/react-patterns">React Patterns</Link>,{' '}
+            <Link to="/system-design">System Design</Link>.
           </li>
           <li>
             For challenges: read the problem and acceptance criteria here. Check off criteria as you
@@ -382,6 +383,9 @@ nvm use --lts`}
         <ul className="get-started-pointers">
           <li>
             <Link to="/flashcards">Flashcards</Link> — interview Q&amp;A; works entirely in the browser.
+          </li>
+          <li>
+            <Link to="/react-patterns">React Patterns</Link> — component and state patterns with copyable examples.
           </li>
           <li>
             <Link to="/system-design">System Design</Link> — architecture guides; no local setup required.

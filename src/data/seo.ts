@@ -45,6 +45,12 @@ const SECTION_FALLBACK: Record<string, PageMeta> = {
     description: 'Quick-review flashcards for hooks, patterns, performance, Next.js, and more.',
     ogImageId: 'flashcards',
   },
+  '/react-patterns': {
+    title: 'React Patterns · ReactTeacher',
+    description:
+      'React component and state patterns with examples: compound components, hooks, context, portals, and more.',
+    ogImageId: 'react-patterns',
+  },
   '/system-design': {
     title: 'System Design · ReactTeacher',
     description: 'Frontend system design problems and interview walkthroughs.',
@@ -88,6 +94,7 @@ export function getPageMeta(pathname: string): PageMeta {
   }
 
   if (path.startsWith('/challenges/')) return SECTION_FALLBACK['/challenges'];
+  if (path.startsWith('/react-patterns/')) return SECTION_FALLBACK['/react-patterns'];
   if (path.startsWith('/system-design/')) return SECTION_FALLBACK['/system-design'];
   if (path.startsWith('/get-started')) return SECTION_FALLBACK['/get-started'];
   if (path.startsWith('/js-basics')) return SECTION_FALLBACK['/js-basics'];

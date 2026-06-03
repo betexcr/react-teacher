@@ -7,6 +7,8 @@ import { FlashcardStudyPage } from './pages/FlashcardStudyPage';
 import { FlashcardsPage } from './pages/FlashcardsPage';
 import { GetStartedPage } from './pages/GetStartedPage';
 import { JsBasicsPage } from './pages/JsBasicsPage';
+import { ReactPatternDetailPage } from './pages/ReactPatternDetailPage';
+import { ReactPatternsPage } from './pages/ReactPatternsPage';
 import { SystemDesignDetailPage } from './pages/SystemDesignDetailPage';
 import { SystemDesignPage } from './pages/SystemDesignPage';
 import './styles/app.css';
@@ -25,6 +27,8 @@ function App() {
         <Route path="challenges" element={<ChallengesPage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
         <Route path="flashcards/:slug" element={<FlashcardStudyPage />} />
+        <Route path="react-patterns" element={<ReactPatternsPage />} />
+        <Route path="react-patterns/:slug" element={<ReactPatternDetailPage />} />
         <Route path="system-design" element={<SystemDesignPage />} />
         <Route path="system-design/:slug" element={<SystemDesignDetailPage />} />
       </Route>

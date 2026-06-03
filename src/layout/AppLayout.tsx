@@ -10,6 +10,8 @@ export function AppLayout() {
 
   const isSystemDesignActive =
     location.pathname === '/system-design' || location.pathname.startsWith('/system-design/');
+  const isReactPatternsActive =
+    location.pathname === '/react-patterns' || location.pathname.startsWith('/react-patterns/');
 
   return (
     <MainScrollContext.Provider value={mainRef}>
@@ -57,6 +59,14 @@ export function AppLayout() {
                   🗂
                 </span>
                 <span className="nav-label">Flashcards</span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/react-patterns" className={isReactPatternsActive ? 'active' : ''}>
+                <span className="nav-icon" aria-hidden>
+                  ◈
+                </span>
+                <span className="nav-label">React Patterns</span>
               </NavLink>
             </li>
             <li className="nav-item">
