@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { MarkdownView } from '../components/MarkdownView';
+import { getSystemDesignHighlights } from '../data/system-design/codeHighlights';
 import { getProblemBySlug } from '../data/system-design';
 import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
 
@@ -25,7 +26,11 @@ export function SystemDesignDetailPage() {
         ← System Design Problems
       </Link>
       <div className="system-design-prose">
-        <MarkdownView source={problem.content} />
+        <MarkdownView
+          source={problem.content}
+          solutionHighlights={getSystemDesignHighlights(problem.slug)}
+          codeHighlightLegend="Key terms in this example"
+        />
       </div>
     </article>
   );

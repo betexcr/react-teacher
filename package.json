@@ -1,6 +1,6 @@
 {
   "name": "react-prep",
-  "description": "ReactTeacher — local React interview prep: challenges, flashcards, and system design",
+  "description": "Free React interview prep: 53 coding challenges with solutions, 290+ flashcards, JS basics, and system-design guides. React 19 + Vite. Live at reactteacher.vercel.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/betexcr/react-teacher.git"

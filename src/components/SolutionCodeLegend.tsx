@@ -4,9 +4,15 @@ import { SolutionCodeTerm } from './SolutionCodeTerm';
 type SolutionCodeLegendProps = {
   code: string;
   highlights: SolutionHighlight[];
+  /** Legend heading above term chips. */
+  legendLabel?: string;
 };
 
-export function SolutionCodeLegend({ code, highlights }: SolutionCodeLegendProps) {
+export function SolutionCodeLegend({
+  code,
+  highlights,
+  legendLabel = 'In this solution',
+}: SolutionCodeLegendProps) {
   const unique = new Map<string, SolutionHighlight>();
   for (const h of highlights) {
     if (!code.includes(h.match)) continue;
@@ -17,7 +23,7 @@ export function SolutionCodeLegend({ code, highlights }: SolutionCodeLegendProps
 
   return (
     <div className="solution-code-terms">
-      <span className="solution-code-terms-label">In this solution</span>
+      <span className="solution-code-terms-label">{legendLabel}</span>
       <ul className="solution-code-terms-list">
         {items.map((h) => (
           <li key={h.label}>

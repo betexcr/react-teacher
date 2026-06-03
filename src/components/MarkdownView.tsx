@@ -9,7 +9,7 @@ type Block =
   | { type: 'p'; text: string }
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
-  | { type: 'code'; text: string }
+  | { type: 'code'; text: string; lang?: string }
 
 function parseMarkdown(source: string): Block[] {
   const blocks: Block[] = []
@@ -18,10 +18,13 @@ function parseMarkdown(source: string): Block[] {
   let inCode = false
   let codeBuf: string[] = []
 
+  let codeLang: string | undefined
+
   const flushCode = () => {
     if (codeBuf.length) {
-      blocks.push({ type: 'code', text: codeBuf.join('\n') })
+      blocks.push({ type: 'code', text: codeBuf.join('\n'), lang: codeLang })
       codeBuf = []
+      codeLang = undefined
     }
   }
 
@@ -35,6 +38,8 @@ function parseMarkdown(source: string): Block[] {
       } else {
         flushCode()
         inCode = true
+        const info = line.slice(3).trim().toLowerCase()
+        codeLang = info || undefined
       }
       i++
       continue
@@ -100,13 +105,25 @@ function parseMarkdown(source: string): Block[] {
   return blocks
 }
 
-type MarkdownViewProps = {
-  source: string
-  /** Challenge-specific tooltips for fenced solution code blocks. */
-  solutionHighlights?: SolutionHighlight[]
+const CODE_LANGS_WITH_TOOLTIPS = new Set(['', 'ts', 'tsx', 'js', 'javascript'])
+
+function codeBlockSupportsTooltips(lang?: string): boolean {
+  if (!lang) return true
+  return CODE_LANGS_WITH_TOOLTIPS.has(lang)
 }
 
-export function MarkdownView({ source, solutionHighlights }: MarkdownViewProps) {
+type MarkdownViewProps = {
+  source: string
+  /** Per-token tooltips for fenced code blocks (challenges, system design). */
+  solutionHighlights?: SolutionHighlight[]
+  codeHighlightLegend?: string
+}
+
+export function MarkdownView({
+  source,
+  solutionHighlights,
+  codeHighlightLegend,
+}: MarkdownViewProps) {
   const blocks = useMemo(() => parseMarkdown(source), [source])
   const annotateCode = solutionHighlights && solutionHighlights.length > 0
 
@@ -142,14 +159,24 @@ export function MarkdownView({ source, solutionHighlights }: MarkdownViewProps) 
                 ))}
               </ol>
             )
-          case 'code':
-            if (annotateCode && solutionHighlights) {
+          case 'code': {
+            const useTooltips =
+              annotateCode &&
+              solutionHighlights &&
+              codeBlockSupportsTooltips(block.lang)
+            if (useTooltips) {
               return (
                 <div key={i} className="solution-code-block-wrap">
                   <pre className="solution-code-pre">
-                    <code>{wrapSolutionCodeTokens(block.text, solutionHighlights, `sol-${i}`)}</code>
+                    <code>
+                      {wrapSolutionCodeTokens(block.text, solutionHighlights, `code-${i}`)}
+                    </code>
                   </pre>
-                  <SolutionCodeLegend code={block.text} highlights={solutionHighlights} />
+                  <SolutionCodeLegend
+                    code={block.text}
+                    highlights={solutionHighlights}
+                    legendLabel={codeHighlightLegend}
+                  />
                 </div>
               )
             }
@@ -158,6 +185,7 @@ export function MarkdownView({ source, solutionHighlights }: MarkdownViewProps) 
                 <code>{block.text}</code>
               </pre>
             )
+          }
           default:
             return null
         }
