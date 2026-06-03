@@ -169,9 +169,9 @@ export const CHALLENGE_RESOURCES = {
     { title: 'Passing Props to a Component', url: 'https://react.dev/learn/passing-props-to-a-component' },
   ],
   'medium/14-fallback-ui-class-components': [
-    { title: 'Error Boundaries', url: 'https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary' },
-    { title: 'Class components – legacy API', url: 'https://react.dev/reference/react/Component' },
-    { title: 'React error handling (learn)', url: 'https://react.dev/learn/error-boundaries' },
+    { title: 'Error boundaries (learn)', url: 'https://react.dev/learn/error-boundaries' },
+    { title: 'react-error-boundary', url: 'https://github.com/bvaughn/react-error-boundary' },
+    { title: 'Error Boundaries (reference)', url: 'https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary' },
   ],
   'medium/15-handling-api-errors': [
     { title: 'Fetching data with Effects', url: 'https://react.dev/learn/synchronizing-with-effects#fetching-data' },

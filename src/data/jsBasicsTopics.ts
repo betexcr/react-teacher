@@ -257,8 +257,8 @@ export const jsBasicsOptionalTopics: readonly JsBasicsTopic[] = [
     title: 'Classes',
     explanation: [
       'A `class` is syntax for creating object “templates” with a constructor and methods. `new User("Ada")` builds one instance.',
-      'React function components replaced most class components, but you still see `class ErrorBoundary extends React.Component` in older code and docs.',
-      'Fields and methods live on the prototype chain (next section). For new React UI, prefer functions + hooks unless a challenge explicitly uses a class.',
+      'React function components replaced most class components. Error boundaries still need a class or a library like `react-error-boundary`—our challenge solutions use function components throughout.',
+      'Fields and methods live on the prototype chain (next section). For new React UI, prefer functions + hooks.',
     ],
     code: `class Counter {
   constructor(start = 0) {

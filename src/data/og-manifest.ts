@@ -287,8 +287,8 @@ export const ogManifest = {
       "ogImageId": "challenges/medium/13-radiogroup-component"
     },
     "/challenges/medium/14-fallback-ui-class-components": {
-      "title": "Fallback UI (Class Components) · Medium",
-      "description": "Medium React challenge: Fallback UI (Class Components). Practice with acceptance criteria and a solution walkthrough.",
+      "title": "Fallback UI (Error Boundaries) · Medium",
+      "description": "Medium React challenge: Fallback UI (Error Boundaries). Practice with acceptance criteria and a solution walkthrough.",
       "ogImageId": "challenges/medium/14-fallback-ui-class-components"
     },
     "/challenges/medium/15-handling-api-errors": {

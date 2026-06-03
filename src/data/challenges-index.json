@@ -960,11 +960,11 @@
     },
     {
       "slug": "14-fallback-ui-class-components",
-      "title": "Fallback UI (Class Components)",
+      "title": "Fallback UI (Error Boundaries)",
       "acceptance": [
         {
           "summary": "Fallback shows on throw",
-          "detail": "Render a child that throws during render and confirm the error boundary shows your fallback UI instead of a white screen. Only class error boundaries catch render errors in React."
+          "detail": "Render a child that throws during render and confirm the error boundary shows your fallback UI instead of a white screen. Use an error boundary (e.g. react-error-boundary)—not try/catch around JSX."
         },
         {
           "summary": "Retry recovers",
@@ -973,16 +973,16 @@
       ],
       "resources": [
         {
-          "title": "Error Boundaries",
-          "url": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary"
-        },
-        {
-          "title": "Class components – legacy API",
-          "url": "https://react.dev/reference/react/Component"
-        },
-        {
-          "title": "React error handling (learn)",
+          "title": "Error boundaries (learn)",
           "url": "https://react.dev/learn/error-boundaries"
+        },
+        {
+          "title": "react-error-boundary",
+          "url": "https://github.com/bvaughn/react-error-boundary"
+        },
+        {
+          "title": "Error Boundaries (reference)",
+          "url": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary"
         }
       ]
     },

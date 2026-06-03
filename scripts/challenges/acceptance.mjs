@@ -393,7 +393,7 @@ export const CHALLENGE_ACCEPTANCE = {
   'medium/14-fallback-ui-class-components': [
     a(
       'Fallback shows on throw',
-      'Render a child that throws during render and confirm the error boundary shows your fallback UI instead of a white screen. Only class error boundaries catch render errors in React.'
+      'Render a child that throws during render and confirm the error boundary shows your fallback UI instead of a white screen. Use an error boundary (e.g. react-error-boundary)—not try/catch around JSX.'
     ),
     a(
       'Retry recovers',

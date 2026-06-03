@@ -713,48 +713,49 @@ export function RadioGroup({
 
   challenge({
     slug: '14-fallback-ui-class-components',
-    title: 'Fallback UI (Class Components)',
+    title: 'Fallback UI (Error Boundaries)',
     difficulty: 'medium',
-    topics: ['ErrorBoundary', 'class components'],
-    goals: ['Catch render errors with error boundary', 'Show fallback UI'],
-    description: 'Class-based ErrorBoundary wrapping a component that throws. Show fallback with retry button resetting error state.',
-    requirements: ['getDerivedStateFromError or componentDidCatch', 'Retry resets state', 'Log error in didCatch'],
-    starter: `class ErrorBoundary extends React.Component`,
-    hints: ['static getDerivedStateFromError() => ({ hasError: true })', 'key prop reset on child to remount'],
+    topics: ['ErrorBoundary', 'error handling'],
+    goals: ['Catch render errors with an error boundary', 'Show fallback UI with retry'],
+    description:
+      'Wrap a component that throws during render with an error boundary. Show a fallback with a retry button that resets the boundary so children can render again.',
+    requirements: [
+      'Error boundary catches render errors (use react-error-boundary or a class boundary)',
+      'FallbackComponent is a function component',
+      'Retry resets boundary state; log errors in onError',
+    ],
+    starter: `import { ErrorBoundary } from 'react-error-boundary';
+
+function Fallback({ error, resetErrorBoundary }) {
+  // ...
+}`,
+    hints: [
+      'npm install react-error-boundary',
+      'FallbackComponent receives resetErrorBoundary',
+      'resetKeys or key on child to remount after retry',
+    ],
     acceptance: ['Fallback shows on throw', 'Retry recovers'],
-    solutionApproach: 'Only class components can be error boundaries today.',
+    solutionApproach:
+      'Use react-error-boundary so your boundary and fallback stay function components; log in onError and reset with resetErrorBoundary.',
     concepts: [{ term: 'Error boundary', detail: 'Catches child render errors—not event handlers or async.' }],
-    solution: `import React, { Component, ReactNode } from 'react';
+    solution: `import { useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
-type Props = { children: ReactNode; fallback?: ReactNode };
-type State = { hasError: boolean };
-
-export class ErrorBoundary extends Component<Props, State> {
-  state: State = { hasError: false };
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, info: React.ErrorInfo) {
-    console.error(error, info.componentStack);
-  }
-
-  reset = () => this.setState({ hasError: false });
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        this.props.fallback ?? (
-          <div>
-            <p>Something went wrong.</p>
-            <button onClick={this.reset}>Try again</button>
-          </div>
-        )
-      );
-    }
-    return this.props.children;
-  }
+function Fallback({
+  error,
+  resetErrorBoundary,
+}: {
+  error: Error;
+  resetErrorBoundary: () => void;
+}) {
+  return (
+    <div role="alert">
+      <p>Something went wrong.</p>
+      <button type="button" onClick={resetErrorBoundary}>
+        Try again
+      </button>
+    </div>
+  );
 }
 
 function Buggy() {
@@ -762,17 +763,26 @@ function Buggy() {
 }
 
 export function Demo() {
-  const [show, setShow] = useState(true);
+  const [resetKey, setResetKey] = useState(0);
+
   return (
-    <ErrorBoundary>
-      {show && <Buggy />}
-      <button onClick={() => setShow(false)}>Hide buggy</button>
+    <ErrorBoundary
+      FallbackComponent={Fallback}
+      onError={(error, info) => console.error(error, info.componentStack)}
+      onReset={() => setResetKey((k) => k + 1)}
+      resetKeys={[resetKey]}
+    >
+      <Buggy key={resetKey} />
     </ErrorBoundary>
   );
 }`,
-    walkthrough: 'Boundary flips hasError; retry clears flag so children render again.',
-    mistakes: ['Trying functional component as boundary without library', 'Expecting to catch event errors'],
-    stretch: ['react-error-boundary package', 'Report to Sentry'],
+    walkthrough:
+      'ErrorBoundary from react-error-boundary catches the throw; Fallback calls resetErrorBoundary; onReset bumps resetKey to remount Buggy.',
+    mistakes: [
+      'Expecting try/catch around JSX to catch render errors',
+      'Expecting the boundary to catch event handler or async errors',
+    ],
+    stretch: ['Report to Sentry in onError', 'Different fallbacks per route'],
   }),
 
   challenge({

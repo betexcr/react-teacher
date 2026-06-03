@@ -1,8 +1,8 @@
-# Solution: Fallback UI (Class Components)
+# Solution: Fallback UI (Error Boundaries)
 
 ## Approach
 
-Only class components can be error boundaries today.
+Use react-error-boundary so your boundary and fallback stay function components; log in onError and reset with resetErrorBoundary.
 
 ## Key concepts
 
@@ -10,45 +10,32 @@ Only class components can be error boundaries today.
 
 ## Code highlights
 
-- `const [show, setShow] = useState(true)` — **show state** — `show` is the value the UI shows. It starts at true. `setShow` updates it when the user interacts. Boundary flips hasError; retry clears flag so children render again.
-- `onClick={() => setShow(false)}` — **click handler** — Updates state (). Boundary flips hasError; retry clears flag so children render again.
-- `onClick={this.reset}` — **onClick** — Runs when the user clicks this button. Boundary flips hasError; retry clears flag so children render again.
-- `{show && <Buggy />}` — **&& render** — Only renders the element when the left side is true.
+- `const [resetKey, setResetKey] = useState(0)` — **resetKey state** — `resetKey` is the value the UI shows. It starts at 0. `setResetKey` updates it when the user interacts. ErrorBoundary from react-error-boundary catches the throw; Fallback calls resetErrorBoundary; onReset bumps resetKey to remount Buggy.
+- `onClick={resetErrorBoundary}` — **click handler** — Updates state (resetErrorBoundary). ErrorBoundary from react-error-boundary catches the throw; Fallback calls resetErrorBoundary; onReset bumps resetKey to remount Buggy.
+- `key={resetKey}` — **key** — Helps React track each list row — use a stable id (resetKey), not the array index, when items can reorder.
+- `role="alert"` — **role="alert"** — Marks an error message so screen readers treat it as urgent.
 
 ## Solution code
 
 ```tsx
-import React, { Component, ReactNode } from 'react';
+import { useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
-type Props = { children: ReactNode; fallback?: ReactNode };
-type State = { hasError: boolean };
-
-export class ErrorBoundary extends Component<Props, State> {
-  state: State = { hasError: false };
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, info: React.ErrorInfo) {
-    console.error(error, info.componentStack);
-  }
-
-  reset = () => this.setState({ hasError: false });
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        this.props.fallback ?? (
-          <div>
-            <p>Something went wrong.</p>
-            <button onClick={this.reset}>Try again</button>
-          </div>
-        )
-      );
-    }
-    return this.props.children;
-  }
+function Fallback({
+  error,
+  resetErrorBoundary,
+}: {
+  error: Error;
+  resetErrorBoundary: () => void;
+}) {
+  return (
+    <div role="alert">
+      <p>Something went wrong.</p>
+      <button type="button" onClick={resetErrorBoundary}>
+        Try again
+      </button>
+    </div>
+  );
 }
 
 function Buggy() {
@@ -56,11 +43,16 @@ function Buggy() {
 }
 
 export function Demo() {
-  const [show, setShow] = useState(true);
+  const [resetKey, setResetKey] = useState(0);
+
   return (
-    <ErrorBoundary>
-      {show && <Buggy />}
-      <button onClick={() => setShow(false)}>Hide buggy</button>
+    <ErrorBoundary
+      FallbackComponent={Fallback}
+      onError={(error, info) => console.error(error, info.componentStack)}
+      onReset={() => setResetKey((k) => k + 1)}
+      resetKeys={[resetKey]}
+    >
+      <Buggy key={resetKey} />
     </ErrorBoundary>
   );
 }
@@ -68,14 +60,14 @@ export function Demo() {
 
 ## Walkthrough
 
-Boundary flips hasError; retry clears flag so children render again.
+ErrorBoundary from react-error-boundary catches the throw; Fallback calls resetErrorBoundary; onReset bumps resetKey to remount Buggy.
 
 ## Common mistakes
 
-- Trying functional component as boundary without library
-- Expecting to catch event errors
+- Expecting try/catch around JSX to catch render errors
+- Expecting the boundary to catch event handler or async errors
 
 ## Stretch goals
 
-- react-error-boundary package
-- Report to Sentry
+- Report to Sentry in onError
+- Different fallbacks per route
