@@ -126,6 +126,11 @@ export const ogManifest = {
       "description": "Study 15 flashcards on TypeScript in React for React interviews.",
       "ogImageId": "flashcards/typescript"
     },
+    "/challenges/easy": {
+      "title": "Easy Challenges · ReactTeacher",
+      "description": "19 easy React coding challenges with acceptance criteria and solutions.",
+      "ogImageId": "challenges/easy"
+    },
     "/challenges/easy/01-counter-component": {
       "title": "Counter Component · Easy",
       "description": "Easy React challenge: Counter Component. Practice with acceptance criteria and a solution walkthrough.",
@@ -220,6 +225,11 @@ export const ogManifest = {
       "title": "useToggle Hook · Easy",
       "description": "Easy React challenge: useToggle Hook. Practice with acceptance criteria and a solution walkthrough.",
       "ogImageId": "challenges/easy/19-use-toggle-hook"
+    },
+    "/challenges/medium": {
+      "title": "Medium Challenges · ReactTeacher",
+      "description": "26 medium React coding challenges with acceptance criteria and solutions.",
+      "ogImageId": "challenges/medium"
     },
     "/challenges/medium/01-todo-list-manager": {
       "title": "Todo List Manager · Medium",
@@ -351,6 +361,11 @@ export const ogManifest = {
       "description": "Medium React challenge: Multi-Theme Manager. Practice with acceptance criteria and a solution walkthrough.",
       "ogImageId": "challenges/medium/26-multi-theme-manager"
     },
+    "/challenges/hard": {
+      "title": "Hard Challenges · ReactTeacher",
+      "description": "5 hard React coding challenges with acceptance criteria and solutions.",
+      "ogImageId": "challenges/hard"
+    },
     "/challenges/hard/01-timer-controls": {
       "title": "Timer Controls · Hard",
       "description": "Hard React challenge: Timer Controls. Practice with acceptance criteria and a solution walkthrough.",
@@ -375,6 +390,11 @@ export const ogManifest = {
       "title": "Art Drawing Tool · Hard",
       "description": "Hard React challenge: Art Drawing Tool. Practice with acceptance criteria and a solution walkthrough.",
       "ogImageId": "challenges/hard/05-art-drawing-tool"
+    },
+    "/challenges/very-hard": {
+      "title": "Very Hard Challenges · ReactTeacher",
+      "description": "3 very hard React coding challenges with acceptance criteria and solutions.",
+      "ogImageId": "challenges/very-hard"
     },
     "/challenges/very-hard/01-connect-four": {
       "title": "Connect Four · Very Hard",

@@ -1,14 +1,29 @@
-import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { DifficultyBadge } from '../components/DifficultyBadge';
 import challengeIndex from '../data/challenges-index.json';
 import { isChallengeCompleted } from '../hooks/useChallengeProgress';
-import { DIFFICULTY_LABELS, type ChallengeMeta, type Difficulty } from '../lib/challenges';
+import {
+  DIFFICULTY_LABELS,
+  isDifficulty,
+  type ChallengeMeta,
+  type Difficulty,
+} from '../lib/challenges';
 
 type IndexedChallenge = ChallengeMeta & { difficulty: Difficulty };
 
 export function ChallengesPage() {
-  const [filter, setFilter] = useState<Difficulty | 'all'>('all');
+  const { difficulty: difficultyParam } = useParams<{ difficulty?: string }>();
+  const navigate = useNavigate();
+
+  const filter: Difficulty | 'all' =
+    difficultyParam && isDifficulty(difficultyParam) ? difficultyParam : 'all';
+
+  useEffect(() => {
+    if (difficultyParam && !isDifficulty(difficultyParam)) {
+      navigate('/challenges', { replace: true });
+    }
+  }, [difficultyParam, navigate]);
 
   const items = useMemo(() => {
     const diffs = filter === 'all' ? (Object.keys(challengeIndex) as Difficulty[]) : [filter];
@@ -17,9 +32,16 @@ export function ChallengesPage() {
     ) as IndexedChallenge[];
   }, [filter]);
 
+  const setFilter = (next: Difficulty | 'all') => {
+    navigate(next === 'all' ? '/challenges' : `/challenges/${next}`);
+  };
+
+  const pageTitle =
+    filter === 'all' ? 'React Challenges' : `${DIFFICULTY_LABELS[filter]} Challenges`;
+
   return (
     <>
-      <h1 className="page-title">React Challenges</h1>
+      <h1 className="page-title">{pageTitle}</h1>
       <p className="challenge-list-lead">
         {items.length} hands-on challenges with interactive acceptance checklists and solution
         write-ups.

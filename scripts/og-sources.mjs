@@ -182,6 +182,7 @@ export function buildOgSources() {
     const label = DIFFICULTY_LABELS[difficulty];
     const colors = DIFFICULTY_ACCENTS[difficulty];
     const sectionId = `challenges/${difficulty}`;
+    const sectionPath = `/challenges/${difficulty}`;
     images.push({
       id: sectionId,
       badge: label,
@@ -189,7 +190,15 @@ export function buildOgSources() {
       subtitle: `${challenges.length} hands-on React exercises`,
       icon: '</>',
       ...colors,
+      pathname: sectionPath,
+      pageTitle: `${label} Challenges · ReactTeacher`,
+      pageDescription: `${challenges.length} ${label.toLowerCase()} React coding challenges with acceptance criteria and solutions.`,
     });
+    routes[sectionPath] = {
+      title: `${label} Challenges · ReactTeacher`,
+      description: `${challenges.length} ${label.toLowerCase()} React coding challenges with acceptance criteria and solutions.`,
+      ogImageId: sectionId,
+    };
 
     for (const challenge of challenges) {
       const id = `challenges/${difficulty}/${challenge.slug}`;

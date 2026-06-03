@@ -19,6 +19,12 @@ export type ChallengeMeta = {
   resources: ChallengeResource[]
 }
 
+const DIFFICULTY_IDS = new Set<Difficulty>(['easy', 'medium', 'hard', 'very-hard'])
+
+export function isDifficulty(value: string): value is Difficulty {
+  return DIFFICULTY_IDS.has(value as Difficulty)
+}
+
 export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
   easy: 'Easy',
   medium: 'Medium',

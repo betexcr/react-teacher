@@ -78,6 +78,15 @@ export function getPageMeta(pathname: string): PageMeta {
   if (section) return section;
 
   if (path.startsWith('/flashcards/')) return SECTION_FALLBACK['/flashcards'];
+
+  const challengeTier = path.match(/^\/challenges\/(easy|medium|hard|very-hard)$/);
+  if (challengeTier) {
+    const tier = manifestRoutes[`/challenges/${challengeTier[1]}`];
+    if (tier) {
+      return { title: tier.title, description: tier.description, ogImageId: tier.ogImageId };
+    }
+  }
+
   if (path.startsWith('/challenges/')) return SECTION_FALLBACK['/challenges'];
   if (path.startsWith('/system-design/')) return SECTION_FALLBACK['/system-design'];
   if (path.startsWith('/get-started')) return SECTION_FALLBACK['/get-started'];

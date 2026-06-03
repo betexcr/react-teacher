@@ -20,8 +20,9 @@ function App() {
         <Route index element={<Navigate to="/get-started" replace />} />
         <Route path="get-started" element={<GetStartedPage />} />
         <Route path="js-basics" element={<JsBasicsPage />} />
-        <Route path="challenges" element={<ChallengesPage />} />
         <Route path="challenges/:difficulty/:slug" element={<ChallengeDetailPage />} />
+        <Route path="challenges/:difficulty" element={<ChallengesPage />} />
+        <Route path="challenges" element={<ChallengesPage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
         <Route path="flashcards/:slug" element={<FlashcardStudyPage />} />
         <Route path="system-design" element={<SystemDesignPage />} />
