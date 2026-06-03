@@ -7,59 +7,59 @@ export const hooksDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is Rules of Hooks?",
-      "explanation": "Only call at top level; only in React functions—ensures consistent fiber hook order.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Only call at top level; only in React functions—ensures consistent fiber hook order.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useState?",
-      "explanation": "State + setter; functional updates; lazy init useState(() => expensive()).\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "State + setter; functional updates; lazy init useState(() => expensive()).\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useEffect?",
-      "explanation": "Side effects after paint; deps array; cleanup on unmount/re-run.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Side effects after paint; deps array; cleanup on unmount/re-run.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useContext?",
-      "explanation": "Subscribe to nearest Provider value; rerenders when value changes.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Subscribe to nearest Provider value; rerenders when value changes.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useReducer?",
-      "explanation": "(state, action) => newState; good for complex transitions.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "(state, action) => newState; good for complex transitions.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useRef?",
-      "explanation": "Mutable .current; DOM refs; values that should not trigger render.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Mutable .current; DOM refs; values that should not trigger render.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useMemo / useCallback?",
-      "explanation": "Cache values/functions when deps stable—use after profiling or to stabilize props for memo children; React Compiler can reduce manual memo.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Cache values/functions when deps stable—use after profiling or to stabilize props for memo children; React Compiler can reduce manual memo.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useImperativeHandle?",
-      "explanation": "Customizes the ref value a parent receives; works with ref-as-prop in React 19 or forwardRef for older patterns.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Customizes the ref value a parent receives; works with ref-as-prop in React 19 or forwardRef for older patterns.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useLayoutEffect?",
-      "explanation": "Sync after DOM update before browser paint—measurements.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Sync after DOM update before browser paint—measurements.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useId?",
-      "explanation": "Stable unique IDs for accessibility associations SSR-safe.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Stable unique IDs for accessibility associations SSR-safe.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useDebugValue?",
-      "explanation": "Label custom hooks in DevTools.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Label custom hooks in DevTools.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is Custom hooks?",
-      "explanation": "Extract stateful logic; name with use; can compose other hooks.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Extract stateful logic; name with use; can compose other hooks.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useTransition?",
-      "explanation": "Mark non-urgent updates; isPending flag.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Mark non-urgent updates; isPending flag.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     },
     {
       "question": "What is useDeferredValue?",
-      "explanation": "Defer lagging behind urgent state for perf.\n\nIn Hooks interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Defer lagging behind urgent state for perf.\n\nInterview tip: cite a hook composition or rules-of-hooks mistake you debugged—not only the API definition."
     }
   ]
 };

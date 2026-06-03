@@ -7,63 +7,63 @@ export const serverComponentsSsrDeck: FlashcardDeck = {
   "cards": [
     {
       "question": "What is Server Component?",
-      "explanation": "Runs on server; can async fetch; no hooks/state/events. Code is not client-bundled; output streams as RSC payload alongside client JS.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Runs on server; can async fetch; no hooks/state/events. Code is not client-bundled; output streams as RSC payload alongside client JS.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is \"use client\"?",
-      "explanation": "Marks client boundary—bundle includes hooks, effects, browser APIs.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Marks client boundary—bundle includes hooks, effects, browser APIs.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is SSR vs SSG?",
-      "explanation": "SSR: HTML per request. SSG: HTML at build. ISR: revalidate static pages.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "SSR: HTML per request. SSG: HTML at build. ISR: revalidate static pages.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Hydration?",
-      "explanation": "Client React reconciles with server-rendered HTML (and RSC payload), then makes the UI interactive; markup mismatches cause hydration errors.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Client React reconciles with server-rendered HTML (and RSC payload), then makes the UI interactive; markup mismatches cause hydration errors.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Streaming SSR?",
-      "explanation": "Send HTML in chunks with Suspense fallbacks—faster TTFB.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Send HTML in chunks with Suspense fallbacks—faster TTFB.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is serialize RSC payload?",
-      "explanation": "Flight protocol streams component tree references to client.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Flight protocol streams component tree references to client.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is When to use client components?",
-      "explanation": "Interactivity, useState, useEffect, browser APIs, most third-party UI libs.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Interactivity, useState, useEffect, browser APIs, most third-party UI libs.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Passing data RSC → client?",
-      "explanation": "Serializable props only; no functions unless server actions.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Serializable props only; no functions unless server actions.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Server Actions?",
-      "explanation": "Async functions run on server; invoked from forms/client with secure boundaries.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Async functions run on server; invoked from forms/client with secure boundaries.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Caching in Next?",
-      "explanation": "fetch { next: { revalidate } }, route segment config, unstable_cache; Next 15+ also Cache Components (\"use cache\", cacheTag, cacheLife).\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "fetch { next: { revalidate } }, route segment config, unstable_cache; Next 15+ also Cache Components (\"use cache\", cacheTag, cacheLife).\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is SEO benefit?",
-      "explanation": "SSR/SSG gives crawlers HTML immediately; CSR can be indexed but is slower/less reliable for content and link previews without SSR/meta pipelines.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "SSR/SSG gives crawlers HTML immediately; CSR can be indexed but is slower/less reliable for content and link previews without SSR/meta pipelines.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Environment secrets?",
-      "explanation": "Only server components/route handlers access private env vars.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Only server components/route handlers access private env vars.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Client-only libraries?",
-      "explanation": "dynamic(() => import(...), { ssr: false }) for chart/map libs.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "dynamic(() => import(...), { ssr: false }) for chart/map libs.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Partial Prerendering?",
-      "explanation": "Static shell + streamed dynamic Suspense holes; experimental in Next 15, evolving toward Cache Components in Next 16+.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Static shell + streamed dynamic Suspense holes; experimental in Next 15, evolving toward Cache Components in Next 16+.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     },
     {
       "question": "What is Waterfalls?",
-      "explanation": "Avoid sequential client fetches; colocate fetch in RSC or parallel Query.\n\nIn Server Components & SSR interviews, connect this to a concrete scenario: what user problem were you solving, and how did this concept keep the UI predictable or maintainable? Strong answers name tradeoffs—not only what the API does.\n\nReact's ecosystem (routing, data libraries, testing tools) assumes you understand this idea. Mention how it interacts with hooks, rendering, or TypeScript where relevant, and contrast with naive DOM manipulation or class-heavy patterns when helpful."
+      "explanation": "Avoid sequential client fetches; colocate fetch in RSC or parallel Query.\n\nInterview tip: clarify what runs on the server vs client bundle and what breaks if you mix boundaries wrong."
     }
   ]
 };
