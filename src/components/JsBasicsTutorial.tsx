@@ -7,6 +7,7 @@ import {
   type CSSProperties,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { JS_BASICS_TOPIC_COUNT } from '../data/jsBasicsTopics';
 import {
   jsBasicsTutorialSteps,
   tutorialTargetId,
@@ -159,7 +160,7 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
 
   const topicLabel =
     step.topicIndex != null
-      ? `Lesson ${step.topicIndex + 1} of 14`
+      ? `Lesson ${step.topicIndex + 1} of ${JS_BASICS_TOPIC_COUNT}`
       : step.focus === 'welcome'
         ? 'Intro'
         : 'Done';

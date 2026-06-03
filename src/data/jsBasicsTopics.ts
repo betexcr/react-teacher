@@ -6,15 +6,109 @@ export type JsBasicsTopic = {
 
 export const jsBasicsTopics: readonly JsBasicsTopic[] = [
   {
-    title: 'Variables',
+    title: 'Data types',
+    explanation: [
+      'Every value in JavaScript has a type. You do not declare types in plain JS (TypeScript adds that later) — the language figures it out from what you write.',
+      'Common types: `number` (42, 3.14), `string` (`"hello"`), `boolean` (`true` / `false`), `null` (intentionally empty), `undefined` (not set yet), `object` (including plain objects and arrays).',
+      'Use `typeof value` to check a type while learning. React mostly passes strings, numbers, booleans, arrays, and objects as props and state.',
+    ],
+    code: `typeof 42          // "number"
+typeof 'hi'        // "string"
+typeof true        // "boolean"
+typeof null        // "object" (historic quirk)
+typeof undefined   // "undefined"
+typeof [1, 2]      // "object" (arrays are objects)`,
+  },
+  {
+    title: 'Math & comparison operators',
+    explanation: [
+      'Math: `+` add, `-` subtract, `*` multiply, `/` divide, `%` remainder (e.g. `10 % 3` is 1).',
+      'Comparisons return `true` or `false`: `<` less than, `>` greater than, `<=` less than or equal, `>=` greater than or equal.',
+      '`===` means “same value and type” (use this). `!==` means “not equal”. Avoid `==` — it converts types and causes bugs.',
+    ],
+    code: `const age = 17;
+age < 18           // true  (too young)
+age >= 18          // false
+score === 100      // strict equal
+score !== 0        // not equal
+total = price * qty + tax`,
+  },
+  {
+    title: 'Variables (const & let)',
     explanation: [
       'Variables store values you use later — a count, a name, a list of todos.',
       'Use `const` when the binding will not change (you will not assign a new value to that name). Use `let` when you need to assign again later — that is called reassigning: the same variable name gets a new value, like changing name from `"Ada"` to `"Alan"`.',
-      'Do not use `var` in new code. In React, most values live in state (`useState`), but you still use `const`/`let` for locals, loop variables, and helpers.',
+      'Do not use `var` in new code. In React, most UI values live in state (`useState`), but you still use `const`/`let` for locals, loop variables, and helpers.',
     ],
     code: `const count = 0;        // count always points to 0
 let name = 'Ada';       // name can be changed later
 name = 'Alan';          // reassign: same variable, new value`,
+  },
+  {
+    title: 'if, else, and conditions',
+    explanation: [
+      '`if (condition) { ... }` runs the block only when `condition` is true. Use `else` for the other path, and `else if` for more branches.',
+      'The condition is usually a comparison (`age >= 18`) or a boolean variable (`isLoggedIn`). Curly braces `{ }` group multiple lines; one line can omit braces but beginners should keep them.',
+      'React uses the same logic in JavaScript — and later you will mirror it in JSX with `&&` and `? :` instead of `if` inside markup.',
+    ],
+    code: `if (score >= 60) {
+  console.log('Pass');
+} else if (score >= 40) {
+  console.log('Retake');
+} else {
+  console.log('Fail');
+}
+
+if (isOpen) toggle();`,
+  },
+  {
+    title: 'Loops: for and while',
+    explanation: [
+      'Loops repeat code. `for` is common when you know how many times: `for (let i = 0; i < 5; i++)` — start at 0, stop before 5, add 1 each time (`i++`).',
+      '`while (condition) { ... }` repeats while the condition stays true. Always make sure the condition eventually becomes false, or the loop runs forever.',
+      'In React you often use `.map` on arrays instead of manual `for` loops to render lists — but `for`/`while` still appear in algorithms and non-UI scripts.',
+    ],
+    code: `for (let i = 0; i < 3; i++) {
+  console.log(i);   // 0, then 1, then 2
+}
+
+let n = 0;
+while (n < 3) {
+  n++;              // same idea: stop when n reaches 3
+}`,
+  },
+  {
+    title: 'Arrays: lists and indexes',
+    explanation: [
+      'An array is an ordered list: `[10, 20, 30]`. Indexes start at `0` — first item is `arr[0]`, second is `arr[1]`. `arr.length` is how many items.',
+      'Arrays can hold any types, even mixed. You will store lists of todos, users, or products — then loop or `.map` over them in React.',
+      'Read and update by index while learning; in React state prefer copying the whole array (spread / `map`) instead of mutating in place.',
+    ],
+    code: `const nums = [10, 20, 30];
+nums[0]              // 10 (first)
+nums[1]              // 20
+nums.length          // 3
+
+const names = ['Ada', 'Alan'];
+names[names.length - 1]   // last item: 'Alan'`,
+  },
+  {
+    title: 'Multidimensional arrays',
+    explanation: [
+      'An array can contain other arrays — like a grid or table: `[[1, 2], [3, 4]]`. Access with two indexes: `grid[0][1]` is row 0, column 1 → `2`.',
+      'Useful for boards (tic-tac-toe), tables, or grouped data. Each “row” is an array; the outer array holds all rows.',
+      'In React you might map over rows, then map over cells — or flatten to a list of objects with `id` fields instead of raw 2D arrays.',
+    ],
+    code: `const grid = [
+  ['X', 'O', ''],
+  ['', 'X', 'O'],
+  ['O', '', 'X'],
+];
+grid[0][0]           // 'X' — row 0, col 0
+grid[2][1]           // ''  — row 2, col 1
+
+const matrix = [[1, 2], [3, 4]];
+matrix[1][0]         // 3`,
   },
   {
     title: 'Functions & arrows',
@@ -52,6 +146,19 @@ const updated = items.map((x) =>
 );`,
   },
   {
+    title: 'Logic: &&, ||, and !',
+    explanation: [
+      'Beyond comparisons, you combine booleans: `&&` (and — both must be true), `||` (or — at least one true), `!` (not — flip true/false).',
+      'Example: `email.includes("@") && !loading` means “valid-looking email and not currently loading.” These show up in validation and conditional UI.',
+      'In JSX you will also use `&&` to render something only when a condition is true — see the next section.',
+    ],
+    code: `const canSubmit = email.includes('@') && password.length >= 8;
+const showGuest = !isLoggedIn;
+const label = error || 'OK';   // use error message, or 'OK' if empty
+
+if (count === 0) { /* disabled when zero */ }`,
+  },
+  {
     title: 'Conditionals in JSX',
     explanation: [
       'Inside JSX you cannot write `if`/`else` statements directly in the middle of markup. Use expressions instead.',
@@ -60,16 +167,6 @@ const updated = items.map((x) =>
     code: `{isLoading && <p>Loading…</p>}
 {error ? <p>{error}</p> : <List data={data} />}
 {count === 0 ? 'Empty' : count}`,
-  },
-  {
-    title: 'Comparisons & booleans',
-    explanation: [
-      'Use `===` to compare values (not `==`, which coerces types and causes bugs). Expressions like `count === 0` evaluate to true or false.',
-      'Combine conditions with `&&` (and) and `||` (or). `!` flips true to false — common for toggles, validation, and conditional JSX in React components.',
-    ],
-    code: `if (count === 0) { /* disabled when zero */ }
-const canSubmit = email.includes('@') && !loading;
-!done && <Badge />   // render Badge when done is false`,
   },
   {
     title: 'Template strings',
@@ -151,3 +248,5 @@ setItems(items.map((i) => (i.id === id ? { ...i, qty: i.qty + 1 } : i)));`,
 const [items, setItems] = useState<Item[]>([]);`,
   },
 ];
+
+export const JS_BASICS_TOPIC_COUNT = jsBasicsTopics.length;

@@ -34,7 +34,7 @@
   <rect x="168" y="118" width="180" height="40" rx="20" fill="#fbbf24" fill-opacity="0.14" stroke="#fbbf24" stroke-opacity="0.45" stroke-width="1"/>
   <text x="192" y="145" fill="#fbbf24" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" letter-spacing="0.06em">FOR STARTERS</text>
   <text x="168" y="248" fill="#e8edf4" font-family="Segoe UI, system-ui, sans-serif" font-size="64" font-weight="700" letter-spacing="-0.03em">JS Basics</text>
-  <text x="168" y="312" fill="#8b9cb3" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="400">Minimal JavaScript before easy React challenges</text>
+  <text x="168" y="312" fill="#8b9cb3" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="400">From zero: types, if, loops, arrays — then React</text>
   <text x="168" y="500" fill="#5b9fd4" font-family="ui-monospace, Consolas, monospace" font-size="22" font-weight="500">reactteacher.vercel.app</text>
   <g transform="translate(900 140)">
     <rect width="200" height="200" rx="36" fill="#1a2332" stroke="#2a3548" stroke-width="1.5"/>

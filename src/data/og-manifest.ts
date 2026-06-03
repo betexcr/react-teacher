@@ -8,7 +8,7 @@ export const ogManifest = {
     },
     "/js-basics": {
       "title": "JS Basics · ReactTeacher",
-      "description": "Minimal JavaScript you need before the easy React coding challenges.",
+      "description": "JavaScript from zero: types, operators, if/for/while, arrays, then React-ready patterns.",
       "ogImageId": "js-basics"
     },
     "/challenges": {

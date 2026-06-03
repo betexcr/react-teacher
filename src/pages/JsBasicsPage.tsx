@@ -34,10 +34,11 @@ export function JsBasicsPage() {
       >
         <h1 className="page-title">JS Basics</h1>
         <p className="get-started-lead">
-          The minimum JavaScript you need before the <strong>easy</strong> React challenges. Terms
-          highlighted in <span className="react-term-inline-sample">purple</span> are React-specific —
-          hover or focus them to see how they differ from plain JavaScript. Inline{' '}
-          <code>code</code> snippets use the same styling as the examples below.
+          Start at the top if you have <strong>never written JavaScript</strong> — data types,{' '}
+          <code>&lt;</code> and <code>&lt;=</code>, <code>if</code>, <code>for</code>/<code>while</code>, arrays,
+          then the pieces React uses every day. Terms highlighted in{' '}
+          <span className="react-term-inline-sample">purple</span> are React-specific (hover for plain-JS
+          comparisons). Inline <code>code</code> in the text matches the examples below.
         </p>
         <div className="js-basics-hero-actions">
           <button

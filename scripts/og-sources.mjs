@@ -96,13 +96,14 @@ export function buildOgSources() {
       id: 'js-basics',
       badge: 'For starters',
       title: 'JS Basics',
-      subtitle: 'Minimal JavaScript before easy React challenges',
+      subtitle: 'From zero: types, if, loops, arrays — then React',
       accent: '#fbbf24',
       accent2: '#f59e0b',
       icon: '{ }',
       pathname: '/js-basics',
       pageTitle: 'JS Basics · ReactTeacher',
-      pageDescription: 'Minimal JavaScript you need before the easy React coding challenges.',
+      pageDescription:
+        'JavaScript from zero: types, operators, if/for/while, arrays, then React-ready patterns.',
     },
     {
       id: 'challenges',
