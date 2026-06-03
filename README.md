@@ -72,3 +72,10 @@ react-teacher/
 
 - React 19 + TypeScript + Vite
 - React Router 7
+
+## AI / agent docs
+
+- [AGENTS.md](AGENTS.md) — architecture and content pipelines (Cursor, Codex, etc.)
+- [CLAUDE.md](CLAUDE.md) — Claude Code quick reference
+- `.cursor/rules/` — scoped Cursor rules
+- `.cursor/skills/` — project skills (challenges, flashcards, deploy, solution tooltips)
