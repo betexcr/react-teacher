@@ -9,6 +9,14 @@ Memo child; memoize callbacks and derived data passed as props.
 - **React.memo**: Shallow compare props; skip render if equal.
 - **Referential equality**: New function/object props break memo.
 
+## Code highlights
+
+- `onClick={() => setCount((c) => c + 1)}` — **increment click** — In "Memo Usage: Prevent Unnecessary Re-renders", this adds 1 using the latest state. Counter clicks do not change items or onSelect reference—List skips render.
+- `const [count, setCount] = useState(0)` — **count state** — In "Memo Usage: Prevent Unnecessary Re-renders", `count` is the value the UI shows. It starts at 0. `setCount` updates it when the user interacts. Counter clicks do not change items or onSelect reference—List skips render.
+- `onClick={() => onSelect(i)}` — **onClick** — In "Memo Usage: Prevent Unnecessary Re-renders", this runs when the user clicks this button. Counter clicks do not change items or onSelect reference—List skips render.
+- `key={i}` — **key** — In "Memo Usage: Prevent Unnecessary Re-renders", helps React track each list row — use a stable id (i), not the array index, when items can reorder.
+- `memo(` — **memo** — In "Memo Usage: Prevent Unnecessary Re-renders": Shallow compare props; skip render if equal.
+
 ## Solution code
 
 ```tsx

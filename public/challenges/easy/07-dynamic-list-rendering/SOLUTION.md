@@ -9,6 +9,15 @@ Array of tag objects with unique ids; render with map and key={id}.
 - **key**: Helps React match items across reorders; must be stable per item.
 - **Index as key**: Breaks when list order changes—avoid for mutable lists.
 
+## Code highlights
+
+- `const [tags, setTags] = useState<Tag[]>([])` — **tags state** — In "Dynamic List Rendering", `tags` is the value the UI shows. It starts at []. `setTags` updates it when the user interacts. Each tag gets a UUID. map renders li with key=tag.id. Duplicate check normalizes case.
+- `[...t, { id: crypto.randomUUID(), label }]` — **spread copy** — In "Dynamic List Rendering", copies the old collection then changes it — React sees a new reference and re-renders.
+- `const [input, setInput] = useState('')` — **input state** — In "Dynamic List Rendering", `input` is the value the UI shows. It starts at ''. `setInput` updates it when the user interacts. Each tag gets a UUID. map renders li with key=tag.id. Duplicate check normalizes case.
+- `onClick={() => remove(tag.id)}` — **onClick** — In "Dynamic List Rendering", clicking runs when the user clicks this button. Each tag gets a UUID. map renders li with key=tag.id. Duplicate check normalizes case.
+- `onClick={addTag}` — **onClick** — In "Dynamic List Rendering", clicking runs when the user clicks this button. Each tag gets a UUID. map renders li with key=tag.id. Duplicate check normalizes case.
+- `key={tag.id}` — **key** — In "Dynamic List Rendering", helps React track each list row — use a stable id (tag.id), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

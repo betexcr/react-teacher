@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { inlineFormat } from '../lib/inlineMarkdown'
+import type { SolutionHighlight } from '../lib/solutionHighlights'
 import { SolutionCodeLegend } from './SolutionCodeLegend'
 import { annotateSolutionCode as wrapSolutionCodeTokens } from '../utils/annotateSolutionCode'
 
@@ -101,12 +102,13 @@ function parseMarkdown(source: string): Block[] {
 
 type MarkdownViewProps = {
   source: string
-  /** Enable hover tooltips on tokens inside fenced code blocks. */
-  annotateSolutionCode?: boolean
+  /** Challenge-specific tooltips for fenced solution code blocks. */
+  solutionHighlights?: SolutionHighlight[]
 }
 
-export function MarkdownView({ source, annotateSolutionCode: annotateCode }: MarkdownViewProps) {
+export function MarkdownView({ source, solutionHighlights }: MarkdownViewProps) {
   const blocks = useMemo(() => parseMarkdown(source), [source])
+  const annotateCode = solutionHighlights && solutionHighlights.length > 0
 
   if (!source.trim()) {
     return <p className="empty-md">No content.</p>
@@ -141,13 +143,13 @@ export function MarkdownView({ source, annotateSolutionCode: annotateCode }: Mar
               </ol>
             )
           case 'code':
-            if (annotateCode) {
+            if (annotateCode && solutionHighlights) {
               return (
                 <div key={i} className="solution-code-block-wrap">
                   <pre className="solution-code-pre">
-                    <code>{wrapSolutionCodeTokens(block.text, `sol-${i}`)}</code>
+                    <code>{wrapSolutionCodeTokens(block.text, solutionHighlights, `sol-${i}`)}</code>
                   </pre>
-                  <SolutionCodeLegend code={block.text} />
+                  <SolutionCodeLegend code={block.text} highlights={solutionHighlights} />
                 </div>
               )
             }

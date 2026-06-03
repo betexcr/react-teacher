@@ -8,6 +8,13 @@ useMemo caches last result until n changes.
 
 - **useMemo**: Caches a computed value; not for side effects.
 
+## Code highlights
+
+- `<input type="range" min={25} max={40} value={n} onChange={(e) => setN(Number(e.target.value))} />` — **controlled input** — In "Memoizing Expensive Calculation", the input text is owned by React state — value plus onChange keep the field in sync. Bumping unrelated counter does not re-run fib because deps unchanged.
+- `const [unrelated, setUnrelated] = useState(0)` — **unrelated state** — In "Memoizing Expensive Calculation", `unrelated` is the value the UI shows. It starts at 0. `setUnrelated` updates it when the user interacts. Bumping unrelated counter does not re-run fib because deps unchanged.
+- `onClick={() => setUnrelated((u) => u + 1)}` — **increment click** — In "Memoizing Expensive Calculation", this adds 1 using the latest state. Bumping unrelated counter does not re-run fib because deps unchanged.
+- `const [n, setN] = useState(35)` — **n state** — In "Memoizing Expensive Calculation", `n` is the value the UI shows. It starts at 35. `setN` updates it when the user interacts. Bumping unrelated counter does not re-run fib because deps unchanged.
+
 ## Solution code
 
 ```tsx

@@ -9,6 +9,17 @@ Single state object or separate useState per field; validation computed during r
 - **Controlled component**: React state is the single source of truth for the input value.
 - **Derived validation**: const emailError = !email.includes("@") && email.length > 0
 
+## Code highlights
+
+- `<input value={email} onChange={(e) => setEmail(e.target.value)} />` — **controlled input** — In "Controlled Input Field", the input text is owned by React state — value plus onChange keep the field in sync. React state is the single source of truth for the input value.
+- `<textarea value={bio} onChange={(e) => setBio(e.target.value)} />` — **controlled input** — In "Controlled Input Field", the input text is owned by React state — value plus onChange keep the field in sync. React state is the single source of truth for the input value.
+- `<input value={name} onChange={(e) => setName(e.target.value)} />` — **controlled input** — In "Controlled Input Field", the input text is owned by React state — value plus onChange keep the field in sync. React state is the single source of truth for the input value.
+- `{emailError && <span role="alert">Invalid email</span>}` — **&& render** — In "Controlled Input Field", only renders the element when the left side is true.
+- `const [email, setEmail] = useState('')` — **email state** — In "Controlled Input Field", `email` is the value the UI shows. It starts at ''. `setEmail` updates it when the user interacts. Every keystroke flows through onChange into state, then back to value. Preview reads the same state.
+- `const [name, setName] = useState('')` — **name state** — In "Controlled Input Field", `name` is the value the UI shows. It starts at ''. `setName` updates it when the user interacts. Every keystroke flows through onChange into state, then back to value. Preview reads the same state.
+- `const [bio, setBio] = useState('')` — **bio state** — In "Controlled Input Field", `bio` is the value the UI shows. It starts at ''. `setBio` updates it when the user interacts. Every keystroke flows through onChange into state, then back to value. Preview reads the same state.
+- `role="alert"` — **role="alert"** — In "Controlled Input Field", marks an error message so screen readers treat it as urgent.
+
 ## Solution code
 
 ```tsx

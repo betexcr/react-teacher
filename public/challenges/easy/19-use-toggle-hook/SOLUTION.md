@@ -9,6 +9,12 @@ useState plus useCallback wrappers for ergonomic boolean control.
 - **Custom hook**: Extract reusable stateful logic; name starts with use.
 - **useCallback**: Stable function identities for memoized children.
 
+## Code highlights
+
+- `const [value, setValue] = useState(initial)` — **value state** — In "useToggle Hook", `value` is the value the UI shows. It starts at initial. `setValue` updates it when the user interacts. Hook encapsulates boolean state and verbs; panel consumes destructured API.
+- `onClick={toggle}` — **onClick** — In "useToggle Hook", clicking runs when the user clicks this button. Hook encapsulates boolean state and verbs; panel consumes destructured API.
+- `onClick={off}` — **onClick** — In "useToggle Hook", clicking runs when the user clicks this button. Hook encapsulates boolean state and verbs; panel consumes destructured API.
+
 ## Solution code
 
 ```tsx

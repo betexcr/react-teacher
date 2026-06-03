@@ -9,6 +9,12 @@ Track which field was last edited and a string value; derive the other field.
 - **Single source of truth**: Avoid storing both numbers independently—they desync.
 - **Last-edited wins**: Canonical pattern for multi-unit converters.
 
+## Code highlights
+
+- `<input value={fahrenheit} onChange={(e) => onF(e.target.value)} />` — **controlled input** — In "Temperature Converter", the input text is owned by React state — value plus onChange keep the field in sync. Celsius string is canonical; Fahrenheit is derived on render unless user edits F which writes back to C.
+- `<input value={celsius} onChange={(e) => onC(e.target.value)} />` — **controlled input** — In "Temperature Converter", the input text is owned by React state — value plus onChange keep the field in sync. Celsius string is canonical; Fahrenheit is derived on render unless user edits F which writes back to C.
+- `const [celsius, setCelsius] = useState('')` — **celsius state** — In "Temperature Converter", `celsius` is the value the UI shows. It starts at ''. `setCelsius` updates it when the user interacts. Celsius string is canonical; Fahrenheit is derived on render unless user edits F which writes back to C.
+
 ## Solution code
 
 ```tsx

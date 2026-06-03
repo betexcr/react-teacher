@@ -9,6 +9,11 @@ Switch is a button with switch role; state drives aria-checked and CSS.
 - **role="switch"**: Communicates binary on/off to assistive tech.
 - **aria-checked**: Required mirror of toggle state.
 
+## Code highlights
+
+- `const [dark, setDark] = useState(false)` — **dark state** — In "Theme Toggle", `dark` is the value the UI shows. It starts at false. `setDark` updates it when the user interacts. Button acts as switch; aria-checked updates; CSS class drives track/thumb.
+- `onClick={() => setDark((d) => !d)}` — **onClick** — In "Theme Toggle", clicking updates state via . Button acts as switch; aria-checked updates; CSS class drives track/thumb.
+
 ## Solution code
 
 ```tsx

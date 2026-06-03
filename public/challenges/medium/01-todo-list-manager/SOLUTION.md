@@ -8,6 +8,20 @@ Array state + filter enum; derived visible todos.
 
 - **Derived UI lists**: Do not store filtered array—compute from todos + filter.
 
+## Code highlights
+
+- `onClick={() => setTodos((xs) => xs.filter((x) => x.id !== t.id))}` — **onClick** — In "Todo List Manager", clicking updates state via . useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `onClick={() => setTodos((xs) => xs.filter((x) => !x.done))}` — **onClick** — In "Todo List Manager", clicking updates state via . useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `[...xs, { id: crypto.randomUUID(), text: t, done: false }]` — **spread copy** — In "Todo List Manager", copies the old collection then changes it — React sees a new reference and re-renders.
+- `.map((x) => x.id === t.id ? { ...x, done: !x.done } : x)` — **.map()** — In "Todo List Manager", turns each item in your data into a JSX row. useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `const [filter, setFilter] = useState<Filter>('all')` — **filter state** — In "Todo List Manager", `filter` is the value the UI shows. It starts at 'all'. `setFilter` updates it when the user interacts. useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `const [todos, setTodos] = useState<Todo[]>([])` — **todos state** — In "Todo List Manager", `todos` is the value the UI shows. It starts at []. `setTodos` updates it when the user interacts. useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `const [text, setText] = useState('')` — **text state** — In "Todo List Manager", `text` is the value the UI shows. It starts at ''. `setText` updates it when the user interacts. useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `onClick={() => setFilter(f)}` — **onClick** — In "Todo List Manager", clicking updates state via . useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `onClick={add}` — **onClick** — In "Todo List Manager", clicking runs when the user clicks this button. useMemo avoids refiltering unnecessarily; CRUD uses immutable array ops.
+- `key={t.id}` — **key** — In "Todo List Manager", helps React track each list row — use a stable id (t.id), not the array index, when items can reorder.
+- `key={f}` — **key** — In "Todo List Manager", helps React track each list row — use a stable id (f), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

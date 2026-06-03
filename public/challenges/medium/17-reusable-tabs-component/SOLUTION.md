@@ -8,6 +8,12 @@ Context shares active index and setIndex; compound subcomponents.
 
 - **WAI-ARIA Tabs**: tablist > tab + tabpanel linkage via ids.
 
+## Code highlights
+
+- `const [internal, setInternal] = useState(0)` — **internal state** — In "Build a Reusable Tabs Component", `internal` is the value the UI shows. It starts at 0. `setInternal` updates it when the user interacts. Controlled index prop overrides internal state; panels conditionally render.
+- `const Ctx = createContext<{ index: number;` — **createContext** — In "Build a Reusable Tabs Component", this context shares data with any child below without passing props on every level.
+- `onClick={() => ctx.setIndex(i)}` — **onClick** — In "Build a Reusable Tabs Component", clicking updates state via . Controlled index prop overrides internal state; panels conditionally render.
+
 ## Solution code
 
 ```tsx

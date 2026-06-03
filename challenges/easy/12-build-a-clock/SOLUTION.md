@@ -9,6 +9,16 @@ Store Date in state; interval sets new Date(); format derived with options.
 - **Timer in useEffect**: Always return cleanup clearing interval.
 - **Derived formatting**: Format from `now` during render, not separate string state.
 
+## Code highlights
+
+- `useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
+  }, [])` — **useEffect** — In "Build a Clock", this effect runs after render to Single source of truth `now`. Intl handles padding and AM/PM.. The returned cleanup function runs on unmount or before the next run.
+- `const [use24h, setUse24h] = useState(true)` — **use24h state** — In "Build a Clock", `use24h` is the value the UI shows. It starts at true. `setUse24h` updates it when the user interacts. Single source of truth `now`. Intl handles padding and AM/PM.
+- `onClick={() => setUse24h((v) => !v)}` — **click handler** — In "Build a Clock", this updates state (). Single source of truth `now`. Intl handles padding and AM/PM.
+- `const [now, setNow] = useState(()` — **now state** — In "Build a Clock", `now` is the value the UI shows. It starts at (. `setNow` updates it when the user interacts. Single source of truth `now`.
+
 ## Solution code
 
 ```tsx

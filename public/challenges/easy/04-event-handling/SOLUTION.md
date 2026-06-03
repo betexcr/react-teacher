@@ -9,6 +9,14 @@ Central string state; handlers call setDisplay with concatenation or slice.
 - **SyntheticEvent**: Cross-browser normalized event; pool is no longer reused in React 17+.
 - **Handler factories**: onClick={() => append("7")} avoids inline bugs with stale closures for simple cases.
 
+## Code highlights
+
+- `const [display, setDisplay] = useState('')` — **display state** — In "Event Handling", `display` is the value the UI shows. It starts at ''. `setDisplay` updates it when the user interacts. Each button triggers a small state transition. type="button" avoids accidental form submission.
+- `onClick={() => append(k)}` — **onClick** — In "Event Handling", clicking runs when the user clicks this button. Each button triggers a small state transition.
+- `onClick={backspace}` — **onClick** — In "Event Handling", clicking runs when the user clicks this button. Each button triggers a small state transition.
+- `onClick={clear}` — **onClick** — In "Event Handling", clicking runs when the user clicks this button. Each button triggers a small state transition.
+- `key={k}` — **key** — In "Event Handling", helps React track each list row — use a stable id (k), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

@@ -9,6 +9,13 @@ Isolate fast-changing state; memo expensive children; stabilize props.
 - **Context splitting**: Consumers of dispatch should not rerender when value changes.
 - **Profiler**: Commit chart shows which optimizations helped.
 
+## Code highlights
+
+- `const CountContext = createContext(0);` — **createContext** — In "Prevent Unnecessary Re-renders", this context shares data with any child below without passing props on every level.
+- `const [tick, setTick] = useState(0)` — **tick state** — In "Prevent Unnecessary Re-renders", `tick` is the value the UI shows. It starts at 0. `setTick` updates it when the user interacts. SlowList memoized with stable items; tick isolated in context consumed only where needed.
+- `onClick={dispatch}` — **onClick** — In "Prevent Unnecessary Re-renders", this runs when the user clicks this button. SlowList memoized with stable items; tick isolated in context consumed only where needed.
+- `key={i}` — **key** — In "Prevent Unnecessary Re-renders", helps React track each list row — use a stable id (i), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

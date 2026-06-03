@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { challenges } from './challenges/index.mjs';
 import { normalizeResource } from './challenges/helpers.mjs';
+import { buildCodeHighlights, formatCodeHighlightsSection } from './challenges/solution-highlights.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..', 'challenges');
@@ -63,6 +64,7 @@ ${c.solutionApproach}
 
 ${c.concepts.map((x) => `- **${x.term}**: ${x.detail}`).join('\n')}
 
+${formatCodeHighlightsSection(buildCodeHighlights(c))}
 ## Solution code
 
 \`\`\`tsx

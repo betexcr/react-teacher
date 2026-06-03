@@ -9,6 +9,25 @@ Track status in state; effect triggers fetch; abort on unmount or refetch.
 - **useEffect**: Synchronize with external systems (network).
 - **AbortController**: Cancel in-flight fetch when component unmounts.
 
+## Code highlights
+
+- `useEffect(() => {
+    const ac = new AbortController();
+    load(ac.signal);
+    return () => ac.abort();
+  }, [load])` — **useEffect** — In "Fetching Data", this effect runs after render to load centralizes fetch logic.. The returned cleanup function runs on unmount or before the next run. Synchronize with external systems (network).
+- `fetch('https://jsonplaceholder.typicode.com/users', { signal })` — **fetch** — In "Fetching Data", this request loads remote data. load centralizes fetch logic.
+- `const [error, setError] = useState<string | null>(null)` — **error state** — In "Fetching Data", `error` is the value the UI shows. It starts at null. `setError` updates it when the user interacts. load centralizes fetch logic. Effect creates AbortController per mount. Refetch calls load without aborting unless you add that.
+- `const [users, setUsers] = useState<User[]>([])` — **users state** — In "Fetching Data", `users` is the value the UI shows. It starts at []. `setUsers` updates it when the user interacts. load centralizes fetch logic. Effect creates AbortController per mount. Refetch calls load without aborting unless you add that.
+- `const [loading, setLoading] = useState(true)` — **loading state** — In "Fetching Data", `loading` is the value the UI shows. It starts at true. `setLoading` updates it when the user interacts. load centralizes fetch logic. Effect creates AbortController per mount. Refetch calls load without aborting unless you add that.
+- `onClick={() => load()}` — **onClick** — In "Fetching Data", clicking runs when the user clicks this button. load centralizes fetch logic. Effect creates AbortController per mount. Refetch calls load without aborting unless you add that.
+- `AbortController` — **AbortController** — In "Fetching Data", aborting cancels the request if the user leaves or a new fetch replaces the old one — avoids updating state after unmount. Cancel in-flight fetch when component unmounts.
+- `if (loading)` — **early return** — In "Fetching Data", short-circuits the render to show loading or error UI before the main content. load centralizes fetch logic.
+- `role="alert"` — **role="alert"** — In "Fetching Data", marks an error message so screen readers treat it as urgent.
+- `if (error)` — **early return** — In "Fetching Data", short-circuits the render to show loading or error UI before the main content. load centralizes fetch logic.
+- `key={u.id}` — **key** — In "Fetching Data", helps React track each list row — use a stable id (u.id), not the array index, when items can reorder.
+- `.finally(` — **finally** — In "Fetching Data", runs after success or failure — here it typically turns off the loading flag.
+
 ## Solution code
 
 ```tsx

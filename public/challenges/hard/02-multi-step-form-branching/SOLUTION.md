@@ -8,6 +8,14 @@ Declarative step graph keyed by prior answers.
 
 - **State machine**: Transitions depend on state—ideal for branching wizards.
 
+## Code highlights
+
+- `{step === 'review' && <pre>{JSON.stringify(answers, null, 2)}</pre>}` — **&& render** — In "Multi-step Form with Branching Logic", only renders the element when the left side is true.
+- `const [answers, setAnswers] = useState<Answers>({})` — **answers state** — In "Multi-step Form with Branching Logic", `answers` is the value the UI shows. It starts at {}. `setAnswers` updates it when the user interacts. nextStep function encodes graph; UI renders step id; answers accumulate.
+- `disabled={step === 'type' && !answers.type}` — **disabled** — In "Multi-step Form with Branching Logic", the control is disabled when step === 'type' && !answers.type — UI follows state instead of manual DOM tweaks. nextStep function encodes graph; UI renders step id; answers accumulate.
+- `const [step, setStep] = useState('type')` — **step state** — In "Multi-step Form with Branching Logic", `step` is the value the UI shows. It starts at 'type'. `setStep` updates it when the user interacts. nextStep function encodes graph; UI renders step id; answers accumulate.
+- `onClick={goNext}` — **onClick** — In "Multi-step Form with Branching Logic", clicking runs when the user clicks this button. nextStep function encodes graph; UI renders step id; answers accumulate.
+
 ## Solution code
 
 ```tsx

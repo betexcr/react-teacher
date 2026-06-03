@@ -1,10 +1,17 @@
 import type { ReactNode } from 'react';
 import { SolutionCodeTerm } from '../components/SolutionCodeTerm';
-import { findSolutionCodeMatches } from '../data/solutionCodeGlossary';
+import {
+  findChallengeHighlightMatches,
+  type SolutionHighlight,
+} from '../lib/solutionHighlights';
 
-/** Wrap important solution-code tokens with hover tooltips. */
-export function annotateSolutionCode(text: string, keyPrefix = 'sol'): ReactNode[] {
-  const matches = findSolutionCodeMatches(text);
+/** Wrap challenge-specific solution tokens with hover tooltips. */
+export function annotateSolutionCode(
+  text: string,
+  highlights: SolutionHighlight[],
+  keyPrefix = 'sol',
+): ReactNode[] {
+  const matches = findChallengeHighlightMatches(text, highlights);
   if (matches.length === 0) return [text];
 
   const nodes: ReactNode[] = [];
@@ -15,7 +22,11 @@ export function annotateSolutionCode(text: string, keyPrefix = 'sol'): ReactNode
       nodes.push(text.slice(last, match.start));
     }
     nodes.push(
-      <SolutionCodeTerm key={`${keyPrefix}-${match.start}-${match.id}-${i}`} id={match.id}>
+      <SolutionCodeTerm
+        key={`${keyPrefix}-${match.start}-${i}`}
+        label={match.label}
+        tip={match.tip}
+      >
         {match.text}
       </SolutionCodeTerm>,
     );

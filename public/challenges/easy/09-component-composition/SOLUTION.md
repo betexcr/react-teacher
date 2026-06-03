@@ -9,6 +9,7 @@ Compound components colocate API; children prop for body content.
 - **Composition over inheritance**: Combine small components instead of mega props.
 - **Compound components**: Card.Header shares implicit context optional.
 
+
 ## Solution code
 
 ```tsx

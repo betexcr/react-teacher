@@ -8,6 +8,18 @@ Track base elapsed + segment start time; reducer for actions.
 
 - **Drift-free timer**: Compute elapsed from Date.now() deltas, not tick count.
 
+## Code highlights
+
+- `useEffect(() => {
+    if (!state.running) return;
+    const id = setInterval(() => force(), 50);
+    return () => clearInterval(id);
+  }, [state.running])` — **useEffect** — In "Timer Controls", this effect runs after render to Pause commits segment duration to elapsed; display derives live total while running.. The returned cleanup function runs on unmount or before the next run.
+- `const [state, dispatch] = useReducer(` — **useReducer** — In "Timer Controls", `state` is updated by dispatching actions instead of many separate setters. Pause commits segment duration to elapsed; display derives live total while running.
+- `.map((l, i) => <li key={i}>{format(l)` — **.map()** — In "Timer Controls", turns each item in your data into a JSX row. Pause commits segment duration to elapsed; display derives live total while running.
+- `disabled={!state.running}` — **disabled** — In "Timer Controls", the control is disabled when !state.running — UI follows state instead of manual DOM tweaks. Pause commits segment duration to elapsed; display derives live total while running.
+- `key={i}` — **key** — In "Timer Controls", helps React track each list row — use a stable id (i), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

@@ -9,6 +9,10 @@ Compute percentage; apply style width; ARIA reflects numbers.
 - **ARIA progressbar**: Screen readers announce value and bounds.
 - **Clamping**: Math.min(max, Math.max(0, value)) avoids overflow UI.
 
+## Code highlights
+
+- `{label && <span id="pb-label">{label}</span>}` — **&& render** — In "Progress Bar Component", only renders the element when the left side is true.
+
 ## Solution code
 
 ```tsx

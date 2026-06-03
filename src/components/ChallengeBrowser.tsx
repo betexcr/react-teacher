@@ -12,6 +12,10 @@ import {
 } from '../lib/challenges'
 import { useChallengeProgress, isChallengeCompleted } from '../hooks/useChallengeProgress'
 import { stripInteractiveSections } from '../lib/challengeBody'
+import {
+  parseSolutionHighlights,
+  stripSolutionHighlightsSection,
+} from '../lib/solutionHighlights'
 import { MarkdownView } from './MarkdownView'
 import { ResourceList } from './ResourceList'
 
@@ -90,9 +94,17 @@ function ChallengeDetailPage() {
     () => stripInteractiveSections(getChallengeMarkdown(difficulty, slug)),
     [difficulty, slug],
   )
-  const solutionMd = useMemo(
+  const solutionMdRaw = useMemo(
     () => getSolutionMarkdown(difficulty, slug),
     [difficulty, slug],
+  )
+  const solutionHighlights = useMemo(
+    () => parseSolutionHighlights(solutionMdRaw),
+    [solutionMdRaw],
+  )
+  const solutionMd = useMemo(
+    () => stripSolutionHighlightsSection(solutionMdRaw),
+    [solutionMdRaw],
   )
   const [showSolution, setShowSolution] = useState(false)
 
@@ -166,10 +178,10 @@ function ChallengeDetailPage() {
         {showSolution && (
           <div className="solution-content">
             <p className="solution-code-hint">
-              Highlighted terms in the solution code are explained on hover or focus — look for{' '}
-              <span className="solution-code-term-inline-sample">teal</span> marks below.
+              <span className="solution-code-term-inline-sample">Teal</span> highlights are explained for{' '}
+              <strong>this challenge only</strong> — hover or focus each mark in the code.
             </p>
-            <MarkdownView source={solutionMd} annotateSolutionCode />
+            <MarkdownView source={solutionMd} solutionHighlights={solutionHighlights} />
           </div>
         )}
       </div>

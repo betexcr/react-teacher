@@ -8,6 +8,21 @@ Active index state; effects for timer; keydown listener.
 
 - **Modulo wrap**: Enables infinite carousel without duplicate slides.
 
+## Code highlights
+
+- `useEffect(() => {
+    if (paused) return;
+    const id = setInterval(next, 5000);
+    return () => clearInterval(id);
+  }, [paused])` — **useEffect** — In "Image Carousel", this effect runs after render to Index wraps with modulo; autoplay effect depends on paused flag.. The returned cleanup function runs on unmount or before the next run.
+- `const [paused, setPaused] = useState(false)` — **paused state** — In "Image Carousel", `paused` is the value the UI shows. It starts at false. `setPaused` updates it when the user interacts. Index wraps with modulo; autoplay effect depends on paused flag.
+- `const [i, setI] = useState(0)` — **i state** — In "Image Carousel", `i` is the value the UI shows. It starts at 0. `setI` updates it when the user interacts. Index wraps with modulo; autoplay effect depends on paused flag.
+- `onClick={() => setI(idx)}` — **click handler** — In "Image Carousel", this updates state (). Index wraps with modulo; autoplay effect depends on paused flag.
+- `aria-live="polite"` — **aria-live** — In "Image Carousel", assistive tech announces updates when this text changes (e.g. the count).
+- `onClick={prev}` — **onClick** — In "Image Carousel", this runs when the user clicks this button. Index wraps with modulo; autoplay effect depends on paused flag.
+- `onClick={next}` — **onClick** — In "Image Carousel", this runs when the user clicks this button. Index wraps with modulo; autoplay effect depends on paused flag.
+- `key={idx}` — **key** — In "Image Carousel", helps React track each list row — use a stable id (idx), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

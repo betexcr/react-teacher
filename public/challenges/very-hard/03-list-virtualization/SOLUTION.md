@@ -9,6 +9,13 @@ Scroll container with inner height spacer; translate visible slice.
 - **Windowing**: Only mount rows in viewport plus overscan buffer.
 - **Overscan**: Extra rows above/below reduce blank flashes during fast scroll.
 
+## Code highlights
+
+- `const parentRef = useRef<HTMLDivElement>(null)` — **ref parentRef** — In "List Virtualization: Manual Virtual Scrolling", `parentRef` keeps a mutable value across renders without triggering re-renders when .current changes. Total height preserves scrollbar; translateY positions window; slice maps only visible indices.
+- `const [scrollTop, setScrollTop] = useState(0)` — **scrollTop state** — In "List Virtualization: Manual Virtual Scrolling", `scrollTop` is the value the UI shows. It starts at 0. `setScrollTop` updates it when the user interacts. Total height preserves scrollbar; translateY positions window; slice maps only visible indices.
+- `const [height, setHeight] = useState(600)` — **height state** — In "List Virtualization: Manual Virtual Scrolling", `height` is the value the UI shows. It starts at 600. `setHeight` updates it when the user interacts. Total height preserves scrollbar; translateY positions window; slice maps only visible indices.
+- `key={i}` — **key** — In "List Virtualization: Manual Virtual Scrolling", helps React track each list row — use a stable id (i), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

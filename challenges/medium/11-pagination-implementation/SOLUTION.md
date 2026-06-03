@@ -8,6 +8,24 @@ Page state drives fetch URL; derive totalPages from total count.
 
 - **Server pagination**: Only load current slice—essential for large data.
 
+## Code highlights
+
+- `useEffect(() => {
+    fetch(\`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}\`)
+      .then((r) => {
+        setTotal(Number(r.headers.get('X-Total-Count') || 100));
+        re` — **useEffect** — In "Pagination Implementation", this effect runs after render to Effect refetches when page changes; buttons disabled at edges..
+- `fetch(\`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}\`)` — **fetch** — In "Pagination Implementation", this request loads remote data. Effect refetches when page changes; buttons disabled at edges.
+- `.map((p: { id: number; title: string }) => <li key={p.id}>{p.title}</li>)` — **.map()** — In "Pagination Implementation", turns each item in your data into a JSX row. Effect refetches when page changes; buttons disabled at edges. JSONPlaceholder may omit X-Total-Count—use a sensible fallback total for the demo.
+- `const [posts, setPosts] = useState([])` — **posts state** — In "Pagination Implementation", `posts` is the value the UI shows. It starts at []. `setPosts` updates it when the user interacts. Effect refetches when page changes; buttons disabled at edges. JSONPlaceholder may omit X-Total-Count—use a sensible fallback total for the demo.
+- `const [total, setTotal] = useState(0)` — **total state** — In "Pagination Implementation", `total` is the value the UI shows. It starts at 0. `setTotal` updates it when the user interacts. JSONPlaceholder may omit X-Total-Count—use a sensible fallback total for the demo.
+- `onClick={() => setPage((p) => p - 1)}` — **decrement click** — In "Pagination Implementation", this subtracts 1 using the latest state. Effect refetches when page changes; buttons disabled at edges.
+- `onClick={() => setPage((p) => p + 1)}` — **increment click** — In "Pagination Implementation", this adds 1 using the latest state. Effect refetches when page changes; buttons disabled at edges.
+- `const [page, setPage] = useState(1)` — **page state** — In "Pagination Implementation", `page` is the value the UI shows. It starts at 1. `setPage` updates it when the user interacts. Effect refetches when page changes; buttons disabled at edges.
+- `disabled={page >= pages}` — **disabled** — In "Pagination Implementation", the control is disabled when page >= pages — UI follows state instead of manual DOM tweaks. Effect refetches when page changes; buttons disabled at edges.
+- `disabled={page === 1}` — **disabled** — In "Pagination Implementation", the control is disabled when page === 1 — UI follows state instead of manual DOM tweaks. Effect refetches when page changes; buttons disabled at edges.
+- `key={p.id}` — **key** — In "Pagination Implementation", helps React track each list row — use a stable id (p.id), not the array index, when items can reorder.
+
 ## Solution code
 
 ```tsx

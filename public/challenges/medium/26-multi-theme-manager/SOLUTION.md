@@ -8,6 +8,16 @@ Resolve effective theme; persist mode; storage listener for sync.
 
 - **storage event**: Fires in other tabs when localStorage changes.
 
+## Code highlights
+
+- `useEffect(() => {
+    localStorage.setItem('mode', mode);
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const dark = mode === 'dark' || (mode === 'system' && mq.matches);
+    d` — **useEffect** — In "Multi-Theme Manager", this effect runs after render to Effective theme derives from mode + system preference; storage event keeps tabs aligned.. The returned cleanup function runs on unmount or before the next run.
+- `<select value={mode} onChange={(e) => setMode(e.target.value as Mode)}>` — **controlled input** — In "Multi-Theme Manager", the input text is owned by React state — value plus onChange keep the field in sync. Effective theme derives from mode + system preference; storage event keeps tabs aligned.
+- `const [mode, setMode] = useState<Mode>(()` — **mode state** — In "Multi-Theme Manager", `mode` is the value the UI shows. It starts at (. `setMode` updates it when the user interacts. Effective theme derives from mode + system preference; storage event keeps tabs aligned.
+
 ## Solution code
 
 ```tsx

@@ -9,6 +9,15 @@ Theme state drives data attribute; CSS variables switch palettes.
 - **data-theme**: Attribute selectors enable global theming without prop drilling colors.
 - **Lazy init**: useState(() => localStorage.getItem(...)) runs once.
 
+## Code highlights
+
+- `useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme])` — **useEffect** — In "Simple Theme Switcher", this effect runs after render to Effect mirrors theme to DOM and storage whenever state changes..
+- `const [theme, setTheme] = useState<Theme>(()` — **theme state** — In "Simple Theme Switcher", `theme` is the value the UI shows. It starts at (. `setTheme` updates it when the user interacts. Effect mirrors theme to DOM and storage whenever state changes.
+- `onClick={toggle}` — **onClick** — In "Simple Theme Switcher", clicking runs when the user clicks this button. Effect mirrors theme to DOM and storage whenever state changes.
+
 ## Solution code
 
 ```tsx
