@@ -61,26 +61,28 @@ export function ChallengesPage() {
           </button>
         ))}
       </div>
-      <ul className="challenge-list">
+      <div className="system-design-grid">
         {items.map((c) => {
           const completed = isChallengeCompleted(c.difficulty, c.slug, c.acceptance.length);
           return (
-            <li key={`${c.difficulty}-${c.slug}`}>
-              <Link to={`/challenges/${c.difficulty}/${c.slug}`} className="challenge-list-card">
-                <div className="challenge-list-card-top">
-                  <DifficultyBadge difficulty={c.difficulty} />
-                  {completed && (
-                    <span className="challenge-completed-badge challenge-completed-badge--small">
-                      Completed
-                    </span>
-                  )}
-                </div>
-                <div className="challenge-list-card-title">{c.title}</div>
-              </Link>
-            </li>
+            <Link
+              key={`${c.difficulty}-${c.slug}`}
+              to={`/challenges/${c.difficulty}/${c.slug}`}
+              className="system-design-card challenge-list-card"
+            >
+              {completed && (
+                <span className="challenge-completed-badge challenge-completed-badge--small">
+                  Completed
+                </span>
+              )}
+              <div className="challenge-list-card-top">
+                <DifficultyBadge difficulty={c.difficulty} />
+              </div>
+              <h3>{c.title}</h3>
+            </Link>
           );
         })}
-      </ul>
+      </div>
     </>
   );
 }
