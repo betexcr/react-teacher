@@ -250,3 +250,98 @@ const [items, setItems] = useState<Item[]>([]);`,
 ];
 
 export const JS_BASICS_TOPIC_COUNT = jsBasicsTopics.length;
+
+/** Optional depth — not needed for easy React challenges, but useful later. */
+export const jsBasicsOptionalTopics: readonly JsBasicsTopic[] = [
+  {
+    title: 'Classes',
+    explanation: [
+      'A `class` is syntax for creating object “templates” with a constructor and methods. `new User("Ada")` builds one instance.',
+      'React function components replaced most class components, but you still see `class ErrorBoundary extends React.Component` in older code and docs.',
+      'Fields and methods live on the prototype chain (next section). For new React UI, prefer functions + hooks unless a challenge explicitly uses a class.',
+    ],
+    code: `class Counter {
+  constructor(start = 0) {
+    this.count = start;
+  }
+  increment() {
+    this.count += 1;
+    return this.count;
+  }
+}
+const c = new Counter(0);
+c.increment();   // 1`,
+  },
+  {
+    title: 'Prototypes',
+    explanation: [
+      'Every object has a hidden link to another object — its prototype. When you read `user.greet`, JavaScript looks on `user`, then on `user`’s prototype, then further up the chain.',
+      'That is how shared methods work without copying them onto every instance. `class` methods are stored on the prototype under the hood.',
+      'You rarely touch prototypes in day-to-day React, but `Object.prototype`, arrays, and DOM nodes all use this model — helpful when debugging “where did this method come from?”',
+    ],
+    code: `const animal = { speaks: false };
+const dog = Object.create(animal);
+dog.bark = () => 'woof';
+dog.speaks;          // false (from animal)
+dog.bark();          // 'woof' (own property)
+
+// class methods live on Dog.prototype`,
+  },
+  {
+    title: 'The this keyword',
+    explanation: [
+      '`this` means “the current object context” — who called the method. `obj.save()` sets `this` to `obj` inside `save`.',
+      'Arrow functions do not have their own `this` — they inherit `this` from the surrounding scope. That is why React event handlers often use arrows: so `this` stays predictable.',
+      'Losing `this` is a classic bug: `const fn = obj.save; fn()` calls `save` without `obj`, so `this` is wrong. Bind with `fn.bind(obj)` or use an arrow wrapper `() => obj.save()`.',
+    ],
+    code: `const timer = {
+  seconds: 0,
+  tick() {
+    this.seconds += 1;   // this === timer
+  },
+};
+timer.tick();
+
+const loose = timer.tick;
+// loose();  // breaks: this is not timer
+
+const safe = () => timer.tick();
+safe();`,
+  },
+  {
+    title: 'Generators',
+    explanation: [
+      'A generator function uses `function*` and `yield` to pause and resume execution. Each `yield` hands a value back to the caller; `next()` continues from where it stopped.',
+      'Useful for lazy sequences, custom iterators, and some advanced libraries — not typical in React UI code.',
+      'If you see `function*` in the wild, read it as “a function that can return multiple values over time.” Async/await covers most “wait and continue” cases in apps.',
+    ],
+    code: `function* ids() {
+  let n = 0;
+  while (true) {
+    yield n++;
+  }
+}
+const gen = ids();
+gen.next().value;   // 0
+gen.next().value;   // 1
+gen.next().value;   // 2`,
+  },
+  {
+    title: 'TypeScript generics (deeper)',
+    explanation: [
+      'Generics let types work with any type while staying safe: `Array<T>`, `useState<T>`, `Promise<User>`. The type parameter `T` is filled in when you use it.',
+      'Constraints narrow `T`: `function first<T extends { id: string }>(items: T[])` means “T must have an `id` string.”',
+      'Utility types reshape types: `Partial<User>` makes all fields optional; `Pick<User, "id" | "name">` keeps only some keys; `Record<string, number>` is a string-keyed map.',
+      'For easy challenges, reading `useState<Item[]>` and simple `type` aliases is enough. Reach for generics when you build reusable hooks or libraries.',
+    ],
+    code: `type ApiResult<T> = { data: T; error?: string };
+
+function first<T>(items: T[]): T | undefined {
+  return items[0];
+}
+
+type User = { id: string; name: string };
+type UserPreview = Pick<User, 'id' | 'name'>;
+type PartialUser = Partial<User>;`,
+  },
+];

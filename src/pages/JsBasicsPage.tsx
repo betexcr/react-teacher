@@ -3,13 +3,81 @@ import { Link } from 'react-router-dom';
 import { CodeBlock } from '../components/CodeBlock';
 import { JsBasicsTutorial } from '../components/JsBasicsTutorial';
 import { ReactCodeTermLegend } from '../components/ReactCodeTermLegend';
-import { jsBasicsTopics } from '../data/jsBasicsTopics';
+import {
+  jsBasicsOptionalTopics,
+  jsBasicsTopics,
+  type JsBasicsTopic,
+} from '../data/jsBasicsTopics';
 import {
   tutorialTargetId,
   type JsBasicsTutorialStep,
 } from '../data/jsBasicsTutorialSteps';
 import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
 import { formatJsBasicsProse } from '../utils/formatJsBasicsProse';
+
+type TopicListProps = {
+  topics: readonly JsBasicsTopic[];
+  startNumber: number;
+  idPrefix: string;
+  activeTargetId: string | null;
+  activeTopicIndex: number | undefined;
+  codeHighlights: string[] | undefined;
+};
+
+function JsBasicsTopicList({
+  topics,
+  startNumber,
+  idPrefix,
+  activeTargetId,
+  activeTopicIndex,
+  codeHighlights,
+}: TopicListProps) {
+  return (
+    <ol className="js-basics-list">
+      {topics.map((topic, i) => {
+        const topicTarget = `${idPrefix}-topic-${i}`;
+        const isTopicActive =
+          activeTargetId === topicTarget ||
+          activeTargetId?.startsWith(`${idPrefix}-topic-${i}-`);
+
+        return (
+          <li
+            key={topic.title}
+            className={`js-basics-item${isTopicActive ? ' js-basics-item--tutorial-active' : ''}`}
+            data-tutorial-target={topicTarget}
+          >
+            <h2 className="js-basics-item-title">
+              <span className="js-basics-num">{startNumber + i}</span>
+              {topic.title}
+            </h2>
+            {topic.explanation.map((paragraph, pi) => {
+              const proseTarget = `${idPrefix}-topic-${i}-prose-${pi}`;
+              const isProseActive = activeTargetId === proseTarget;
+              return (
+                <p
+                  key={pi}
+                  className={`js-basics-why${isProseActive ? ' js-basics-why--tutorial-active' : ''}`}
+                  data-tutorial-target={proseTarget}
+                >
+                  {formatJsBasicsProse(paragraph, `${idPrefix}-${topic.title}-${pi}`)}
+                </p>
+              );
+            })}
+            <div data-tutorial-target={`${idPrefix}-topic-${i}-code`}>
+              <CodeBlock
+                code={topic.code}
+                highlightPhrases={activeTopicIndex === i ? codeHighlights : undefined}
+              />
+            </div>
+            <div data-tutorial-target={`${idPrefix}-topic-${i}-legend`}>
+              <ReactCodeTermLegend code={topic.code} />
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
 
 export function JsBasicsPage() {
   useRouteScrollTop();
@@ -25,6 +93,7 @@ export function JsBasicsPage() {
 
   const activeTargetId = activeTutorial ? tutorialTargetId(activeTutorial.step) : null;
   const codeHighlights = activeTutorial?.step.codeHighlights;
+  const activeTopicIndex = activeTutorial?.step.topicIndex;
 
   return (
     <article className="get-started js-basics">
@@ -57,61 +126,44 @@ export function JsBasicsPage() {
         </div>
       </header>
 
-      <ol className="js-basics-list">
-        {jsBasicsTopics.map((topic, i) => {
-          const topicTarget = `js-basics-topic-${i}`;
-          const isTopicActive =
-            activeTargetId === topicTarget ||
-            activeTargetId?.startsWith(`js-basics-topic-${i}-`);
-
-          return (
-            <li
-              key={topic.title}
-              className={`js-basics-item${isTopicActive ? ' js-basics-item--tutorial-active' : ''}`}
-              data-tutorial-target={topicTarget}
-            >
-              <h2 className="js-basics-item-title">
-                <span className="js-basics-num">{i + 1}</span>
-                {topic.title}
-              </h2>
-              {topic.explanation.map((paragraph, pi) => {
-                const proseTarget = `js-basics-topic-${i}-prose-${pi}`;
-                const isProseActive = activeTargetId === proseTarget;
-                return (
-                  <p
-                    key={pi}
-                    className={`js-basics-why${isProseActive ? ' js-basics-why--tutorial-active' : ''}`}
-                    data-tutorial-target={proseTarget}
-                  >
-                    {formatJsBasicsProse(paragraph, `${topic.title}-${pi}`)}
-                  </p>
-                );
-              })}
-              <div data-tutorial-target={`js-basics-topic-${i}-code`}>
-                <CodeBlock
-                  code={topic.code}
-                  highlightPhrases={
-                    activeTutorial?.step.topicIndex === i ? codeHighlights : undefined
-                  }
-                />
-              </div>
-              <div data-tutorial-target={`js-basics-topic-${i}-legend`}>
-                <ReactCodeTermLegend code={topic.code} />
-              </div>
-            </li>
-          );
-        })}
-      </ol>
+      <JsBasicsTopicList
+        topics={jsBasicsTopics}
+        startNumber={1}
+        idPrefix="js-basics"
+        activeTargetId={activeTargetId}
+        activeTopicIndex={activeTopicIndex}
+        codeHighlights={codeHighlights}
+      />
 
       <section
-        className="get-started-section get-started-section--compact"
+        className="get-started-section js-basics-skip"
         data-tutorial-target="js-basics-finish"
       >
         <h2>What you can skip for now</h2>
         <p className="get-started-section-intro">
-          Classes, prototypes, <code>this</code>, generators, and deep TypeScript generics — not required for
-          easy challenges. Learn {formatJsBasicsProse('React', 'skip-react')} patterns first; add depth later.
+          The topics below are <strong>not required</strong> for easy React challenges. Learn{' '}
+          {formatJsBasicsProse('React', 'skip-react')} patterns in the list above first — then come back here
+          when you want more JavaScript depth.
         </p>
+      </section>
+
+      <section className="js-basics-optional">
+        <h2 className="js-basics-optional-heading">Optional depth</h2>
+        <p className="js-basics-optional-intro">
+          Classes, prototypes, <code>this</code>, generators, and TypeScript generics — explained simply if
+          you choose to study them now.
+        </p>
+        <JsBasicsTopicList
+          topics={jsBasicsOptionalTopics}
+          startNumber={jsBasicsTopics.length + 1}
+          idPrefix="js-basics-opt"
+          activeTargetId={activeTargetId}
+          activeTopicIndex={undefined}
+          codeHighlights={undefined}
+        />
+      </section>
+
+      <section className="get-started-section get-started-section--compact">
         <p className="get-started-path-cta">
           Ready? <Link to="/challenges">Start with easy challenges</Link> or read{' '}
           <Link to="/get-started">Get Started</Link> for local setup.
