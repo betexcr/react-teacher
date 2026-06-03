@@ -17,10 +17,10 @@ Attach listener to container; compute local x/y from client coords - rect.
 
     const onMove = (e: MouseEvent) => {
       const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;` — **useEffect** — In "MouseTracker", this effect runs after render to Global mousemove plus rect math determines inside and local coords.. The returned cleanup function runs on unmount or before the next run.
-- `const [local, setLocal] = useState({ x: 0, y: 0 })` — **local state** — In "MouseTracker", `local` is the value the UI shows. It starts at { x: 0, y: 0 }. `setLocal` updates it when the user interacts. Global mousemove plus rect math determines inside and local coords.
-- `const [inside, setInside] = useState(false)` — **inside state** — In "MouseTracker", `inside` is the value the UI shows. It starts at false. `setInside` updates it when the user interacts. Global mousemove plus rect math determines inside and local coords.
-- `const boxRef = useRef<HTMLDivElement>(null)` — **ref boxRef** — In "MouseTracker", `boxRef` keeps a mutable value across renders without triggering re-renders when .current changes. Global mousemove plus rect math determines inside and local coords.
+      const x = e.clientX - rect.left;` — **useEffect** — Runs after render to Global mousemove plus rect math determines inside and local coords.. The returned cleanup function runs on unmount or before the next run.
+- `const [local, setLocal] = useState({ x: 0, y: 0 })` — **local state** — `local` is the value the UI shows. It starts at { x: 0, y: 0 }. `setLocal` updates it when the user interacts. Global mousemove plus rect math determines inside and local coords.
+- `const [inside, setInside] = useState(false)` — **inside state** — `inside` is the value the UI shows. It starts at false. `setInside` updates it when the user interacts. Global mousemove plus rect math determines inside and local coords.
+- `const boxRef = useRef<HTMLDivElement>(null)` — **ref boxRef** — `boxRef` keeps a mutable value across renders without triggering re-renders when .current changes. Global mousemove plus rect math determines inside and local coords.
 
 ## Solution code
 

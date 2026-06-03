@@ -11,9 +11,9 @@ Extract interface UserCardProps; parent maps users to cards.
 
 ## Code highlights
 
-- `{onFollow && <button onClick={onFollow}>Follow</button>}` — **&& render** — In "Refactor to Props", only renders the element when the left side is true.
-- `onClick={onFollow}` — **onClick** — In "Refactor to Props", clicking runs when the user clicks this button. UserCard becomes pure function of props. Gallery owns the list and wires events.
-- `key={u.id}` — **key** — In "Refactor to Props", helps React track each list row — use a stable id (u.id), not the array index, when items can reorder.
+- `{onFollow && <button onClick={onFollow}>Follow</button>}` — **&& render** — Only renders the element when the left side is true.
+- `onClick={onFollow}` — **onClick** — Runs when the user clicks this button. UserCard becomes pure function of props. Gallery owns the list and wires events.
+- `key={u.id}` — **key** — Helps React track each list row — use a stable id (u.id), not the array index, when items can reorder.
 
 ## Solution code
 

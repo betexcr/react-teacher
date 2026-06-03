@@ -10,12 +10,12 @@ Classic past/present/future model with reducer.
 
 ## Code highlights
 
-- `const [state, dispatch] = useReducer(` — **useReducer** — In "State History Manager", `state` is updated by dispatching actions instead of many separate setters. SET pushes present to past and clears future. UNDO/REDO shift stacks.
-- `.map((s) => <li key={s}>{s}</li>)` — **.map()** — In "State History Manager", turns each item in your data into a JSX row. SET pushes present to past and clears future. UNDO/REDO shift stacks.
-- `disabled={!state.future.length}` — **disabled** — In "State History Manager", the control is disabled when !state.future.length — UI follows state instead of manual DOM tweaks. SET pushes present to past and clears future. UNDO/REDO shift stacks.
-- `disabled={!state.past.length}` — **disabled** — In "State History Manager", the control is disabled when !state.past.length — UI follows state instead of manual DOM tweaks. SET pushes present to past and clears future. UNDO/REDO shift stacks.
-- `onClick={addShape}` — **onClick** — In "State History Manager", clicking runs when the user clicks this button. SET pushes present to past and clears future. UNDO/REDO shift stacks.
-- `key={s}` — **key** — In "State History Manager", helps React track each list row — use a stable id (s), not the array index, when items can reorder.
+- `const [state, dispatch] = useReducer(` — **useReducer** — `state` is updated by dispatching actions instead of many separate setters. SET pushes present to past and clears future. UNDO/REDO shift stacks.
+- `.map((s) => <li key={s}>{s}</li>)` — **.map()** — Turns each item in your data into a JSX row. SET pushes present to past and clears future. UNDO/REDO shift stacks.
+- `disabled={!state.future.length}` — **disabled** — Disabled when !state.future.length — UI follows state instead of manual DOM tweaks. SET pushes present to past and clears future. UNDO/REDO shift stacks.
+- `disabled={!state.past.length}` — **disabled** — Disabled when !state.past.length — UI follows state instead of manual DOM tweaks. SET pushes present to past and clears future. UNDO/REDO shift stacks.
+- `onClick={addShape}` — **onClick** — Runs when the user clicks this button. SET pushes present to past and clears future. UNDO/REDO shift stacks.
+- `key={s}` — **key** — Helps React track each list row — use a stable id (s), not the array index, when items can reorder.
 
 ## Solution code
 

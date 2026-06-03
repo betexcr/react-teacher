@@ -13,8 +13,8 @@ Spread each ancestor object when changing a nested field.
 - `const [user, setUser] = useState<User>({
     profile: { name: 'Ada', avatar: '' },
     preferences: { notifications: { email: true, push: false } },
-  })` — **user state** — In "Nested State Manager", `user` is the value the UI shows. It starts at { profile: { name: 'Ada', avatar: '' }, preferences: { notifications: { email: true, push: false } }, }. `setUser` updates it when the user interacts. Each setter copies every object from root to the changed property.
-- `<input value={user.profile.name} onChange={(e) => setName(e.target.value)} />` — **controlled input** — In "Nested State Manager", the input text is owned by React state — value plus onChange keep the field in sync. Each setter copies every object from root to the changed property.
+  })` — **user state** — `user` is the value the UI shows. It starts at { profile: { name: 'Ada', avatar: '' }, preferences: { notifications: { email: true, push: false } }, }. `setUser` updates it when the user interacts. Each setter copies every object from root to the changed property.
+- `<input value={user.profile.name} onChange={(e) => setName(e.target.value)} />` — **controlled input** — Input text is owned by React state — value plus onChange keep the field in sync. Each setter copies every object from root to the changed property.
 
 ## Solution code
 

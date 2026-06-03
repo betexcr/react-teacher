@@ -10,7 +10,7 @@ Finite steps encoded in state; dispatch events.
 
 ## Code highlights
 
-- `const [state, dispatch] = useReducer(` — **useReducer** — In "useReducer Implementation", `state` is updated by dispatching actions instead of many separate setters. (state, action) => newState — predictable updates.
+- `const [state, dispatch] = useReducer(` — **useReducer** — `state` is updated by dispatching actions instead of many separate setters. (state, action) => newState — predictable updates.
 
 ## Solution code
 

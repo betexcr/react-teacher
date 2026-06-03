@@ -37,8 +37,6 @@ export function buildCodeHighlights(c) {
     });
   };
 
-  const title = c.title;
-
   // useState: [value, setter] = useState(init)
   for (const m of code.matchAll(
     /const\s*\[\s*(\w+)\s*,\s*(set\w+)\s*\]\s*=\s*(useState(?:<[^>]+>)?)\s*\(([^)]*)\)/g,
@@ -48,7 +46,7 @@ export function buildCodeHighlights(c) {
     add(
       full,
       `${varName} state`,
-      `In "${title}", \`${varName}\` is the value the UI shows.${initText} \`${setter}\` updates it when the user interacts. ${pickWalkthrough(c.walkthrough, varName)}`,
+      `\`${varName}\` is the value the UI shows.${initText} \`${setter}\` updates it when the user interacts. ${pickWalkthrough(c.walkthrough, varName)}`,
     );
   }
 
@@ -57,7 +55,7 @@ export function buildCodeHighlights(c) {
     add(
       m[0],
       'useReducer',
-      `In "${title}", \`${m[1]}\` is updated by dispatching actions instead of many separate setters. ${concepts['reducer'] || pickWalkthrough(c.walkthrough, 'dispatch|action|reducer')}`,
+      `\`${m[1]}\` is updated by dispatching actions instead of many separate setters. ${concepts['reducer'] || pickWalkthrough(c.walkthrough, 'dispatch|action|reducer')}`,
     );
   }
 
@@ -66,7 +64,7 @@ export function buildCodeHighlights(c) {
     add(
       m[0],
       `ref ${m[1]}`,
-      `In "${title}", \`${m[1]}\` keeps a mutable value across renders without triggering re-renders when .current changes. ${concepts['useref'] || pickWalkthrough(c.walkthrough, 'ref|previous|dom')}`,
+      `\`${m[1]}\` keeps a mutable value across renders without triggering re-renders when .current changes. ${concepts['useref'] || pickWalkthrough(c.walkthrough, 'ref|previous|dom')}`,
     );
   }
 
@@ -78,7 +76,7 @@ export function buildCodeHighlights(c) {
       add(
         block.length > 200 ? block.slice(0, 200) : block,
         'useEffect',
-        `In "${title}", this effect runs after render to ${pickWalkthrough(c.walkthrough, 'fetch|load|subscribe|timer|interval|mount') || 'sync with something outside React'}.${hasCleanup ? ' The returned cleanup function runs on unmount or before the next run.' : ''} ${concepts['useeffect'] || ''}`,
+        `Runs after render to ${pickWalkthrough(c.walkthrough, 'fetch|load|subscribe|timer|interval|mount') || 'sync with something outside React'}.${hasCleanup ? ' The returned cleanup function runs on unmount or before the next run.' : ''} ${concepts['useeffect'] || ''}`,
       );
       break;
     }
@@ -90,7 +88,7 @@ export function buildCodeHighlights(c) {
     add(
       short,
       `useCallback ${m[1]}`,
-      `In "${title}", \`${m[1]}\` keeps a stable function reference between renders. ${concepts['usecallback'] || pickWalkthrough(c.walkthrough, 'callback|load|memo|stable')}`,
+      `\`${m[1]}\` keeps a stable function reference between renders. ${concepts['usecallback'] || pickWalkthrough(c.walkthrough, 'callback|load|memo|stable')}`,
     );
   }
 
@@ -100,17 +98,17 @@ export function buildCodeHighlights(c) {
     add(
       short,
       `useMemo ${m[1]}`,
-      `In "${title}", \`${m[1]}\` caches an expensive computed value until dependencies change. ${concepts['usememo'] || pickWalkthrough(c.walkthrough, 'memo|compute|cache')}`,
+      `\`${m[1]}\` caches an expensive computed value until dependencies change. ${concepts['usememo'] || pickWalkthrough(c.walkthrough, 'memo|compute|cache')}`,
     );
   }
 
   // createContext / Provider
   if (code.includes('createContext')) {
     const m = code.match(/const\s+(\w+)\s*=\s*createContext[^;]+;/);
-    if (m) add(m[0], 'createContext', `In "${title}", this context shares data with any child below without passing props on every level. ${concepts['context'] || ''}`);
+    if (m) add(m[0], 'createContext', `Shares data with any child below without passing props on every level. ${concepts['context'] || ''}`);
   }
   for (const m of code.matchAll(/<(\w*Provider)\b[^>]*>/g)) {
-    add(`<${m[1]}`, m[1], `In "${title}", ${m[1]} supplies the context value to components nested inside it. ${pickWalkthrough(c.walkthrough, 'theme|context|provider')}`);
+    add(`<${m[1]}`, m[1], `${m[1]} supplies the context value to components nested inside it. ${pickWalkthrough(c.walkthrough, 'theme|context|provider')}`);
   }
 
   // fetch + AbortController
@@ -120,7 +118,7 @@ export function buildCodeHighlights(c) {
       add(
         fetchCall,
         'fetch',
-        `In "${title}", this request loads remote data. ${pickWalkthrough(c.walkthrough, 'fetch|load|api|users|data')}`,
+        `Loads remote data. ${pickWalkthrough(c.walkthrough, 'fetch|load|api|users|data')}`,
       );
     }
   }
@@ -128,11 +126,11 @@ export function buildCodeHighlights(c) {
     add(
       'AbortController',
       'AbortController',
-      `In "${title}", aborting cancels the request if the user leaves or a new fetch replaces the old one — avoids updating state after unmount. ${concepts['abortcontroller'] || pickWalkthrough(c.walkthrough, 'abort|unmount|cancel')}`,
+      `Cancels the request if the user leaves or a new fetch replaces the old one — avoids updating state after unmount. ${concepts['abortcontroller'] || pickWalkthrough(c.walkthrough, 'abort|unmount|cancel')}`,
     );
   }
   if (code.includes('.finally(')) {
-    add('.finally(', 'finally', `In "${title}", runs after success or failure — here it typically turns off the loading flag.`);
+    add('.finally(', 'finally', `Runs after success or failure — here it typically turns off the loading flag.`);
   }
 
   // Line-by-line meaningful patterns
@@ -161,7 +159,7 @@ export function buildCodeHighlights(c) {
         label = 'click handler';
         action = `updates state (${handler.split('(')[0]})`;
       }
-      add(snippet, label, `In "${title}", this ${action}. ${pickWalkthrough(c.walkthrough, 'button|click|increment|decrement|reset')}`);
+      add(snippet, label, `${action.charAt(0).toUpperCase()}${action.slice(1)}. ${pickWalkthrough(c.walkthrough, 'button|click|increment|decrement|reset')}`);
     }
 
     const disabled = t.match(/disabled=\{([^}]+)\}/);
@@ -169,15 +167,15 @@ export function buildCodeHighlights(c) {
       add(
         `disabled={${disabled[1]}}`,
         'disabled',
-        `In "${title}", the control is disabled when ${disabled[1]} — UI follows state instead of manual DOM tweaks. ${concepts['controlled updates'] || concepts['controlled component'] || pickWalkthrough(c.walkthrough, 'disabled|zero|cannot')}`,
+        `Disabled when ${disabled[1]} — UI follows state instead of manual DOM tweaks. ${concepts['controlled updates'] || concepts['controlled component'] || pickWalkthrough(c.walkthrough, 'disabled|zero|cannot')}`,
       );
     }
 
     if (t.includes('aria-live')) {
-      add('aria-live="polite"', 'aria-live', `In "${title}", assistive tech announces updates when this text changes (e.g. the count).`);
+      add('aria-live="polite"', 'aria-live', `Assistive tech announces updates when this text changes (e.g. the count).`);
     }
     if (t.includes('role="alert"')) {
-      add('role="alert"', 'role="alert"', `In "${title}", marks an error message so screen readers treat it as urgent.`);
+      add('role="alert"', 'role="alert"', `Marks an error message so screen readers treat it as urgent.`);
     }
 
     const mapCall = t.match(/\.map\s*\(\s*\([^)]*\)\s*=>\s*[^)]+\)/);
@@ -185,7 +183,7 @@ export function buildCodeHighlights(c) {
       add(
         mapCall[0].length > 80 ? mapCall[0].slice(0, 77) + '...' : mapCall[0],
         '.map()',
-        `In "${title}", turns each item in your data into a JSX row. ${concepts['immutable updates'] || pickWalkthrough(c.walkthrough, 'list|map|render|item')}`,
+        `Turns each item in your data into a JSX row. ${concepts['immutable updates'] || pickWalkthrough(c.walkthrough, 'list|map|render|item')}`,
       );
     }
 
@@ -195,7 +193,7 @@ export function buildCodeHighlights(c) {
         add(
           spread,
           'spread copy',
-          `In "${title}", copies the old collection then changes it — React sees a new reference and re-renders. ${concepts['immutable updates'] || ''}`,
+          `Copies the old collection then changes it — React sees a new reference and re-renders. ${concepts['immutable updates'] || ''}`,
         );
       }
     }
@@ -206,26 +204,26 @@ export function buildCodeHighlights(c) {
         add(
           cond,
           'early return',
-          `In "${title}", short-circuits the render to show loading or error UI before the main content. ${pickWalkthrough(c.walkthrough, 'loading|error|fetch')}`,
+          `Short-circuits the render to show loading or error UI before the main content. ${pickWalkthrough(c.walkthrough, 'loading|error|fetch')}`,
         );
       }
     }
 
     if (/\?\s*</.test(t) && t.includes('return')) {
       const short = t.length > 90 ? t.slice(0, 87) + '...' : t;
-      add(short, 'ternary UI', `In "${title}", picks which UI branch to show based on a condition. ${pickWalkthrough(c.walkthrough, 'loading|error|empty')}`);
+      add(short, 'ternary UI', `Picks which UI branch to show based on a condition. ${pickWalkthrough(c.walkthrough, 'loading|error|empty')}`);
     }
 
     if (/&&\s*</.test(t)) {
       const short = t.length > 90 ? t.slice(0, 87) + '...' : t;
-      add(short, '&& render', `In "${title}", only renders the element when the left side is true.`);
+      add(short, '&& render', `Only renders the element when the left side is true.`);
     }
 
     if (/value=\{/.test(t) && /onChange=\{/.test(t)) {
       add(
         t.length > 100 ? t.slice(0, 97) + '...' : t,
         'controlled input',
-        `In "${title}", the input text is owned by React state — value plus onChange keep the field in sync. ${concepts['controlled component'] || pickWalkthrough(c.walkthrough, 'input|value|controlled')}`,
+        `Input text is owned by React state — value plus onChange keep the field in sync. ${concepts['controlled component'] || pickWalkthrough(c.walkthrough, 'input|value|controlled')}`,
       );
     }
 
@@ -234,7 +232,7 @@ export function buildCodeHighlights(c) {
       add(
         `key={${keyExpr}}`,
         'key',
-        `In "${title}", helps React track each list row — use a stable id (${keyExpr}), not the array index, when items can reorder.`,
+        `Helps React track each list row — use a stable id (${keyExpr}), not the array index, when items can reorder.`,
       );
     }
   }
@@ -243,17 +241,17 @@ export function buildCodeHighlights(c) {
   for (const { term, detail } of c.concepts) {
     const lower = term.toLowerCase();
     if (lower.includes('profiler') && code.includes('Profiler')) {
-      add('Profiler', 'Profiler', `In "${title}": ${detail}`);
+      add('Profiler', 'Profiler', `${detail}`);
     }
     if (lower.includes('forwardref') && code.includes('forwardRef')) {
-      add('forwardRef', 'forwardRef', `In "${title}": ${detail}`);
+      add('forwardRef', 'forwardRef', `${detail}`);
     }
     if (lower.includes('memo') && code.includes('memo(')) {
-      add('memo(', 'memo', `In "${title}": ${detail}`);
+      add('memo(', 'memo', `${detail}`);
     }
     if (lower.includes('delegation') && code.includes('onClick')) {
       const parentHandler = code.match(/onClick=\{[^}]+\}/)?.[0];
-      if (parentHandler) add(parentHandler, 'event delegation', `In "${title}": ${detail}`);
+      if (parentHandler) add(parentHandler, 'event delegation', `${detail}`);
     }
   }
 

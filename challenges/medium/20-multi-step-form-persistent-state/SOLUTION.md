@@ -10,18 +10,18 @@ One state blob; step index; storage sync effect.
 
 ## Code highlights
 
-- `<input value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} />` — **controlled input** — In "Multi-step Form with Persistent State", the input text is owned by React state — value plus onChange keep the field in sync. All fields live in data; step only controls which inputs render.
-- `<input value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />` — **controlled input** — In "Multi-step Form with Persistent State", the input text is owned by React state — value plus onChange keep the field in sync. All fields live in data; step only controls which inputs render.
+- `<input value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} />` — **controlled input** — Input text is owned by React state — value plus onChange keep the field in sync. All fields live in data; step only controls which inputs render.
+- `<input value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />` — **controlled input** — Input text is owned by React state — value plus onChange keep the field in sync. All fields live in data; step only controls which inputs render.
 - `useEffect(() => {
     sessionStorage.setItem(KEY, JSON.stringify(data));
-  }, [data])` — **useEffect** — In "Multi-step Form with Persistent State", this effect runs after render to All fields live in data; step only controls which inputs render..
-- `{step === 2 && <pre>{JSON.stringify(data, null, 2)}</pre>}` — **&& render** — In "Multi-step Form with Persistent State", only renders the element when the left side is true.
-- `{step > 0 && <button onClick={back}>Back</button>}` — **&& render** — In "Multi-step Form with Persistent State", only renders the element when the left side is true.
-- `{step < 2 && <button onClick={next}>Next</button>}` — **&& render** — In "Multi-step Form with Persistent State", only renders the element when the left side is true.
-- `const [data, setData] = useState<FormData>(()` — **data state** — In "Multi-step Form with Persistent State", `data` is the value the UI shows. It starts at (. `setData` updates it when the user interacts. All fields live in data; step only controls which inputs render.
-- `const [step, setStep] = useState(0)` — **step state** — In "Multi-step Form with Persistent State", `step` is the value the UI shows. It starts at 0. `setStep` updates it when the user interacts. All fields live in data; step only controls which inputs render.
-- `onClick={back}` — **onClick** — In "Multi-step Form with Persistent State", this runs when the user clicks this button. All fields live in data; step only controls which inputs render.
-- `onClick={next}` — **onClick** — In "Multi-step Form with Persistent State", this runs when the user clicks this button. All fields live in data; step only controls which inputs render.
+  }, [data])` — **useEffect** — Runs after render to All fields live in data; step only controls which inputs render..
+- `{step === 2 && <pre>{JSON.stringify(data, null, 2)}</pre>}` — **&& render** — Only renders the element when the left side is true.
+- `{step > 0 && <button onClick={back}>Back</button>}` — **&& render** — Only renders the element when the left side is true.
+- `{step < 2 && <button onClick={next}>Next</button>}` — **&& render** — Only renders the element when the left side is true.
+- `const [data, setData] = useState<FormData>(()` — **data state** — `data` is the value the UI shows. It starts at (. `setData` updates it when the user interacts. All fields live in data; step only controls which inputs render.
+- `const [step, setStep] = useState(0)` — **step state** — `step` is the value the UI shows. It starts at 0. `setStep` updates it when the user interacts. All fields live in data; step only controls which inputs render.
+- `onClick={back}` — **onClick** — Runs when the user clicks this button. All fields live in data; step only controls which inputs render.
+- `onClick={next}` — **onClick** — Runs when the user clicks this button. All fields live in data; step only controls which inputs render.
 
 ## Solution code
 

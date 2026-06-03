@@ -11,12 +11,12 @@ A single piece of state holds the count. Event handlers call setCount with eithe
 
 ## Code highlights
 
-- `onClick={() => setCount((c) => c + 1)}` — **onClick** — In "Counter Component", clicking increments the count by 1. Each button calls setCount.
-- `onClick={() => setCount((c) => c - 1)}` — **onClick** — In "Counter Component", clicking decrements the count by 1. Each button calls setCount.
-- `const [count, setCount] = useState(0)` — **count state** — In "Counter Component", `count` is the value the UI shows. It starts at 0. `setCount` updates it when the user interacts. We initialize count to 0.
-- `onClick={() => setCount(0)}` — **onClick** — In "Counter Component", clicking resets the counter to zero. Each button calls setCount.
-- `disabled={count === 0}` — **disabled** — In "Counter Component", the control is disabled when count === 0 — UI follows state instead of manual DOM tweaks. Derive UI (disabled button) from state instead of mutating the DOM.
-- `aria-live="polite"` — **aria-live** — In "Counter Component", assistive tech announces updates when this text changes (e.g. the count).
+- `onClick={() => setCount((c) => c + 1)}` — **increment click** — Adds 1 using the latest state. Each button calls setCount.
+- `onClick={() => setCount((c) => c - 1)}` — **decrement click** — Subtracts 1 using the latest state. Each button calls setCount.
+- `const [count, setCount] = useState(0)` — **count state** — `count` is the value the UI shows. It starts at 0. `setCount` updates it when the user interacts. We initialize count to 0.
+- `onClick={() => setCount(0)}` — **reset click** — Resets the value to zero. Each button calls setCount.
+- `disabled={count === 0}` — **disabled** — Disabled when count === 0 — UI follows state instead of manual DOM tweaks. Derive UI (disabled button) from state instead of mutating the DOM.
+- `aria-live="polite"` — **aria-live** — Assistive tech announces updates when this text changes (e.g. the count).
 
 ## Solution code
 

@@ -10,8 +10,8 @@ Single component composes class names and conditional spinner.
 
 ## Code highlights
 
-- `{loading && <span className="spinner" aria-hidden />}` — **&& render** — In "Build a Reusable Button Component", only renders the element when the left side is true.
-- `disabled={disabled || loading}` — **disabled** — In "Build a Reusable Button Component", the control is disabled when disabled || loading — UI follows state instead of manual DOM tweaks. loading sets disabled and aria-busy; variant drives CSS modifier.
+- `{loading && <span className="spinner" aria-hidden />}` — **&& render** — Only renders the element when the left side is true.
+- `disabled={disabled || loading}` — **disabled** — Disabled when disabled || loading — UI follows state instead of manual DOM tweaks. loading sets disabled and aria-busy; variant drives CSS modifier.
 
 ## Solution code
 

@@ -16,14 +16,14 @@
     if (!canvas) return;
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width` — **useEffect** — In "Art Drawing Tool", this effect runs after render to Pointer events draw line segments; DPR effect sizes backing store for crisp strokes..
-- `<input type="color" value={color} onChange={(e) => setColor(e.target.value)} />` — **controlled input** — In "Art Drawing Tool", the input text is owned by React state — value plus onChange keep the field in sync. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
-- `const [drawing, setDrawing] = useState(false)` — **drawing state** — In "Art Drawing Tool", `drawing` is the value the UI shows. It starts at false. `setDrawing` updates it when the user interacts. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
-- `const ref = useRef<HTMLCanvasElement>(null)` — **ref ref** — In "Art Drawing Tool", `ref` keeps a mutable value across renders without triggering re-renders when .current changes. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
-- `const [color, setColor] = useState('#000')` — **color state** — In "Art Drawing Tool", `color` is the value the UI shows. It starts at '#000'. `setColor` updates it when the user interacts. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
-- `const [size, setSize] = useState(4)` — **size state** — In "Art Drawing Tool", `size` is the value the UI shows. It starts at 4. `setSize` updates it when the user interacts. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
-- `onClick={download}` — **onClick** — In "Art Drawing Tool", clicking runs when the user clicks this button. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
-- `onClick={clear}` — **onClick** — In "Art Drawing Tool", clicking runs when the user clicks this button. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
+    canvas.width = rect.width` — **useEffect** — Runs after render to Pointer events draw line segments; DPR effect sizes backing store for crisp strokes..
+- `<input type="color" value={color} onChange={(e) => setColor(e.target.value)} />` — **controlled input** — Input text is owned by React state — value plus onChange keep the field in sync. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
+- `const [drawing, setDrawing] = useState(false)` — **drawing state** — `drawing` is the value the UI shows. It starts at false. `setDrawing` updates it when the user interacts. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
+- `const ref = useRef<HTMLCanvasElement>(null)` — **ref ref** — `ref` keeps a mutable value across renders without triggering re-renders when .current changes. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
+- `const [color, setColor] = useState('#000')` — **color state** — `color` is the value the UI shows. It starts at '#000'. `setColor` updates it when the user interacts. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
+- `const [size, setSize] = useState(4)` — **size state** — `size` is the value the UI shows. It starts at 4. `setSize` updates it when the user interacts. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
+- `onClick={download}` — **onClick** — Runs when the user clicks this button. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
+- `onClick={clear}` — **onClick** — Runs when the user clicks this button. Pointer events draw line segments; DPR effect sizes backing store for crisp strokes.
 
 ## Solution code
 

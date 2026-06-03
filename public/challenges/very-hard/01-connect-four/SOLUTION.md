@@ -10,14 +10,14 @@ Immutable board updates; win check radiates from last placed cell.
 
 ## Code highlights
 
-- `const [winner, setWinner] = useState<Cell | 'draw' | null>(null)` — **winner state** — In "Connect Four", `winner` is the value the UI shows. It starts at null. `setWinner` updates it when the user interacts. Drop finds lowest empty row; win scans 4 directions from last move only.
-- `.map((c, ci) => (ri === r && ci === col ? player : c)` — **.map()** — In "Connect Four", turns each item in your data into a JSX row. Drop finds lowest empty row; win scans 4 directions from last move only.
-- `const [player, setPlayer] = useState<'R' | 'Y'>('R')` — **player state** — In "Connect Four", `player` is the value the UI shows. It starts at 'R'. `setPlayer` updates it when the user interacts. Drop finds lowest empty row; win scans 4 directions from last move only.
-- `const [board, setBoard] = useState(createBoard)` — **board state** — In "Connect Four", `board` is the value the UI shows. It starts at createBoard. `setBoard` updates it when the user interacts. Drop finds lowest empty row; win scans 4 directions from last move only.
-- `onClick={() => play(col)}` — **onClick** — In "Connect Four", clicking runs when the user clicks this button. Drop finds lowest empty row; win scans 4 directions from last move only.
-- `key={col}` — **key** — In "Connect Four", helps React track each list row — use a stable id (col), not the array index, when items can reorder.
-- `key={r}` — **key** — In "Connect Four", helps React track each list row — use a stable id (r), not the array index, when items can reorder.
-- `key={c}` — **key** — In "Connect Four", helps React track each list row — use a stable id (c), not the array index, when items can reorder.
+- `const [winner, setWinner] = useState<Cell | 'draw' | null>(null)` — **winner state** — `winner` is the value the UI shows. It starts at null. `setWinner` updates it when the user interacts. Drop finds lowest empty row; win scans 4 directions from last move only.
+- `.map((c, ci) => (ri === r && ci === col ? player : c)` — **.map()** — Turns each item in your data into a JSX row. Drop finds lowest empty row; win scans 4 directions from last move only.
+- `const [player, setPlayer] = useState<'R' | 'Y'>('R')` — **player state** — `player` is the value the UI shows. It starts at 'R'. `setPlayer` updates it when the user interacts. Drop finds lowest empty row; win scans 4 directions from last move only.
+- `const [board, setBoard] = useState(createBoard)` — **board state** — `board` is the value the UI shows. It starts at createBoard. `setBoard` updates it when the user interacts. Drop finds lowest empty row; win scans 4 directions from last move only.
+- `onClick={() => play(col)}` — **onClick** — Runs when the user clicks this button. Drop finds lowest empty row; win scans 4 directions from last move only.
+- `key={col}` — **key** — Helps React track each list row — use a stable id (col), not the array index, when items can reorder.
+- `key={r}` — **key** — Helps React track each list row — use a stable id (r), not the array index, when items can reorder.
+- `key={c}` — **key** — Helps React track each list row — use a stable id (c), not the array index, when items can reorder.
 
 ## Solution code
 

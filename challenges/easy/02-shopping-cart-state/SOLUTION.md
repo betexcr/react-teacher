@@ -11,13 +11,13 @@ Keep cart as an array. Each operation returns a new array reference so React det
 
 ## Code highlights
 
-- `const [items, setItems] = useState<Item[]>([])` — **items state** — In "Shopping Cart State", `items` is the value the UI shows. It starts at []. `setItems` updates it when the user interacts. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
-- `.map((i) => (i.id === id ? { ...i, qty } : i)` — **.map()** — In "Shopping Cart State", turns each item in your data into a JSX row. Copy-on-write patterns (map, filter, spread) keep state predictable.
-- `onClick={() => updateQty(i.id, i.qty - 1)}` — **decrement click** — In "Shopping Cart State", this subtracts 1 using the latest state. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
-- `onClick={() => updateQty(i.id, i.qty + 1)}` — **increment click** — In "Shopping Cart State", this adds 1 using the latest state. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
-- `[...prev, { ...product, qty: 1 }]` — **spread copy** — In "Shopping Cart State", copies the old collection then changes it — React sees a new reference and re-renders. Copy-on-write patterns (map, filter, spread) keep state predictable.
-- `onClick={() => removeItem(i.id)}` — **onClick** — In "Shopping Cart State", this runs when the user clicks this button. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
-- `key={i.id}` — **key** — In "Shopping Cart State", helps React track each list row — use a stable id (i.id), not the array index, when items can reorder.
+- `const [items, setItems] = useState<Item[]>([])` — **items state** — `items` is the value the UI shows. It starts at []. `setItems` updates it when the user interacts. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
+- `.map((i) => (i.id === id ? { ...i, qty } : i)` — **.map()** — Turns each item in your data into a JSX row. Copy-on-write patterns (map, filter, spread) keep state predictable.
+- `onClick={() => updateQty(i.id, i.qty - 1)}` — **decrement click** — Subtracts 1 using the latest state. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
+- `onClick={() => updateQty(i.id, i.qty + 1)}` — **increment click** — Adds 1 using the latest state. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
+- `[...prev, { ...product, qty: 1 }]` — **spread copy** — Copies the old collection then changes it — React sees a new reference and re-renders. Copy-on-write patterns (map, filter, spread) keep state predictable.
+- `onClick={() => removeItem(i.id)}` — **onClick** — Runs when the user clicks this button. addItem checks for duplicates with find, then either maps to bump qty or spreads a new entry. updateQty filters out zero-qty lines. total is derived each render.
+- `key={i.id}` — **key** — Helps React track each list row — use a stable id (i.id), not the array index, when items can reorder.
 
 ## Solution code
 

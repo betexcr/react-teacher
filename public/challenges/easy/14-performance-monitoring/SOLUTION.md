@@ -11,8 +11,8 @@ Profiler reports actualDuration; parent stores metrics for display.
 
 ## Code highlights
 
-- `const [last, setLast] = useState(0)` — **last state** — In "Performance Monitoring", `last` is the value the UI shows. It starts at 0. `setLast` updates it when the user interacts. Profiler wraps expensive subtree; callback receives timing after commit.
-- `Profiler` — **Profiler** — In "Performance Monitoring": Measures subtree render/commit time; works in production with overhead—DevTools Profiler is the main workflow in dev.
+- `const [last, setLast] = useState(0)` — **last state** — `last` is the value the UI shows. It starts at 0. `setLast` updates it when the user interacts. Profiler wraps expensive subtree; callback receives timing after commit.
+- `Profiler` — **Profiler** — Measures subtree render/commit time; works in production with overhead—DevTools Profiler is the main workflow in dev.
 
 ## Solution code
 

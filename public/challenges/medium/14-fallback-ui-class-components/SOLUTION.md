@@ -10,10 +10,10 @@ Only class components can be error boundaries today.
 
 ## Code highlights
 
-- `const [show, setShow] = useState(true)` — **show state** — In "Fallback UI (Class Components)", `show` is the value the UI shows. It starts at true. `setShow` updates it when the user interacts. Boundary flips hasError; retry clears flag so children render again.
-- `onClick={() => setShow(false)}` — **onClick** — In "Fallback UI (Class Components)", clicking updates state via . Boundary flips hasError; retry clears flag so children render again.
-- `onClick={this.reset}` — **onClick** — In "Fallback UI (Class Components)", clicking runs when the user clicks this button. Boundary flips hasError; retry clears flag so children render again.
-- `{show && <Buggy />}` — **&& render** — In "Fallback UI (Class Components)", only renders the element when the left side is true.
+- `const [show, setShow] = useState(true)` — **show state** — `show` is the value the UI shows. It starts at true. `setShow` updates it when the user interacts. Boundary flips hasError; retry clears flag so children render again.
+- `onClick={() => setShow(false)}` — **click handler** — Updates state (). Boundary flips hasError; retry clears flag so children render again.
+- `onClick={this.reset}` — **onClick** — Runs when the user clicks this button. Boundary flips hasError; retry clears flag so children render again.
+- `{show && <Buggy />}` — **&& render** — Only renders the element when the left side is true.
 
 ## Solution code
 

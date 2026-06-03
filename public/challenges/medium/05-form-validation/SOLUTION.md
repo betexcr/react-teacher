@@ -10,11 +10,11 @@ Controlled fields + validate function + touched map.
 
 ## Code highlights
 
-- `const [values, setValues] = useState({ username: '', email: '', password: '', confirm: '' })` — **values state** — In "Form Validation", `values` is the value the UI shows. It starts at { username: '', email: '', password: '', confirm: '' }. `setValues` updates it when the user interacts. errors recomputed each render; touched gates visibility; submit marks all touched.
-- `{show(f) && <span role="alert">{errors[f]}</span>}` — **&& render** — In "Form Validation", only renders the element when the left side is true.
-- `disabled={Object.keys(errors).length > 0}` — **disabled** — In "Form Validation", the control is disabled when Object.keys(errors).length > 0 — UI follows state instead of manual DOM tweaks. errors recomputed each render; touched gates visibility; submit marks all touched.
-- `role="alert"` — **role="alert"** — In "Form Validation", marks an error message so screen readers treat it as urgent.
-- `key={f}` — **key** — In "Form Validation", helps React track each list row — use a stable id (f), not the array index, when items can reorder.
+- `const [values, setValues] = useState({ username: '', email: '', password: '', confirm: '' })` — **values state** — `values` is the value the UI shows. It starts at { username: '', email: '', password: '', confirm: '' }. `setValues` updates it when the user interacts. errors recomputed each render; touched gates visibility; submit marks all touched.
+- `{show(f) && <span role="alert">{errors[f]}</span>}` — **&& render** — Only renders the element when the left side is true.
+- `disabled={Object.keys(errors).length > 0}` — **disabled** — Disabled when Object.keys(errors).length > 0 — UI follows state instead of manual DOM tweaks. errors recomputed each render; touched gates visibility; submit marks all touched.
+- `role="alert"` — **role="alert"** — Marks an error message so screen readers treat it as urgent.
+- `key={f}` — **key** — Helps React track each list row — use a stable id (f), not the array index, when items can reorder.
 
 ## Solution code
 

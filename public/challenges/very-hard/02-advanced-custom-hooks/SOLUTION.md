@@ -16,9 +16,9 @@ Layered hooks; effects subscribe to external systems; lazy init for storage.
     setMatches(mq.matches);
     const fn = () => setMatches(mq.matches);
     mq.addEventListener('change', fn);
-    return () => mq.removeEve` — **useEffect** — In "Advanced Custom Hooks", this effect runs after render to Media query hook listens to changes; storage hook persists setting; composed hook resolves effective theme.. The returned cleanup function runs on unmount or before the next run.
-- `const [matches, setMatches] = useState(false)` — **matches state** — In "Advanced Custom Hooks", `matches` is the value the UI shows. It starts at false. `setMatches` updates it when the user interacts. Media query hook listens to changes; storage hook persists setting; composed hook resolves effective theme.
-- `const [value, setValue] = useState<T>(()` — **value state** — In "Advanced Custom Hooks", `value` is the value the UI shows. It starts at (. `setValue` updates it when the user interacts. Media query hook listens to changes; storage hook persists setting; composed hook resolves effective theme.
+    return () => mq.removeEve` — **useEffect** — Runs after render to Media query hook listens to changes; storage hook persists setting; composed hook resolves effective theme.. The returned cleanup function runs on unmount or before the next run.
+- `const [matches, setMatches] = useState(false)` — **matches state** — `matches` is the value the UI shows. It starts at false. `setMatches` updates it when the user interacts. Media query hook listens to changes; storage hook persists setting; composed hook resolves effective theme.
+- `const [value, setValue] = useState<T>(()` — **value state** — `value` is the value the UI shows. It starts at (. `setValue` updates it when the user interacts. Media query hook listens to changes; storage hook persists setting; composed hook resolves effective theme.
 
 ## Solution code
 

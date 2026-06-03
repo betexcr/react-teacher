@@ -10,8 +10,8 @@ Throw structured errors; component branches on error.kind.
 
 ## Code highlights
 
-- `fetch(\`/api/users/${id}\`)` — **fetch** — In "Handling API Errors", this request loads remote data. Errors carry status; UI chooses message and whether retry makes sense.
-- `onClick={execute}` — **onClick** — In "Handling API Errors", clicking runs when the user clicks this button. Errors carry status; UI chooses message and whether retry makes sense.
+- `fetch(\`/api/users/${id}\`)` — **fetch** — Loads remote data. Errors carry status; UI chooses message and whether retry makes sense.
+- `onClick={execute}` — **onClick** — Runs when the user clicks this button. Errors carry status; UI chooses message and whether retry makes sense.
 
 ## Solution code
 

@@ -10,10 +10,10 @@ forwardRef + useId for associations.
 
 ## Code highlights
 
-- `{error && <span id={errId} role="alert">{error}</span>}` — **&& render** — In "Build a Reusable Input Component", only renders the element when the left side is true.
-- `{hint && <span id={hintId}>{hint}</span>}` — **&& render** — In "Build a Reusable Input Component", only renders the element when the left side is true.
-- `role="alert"` — **role="alert"** — In "Build a Reusable Input Component", marks an error message so screen readers treat it as urgent.
-- `forwardRef` — **forwardRef** — In "Build a Reusable Input Component": Lets parents imperatively access DOM node.
+- `{error && <span id={errId} role="alert">{error}</span>}` — **&& render** — Only renders the element when the left side is true.
+- `{hint && <span id={hintId}>{hint}</span>}` — **&& render** — Only renders the element when the left side is true.
+- `role="alert"` — **role="alert"** — Marks an error message so screen readers treat it as urgent.
+- `forwardRef` — **forwardRef** — Lets parents imperatively access DOM node.
 
 ## Solution code
 

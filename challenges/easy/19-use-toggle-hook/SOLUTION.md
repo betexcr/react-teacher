@@ -11,9 +11,9 @@ useState plus useCallback wrappers for ergonomic boolean control.
 
 ## Code highlights
 
-- `const [value, setValue] = useState(initial)` — **value state** — In "useToggle Hook", `value` is the value the UI shows. It starts at initial. `setValue` updates it when the user interacts. Hook encapsulates boolean state and verbs; panel consumes destructured API.
-- `onClick={toggle}` — **onClick** — In "useToggle Hook", this runs when the user clicks this button. Hook encapsulates boolean state and verbs; panel consumes destructured API.
-- `onClick={off}` — **onClick** — In "useToggle Hook", this runs when the user clicks this button. Hook encapsulates boolean state and verbs; panel consumes destructured API.
+- `const [value, setValue] = useState(initial)` — **value state** — `value` is the value the UI shows. It starts at initial. `setValue` updates it when the user interacts. Hook encapsulates boolean state and verbs; panel consumes destructured API.
+- `onClick={toggle}` — **onClick** — Runs when the user clicks this button. Hook encapsulates boolean state and verbs; panel consumes destructured API.
+- `onClick={off}` — **onClick** — Runs when the user clicks this button. Hook encapsulates boolean state and verbs; panel consumes destructured API.
 
 ## Solution code
 

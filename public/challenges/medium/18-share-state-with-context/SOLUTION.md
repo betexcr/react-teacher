@@ -10,8 +10,8 @@ Provider stores user + actions object.
 
 ## Code highlights
 
-- `const AuthContext = createContext<Auth | null>(null);` — **createContext** — In "Share State with Context", this context shares data with any child below without passing props on every level.
-- `const [user, setUser] = useState<User | null>(null)` — **user state** — In "Share State with Context", `user` is the value the UI shows. It starts at null. `setUser` updates it when the user interacts. login/logout mutate user; consumers re-render when context value changes.
+- `const AuthContext = createContext<Auth | null>(null);` — **createContext** — Shares data with any child below without passing props on every level.
+- `const [user, setUser] = useState<User | null>(null)` — **user state** — `user` is the value the UI shows. It starts at null. `setUser` updates it when the user interacts. login/logout mutate user; consumers re-render when context value changes.
 
 ## Solution code
 

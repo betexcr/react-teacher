@@ -10,9 +10,9 @@ Context shares active index and setIndex; compound subcomponents.
 
 ## Code highlights
 
-- `const [internal, setInternal] = useState(0)` — **internal state** — In "Build a Reusable Tabs Component", `internal` is the value the UI shows. It starts at 0. `setInternal` updates it when the user interacts. Controlled index prop overrides internal state; panels conditionally render.
-- `const Ctx = createContext<{ index: number;` — **createContext** — In "Build a Reusable Tabs Component", this context shares data with any child below without passing props on every level.
-- `onClick={() => ctx.setIndex(i)}` — **click handler** — In "Build a Reusable Tabs Component", this updates state (). Controlled index prop overrides internal state; panels conditionally render.
+- `const [internal, setInternal] = useState(0)` — **internal state** — `internal` is the value the UI shows. It starts at 0. `setInternal` updates it when the user interacts. Controlled index prop overrides internal state; panels conditionally render.
+- `const Ctx = createContext<{ index: number;` — **createContext** — Shares data with any child below without passing props on every level.
+- `onClick={() => ctx.setIndex(i)}` — **click handler** — Updates state (). Controlled index prop overrides internal state; panels conditionally render.
 
 ## Solution code
 

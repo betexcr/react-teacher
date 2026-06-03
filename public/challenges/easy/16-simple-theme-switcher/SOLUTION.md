@@ -14,9 +14,9 @@ Theme state drives data attribute; CSS variables switch palettes.
 - `useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem('theme', theme);
-  }, [theme])` — **useEffect** — In "Simple Theme Switcher", this effect runs after render to Effect mirrors theme to DOM and storage whenever state changes..
-- `const [theme, setTheme] = useState<Theme>(()` — **theme state** — In "Simple Theme Switcher", `theme` is the value the UI shows. It starts at (. `setTheme` updates it when the user interacts. Effect mirrors theme to DOM and storage whenever state changes.
-- `onClick={toggle}` — **onClick** — In "Simple Theme Switcher", clicking runs when the user clicks this button. Effect mirrors theme to DOM and storage whenever state changes.
+  }, [theme])` — **useEffect** — Runs after render to Effect mirrors theme to DOM and storage whenever state changes..
+- `const [theme, setTheme] = useState<Theme>(()` — **theme state** — `theme` is the value the UI shows. It starts at (. `setTheme` updates it when the user interacts. Effect mirrors theme to DOM and storage whenever state changes.
+- `onClick={toggle}` — **onClick** — Runs when the user clicks this button. Effect mirrors theme to DOM and storage whenever state changes.
 
 ## Solution code
 

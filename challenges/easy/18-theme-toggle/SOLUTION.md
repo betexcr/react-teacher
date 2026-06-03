@@ -11,8 +11,8 @@ Switch is a button with switch role; state drives aria-checked and CSS.
 
 ## Code highlights
 
-- `const [dark, setDark] = useState(false)` — **dark state** — In "Theme Toggle", `dark` is the value the UI shows. It starts at false. `setDark` updates it when the user interacts. Button acts as switch; aria-checked updates; CSS class drives track/thumb.
-- `onClick={() => setDark((d) => !d)}` — **click handler** — In "Theme Toggle", this updates state (). Button acts as switch; aria-checked updates; CSS class drives track/thumb.
+- `const [dark, setDark] = useState(false)` — **dark state** — `dark` is the value the UI shows. It starts at false. `setDark` updates it when the user interacts. Button acts as switch; aria-checked updates; CSS class drives track/thumb.
+- `onClick={() => setDark((d) => !d)}` — **click handler** — Updates state (). Button acts as switch; aria-checked updates; CSS class drives track/thumb.
 
 ## Solution code
 

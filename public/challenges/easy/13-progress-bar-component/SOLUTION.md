@@ -11,7 +11,7 @@ Compute percentage; apply style width; ARIA reflects numbers.
 
 ## Code highlights
 
-- `{label && <span id="pb-label">{label}</span>}` — **&& render** — In "Progress Bar Component", only renders the element when the left side is true.
+- `{label && <span id="pb-label">{label}</span>}` — **&& render** — Only renders the element when the left side is true.
 
 ## Solution code
 

@@ -17,8 +17,8 @@ Module-level Map + timestamp; hook reads/writes cache.
       return;
     }
     fetcher().then((d) => {
-      cache.set(key, { data:` — **useEffect** — In "Cache Management", this effect runs after render to Cache hit short-circuits network; invalidate deletes entry forcing refetch..
-- `const [data, setData] = useState<T | null>(null)` — **data state** — In "Cache Management", `data` is the value the UI shows. It starts at null. `setData` updates it when the user interacts. Cache hit short-circuits network; invalidate deletes entry forcing refetch.
+      cache.set(key, { data:` — **useEffect** — Runs after render to Cache hit short-circuits network; invalidate deletes entry forcing refetch..
+- `const [data, setData] = useState<T | null>(null)` — **data state** — `data` is the value the UI shows. It starts at null. `setData` updates it when the user interacts. Cache hit short-circuits network; invalidate deletes entry forcing refetch.
 
 ## Solution code
 

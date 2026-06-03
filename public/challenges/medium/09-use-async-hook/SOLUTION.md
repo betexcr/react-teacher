@@ -10,10 +10,10 @@ Request id or AbortController discards outdated results.
 
 ## Code highlights
 
-- `const [error, setError] = useState<Error | null>(null)` — **error state** — In "useAsync Hook", `error` is the value the UI shows. It starts at null. `setError` updates it when the user interacts. Each execute bumps id; only matching id may commit results.
-- `const [status, setStatus] = useState<Status>('idle')` — **status state** — In "useAsync Hook", `status` is the value the UI shows. It starts at 'idle'. `setStatus` updates it when the user interacts. Each execute bumps id; only matching id may commit results.
-- `const [data, setData] = useState<T | null>(null)` — **data state** — In "useAsync Hook", `data` is the value the UI shows. It starts at null. `setData` updates it when the user interacts. Each execute bumps id; only matching id may commit results.
-- `const idRef = useRef(0)` — **ref idRef** — In "useAsync Hook", `idRef` keeps a mutable value across renders without triggering re-renders when .current changes. Each execute bumps id; only matching id may commit results.
+- `const [error, setError] = useState<Error | null>(null)` — **error state** — `error` is the value the UI shows. It starts at null. `setError` updates it when the user interacts. Each execute bumps id; only matching id may commit results.
+- `const [status, setStatus] = useState<Status>('idle')` — **status state** — `status` is the value the UI shows. It starts at 'idle'. `setStatus` updates it when the user interacts. Each execute bumps id; only matching id may commit results.
+- `const [data, setData] = useState<T | null>(null)` — **data state** — `data` is the value the UI shows. It starts at null. `setData` updates it when the user interacts. Each execute bumps id; only matching id may commit results.
+- `const idRef = useRef(0)` — **ref idRef** — `idRef` keeps a mutable value across renders without triggering re-renders when .current changes. Each execute bumps id; only matching id may commit results.
 
 ## Solution code
 

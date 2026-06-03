@@ -10,9 +10,9 @@ Parent owns value; RadioGroup renders radios as buttons with radio role.
 
 ## Code highlights
 
-- `onClick={() => onChange(o.value)}` — **onClick** — In "RadioGroup Component", this runs when the user clicks this button. Controlled value from parent; keyboard wraps selection index.
-- `disabled={o.disabled}` — **disabled** — In "RadioGroup Component", the control is disabled when o.disabled — UI follows state instead of manual DOM tweaks. Controlled value from parent; keyboard wraps selection index.
-- `key={o.value}` — **key** — In "RadioGroup Component", helps React track each list row — use a stable id (o.value), not the array index, when items can reorder.
+- `onClick={() => onChange(o.value)}` — **onClick** — Runs when the user clicks this button. Controlled value from parent; keyboard wraps selection index.
+- `disabled={o.disabled}` — **disabled** — Disabled when o.disabled — UI follows state instead of manual DOM tweaks. Controlled value from parent; keyboard wraps selection index.
+- `key={o.value}` — **key** — Helps React track each list row — use a stable id (o.value), not the array index, when items can reorder.
 
 ## Solution code
 

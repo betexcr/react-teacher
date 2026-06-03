@@ -10,11 +10,11 @@ Separate contexts for orthogonal concerns.
 
 ## Code highlights
 
-- `onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}` — **onClick** — In "Multiple Contexts", clicking updates state via . Independent state in AppProviders; children subscribe only to contexts they use.
-- `const [theme, setTheme] = useState<'light' | 'dark'>('light')` — **theme state** — In "Multiple Contexts", `theme` is the value the UI shows. It starts at 'light'. `setTheme` updates it when the user interacts. Independent state in AppProviders; children subscribe only to contexts they use.
-- `onClick={() => setLocale((l) => (l === 'en' ? 'es' : 'en'))}` — **onClick** — In "Multiple Contexts", clicking updates state via . Independent state in AppProviders; children subscribe only to contexts they use.
-- `const [locale, setLocale] = useState<'en' | 'es'>('en')` — **locale state** — In "Multiple Contexts", `locale` is the value the UI shows. It starts at 'en'. `setLocale` updates it when the user interacts. Independent state in AppProviders; children subscribe only to contexts they use.
-- `const LocaleContext = createContext<'en' | 'es'>('en');` — **createContext** — In "Multiple Contexts", this context shares data with any child below without passing props on every level.
+- `onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}` — **click handler** — Updates state (). Independent state in AppProviders; children subscribe only to contexts they use.
+- `const [theme, setTheme] = useState<'light' | 'dark'>('light')` — **theme state** — `theme` is the value the UI shows. It starts at 'light'. `setTheme` updates it when the user interacts. Independent state in AppProviders; children subscribe only to contexts they use.
+- `onClick={() => setLocale((l) => (l === 'en' ? 'es' : 'en'))}` — **click handler** — Updates state (). Independent state in AppProviders; children subscribe only to contexts they use.
+- `const [locale, setLocale] = useState<'en' | 'es'>('en')` — **locale state** — `locale` is the value the UI shows. It starts at 'en'. `setLocale` updates it when the user interacts. Independent state in AppProviders; children subscribe only to contexts they use.
+- `const LocaleContext = createContext<'en' | 'es'>('en');` — **createContext** — Shares data with any child below without passing props on every level.
 
 ## Solution code
 

@@ -10,12 +10,12 @@ Board as array; map clicks to new board copies; calculateWinner pure function.
 
 ## Code highlights
 
-- `const [history, setHistory] = useState<(string | null)[][]>([Array(9)` — **history state** — In "Build a Tic-Tac-Toe Game", `history` is the value the UI shows. It starts at [Array(9. `setHistory` updates it when the user interacts. History stack stores boards; step indexes into history for time travel.
-- `[...history.slice(0, step + 1), next]` — **spread copy** — In "Build a Tic-Tac-Toe Game", copies the old collection then changes it — React sees a new reference and re-renders.
-- `const [step, setStep] = useState(0)` — **step state** — In "Build a Tic-Tac-Toe Game", `step` is the value the UI shows. It starts at 0. `setStep` updates it when the user interacts. History stack stores boards; step indexes into history for time travel.
-- `onClick={() => setStep(i)}` — **click handler** — In "Build a Tic-Tac-Toe Game", this updates state (). History stack stores boards; step indexes into history for time travel.
-- `onClick={() => play(i)}` — **onClick** — In "Build a Tic-Tac-Toe Game", this runs when the user clicks this button. History stack stores boards; step indexes into history for time travel.
-- `key={i}` — **key** — In "Build a Tic-Tac-Toe Game", helps React track each list row — use a stable id (i), not the array index, when items can reorder.
+- `const [history, setHistory] = useState<(string | null)[][]>([Array(9)` — **history state** — `history` is the value the UI shows. It starts at [Array(9. `setHistory` updates it when the user interacts. History stack stores boards; step indexes into history for time travel.
+- `[...history.slice(0, step + 1), next]` — **spread copy** — Copies the old collection then changes it — React sees a new reference and re-renders.
+- `const [step, setStep] = useState(0)` — **step state** — `step` is the value the UI shows. It starts at 0. `setStep` updates it when the user interacts. History stack stores boards; step indexes into history for time travel.
+- `onClick={() => setStep(i)}` — **click handler** — Updates state (). History stack stores boards; step indexes into history for time travel.
+- `onClick={() => play(i)}` — **onClick** — Runs when the user clicks this button. History stack stores boards; step indexes into history for time travel.
+- `key={i}` — **key** — Helps React track each list row — use a stable id (i), not the array index, when items can reorder.
 
 ## Solution code
 

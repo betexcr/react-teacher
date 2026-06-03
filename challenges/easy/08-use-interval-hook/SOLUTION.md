@@ -13,9 +13,9 @@ Dan Abramov pattern: ref for callback, effect sets interval when delay changes.
 
 - `useEffect(() => {
     saved.current = callback;
-  }, [callback])` — **useEffect** — In "useInterval Hook", this effect runs after render to Separating callback ref from delay effect avoids resetting timer every render when only callback identity changes..
-- `const [on, setOn] = useState(false)` — **on state** — In "useInterval Hook", `on` is the value the UI shows. It starts at false. `setOn` updates it when the user interacts. Separating callback ref from delay effect avoids resetting timer every render when only callback identity changes.
-- `const saved = useRef(callback)` — **ref saved** — In "useInterval Hook", `saved` keeps a mutable value across renders without triggering re-renders when .current changes. Separating callback ref from delay effect avoids resetting timer every render when only callback identity changes.
+  }, [callback])` — **useEffect** — Runs after render to Separating callback ref from delay effect avoids resetting timer every render when only callback identity changes..
+- `const [on, setOn] = useState(false)` — **on state** — `on` is the value the UI shows. It starts at false. `setOn` updates it when the user interacts. Separating callback ref from delay effect avoids resetting timer every render when only callback identity changes.
+- `const saved = useRef(callback)` — **ref saved** — `saved` keeps a mutable value across renders without triggering re-renders when .current changes. Separating callback ref from delay effect avoids resetting timer every render when only callback identity changes.
 
 ## Solution code
 

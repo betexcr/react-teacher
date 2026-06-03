@@ -10,11 +10,11 @@ Native event bubbling + closest to find actionable element.
 
 ## Code highlights
 
-- `onClick={() => setItems((xs) => [...xs, { id: crypto.randomUUID(), label: 'New' }` — **event delegation** — In "Event Delegation": Parent handles events from children—fewer listeners, dynamic-friendly.
-- `const [items, setItems] = useState<Item[]>([{ id: '1', label: 'Alpha' }])` — **items state** — In "Event Delegation", `items` is the value the UI shows. It starts at [{ id: '1', label: 'Alpha' }]. `setItems` updates it when the user interacts. React synthetic events still bubble; closest finds button with data attributes.
-- `[...xs, { id: crypto.randomUUID(), label: 'New' }]` — **spread copy** — In "Event Delegation", copies the old collection then changes it — React sees a new reference and re-renders.
-- `onClick={onListClick}` — **onClick** — In "Event Delegation", this runs when the user clicks this button. React synthetic events still bubble; closest finds button with data attributes.
-- `key={item.id}` — **key** — In "Event Delegation", helps React track each list row — use a stable id (item.id), not the array index, when items can reorder.
+- `onClick={() => setItems((xs) => [...xs, { id: crypto.randomUUID(), label: 'New' }` — **event delegation** — Parent handles events from children—fewer listeners, dynamic-friendly.
+- `const [items, setItems] = useState<Item[]>([{ id: '1', label: 'Alpha' }])` — **items state** — `items` is the value the UI shows. It starts at [{ id: '1', label: 'Alpha' }]. `setItems` updates it when the user interacts. React synthetic events still bubble; closest finds button with data attributes.
+- `[...xs, { id: crypto.randomUUID(), label: 'New' }]` — **spread copy** — Copies the old collection then changes it — React sees a new reference and re-renders.
+- `onClick={onListClick}` — **onClick** — Runs when the user clicks this button. React synthetic events still bubble; closest finds button with data attributes.
+- `key={item.id}` — **key** — Helps React track each list row — use a stable id (item.id), not the array index, when items can reorder.
 
 ## Solution code
 

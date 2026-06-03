@@ -10,12 +10,12 @@ Draft/applied split prevents half-finished theme leaking globally.
 
 ## Code highlights
 
-- `<select value={draft} onChange={(e) => setDraft(e.target.value)}>` — **controlled input** — In "Advanced Theme Manager", the input text is owned by React state — value plus onChange keep the field in sync. Select updates draft only; Apply writes CSS variables globally.
-- `.map((p) => <option key={p} value={p}>{p}</option>)` — **.map()** — In "Advanced Theme Manager", turns each item in your data into a JSX row. Select updates draft only; Apply writes CSS variables globally.
-- `const [applied, setApplied] = useState('ocean')` — **applied state** — In "Advanced Theme Manager", `applied` is the value the UI shows. It starts at 'ocean'. `setApplied` updates it when the user interacts. Select updates draft only; Apply writes CSS variables globally.
-- `const [draft, setDraft] = useState(applied)` — **draft state** — In "Advanced Theme Manager", `draft` is the value the UI shows. It starts at applied. `setDraft` updates it when the user interacts. Select updates draft only; Apply writes CSS variables globally.
-- `onClick={commit}` — **onClick** — In "Advanced Theme Manager", clicking runs when the user clicks this button. Select updates draft only; Apply writes CSS variables globally.
-- `key={p}` — **key** — In "Advanced Theme Manager", helps React track each list row — use a stable id (p), not the array index, when items can reorder.
+- `<select value={draft} onChange={(e) => setDraft(e.target.value)}>` — **controlled input** — Input text is owned by React state — value plus onChange keep the field in sync. Select updates draft only; Apply writes CSS variables globally.
+- `.map((p) => <option key={p} value={p}>{p}</option>)` — **.map()** — Turns each item in your data into a JSX row. Select updates draft only; Apply writes CSS variables globally.
+- `const [applied, setApplied] = useState('ocean')` — **applied state** — `applied` is the value the UI shows. It starts at 'ocean'. `setApplied` updates it when the user interacts. Select updates draft only; Apply writes CSS variables globally.
+- `const [draft, setDraft] = useState(applied)` — **draft state** — `draft` is the value the UI shows. It starts at applied. `setDraft` updates it when the user interacts. Select updates draft only; Apply writes CSS variables globally.
+- `onClick={commit}` — **onClick** — Runs when the user clicks this button. Select updates draft only; Apply writes CSS variables globally.
+- `key={p}` — **key** — Helps React track each list row — use a stable id (p), not the array index, when items can reorder.
 
 ## Solution code
 

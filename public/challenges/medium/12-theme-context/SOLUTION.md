@@ -10,9 +10,9 @@ Context shares { theme, setTheme }; consumers read via hook.
 
 ## Code highlights
 
-- `const ThemeContext = createContext<Ctx | null>(null);` — **createContext** — In "Theme Context", this context shares data with any child below without passing props on every level. Broadcasts value to subtree without intermediate props.
-- `const [theme, setTheme] = useState<Theme>('light')` — **theme state** — In "Theme Context", `theme` is the value the UI shows. It starts at 'light'. `setTheme` updates it when the user interacts. Provider memoizes value; hook enforces correct usage.
-- `onClick={toggle}` — **onClick** — In "Theme Context", clicking runs when the user clicks this button. Provider memoizes value; hook enforces correct usage.
+- `const ThemeContext = createContext<Ctx | null>(null);` — **createContext** — Shares data with any child below without passing props on every level. Broadcasts value to subtree without intermediate props.
+- `const [theme, setTheme] = useState<Theme>('light')` — **theme state** — `theme` is the value the UI shows. It starts at 'light'. `setTheme` updates it when the user interacts. Provider memoizes value; hook enforces correct usage.
+- `onClick={toggle}` — **onClick** — Runs when the user clicks this button. Provider memoizes value; hook enforces correct usage.
 
 ## Solution code
 

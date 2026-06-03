@@ -15,10 +15,10 @@ Portal + dialog semantics + effect for focus management.
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
     ref.current?.focus();
-    return ()` — **useEffect** — In "Build a Reusable Drawer Component", this effect runs after render to Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.. The returned cleanup function runs on unmount or before the next run.
-- `const ref = useRef<HTMLDivElement>(null)` — **ref ref** — In "Build a Reusable Drawer Component", `ref` keeps a mutable value across renders without triggering re-renders when .current changes. Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.
-- `onClick={(e) => e.stopPropagation()}` — **onClick** — In "Build a Reusable Drawer Component", this runs when the user clicks this button. Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.
-- `onClick={onClose}` — **onClick** — In "Build a Reusable Drawer Component", this runs when the user clicks this button. Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.
+    return ()` — **useEffect** — Runs after render to Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.. The returned cleanup function runs on unmount or before the next run.
+- `const ref = useRef<HTMLDivElement>(null)` — **ref ref** — `ref` keeps a mutable value across renders without triggering re-renders when .current changes. Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.
+- `onClick={(e) => e.stopPropagation()}` — **onClick** — Runs when the user clicks this button. Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.
+- `onClick={onClose}` — **onClick** — Runs when the user clicks this button. Portal mounts overlay at body; stopPropagation keeps drawer clicks from closing.
 
 ## Solution code
 
