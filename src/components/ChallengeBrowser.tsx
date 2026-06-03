@@ -165,7 +165,11 @@ function ChallengeDetailPage() {
         </button>
         {showSolution && (
           <div className="solution-content">
-            <MarkdownView source={solutionMd} />
+            <p className="solution-code-hint">
+              Highlighted terms in the solution code are explained on hover or focus — look for{' '}
+              <span className="solution-code-term-inline-sample">teal</span> marks below.
+            </p>
+            <MarkdownView source={solutionMd} annotateSolutionCode />
           </div>
         )}
       </div>
