@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { MarkdownView } from '../components/MarkdownView';
+import { getReactPatternHighlights } from '../data/react-patterns/codeHighlights';
 import { getPatternBySlug } from '../data/react-patterns';
 import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
 
@@ -25,7 +26,11 @@ export function ReactPatternDetailPage() {
         ← React Patterns
       </Link>
       <div className="system-design-prose">
-        <MarkdownView source={pattern.content} />
+        <MarkdownView
+          source={pattern.content}
+          solutionHighlights={getReactPatternHighlights(pattern.slug)}
+          codeHighlightLegend="Key terms in this example"
+        />
       </div>
     </article>
   );
