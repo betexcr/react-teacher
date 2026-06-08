@@ -268,6 +268,95 @@ const bySlug: Record<string, SolutionHighlight[]> = {
       tip: 'Declares a sortable list strategy (here vertical) for cards inside a column.',
     },
   ],
+  'autocomplete-search': [
+    {
+      match: 'useDebouncedValue(query.trim(), 200)',
+      label: 'debounce',
+      tip: 'Waits 200ms after typing stops before firing API—cuts request volume dramatically.',
+    },
+    {
+      match: 'abortRef.current?.abort()',
+      label: 'AbortController',
+      tip: 'Cancels the in-flight suggest request when query changes—prevents stale results winning.',
+    },
+    {
+      match: "queryKey: ['search', debouncedQuery]",
+      label: 'queryKey',
+      tip: 'React Query caches per query string—repeat searches feel instant for 30s.',
+    },
+    {
+      match: 'placeholderData: (prev) => prev',
+      label: 'placeholderData',
+      tip: 'Keeps prior results visible while refetching—avoids list flicker on each keystroke.',
+    },
+    {
+      match: 'role="combobox"',
+      label: 'combobox',
+      tip: 'WAI-ARIA role pairing input with listbox—required for accessible typeahead.',
+    },
+    {
+      match: 'aria-activedescendant',
+      label: 'aria-activedescendant',
+      tip: 'Points screen readers to the keyboard-highlighted option without moving focus.',
+    },
+    {
+      match: 'enabled: debouncedQuery.length >= 2',
+      label: 'enabled guard',
+      tip: 'Skip API until minimum query length—reduces noise and matches user intent.',
+    },
+    {
+      match: 'localStorage.setItem(RECENT_KEY',
+      label: 'recent searches',
+      tip: 'Persist last queries locally—show on focus before user types.',
+    },
+  ],
+  'data-table': [
+    {
+      match: 'useSearchParams',
+      label: 'URL state',
+      tip: 'Table sort/filter/page live in URL—shareable admin views and back-button support.',
+    },
+    {
+      match: 'manualPagination: true',
+      label: 'manualPagination',
+      tip: 'Server returns one page; table does not slice rows client-side.',
+    },
+    {
+      match: 'manualSorting: true',
+      label: 'manualSorting',
+      tip: 'Sort clicks update URL/API—database sorts 100k rows, not the browser.',
+    },
+    {
+      match: "queryKey: ['users', urlState]",
+      label: 'queryKey',
+      tip: 'Refetch when any URL table param changes—page, sort, filters stay in sync.',
+    },
+    {
+      match: 'placeholderData: (prev) => prev',
+      label: 'placeholderData',
+      tip: 'Show previous page while next page loads—smoother pagination UX.',
+    },
+    {
+      match: 'flexRender',
+      label: 'flexRender',
+      tip: 'TanStack Table helper renders header/cell defs—supports custom sort UI.',
+    },
+    {
+      match: 'aria-sort',
+      label: 'aria-sort',
+      tip: 'Announce ascending/descending sort state on column headers.',
+    },
+    {
+      match: 'bulk-delete',
+      label: 'bulk delete',
+      tip: 'POST selected ids to server—never delete row-by-row from the client loop.',
+    },
+    {
+      match: 'next.set(\'page\', \'1\')',
+      label: 'reset page',
+      tip: 'When filter changes, jump to page 1—avoids empty page 5 after narrowing results.',
+    },
+  ],
 };
 
 function sortByMatchLength(highlights: SolutionHighlight[]): SolutionHighlight[] {

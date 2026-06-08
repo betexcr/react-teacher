@@ -456,6 +456,16 @@ export const ogManifest = {
       "description": "Frontend system design: Complex Drag-and-Drop Interactions. Interview walkthrough on ReactTeacher.",
       "ogImageId": "system-design/kanban-board"
     },
+    "/system-design/autocomplete-search": {
+      "title": "Search Autocomplete · System Design",
+      "description": "Frontend system design: Debounced API, keyboard navigation, caching. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/autocomplete-search"
+    },
+    "/system-design/data-table": {
+      "title": "Admin Data Table · System Design",
+      "description": "Frontend system design: Sort, filter, pagination, bulk actions. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/data-table"
+    },
     "/react-patterns/compound-components": {
       "title": "Compound Components · React Patterns",
       "description": "React pattern guide: Shared implicit state via context. Examples and tradeoffs on ReactTeacher.",

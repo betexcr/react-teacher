@@ -7,6 +7,8 @@ import authSystem from './content/auth-system.md?raw';
 import googleDocsClone from './content/google-docs-clone.md?raw';
 import videoPlayer from './content/video-player.md?raw';
 import kanbanBoard from './content/kanban-board.md?raw';
+import autocompleteSearch from './content/autocomplete-search.md?raw';
+import dataTable from './content/data-table.md?raw';
 
 export const systemDesignProblems: SystemDesignProblem[] = [
   {
@@ -64,6 +66,20 @@ export const systemDesignProblems: SystemDesignProblem[] = [
     subtitle: 'Complex Drag-and-Drop Interactions',
     pageTitle: 'Complex Drag-and-Drop Kanban Board',
     content: kanbanBoard,
+  },
+  {
+    slug: 'autocomplete-search',
+    title: 'Search Autocomplete',
+    subtitle: 'Debounced API, keyboard navigation, caching',
+    pageTitle: 'Search Autocomplete (Typeahead)',
+    content: autocompleteSearch,
+  },
+  {
+    slug: 'data-table',
+    title: 'Admin Data Table',
+    subtitle: 'Sort, filter, pagination, bulk actions',
+    pageTitle: 'Admin Data Table',
+    content: dataTable,
   },
 ];
 

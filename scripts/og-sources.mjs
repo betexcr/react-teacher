@@ -51,6 +51,8 @@ const systemDesignProblems = [
   { slug: 'google-docs-clone', title: 'Google Docs Clone', subtitle: 'Real-time Collaboration Editor' },
   { slug: 'video-player', title: 'Video Player', subtitle: 'Custom Video Player' },
   { slug: 'kanban-board', title: 'Kanban Board', subtitle: 'Complex Drag-and-Drop Interactions' },
+  { slug: 'autocomplete-search', title: 'Search Autocomplete', subtitle: 'Debounced API, keyboard navigation, caching' },
+  { slug: 'data-table', title: 'Admin Data Table', subtitle: 'Sort, filter, pagination, bulk actions' },
 ];
 
 const reactPatterns = [
