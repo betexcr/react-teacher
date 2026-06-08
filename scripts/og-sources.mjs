@@ -59,6 +59,9 @@ const systemDesignProblems = [
   { slug: 'notification-center', title: 'Notification Center', subtitle: 'Toasts, inbox, WebSocket push, unread badges' },
   { slug: 'calendar-scheduling', title: 'Calendar & Scheduling', subtitle: 'Timezones, recurring events, conflict detection' },
   { slug: 'photo-gallery', title: 'Photo Gallery', subtitle: 'Lazy grid, lightbox, infinite media scroll' },
+  { slug: 'offline-pwa', title: 'Offline-First PWA', subtitle: 'Service worker, mutation queue, background sync' },
+  { slug: 'feature-flags', title: 'Feature Flags & A/B', subtitle: 'Client bucketing, bootstrap, no-flash UI' },
+  { slug: 'multi-tenant-saas', title: 'Multi-Tenant SaaS', subtitle: 'Org switcher, scoped cache, white-label theming' },
 ];
 
 const reactPatterns = [

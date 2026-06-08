@@ -496,6 +496,21 @@ export const ogManifest = {
       "description": "Frontend system design: Lazy grid, lightbox, infinite media scroll. Interview walkthrough on ReactTeacher.",
       "ogImageId": "system-design/photo-gallery"
     },
+    "/system-design/offline-pwa": {
+      "title": "Offline-First PWA · System Design",
+      "description": "Frontend system design: Service worker, mutation queue, background sync. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/offline-pwa"
+    },
+    "/system-design/feature-flags": {
+      "title": "Feature Flags & A/B · System Design",
+      "description": "Frontend system design: Client bucketing, bootstrap, no-flash UI. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/feature-flags"
+    },
+    "/system-design/multi-tenant-saas": {
+      "title": "Multi-Tenant SaaS · System Design",
+      "description": "Frontend system design: Org switcher, scoped cache, white-label theming. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/multi-tenant-saas"
+    },
     "/react-patterns/compound-components": {
       "title": "Compound Components · React Patterns",
       "description": "React pattern guide: Shared implicit state via context. Examples and tradeoffs on ReactTeacher.",

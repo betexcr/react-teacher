@@ -584,6 +584,117 @@ const bySlug: Record<string, SolutionHighlight[]> = {
       tip: 'Prevent background scroll while lightbox is open.',
     },
   ],
+  'offline-pwa': [
+    {
+      match: 'precacheAndRoute',
+      label: 'precache',
+      tip: 'Install-time cache of hashed JS/CSS—app shell loads offline immediately.',
+    },
+    {
+      match: 'NetworkFirst',
+      label: 'NetworkFirst',
+      tip: 'Try network for API; fall back to cache when offline or slow.',
+    },
+    {
+      match: 'replay-mutations',
+      label: 'Background Sync',
+      tip: 'Browser replays offline queue when connectivity returns.',
+    },
+    {
+      match: 'Idempotency-Key',
+      label: 'Idempotency-Key',
+      tip: 'Safe replay—duplicate POST with same key does not double-apply on server.',
+    },
+    {
+      match: 'openDB(\'offline-queue\'',
+      label: 'IndexedDB queue',
+      tip: 'Persist mutations across refresh—survives tab close until synced.',
+    },
+    {
+      match: 'useSyncExternalStore',
+      label: 'online status',
+      tip: 'Subscribe to online/offline—re-render banner without polling.',
+    },
+    {
+      match: 'SKIP_WAITING',
+      label: 'skip waiting',
+      tip: 'Activate new service worker after user accepts update prompt.',
+    },
+  ],
+  'feature-flags': [
+    {
+      match: 'window.__FLAGS__',
+      label: 'bootstrap flags',
+      tip: 'Inline flags before React hydrate—prevents flash of wrong variant.',
+    },
+    {
+      match: 'useFlag(',
+      label: 'useFlag',
+      tip: 'Read boolean gate in components—defaults false when SDK unavailable.',
+    },
+    {
+      match: 'useVariant(',
+      label: 'useVariant',
+      tip: 'Multivariate A/B/C—returns string variant for experiment branches.',
+    },
+    {
+      match: 'staleTime: 60_000',
+      label: 'staleTime',
+      tip: 'Cache flags 60s—balance freshness vs. request volume.',
+    },
+    {
+      match: 'sessionStorage.setItem(key, variant)',
+      label: 'exposure once',
+      tip: 'Track experiment exposure once per session—avoid inflated analytics.',
+    },
+    {
+      match: 'bucket(userId, flagKey, percent)',
+      label: 'deterministic bucket',
+      tip: 'Hash user+flag for sticky percentage rollout—same user, same variant.',
+    },
+    {
+      match: 'forceOff',
+      label: 'kill switch',
+      tip: 'Admin override disables flag instantly—overrides rollout rules.',
+    },
+  ],
+  'multi-tenant-saas': [
+    {
+      match: 'qc.clear()',
+      label: 'cache clear',
+      tip: 'Wipe React Query on org switch—prevent cross-tenant data leak in UI.',
+    },
+    {
+      match: "queryKey: ['projects', org?.id]",
+      label: 'scoped queryKey',
+      tip: 'Every tenant query includes orgId—cache partitions per organization.',
+    },
+    {
+      match: 'X-Org-Id',
+      label: 'org header',
+      tip: 'API middleware scopes data to selected org—pairs with JWT membership check.',
+    },
+    {
+      match: 'OrgSwitcher',
+      label: 'org switcher',
+      tip: 'Header control to change active tenant—triggers cache clear + refetch.',
+    },
+    {
+      match: '--brand-primary',
+      label: 'CSS variable',
+      tip: 'Runtime theme injection for white-label primary color per tenant.',
+    },
+    {
+      match: 'RequireRole',
+      label: 'role guard',
+      tip: 'Route outlet blocks access when user role not in allow list for org.',
+    },
+    {
+      match: "localStorage.setItem('lastOrgId'",
+      label: 'last org',
+      tip: 'Remember last selected org across sessions—validate membership on load.',
+    },
+  ],
 };
 
 function sortByMatchLength(highlights: SolutionHighlight[]): SolutionHighlight[] {

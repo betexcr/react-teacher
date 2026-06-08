@@ -15,6 +15,9 @@ import shoppingCart from './content/shopping-cart.md?raw';
 import notificationCenter from './content/notification-center.md?raw';
 import calendarScheduling from './content/calendar-scheduling.md?raw';
 import photoGallery from './content/photo-gallery.md?raw';
+import offlinePwa from './content/offline-pwa.md?raw';
+import featureFlags from './content/feature-flags.md?raw';
+import multiTenantSaas from './content/multi-tenant-saas.md?raw';
 
 export const systemDesignProblems: SystemDesignProblem[] = [
   {
@@ -128,6 +131,27 @@ export const systemDesignProblems: SystemDesignProblem[] = [
     subtitle: 'Lazy grid, lightbox, infinite media scroll',
     pageTitle: 'Photo Gallery / Media Grid',
     content: photoGallery,
+  },
+  {
+    slug: 'offline-pwa',
+    title: 'Offline-First PWA',
+    subtitle: 'Service worker, mutation queue, background sync',
+    pageTitle: 'Offline-First PWA',
+    content: offlinePwa,
+  },
+  {
+    slug: 'feature-flags',
+    title: 'Feature Flags & A/B',
+    subtitle: 'Client bucketing, bootstrap, no-flash UI',
+    pageTitle: 'Feature Flags & A/B Testing',
+    content: featureFlags,
+  },
+  {
+    slug: 'multi-tenant-saas',
+    title: 'Multi-Tenant SaaS',
+    subtitle: 'Org switcher, scoped cache, white-label theming',
+    pageTitle: 'Multi-Tenant SaaS Shell',
+    content: multiTenantSaas,
   },
 ];
 
