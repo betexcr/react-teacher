@@ -466,6 +466,16 @@ export const ogManifest = {
       "description": "Frontend system design: Sort, filter, pagination, bulk actions. Interview walkthrough on ReactTeacher.",
       "ogImageId": "system-design/data-table"
     },
+    "/system-design/file-upload": {
+      "title": "File Upload · System Design",
+      "description": "Frontend system design: Chunked upload, progress, presigned URLs. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/file-upload"
+    },
+    "/system-design/analytics-dashboard": {
+      "title": "Analytics Dashboard · System Design",
+      "description": "Frontend system design: Widgets, time ranges, lazy chart loading. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/analytics-dashboard"
+    },
     "/react-patterns/compound-components": {
       "title": "Compound Components · React Patterns",
       "description": "React pattern guide: Shared implicit state via context. Examples and tradeoffs on ReactTeacher.",

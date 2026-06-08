@@ -357,6 +357,90 @@ const bySlug: Record<string, SolutionHighlight[]> = {
       tip: 'When filter changes, jump to page 1—avoids empty page 5 after narrowing results.',
     },
   ],
+  'file-upload': [
+    {
+      match: 'onDragOver={(e) => e.preventDefault()}',
+      label: 'preventDefault',
+      tip: 'Required on dragover—without it the browser will not fire drop events.',
+    },
+    {
+      match: '/api/uploads/init',
+      label: 'init upload',
+      tip: 'Server mints presigned URL + fields—client never sends file bytes through your API.',
+    },
+    {
+      match: 'xhr.upload.onprogress',
+      label: 'onprogress',
+      tip: 'XHR upload progress events—fetch API lacks upload progress without ReadableStream hacks.',
+    },
+    {
+      match: 'form.append(\'file\', file)',
+      label: 'FormData',
+      tip: 'Presigned POST expects policy fields plus file in multipart form to S3.',
+    },
+    {
+      match: '/complete',
+      label: 'complete',
+      tip: 'Notify backend after S3 upload—triggers virus scan and marks metadata ready.',
+    },
+    {
+      match: 'pollUntilReady',
+      label: 'poll scan',
+      tip: 'Async processing—client polls until status is ready or rejected.',
+    },
+    {
+      match: 'URL.createObjectURL(file)',
+      label: 'object URL',
+      tip: 'Instant local image preview before upload finishes—revoke on cleanup.',
+    },
+    {
+      match: 'URL.revokeObjectURL(url)',
+      label: 'revokeObjectURL',
+      tip: 'Frees blob memory when preview unmounts—prevents leaks on large batches.',
+    },
+  ],
+  'analytics-dashboard': [
+    {
+      match: 'DateRangeContext',
+      label: 'DateRangeContext',
+      tip: 'Shared from/to drives every widget—one picker refetches all metrics together.',
+    },
+    {
+      match: "queryKey: ['metrics', 'mrr', range.from, range.to]",
+      label: 'queryKey',
+      tip: 'Cache keyed by widget + range—changing dates refetches only affected metrics.',
+    },
+    {
+      match: 'staleTime: 60_000',
+      label: 'staleTime',
+      tip: 'Dashboard data stays fresh for 60s—reduces refetch noise on tab focus.',
+    },
+    {
+      match: 'useQueries({',
+      label: 'useQueries',
+      tip: 'Parallel independent fetches—one slow widget does not block the grid.',
+    },
+    {
+      match: 'lazy(() => import(',
+      label: 'React.lazy',
+      tip: 'Code-split heavy chart library—dashboard shell paints before chart JS loads.',
+    },
+    {
+      match: 'WidgetErrorBoundary',
+      label: 'error boundary',
+      tip: 'Isolate widget failures—sibling tiles keep rendering if one chart throws.',
+    },
+    {
+      match: 'exportCsv',
+      label: 'CSV export',
+      tip: 'Stream export from server—avoid building huge CSV strings in the browser.',
+    },
+    {
+      match: 'setParams(p, { replace: true })',
+      label: 'URL sync',
+      tip: 'Date range in URL—shareable dashboard views and back-button support.',
+    },
+  ],
 };
 
 function sortByMatchLength(highlights: SolutionHighlight[]): SolutionHighlight[] {

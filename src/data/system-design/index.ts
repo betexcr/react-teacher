@@ -9,6 +9,8 @@ import videoPlayer from './content/video-player.md?raw';
 import kanbanBoard from './content/kanban-board.md?raw';
 import autocompleteSearch from './content/autocomplete-search.md?raw';
 import dataTable from './content/data-table.md?raw';
+import fileUpload from './content/file-upload.md?raw';
+import analyticsDashboard from './content/analytics-dashboard.md?raw';
 
 export const systemDesignProblems: SystemDesignProblem[] = [
   {
@@ -80,6 +82,20 @@ export const systemDesignProblems: SystemDesignProblem[] = [
     subtitle: 'Sort, filter, pagination, bulk actions',
     pageTitle: 'Admin Data Table',
     content: dataTable,
+  },
+  {
+    slug: 'file-upload',
+    title: 'File Upload',
+    subtitle: 'Chunked upload, progress, presigned URLs',
+    pageTitle: 'File Upload Pipeline',
+    content: fileUpload,
+  },
+  {
+    slug: 'analytics-dashboard',
+    title: 'Analytics Dashboard',
+    subtitle: 'Widgets, time ranges, lazy chart loading',
+    pageTitle: 'Analytics Dashboard',
+    content: analyticsDashboard,
   },
 ];
 

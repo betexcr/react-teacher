@@ -53,6 +53,8 @@ const systemDesignProblems = [
   { slug: 'kanban-board', title: 'Kanban Board', subtitle: 'Complex Drag-and-Drop Interactions' },
   { slug: 'autocomplete-search', title: 'Search Autocomplete', subtitle: 'Debounced API, keyboard navigation, caching' },
   { slug: 'data-table', title: 'Admin Data Table', subtitle: 'Sort, filter, pagination, bulk actions' },
+  { slug: 'file-upload', title: 'File Upload', subtitle: 'Chunked upload, progress, presigned URLs' },
+  { slug: 'analytics-dashboard', title: 'Analytics Dashboard', subtitle: 'Widgets, time ranges, lazy chart loading' },
 ];
 
 const reactPatterns = [
