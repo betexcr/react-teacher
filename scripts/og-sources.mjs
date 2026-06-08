@@ -62,6 +62,8 @@ const systemDesignProblems = [
   { slug: 'offline-pwa', title: 'Offline-First PWA', subtitle: 'Service worker, mutation queue, background sync' },
   { slug: 'feature-flags', title: 'Feature Flags & A/B', subtitle: 'Client bucketing, bootstrap, no-flash UI' },
   { slug: 'multi-tenant-saas', title: 'Multi-Tenant SaaS', subtitle: 'Org switcher, scoped cache, white-label theming' },
+  { slug: 'maps-location', title: 'Maps & Location', subtitle: 'Marker clustering, bbox fetch, geolocation' },
+  { slug: 'email-client', title: 'Email Client', subtitle: 'Threading, labels, virtualized inbox' },
 ];
 
 const reactPatterns = [

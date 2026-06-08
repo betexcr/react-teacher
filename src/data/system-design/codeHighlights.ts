@@ -695,6 +695,80 @@ const bySlug: Record<string, SolutionHighlight[]> = {
       tip: 'Remember last selected org across sessions—validate membership on load.',
     },
   ],
+  'maps-location': [
+    {
+      match: 'new Supercluster({ radius: 60',
+      label: 'Supercluster',
+      tip: 'Spatial index clusters thousands of points—O(log n) queries per pan/zoom.',
+    },
+    {
+      match: 'getClusters([sw.lng, sw.lat, ne.lng, ne.lat]',
+      label: 'bbox clusters',
+      tip: 'Return clusters + markers visible in current map bounds at this zoom.',
+    },
+    {
+      match: "queryKey: ['places', key]",
+      label: 'bbox cache',
+      tip: 'React Query caches marker fetches per viewport—avoid refetch on tiny pans.',
+    },
+    {
+      match: 'placeholderData: (prev) => prev',
+      label: 'placeholderData',
+      tip: 'Keep previous markers visible while new bbox loads—prevents map flash.',
+    },
+    {
+      match: 'navigator.geolocation.getCurrentPosition',
+      label: 'geolocation',
+      tip: 'Browser API for user location—handle permission denied gracefully.',
+    },
+    {
+      match: 'ST_MakeEnvelope',
+      label: 'spatial query',
+      tip: 'PostGIS bbox filter with GiST index—scales vs. full table scan.',
+    },
+    {
+      match: 'enabled: !!bounds && zoom >= 8',
+      label: 'zoom gate',
+      tip: 'Skip marker fetch at world zoom—server returns too much or uses aggregation only.',
+    },
+  ],
+  'email-client': [
+    {
+      match: "queryKey: ['threads', label]",
+      label: 'label filter',
+      tip: 'Thread list cache keyed by active label—inbox vs. starred are separate lists.',
+    },
+    {
+      match: 'useInfiniteQuery',
+      label: 'infinite threads',
+      tip: 'Cursor pagination for inbox—load more as user scrolls virtual list.',
+    },
+    {
+      match: 'useVirtualizer',
+      label: 'virtual list',
+      tip: 'Render only visible thread rows—10k threads without 10k DOM nodes.',
+    },
+    {
+      match: 'onMutate: async (threadId)',
+      label: 'optimistic read',
+      tip: 'Instantly clear unread badge; rollback cache snapshot if PATCH fails.',
+    },
+    {
+      match: "queryKey: ['messages', threadId]",
+      label: 'lazy bodies',
+      tip: 'Fetch full message bodies only when thread opens—list stays lightweight.',
+    },
+    {
+      match: 'dangerouslySetInnerHTML',
+      label: 'HTML body',
+      tip: 'Render rich email HTML—must sanitize with DOMPurify first.',
+    },
+    {
+      match: 'window.setTimeout(() => {',
+      label: 'draft autosave',
+      tip: 'Debounce 800ms PUT to drafts—persist compose without spamming API.',
+    },
+  ],
 };
 
 function sortByMatchLength(highlights: SolutionHighlight[]): SolutionHighlight[] {

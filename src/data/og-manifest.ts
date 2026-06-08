@@ -511,6 +511,16 @@ export const ogManifest = {
       "description": "Frontend system design: Org switcher, scoped cache, white-label theming. Interview walkthrough on ReactTeacher.",
       "ogImageId": "system-design/multi-tenant-saas"
     },
+    "/system-design/maps-location": {
+      "title": "Maps & Location · System Design",
+      "description": "Frontend system design: Marker clustering, bbox fetch, geolocation. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/maps-location"
+    },
+    "/system-design/email-client": {
+      "title": "Email Client · System Design",
+      "description": "Frontend system design: Threading, labels, virtualized inbox. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/email-client"
+    },
     "/react-patterns/compound-components": {
       "title": "Compound Components · React Patterns",
       "description": "React pattern guide: Shared implicit state via context. Examples and tradeoffs on ReactTeacher.",

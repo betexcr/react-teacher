@@ -18,6 +18,8 @@ import photoGallery from './content/photo-gallery.md?raw';
 import offlinePwa from './content/offline-pwa.md?raw';
 import featureFlags from './content/feature-flags.md?raw';
 import multiTenantSaas from './content/multi-tenant-saas.md?raw';
+import mapsLocation from './content/maps-location.md?raw';
+import emailClient from './content/email-client.md?raw';
 
 export const systemDesignProblems: SystemDesignProblem[] = [
   {
@@ -152,6 +154,20 @@ export const systemDesignProblems: SystemDesignProblem[] = [
     subtitle: 'Org switcher, scoped cache, white-label theming',
     pageTitle: 'Multi-Tenant SaaS Shell',
     content: multiTenantSaas,
+  },
+  {
+    slug: 'maps-location',
+    title: 'Maps & Location',
+    subtitle: 'Marker clustering, bbox fetch, geolocation',
+    pageTitle: 'Maps / Location App',
+    content: mapsLocation,
+  },
+  {
+    slug: 'email-client',
+    title: 'Email Client',
+    subtitle: 'Threading, labels, virtualized inbox',
+    pageTitle: 'Email Client',
+    content: emailClient,
   },
 ];
 
