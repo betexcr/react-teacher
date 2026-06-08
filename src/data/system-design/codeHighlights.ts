@@ -441,6 +441,149 @@ const bySlug: Record<string, SolutionHighlight[]> = {
       tip: 'Date range in URL—shareable dashboard views and back-button support.',
     },
   ],
+  'shopping-cart': [
+    {
+      match: "queryKey: ['cart']",
+      label: 'cart queryKey',
+      tip: 'Single cache bucket for cart—mutations invalidate to sync totals with server.',
+    },
+    {
+      match: 'onMutate: async (productId)',
+      label: 'onMutate',
+      tip: 'Optimistic add-to-cart—UI updates before API confirms stock and price.',
+    },
+    {
+      match: 'qc.setQueryData<Cart>([\'cart\'], ctx?.prev)',
+      label: 'rollback',
+      tip: 'Restore prior cart if add fails (out of stock or price change).',
+    },
+    {
+      match: 'useReducer(reducer,',
+      label: 'checkout reducer',
+      tip: 'Multi-step checkout as explicit state machine—shipping → payment → review.',
+    },
+    {
+      match: 'loadStripe(',
+      label: 'loadStripe',
+      tip: 'Loads Stripe.js once—PaymentElement handles PCI-sensitive card fields.',
+    },
+    {
+      match: 'confirmPayment({',
+      label: 'confirmPayment',
+      tip: 'Confirms PaymentIntent client-side—redirects to return_url on success.',
+    },
+    {
+      match: 'PaymentElement',
+      label: 'PaymentElement',
+      tip: 'Stripe-hosted inputs—card data never enters your React state.',
+    },
+  ],
+  'notification-center': [
+    {
+      match: 'aria-live="polite"',
+      label: 'aria-live',
+      tip: 'Toast region announces new notifications without stealing focus.',
+    },
+    {
+      match: 'setToasts((prev) => [...prev.slice(-2)',
+      label: 'toast stack',
+      tip: 'Cap visible toasts at 3—older toasts drop off to avoid covering UI.',
+    },
+    {
+      match: "queryKey: ['notifications']",
+      label: 'inbox query',
+      tip: 'Infinite inbox cache—invalidate when WS push or mark-read fires.',
+    },
+    {
+      match: "new WebSocket('/ws/notifications')",
+      label: 'WebSocket',
+      tip: 'Real-time push for online users—fallback poll on disconnect.',
+    },
+    {
+      match: 'push({ title: msg.notification.title',
+      label: 'toast on push',
+      tip: 'High-urgency events surface as toast AND persist in inbox.',
+    },
+    {
+      match: '/notifications/${id}/read',
+      label: 'mark read',
+      tip: 'PATCH single notification—badge count derived from unread rows.',
+    },
+    {
+      match: 'aria-label={`Notifications${unreadCount',
+      label: 'badge a11y',
+      tip: 'Bell button announces unread count to screen readers.',
+    },
+  ],
+  'calendar-scheduling': [
+    {
+      match: "queryKey: ['events', from, to]",
+      label: 'range query',
+      tip: 'Fetch only visible week—never load entire calendar year client-side.',
+    },
+    {
+      match: 'startOfWeek(anchor)',
+      label: 'visible range',
+      tip: 'Compute from/to bounds for API—week view loads 7 days of events.',
+    },
+    {
+      match: 'eventStyle(ev)',
+      label: 'layout',
+      tip: 'Map start/end times to top/height % within day column—core week grid math.',
+    },
+    {
+      match: 'role="grid"',
+      label: 'grid role',
+      tip: 'Week view as ARIA grid—columns are days, events are focusable cells.',
+    },
+    {
+      match: 'res.status === 409',
+      label: '409 conflict',
+      tip: 'Server rejects overlapping booking—show conflict message, no silent double-book.',
+    },
+    {
+      match: 'startUtc',
+      label: 'UTC storage',
+      tip: 'Persist ISO UTC—display with Intl in user local timezone.',
+    },
+  ],
+  'photo-gallery': [
+    {
+      match: 'IntersectionObserver',
+      label: 'IntersectionObserver',
+      tip: 'Load thumbnails when tile nears viewport—rootMargin prefetches early.',
+    },
+    {
+      match: 'paddingBottom: `${aspect}%`',
+      label: 'aspect ratio box',
+      tip: 'Reserve space from width/height metadata—prevents layout shift (CLS).',
+    },
+    {
+      match: 'blurDataUrl',
+      label: 'LQIP',
+      tip: 'Tiny blur placeholder until thumb loads—improves perceived performance.',
+    },
+    {
+      match: 'useInfiniteQuery({',
+      label: 'useInfiniteQuery',
+      tip: 'Cursor-paginated media feed—append pages as user scrolls.',
+    },
+    {
+      match: 'createPortal(',
+      label: 'lightbox portal',
+      tip: 'Full-screen viewer at document.body—escapes overflow:hidden ancestors.',
+    },
+    {
+      match: "e.key === 'Escape'",
+      label: 'Escape',
+      tip: 'Close lightbox on Escape—standard modal keyboard contract.',
+    },
+    {
+      match: 'document.body.style.overflow = \'hidden\'',
+      label: 'scroll lock',
+      tip: 'Prevent background scroll while lightbox is open.',
+    },
+  ],
 };
 
 function sortByMatchLength(highlights: SolutionHighlight[]): SolutionHighlight[] {

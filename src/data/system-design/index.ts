@@ -11,6 +11,10 @@ import autocompleteSearch from './content/autocomplete-search.md?raw';
 import dataTable from './content/data-table.md?raw';
 import fileUpload from './content/file-upload.md?raw';
 import analyticsDashboard from './content/analytics-dashboard.md?raw';
+import shoppingCart from './content/shopping-cart.md?raw';
+import notificationCenter from './content/notification-center.md?raw';
+import calendarScheduling from './content/calendar-scheduling.md?raw';
+import photoGallery from './content/photo-gallery.md?raw';
 
 export const systemDesignProblems: SystemDesignProblem[] = [
   {
@@ -96,6 +100,34 @@ export const systemDesignProblems: SystemDesignProblem[] = [
     subtitle: 'Widgets, time ranges, lazy chart loading',
     pageTitle: 'Analytics Dashboard',
     content: analyticsDashboard,
+  },
+  {
+    slug: 'shopping-cart',
+    title: 'Shopping Cart',
+    subtitle: 'Cart persistence, checkout wizard, Stripe payments',
+    pageTitle: 'E-commerce Cart & Checkout',
+    content: shoppingCart,
+  },
+  {
+    slug: 'notification-center',
+    title: 'Notification Center',
+    subtitle: 'Toasts, inbox, WebSocket push, unread badges',
+    pageTitle: 'Notification Center',
+    content: notificationCenter,
+  },
+  {
+    slug: 'calendar-scheduling',
+    title: 'Calendar & Scheduling',
+    subtitle: 'Timezones, recurring events, conflict detection',
+    pageTitle: 'Calendar & Scheduling',
+    content: calendarScheduling,
+  },
+  {
+    slug: 'photo-gallery',
+    title: 'Photo Gallery',
+    subtitle: 'Lazy grid, lightbox, infinite media scroll',
+    pageTitle: 'Photo Gallery / Media Grid',
+    content: photoGallery,
   },
 ];
 

@@ -476,6 +476,26 @@ export const ogManifest = {
       "description": "Frontend system design: Widgets, time ranges, lazy chart loading. Interview walkthrough on ReactTeacher.",
       "ogImageId": "system-design/analytics-dashboard"
     },
+    "/system-design/shopping-cart": {
+      "title": "Shopping Cart · System Design",
+      "description": "Frontend system design: Cart persistence, checkout wizard, Stripe payments. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/shopping-cart"
+    },
+    "/system-design/notification-center": {
+      "title": "Notification Center · System Design",
+      "description": "Frontend system design: Toasts, inbox, WebSocket push, unread badges. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/notification-center"
+    },
+    "/system-design/calendar-scheduling": {
+      "title": "Calendar & Scheduling · System Design",
+      "description": "Frontend system design: Timezones, recurring events, conflict detection. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/calendar-scheduling"
+    },
+    "/system-design/photo-gallery": {
+      "title": "Photo Gallery · System Design",
+      "description": "Frontend system design: Lazy grid, lightbox, infinite media scroll. Interview walkthrough on ReactTeacher.",
+      "ogImageId": "system-design/photo-gallery"
+    },
     "/react-patterns/compound-components": {
       "title": "Compound Components · React Patterns",
       "description": "React pattern guide: Shared implicit state via context. Examples and tradeoffs on ReactTeacher.",

@@ -55,6 +55,10 @@ const systemDesignProblems = [
   { slug: 'data-table', title: 'Admin Data Table', subtitle: 'Sort, filter, pagination, bulk actions' },
   { slug: 'file-upload', title: 'File Upload', subtitle: 'Chunked upload, progress, presigned URLs' },
   { slug: 'analytics-dashboard', title: 'Analytics Dashboard', subtitle: 'Widgets, time ranges, lazy chart loading' },
+  { slug: 'shopping-cart', title: 'Shopping Cart', subtitle: 'Cart persistence, checkout wizard, Stripe payments' },
+  { slug: 'notification-center', title: 'Notification Center', subtitle: 'Toasts, inbox, WebSocket push, unread badges' },
+  { slug: 'calendar-scheduling', title: 'Calendar & Scheduling', subtitle: 'Timezones, recurring events, conflict detection' },
+  { slug: 'photo-gallery', title: 'Photo Gallery', subtitle: 'Lazy grid, lightbox, infinite media scroll' },
 ];
 
 const reactPatterns = [
