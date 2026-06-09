@@ -55,6 +55,9 @@ function ThemeToggle() {
 
 ## Tradeoffs
 
-- **Pros:** Eliminates prop drilling; ergonomic with custom hooks
-- **Cons:** Easy to overuse; debugging “who changed context?” is harder than explicit props
-- **Interview angle:** Context is not a state manager — pair with `useReducer`, TanStack Query, or Zustand for complex updates
+| Aspect | Details |
+|--------|---------|
+| Pros | Eliminates prop drilling; ergonomic with custom hooks |
+| Cons | Easy to overuse; debugging “who changed context?” is harder than explicit props |
+| Interview angle | Context is not a state manager — pair with `useReducer`, TanStack Query, or Zustand for complex updates |
+

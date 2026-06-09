@@ -55,6 +55,8 @@ function WeatherBanner() {
 
 ## Tradeoffs
 
-- **Pros:** DRY logic, colocated tests, composable (hooks calling hooks)
-- **Cons:** Over-abstracting one-off logic adds indirection; debug stack traces go through more layers
-- **Interview angle:** Custom hooks replaced many HOC and render-prop use cases in modern React
+| Aspect | Details |
+|--------|---------|
+| Pros | DRY logic, colocated tests, composable (hooks calling hooks) |
+| Cons | Over-abstracting one-off logic adds indirection; debug stack traces go through more layers |
+| Interview angle | Custom hooks replaced many HOC and render-prop use cases in modern React |

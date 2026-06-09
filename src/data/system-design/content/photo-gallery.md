@@ -26,9 +26,11 @@ Click  ──► Portal lightbox ──► preload full size ──► focus tra
 
 ### 1. Masonry vs. uniform grid
 
-**Uniform grid (CSS grid):** Fixed aspect ratio cells—simple, no layout shift if height known.
-
-**Masonry (column-based or JS layout):** Variable aspect ratios like Pinterest—use `columns: 3` CSS or measure widths with a library (`react-masonry-css`).
+| Uniform grid (CSS grid) | Masonry layout |
+|-------------------------|----------------|
+| Fixed aspect ratio cells | Variable aspect ratios (Pinterest-style) |
+| Simple—no layout shift if height known | `columns: 3` CSS or `react-masonry-css` |
+| Best when API returns `width` / `height` | Best for mixed photo dimensions |
 
 Prefer **known aspect ratio** from API (`width`, `height`) to reserve space: `padding-bottom: (h/w)*100%`.
 

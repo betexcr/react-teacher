@@ -64,6 +64,8 @@ Custom hooks often absorb the “container” role (`useUser()`), leaving a sing
 
 ## Tradeoffs
 
-- **Pros:** Testable UI, clear data boundaries, reusable views
-- **Cons:** Extra files/boilerplate; strict splits can fight colocation preferences
-- **Interview angle:** Mention hooks as the modern container layer without abandoning the idea
+| Aspect | Details |
+|--------|---------|
+| Pros | Testable UI, clear data boundaries, reusable views |
+| Cons | Extra files/boilerplate; strict splits can fight colocation preferences |
+| Interview angle | Mention hooks as the modern container layer without abandoning the idea |

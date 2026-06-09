@@ -30,11 +30,11 @@ TanStack Table (server mode) + optional row virtualizer
 
 ### 1. Server-side vs. client-side table mode
 
-**Server-side** (required at scale): sort/filter/pagination params sent to API; table holds only current page (~50 rows).
-
-**Client-side:** Load all rows once—fine for <500 rows (settings pages, small teams).
-
-Use TanStack Table `manualPagination`, `manualSorting`, `manualFiltering` when server-driven.
+| Server-side | Client-side |
+|-------------|-------------|
+| Sort/filter/page params hit API | Load all rows once into memory |
+| Holds ~50 rows per page—scales to millions | Fine for <500 rows (settings, small teams) |
+| Use `manualPagination`, `manualSorting`, `manualFiltering` | Instant sort/filter without round trips |
 
 ### 2. URL as state (shareable views)
 

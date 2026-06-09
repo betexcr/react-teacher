@@ -24,9 +24,11 @@ dispatch(action) → middleware chain → reducer → notify subscribers → Rea
 
 ### 1. Single store vs. multiple stores
 
-A **single root store** with namespaced slices (`state.cart`, `state.user`) simplifies devtools and time-travel. Feature teams own slice reducers composed via `combineReducers`.
-
-Alternative: multiple small stores per domain—better isolation but harder cross-slice transactions.
+| Single root store | Multiple domain stores |
+|-------------------|------------------------|
+| Namespaced slices (`state.cart`, `state.user`) | One store per feature domain |
+| Simpler devtools and time-travel | Better isolation between teams |
+| Cross-slice updates in one dispatch | Harder atomic cross-domain transactions |
 
 ### 2. Subscription model
 

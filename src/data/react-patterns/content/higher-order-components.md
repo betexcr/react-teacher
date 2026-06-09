@@ -49,6 +49,8 @@ Or extract `useRequireAuth()` hook shared across routes.
 
 ## Tradeoffs
 
-- **Pros:** Reusable enhancement, single place for auth/logging
-- **Cons:** Prop name collisions, ref forwarding (`forwardRef`), DevTools nesting, harder TypeScript inference
-- **Interview angle:** Hooks won for most HOC use cases; know HOC for reading older codebases
+| Aspect | Details |
+|--------|---------|
+| Pros | Reusable enhancement, single place for auth/logging |
+| Cons | Prop name collisions, ref forwarding (`forwardRef`), DevTools nesting, harder TypeScript inference |
+| Interview angle | Hooks won for most HOC use cases; know HOC for reading older codebases |

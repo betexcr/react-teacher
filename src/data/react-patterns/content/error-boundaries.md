@@ -41,6 +41,8 @@ Place boundaries at **route** or **feature** boundaries — not around every lea
 
 ## Tradeoffs
 
-- **Pros:** Resilient UX, localized recovery
-- **Cons:** No hook equivalent yet; does not catch event/async errors
-- **Interview angle:** Pair with route error elements (React Router) and Suspense for loading — different failure modes
+| Aspect | Details |
+|--------|---------|
+| Pros | Resilient UX, localized recovery |
+| Cons | No hook equivalent yet; does not catch event/async errors |
+| Interview angle | Pair with route error elements (React Router) and Suspense for loading — different failure modes |

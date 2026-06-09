@@ -26,7 +26,11 @@ REST GET /rooms/123/messages?cursor= ──► Postgres
 
 ### 1. WebSocket vs. SSE
 
-**WebSockets** are bidirectional—ideal for chat, typing events, and acknowledgments. SSE is simpler but server-to-client only.
+| WebSocket | SSE |
+|-----------|-----|
+| Bidirectional—client and server send anytime | Server-to-client only |
+| Typing indicators, acks, presence | Simpler protocol, auto-reconnect |
+| Ideal for chat rooms | Fine for live feeds without client sends |
 
 ### 2. Message identity and ordering
 

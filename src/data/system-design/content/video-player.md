@@ -26,7 +26,11 @@ Analytics beacon ──► /events (batch, sendBeacon on unload)
 
 ### 1. Native video vs. MSE library
 
-**Progressive MP4** is simple but no ABR. **HLS** via `hls.js` (Safari native HLS) enables adaptive quality based on bandwidth.
+| Progressive MP4 | HLS (`hls.js` / native Safari) |
+|-----------------|----------------------------------|
+| Simple `<video src>` setup | Adaptive bitrate from manifest |
+| No quality switching | Bandwidth-aware quality ladder |
+| Fine for short clips | Required for long-form streaming |
 
 ### 2. State machine
 

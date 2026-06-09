@@ -28,9 +28,11 @@ Pan/zoom ──► debounce moveend ──► bbox + zoom ──► GET /places?
 
 ### 1. Map library: Mapbox GL vs. Leaflet
 
-**Mapbox GL:** WebGL vector tiles, smooth styling, built-in clustering in some setups—heavier bundle, API key cost.
-
-**Leaflet + raster tiles:** Simpler, lighter, great for interviews; pair with `react-leaflet` and `leaflet.markercluster` or **Supercluster** for custom React markers.
+| Mapbox GL | Leaflet + raster tiles |
+|-----------|------------------------|
+| WebGL vector tiles, smooth styling | Simpler, lighter bundle |
+| Built-in clustering options | Pair with `react-leaflet` + Supercluster |
+| Heavier bundle, API key cost | Great default for interviews |
 
 For React interviews, emphasize **viewport-driven data** and **clustering math**, not tile provider politics.
 

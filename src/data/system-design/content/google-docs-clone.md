@@ -26,9 +26,11 @@ Awareness  → separate Yjs awareness / custom presence channel (ephemeral)
 
 ### 1. CRDT vs. Operational Transform (OT)
 
-**OT** (Google Docs classic) needs a central server to transform concurrent ops—harder to make peer-to-peer.
-
-**CRDTs** (Yjs, Automerge) merge without central ordering; great for offline and P2P; larger metadata overhead.
+| Operational Transform (OT) | CRDT (Yjs, Automerge) |
+|----------------------------|------------------------|
+| Central server transforms concurrent ops | Merge without central ordering |
+| Classic Google Docs model | Great for offline and P2P |
+| Harder peer-to-peer | Larger metadata overhead |
 
 For React apps, **Yjs + y-prosemirror** is a common production choice.
 

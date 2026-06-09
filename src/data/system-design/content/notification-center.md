@@ -37,7 +37,11 @@ Route to both: toast for immediate attention, always write inbox row for audit.
 
 ### 2. WebSocket vs. polling
 
-**WebSocket** for online users—sub-100ms badge updates. On disconnect, fall back to polling every 60s or refetch on `visibilitychange` when tab focuses.
+| WebSocket | Polling fallback |
+|-----------|------------------|
+| Sub-100ms badge updates when online | Every 60s or on `visibilitychange` focus |
+| Push new notifications instantly | Works through restrictive proxies |
+| Requires reconnect + dedupe by `eventId` | Higher latency; simpler infrastructure |
 
 Include `eventId` in payload; client ignores duplicates.
 

@@ -25,7 +25,11 @@ onDragEnd → optimistic local state → PATCH move → ack or rollback
 
 ### 1. dnd-kit vs. HTML5 DnD
 
-**@dnd-kit** provides accessible sensors (pointer, keyboard), collision detection, and custom drag overlays—better than raw HTML5 DnD for complex boards.
+| @dnd-kit | HTML5 DnD |
+|----------|-----------|
+| Pointer + keyboard sensors, collision detection | Built-in browser API—minimal deps |
+| Custom `DragOverlay` for complex boards | Limited a11y and mobile support |
+| Recommended for production kanban | OK for simple prototypes only |
 
 ### 2. Data model
 

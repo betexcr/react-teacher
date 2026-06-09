@@ -56,6 +56,9 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 ## Tradeoffs
 
-- **Pros:** Accessible defaults, full styling freedom, shared logic across products
-- **Cons:** More wiring than batteries-included UI kits; you own visual polish
-- **Interview angle:** Headless + compound components is how modern libraries (shadcn/ui) are built
+| Aspect | Details |
+|--------|---------|
+| Pros | Accessible defaults, full styling freedom, shared logic across products |
+| Cons | More wiring than batteries-included UI kits; you own visual polish |
+| Interview angle | Headless + compound components is how modern libraries (shadcn/ui) are built |
+

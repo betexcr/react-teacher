@@ -49,6 +49,8 @@ Production modals also trap focus and restore it on close — use a library (Rad
 
 ## Tradeoffs
 
-- **Pros:** Correct stacking and clipping behavior; events still bubble in React tree
-- **Cons:** Portal target must exist; SSR/hydration needs care; a11y requires extra work
-- **Interview angle:** React event delegation still works across portal boundary — synthetic events bubble through React hierarchy, not DOM hierarchy
+| Aspect | Details |
+|--------|---------|
+| Pros | Correct stacking and clipping behavior; events still bubble in React tree |
+| Cons | Portal target must exist; SSR/hydration needs care; a11y requires extra work |
+| Interview angle | React event delegation still works across portal boundary — synthetic events bubble through React hierarchy, not DOM hierarchy |

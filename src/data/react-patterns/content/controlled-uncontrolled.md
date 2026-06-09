@@ -59,5 +59,8 @@ React Hook Form often uses uncontrolled inputs internally (refs) while exposing 
 
 ## Tradeoffs
 
-- **Controlled:** Predictable, testable, more re-renders
-- **Uncontrolled:** Less boilerplate, harder to react to every keystroke in React state
+| Mode | Characteristics |
+|------|-----------------|
+| Controlled | Predictable, testable, more re-renders |
+| Uncontrolled | Less boilerplate, harder to react to every keystroke in React state |
+

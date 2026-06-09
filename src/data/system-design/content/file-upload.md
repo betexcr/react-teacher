@@ -27,7 +27,11 @@ Client ──► POST /uploads/init ──► presigned URL + fields
 
 ### 1. Presigned URL vs. multipart through API
 
-**Presigned POST/PUT** lets the browser upload directly to object storage. Your API only mints credentials and records metadata—saves bandwidth and avoids timeout limits on serverless functions.
+| Presigned POST/PUT to storage | Upload through your API |
+|-------------------------------|-------------------------|
+| Browser sends bytes directly to S3/R2 | All bytes proxy through server |
+| API mints credentials + metadata only | Simpler auth, hits serverless timeouts |
+| Saves bandwidth; avoids function limits | Fine for small files only |
 
 Flow: client requests upload slot → server returns `{ url, fields, uploadId }` → client POSTs `FormData` to S3 → client notifies server on complete.
 

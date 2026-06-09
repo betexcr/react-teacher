@@ -10,6 +10,50 @@ type Block =
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
   | { type: 'code'; text: string; lang?: string }
+  | { type: 'table'; header: string[]; rows: string[][] }
+
+function isTableRow(line: string): boolean {
+  const trimmed = line.trim()
+  return trimmed.startsWith('|') && trimmed.includes('|', 1)
+}
+
+function isTableSeparatorRow(line: string): boolean {
+  return isTableRow(line) && /^\|[\s\-:|]+\|?$/.test(line.trim())
+}
+
+function parseTableRow(line: string): string[] {
+  let inner = line.trim()
+  if (inner.startsWith('|')) inner = inner.slice(1)
+  if (inner.endsWith('|')) inner = inner.slice(0, -1)
+  return inner.split('|').map((cell) => cell.trim())
+}
+
+function parseTableBlock(lines: string[], start: number): { block: Block; next: number } | null {
+  if (!isTableRow(lines[start])) return null
+
+  const tableLines: string[] = []
+  let i = start
+  while (i < lines.length && isTableRow(lines[i])) {
+    tableLines.push(lines[i])
+    i++
+  }
+
+  if (tableLines.length < 2) return null
+
+  const header = parseTableRow(tableLines[0])
+  let bodyStart = 1
+  if (tableLines.length > 1 && isTableSeparatorRow(tableLines[1])) {
+    bodyStart = 2
+  }
+
+  const rows = tableLines.slice(bodyStart).filter((line) => !isTableSeparatorRow(line)).map(parseTableRow)
+  if (rows.length === 0) return null
+
+  return {
+    block: { type: 'table', header, rows },
+    next: i,
+  }
+}
 
 function parseMarkdown(source: string): Block[] {
   const blocks: Block[] = []
@@ -92,6 +136,15 @@ function parseMarkdown(source: string): Block[] {
       continue
     }
 
+    if (isTableRow(line)) {
+      const parsed = parseTableBlock(lines, i)
+      if (parsed) {
+        blocks.push(parsed.block)
+        i = parsed.next
+        continue
+      }
+    }
+
     if (line.trim() === '') {
       i++
       continue
@@ -158,6 +211,29 @@ export function MarkdownView({
                   <li key={j}>{inlineFormat(item)}</li>
                 ))}
               </ol>
+            )
+          case 'table':
+            return (
+              <div key={i} className="markdown-table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      {block.header.map((cell, j) => (
+                        <th key={j}>{inlineFormat(cell)}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {block.rows.map((row, j) => (
+                      <tr key={j}>
+                        {row.map((cell, k) => (
+                          <td key={k}>{inlineFormat(cell)}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )
           case 'code': {
             const useTooltips =

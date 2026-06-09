@@ -27,9 +27,11 @@ Keystroke ──► debounce 200ms ──► AbortController ──► GET /sear
 
 ### 1. Debounce vs. throttle
 
-**Debounce** waits until the user pauses typing (e.g. 200ms)—ideal for search APIs where each character would otherwise trigger a request.
-
-**Throttle** fires at fixed intervals—better for scroll/resize, not typeahead.
+| Debounce | Throttle |
+|----------|----------|
+| Waits until user pauses typing (e.g. 200ms) | Fires at fixed intervals |
+| Ideal for search APIs—avoids request per keystroke | Better for scroll/resize, not typeahead |
+| Skip on Enter or recent-search pick (immediate fetch) | Not suited for typeahead latency |
 
 Skip debounce on Enter or when selecting a recent search (immediate fetch).
 

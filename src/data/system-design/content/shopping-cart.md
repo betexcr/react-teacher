@@ -26,13 +26,13 @@ Success     ──► webhook confirms ──► clear cart + order receipt
 
 ### 1. Guest vs. authenticated cart merge
 
-Guest cart lives in `localStorage` `{ items: [{ productId, qty }] }`. On login:
+| Guest cart | Authenticated cart |
+|------------|-------------------|
+| `localStorage` `{ productId, qty }` | Server-owned cart tied to user id |
+| Optional `sessionId` cookie for cross-device | Survives device switch |
+| On login: POST `/cart/merge` then clear local | Server resolves qty conflicts |
 
-1. POST guest cart to `/cart/merge`
-2. Server merges quantities, resolves conflicts (keep higher qty or server wins)
-3. Clear local guest cart
-
-Use stable `sessionId` cookie for anonymous server-side cart if you need cross-device guest sync.
+Merge flow: POST guest cart → server merges quantities → clear local guest cart.
 
 ### 2. Optimistic add-to-cart
 

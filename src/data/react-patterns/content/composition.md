@@ -51,6 +51,9 @@ Sometimes the parent must inject state into children — that becomes the **rend
 
 ## Tradeoffs
 
-- **Pros:** Flexible API, no fragile inheritance chains, easy to wrap third-party components
-- **Cons:** Slot prop explosion if you add too many named regions — consider compound components instead
-- **Interview angle:** “Prefer composition” is React’s answer to OOP inheritance for UI
+| Aspect | Details |
+|--------|---------|
+| Pros | Flexible API, no fragile inheritance chains, easy to wrap third-party components |
+| Cons | Slot prop explosion if you add too many named regions — consider compound components instead |
+| Interview angle | “Prefer composition” is React’s answer to OOP inheritance for UI |
+

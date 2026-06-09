@@ -32,9 +32,11 @@ The system is divided into three main layers:
 
 ### 1. Pagination Strategy: Cursor vs. Offset
 
-**Offset pagination** skips N rows (`OFFSET 20 LIMIT 10`). It breaks when items are inserted at the top of a real-time feed and forces the database to scan skipped rows at depth.
-
-**Cursor pagination** uses an opaque pointer (e.g. `timestamp + id`) to request the next slice: “items older than this cursor.” It stays consistent when new posts arrive and scales because the DB seeks an index instead of counting offsets.
+| Offset pagination | Cursor pagination |
+|-------------------|-------------------|
+| `OFFSET 20 LIMIT 10`—skip N rows | Opaque pointer (`timestamp + id`) for next slice |
+| Breaks when items insert at top of live feed | Stable when new posts arrive |
+| DB scans skipped rows at depth | Index seek—scales on large tables |
 
 We encode cursors as base64 `{ createdAt, id }` for stable chronological ordering.
 

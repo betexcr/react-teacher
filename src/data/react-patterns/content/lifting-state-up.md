@@ -47,6 +47,9 @@ If props pass through many layers (**prop drilling**), consider context or a col
 
 ## Tradeoffs
 
-- **Pros:** Single source of truth, easy data flow tracing
-- **Cons:** Middle components pass props they do not use — refactor to context or composition
-- **Interview angle:** Foundation for controlled components and one-way data flow in React
+| Aspect | Details |
+|--------|---------|
+| Pros | Single source of truth, easy data flow tracing |
+| Cons | Middle components pass props they do not use — refactor to context or composition |
+| Interview angle | Foundation for controlled components and one-way data flow in React |
+

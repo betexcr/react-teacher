@@ -29,9 +29,11 @@ DateRangeContext (from, to)
 
 ### 1. Shared date range vs. per-widget range
 
-**Global range** (recommended for exec dashboards): one picker updates context; all widgets refetch together. URL-sync `?from=2025-01-01&to=2025-01-31` for shareable views.
-
-Per-widget range only when comparing periods side-by-side.
+| Global (shared) range | Per-widget range |
+|-----------------------|------------------|
+| One picker updates all widgets | Each tile owns its date picker |
+| URL-sync `?from=&to=` for shareable views | Compare periods side-by-side |
+| Recommended for exec dashboards | Use only when tiles need different windows |
 
 ### 2. Parallel independent queries
 

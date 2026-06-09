@@ -27,15 +27,19 @@ Compose ──► debounced draft PATCH ──► POST /messages on send
 
 ### 1. Threads vs. flat messages
 
-UI lists **threads** (conversation units). Each thread has `threadId`, `subject`, `snippet`, `lastMessageAt`, `participants[]`, `labelIds[]`, `unreadCount`.
-
-Opening a thread fetches **messages** ordered by `sentAt`. Keeps list payload small—no bodies in index.
+| Thread list (recommended) | Flat message list |
+|---------------------------|-------------------|
+| Summary: `subject`, `snippet`, `unreadCount` | Every row is one message |
+| Bodies loaded on open (`GET /threads/:id/messages`) | Large payloads if bodies in index |
+| Matches Gmail/Outlook UX | Poor for long conversations |
 
 ### 2. Labels vs. folders
 
-Gmail model: labels are tags—a thread can be `INBOX` + `IMPORTANT` simultaneously. "Archive" = remove `INBOX` label, not delete.
-
-Active filter = intersection of selected labels. Store filter in URL: `/mail?label=inbox` for shareable state.
+| Labels (Gmail model) | Folders (classic) |
+|----------------------|-------------------|
+| Many tags per thread (`INBOX` + `IMPORTANT`) | One folder per message |
+| Archive = remove `INBOX` label | Move = copy + delete |
+| Filter = label intersection; URL `/mail?label=inbox` | Single active folder path |
 
 ### 3. Optimistic mutations
 

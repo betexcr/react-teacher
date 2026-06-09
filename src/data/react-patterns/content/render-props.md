@@ -62,6 +62,9 @@ function useMousePosition() {
 
 ## Tradeoffs
 
-- **Pros:** Flexible rendering, explicit data injection
-- **Cons:** Callback nesting (“wrapper hell”); hooks are usually cleaner today
-- **Interview angle:** Know render props historically; prefer custom hooks for new code unless API demands JSX injection
+| Aspect | Details |
+|--------|---------|
+| Pros | Flexible rendering, explicit data injection |
+| Cons | Callback nesting (“wrapper hell”); hooks are usually cleaner today |
+| Interview angle | Know render props historically; prefer custom hooks for new code unless API demands JSX injection |
+

@@ -51,6 +51,9 @@ Finer-grained boundaries let the shell render while a heavy panel loads:
 
 ## Tradeoffs
 
-- **Pros:** Smaller initial JS, faster TTI on landing routes
-- **Cons:** Waterfall if over-nested; layout shift if fallbacks differ in size; needs error boundary for failed imports
-- **Interview angle:** Mention `lazy` must be default export; Vite/webpack handle chunk names automatically
+| Aspect | Details |
+|--------|---------|
+| Pros | Smaller initial JS, faster TTI on landing routes |
+| Cons | Waterfall if over-nested; layout shift if fallbacks differ in size; needs error boundary for failed imports |
+| Interview angle | Mention `lazy` must be default export; Vite/webpack handle chunk names automatically |
+

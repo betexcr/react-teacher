@@ -28,11 +28,11 @@ Exposure event ──► analytics (once per session per experiment)
 
 **Flash problem:** Component renders `false`, then flag loads `true` → layout shift.
 
-Mitigations:
-
-1. **Inline bootstrap:** Server/edge embeds `<script>window.__FLAGS__={...}</script>` in HTML
-2. **Blocking root:** App shell waits for `flagsReady` before rendering gated routes
-3. **Skeleton:** Render neutral placeholder until flags resolve (acceptable for non-critical UI)
+| Strategy | Tradeoff |
+|----------|----------|
+| Inline bootstrap (`window.__FLAGS__` in HTML) | No flash; requires server/edge embed |
+| Blocking root until `flagsReady` | Correct first paint; delays app shell |
+| Skeleton placeholder | Fast shell; brief neutral UI for gated routes |
 
 For SPAs on Vercel, fetch flags in parallel with app bundle; hold router until first response or timeout (default all false).
 

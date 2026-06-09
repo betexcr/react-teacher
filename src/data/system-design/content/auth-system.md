@@ -25,9 +25,11 @@ Request ──► Bearer access token ──► Permission middleware ──► 
 
 ### 1. JWT vs. server sessions
 
-**JWT access tokens** scale horizontally (no server session lookup) but are hard to revoke—pair with short TTL + refresh tokens stored server-side.
-
-**Server sessions** in Redis simplify revocation; require sticky sessions or shared session store.
+| JWT access tokens | Server sessions (Redis) |
+|-------------------|-------------------------|
+| Horizontal scale—no session lookup per request | Simple revocation on logout |
+| Hard to revoke instantly | Requires shared session store or sticky sessions |
+| Pair with short TTL + refresh token | Strong fit when revoke-now matters |
 
 Hybrid: short JWT + `jti` blocklist in Redis for logout.
 

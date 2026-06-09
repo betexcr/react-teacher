@@ -63,6 +63,9 @@ function TodoRow({ todo }: { todo: Todo }) {
 
 ## Tradeoffs
 
-- **Pros:** Snappy UX, fewer loading spinners
-- **Cons:** Rollback can confuse users; conflict resolution gets hard with concurrent edits
-- **Interview angle:** Contrast with pessimistic UI (wait for server) and true offline-first (CRDTs)
+| Aspect | Details |
+|--------|---------|
+| Pros | Snappy UX, fewer loading spinners |
+| Cons | Rollback can confuse users; conflict resolution gets hard with concurrent edits |
+| Interview angle | Contrast with pessimistic UI (wait for server) and true offline-first (CRDTs) |
+

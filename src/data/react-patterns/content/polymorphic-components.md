@@ -41,6 +41,9 @@ Use generics + `ComponentPropsWithoutRef` so `href` is required when `as="a"` an
 
 ## Tradeoffs
 
-- **Pros:** One component, many semantics; consistent styling
-- **Cons:** Generic types get complex; misuse (`as="div"` with `href`) is possible without strict typing
-- **Interview angle:** Contrast `as` prop vs wrapping with `<Link><Button /></Link>` (invalid HTML nesting if Button renders `<button>`)
+| Aspect | Details |
+|--------|---------|
+| Pros | One component, many semantics; consistent styling |
+| Cons | Generic types get complex; misuse (`as="div"` with `href`) is possible without strict typing |
+| Interview angle | Contrast `as` prop vs wrapping with `<Link><Button /></Link>` (invalid HTML nesting if Button renders `<button>`) |
+

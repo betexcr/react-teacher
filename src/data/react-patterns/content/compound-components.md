@@ -75,6 +75,8 @@ Tabs.Panel = Panel;
 
 ## Tradeoffs
 
-- **Pros:** Flexible layout, small public API surface, matches Radix/shadcn mental model
-- **Cons:** Requires context discipline; static subcomponents (`Tabs.List`) need clear docs
-- **Interview angle:** Contrast with a single `<Tabs items={…} />` — compound components trade one prop blob for composability
+| Aspect | Details |
+|--------|---------|
+| Pros | Flexible layout, small public API surface, matches Radix/shadcn mental model |
+| Cons | Requires context discipline; static subcomponents (`Tabs.List`) need clear docs |
+| Interview angle | Contrast with a single `<Tabs items={…} />` — compound components trade one prop blob for composability |

@@ -61,6 +61,8 @@ function CheckoutWizard() {
 
 ## Tradeoffs
 
-- **Pros:** Predictable transitions, easy to unit test reducer in isolation
-- **Cons:** Boilerplate for trivial `useState` cases; action types need discipline
-- **Interview angle:** Compare to Redux — same reducer idea, smaller scope with `useReducer`
+| Aspect | Details |
+|--------|---------|
+| Pros | Predictable transitions, easy to unit test reducer in isolation |
+| Cons | Boilerplate for trivial `useState` cases; action types need discipline |
+| Interview angle | Compare to Redux — same reducer idea, smaller scope with `useReducer` |
