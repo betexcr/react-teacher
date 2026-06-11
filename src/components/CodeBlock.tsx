@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { highlightCodePhrases } from '../utils/highlightCodePhrases';
 
 type CodeBlockProps = {
@@ -25,12 +25,6 @@ export function CodeBlock({ code, className = '', highlightPhrases }: CodeBlockP
       setCopied(false);
     }
   }, [text]);
-
-  useEffect(() => {
-    return () => {
-      if (resetTimer.current) clearTimeout(resetTimer.current);
-    };
-  }, []);
 
   return (
     <div className={`code-block ${className}`.trim()}>

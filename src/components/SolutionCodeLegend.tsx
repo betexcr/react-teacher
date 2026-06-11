@@ -1,4 +1,4 @@
-import type { SolutionHighlight } from '../lib/solutionHighlights';
+import { findChallengeHighlightMatches, type SolutionHighlight } from '../lib/solutionHighlights';
 import { SolutionCodeTerm } from './SolutionCodeTerm';
 
 type SolutionCodeLegendProps = {
@@ -14,9 +14,10 @@ export function SolutionCodeLegend({
   legendLabel = 'In this solution',
 }: SolutionCodeLegendProps) {
   const unique = new Map<string, SolutionHighlight>();
-  for (const h of highlights) {
-    if (!code.includes(h.match)) continue;
-    if (!unique.has(h.label)) unique.set(h.label, h);
+  for (const match of findChallengeHighlightMatches(code, highlights)) {
+    if (!unique.has(match.label)) {
+      unique.set(match.label, { match: match.text, label: match.label, tip: match.tip });
+    }
   }
   const items = [...unique.values()];
   if (items.length === 0) return null;

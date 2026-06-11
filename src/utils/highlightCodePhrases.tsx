@@ -2,6 +2,23 @@ import type { ReactNode } from 'react';
 
 type Span = { start: number; end: number };
 
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function findPhraseSpans(code: string, phrases: string[]): Span[] {
+  const unique = [...new Set(phrases.filter(Boolean))].sort((a, b) => b.length - a.length);
+  if (unique.length === 0) return [];
+
+  const spans: Span[] = [];
+  const re = new RegExp(unique.map(escapeRegExp).join('|'), 'g');
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(code)) !== null) {
+    spans.push({ start: match.index, end: match.index + match[0].length });
+  }
+  return spans;
+}
+
 function mergeSpans(spans: Span[]): Span[] {
   if (spans.length === 0) return [];
   const sorted = spans.toSorted((a, b) => a.start - b.start || b.end - a.end);
@@ -26,19 +43,7 @@ export function highlightCodePhrases(
 ): ReactNode {
   if (!phrases?.length) return code;
 
-  const spans: Span[] = [];
-  for (const phrase of phrases) {
-    if (!phrase) continue;
-    let from = 0;
-    while (from < code.length) {
-      const idx = code.indexOf(phrase, from);
-      if (idx === -1) break;
-      spans.push({ start: idx, end: idx + phrase.length });
-      from = idx + phrase.length;
-    }
-  }
-
-  const merged = mergeSpans(spans);
+  const merged = mergeSpans(findPhraseSpans(code, phrases));
   if (merged.length === 0) return code;
 
   const nodes: ReactNode[] = [];

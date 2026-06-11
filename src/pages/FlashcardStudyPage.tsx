@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CodeBlock } from '../components/CodeBlock';
 import { HiddenCardsTooltip } from '../components/HiddenCardsTooltip';
@@ -39,10 +39,12 @@ export function FlashcardStudyPage() {
   const [index, setLocalIndex] = useState(0);
   const [explanationOpen, setExplanationOpen] = useState(false);
   const [uncompletedOnly, setUncompletedOnly] = useState(() => readUncompletedOnlyFilter());
+  const [trackedDeckId, setTrackedDeckId] = useState<string | undefined>(deck?.id);
+  const [explanationIndex, setExplanationIndex] = useState(0);
 
   const uncompletedIndices = useMemo(
     () => getUncompletedIndices(total, isCardComplete),
-    [total, isCardComplete, progress.completedCardIndices]
+    [total, isCardComplete]
   );
 
   const activeIndices = uncompletedOnly ? uncompletedIndices : Array.from({ length: total }, (_, i) => i);
@@ -56,33 +58,41 @@ export function FlashcardStudyPage() {
       }
     }
     return items;
-  }, [deck, total, isCardComplete, progress.completedCardIndices]);
+  }, [deck, total, isCardComplete]);
+
+  const setFilter = useCallback(
+    (enabled: boolean) => {
+      setUncompletedOnly(enabled);
+      writeUncompletedOnlyFilter(enabled);
+      if (enabled) {
+        const nextIndices = getUncompletedIndices(total, isCardComplete);
+        if (nextIndices.length > 0 && !nextIndices.includes(index)) {
+          const next = nextIndices[0];
+          setLocalIndex(next);
+          setIndex(next);
+        }
+      }
+    },
+    [total, isCardComplete, index, setIndex]
+  );
+
+  if (deck?.id && deck.id !== trackedDeckId) {
+    setTrackedDeckId(deck.id);
+    const savedIndex = progress.lastIndex > 0 ? progress.lastIndex : 0;
+    setLocalIndex(savedIndex);
+  }
+
+  if (index !== explanationIndex) {
+    setExplanationIndex(index);
+    setExplanationOpen(false);
+  }
+
+  if (uncompletedOnly && activeIndices.length > 0 && !activeIndices.includes(index)) {
+    setLocalIndex(activeIndices[0]);
+  }
 
   const positionInActive = activeIndices.indexOf(index);
   const safePosition = positionInActive >= 0 ? positionInActive : 0;
-
-  useEffect(() => {
-    if (!deck) return;
-    setLocalIndex(progress.lastIndex > 0 ? progress.lastIndex : 0);
-  }, [deck?.id, progress.lastIndex]);
-
-  useEffect(() => {
-    setExplanationOpen(false);
-  }, [index]);
-
-  useEffect(() => {
-    if (!uncompletedOnly || activeIndices.length === 0) return;
-    if (!activeIndices.includes(index)) {
-      const next = activeIndices[0];
-      setLocalIndex(next);
-      setIndex(next);
-    }
-  }, [uncompletedOnly, activeIndices, index, setIndex]);
-
-  const setFilter = useCallback((enabled: boolean) => {
-    setUncompletedOnly(enabled);
-    writeUncompletedOnlyFilter(enabled);
-  }, []);
 
   if (!deck) {
     return (

@@ -100,8 +100,8 @@ export const REACT_TERM_PHRASES = PROSE_PATTERNS;
 function findTermIds(text: string, patterns: { id: ReactTermId; pattern: RegExp }[]): ReactTermId[] {
   const found = new Set<ReactTermId>();
   for (const { id, pattern } of patterns) {
-    const re = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`);
-    if (re.test(text)) found.add(id);
+    pattern.lastIndex = 0;
+    if (pattern.test(text)) found.add(id);
   }
   return [...found];
 }
@@ -114,9 +114,9 @@ export function findReactTermMatches(text: string): { start: number; end: number
   const matches: { start: number; end: number; id: ReactTermId; text: string }[] = [];
 
   for (const { id, pattern } of PROSE_PATTERNS) {
-    const re = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`);
+    pattern.lastIndex = 0;
     let m: RegExpExecArray | null;
-    while ((m = re.exec(text)) !== null) {
+    while ((m = pattern.exec(text)) !== null) {
       matches.push({
         start: m.index,
         end: m.index + m[0].length,

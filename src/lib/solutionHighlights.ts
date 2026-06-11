@@ -4,6 +4,10 @@ export type SolutionHighlight = {
   tip: string;
 };
 
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 const HIGHLIGHTS_SECTION = /## Code highlights\n([\s\S]*?)(?=\n## |\n# |$)/;
 
 /** Parse challenge-specific tooltips generated into SOLUTION.md. */
@@ -23,7 +27,7 @@ export function parseSolutionHighlights(markdown: string): SolutionHighlight[] {
     });
   }
 
-  return highlights.sort((a, b) => b.match.length - a.match.length);
+  return highlights.toSorted((a, b) => b.match.length - a.match.length);
 }
 
 /** Remove the highlights section so it is not shown as prose. */
@@ -35,29 +39,33 @@ export function findChallengeHighlightMatches(
   code: string,
   highlights: SolutionHighlight[],
 ): { start: number; end: number; label: string; tip: string; text: string }[] {
-  const matches: { start: number; end: number; label: string; tip: string; text: string }[] = [];
-
+  const byMatch = new Map<string, SolutionHighlight>();
   for (const h of highlights) {
-    let from = 0;
-    while (from < code.length) {
-      const idx = code.indexOf(h.match, from);
-      if (idx === -1) break;
-      matches.push({
-        start: idx,
-        end: idx + h.match.length,
-        label: h.label,
-        tip: h.tip,
-        text: h.match,
-      });
-      from = idx + h.match.length;
-    }
+    if (!byMatch.has(h.match)) byMatch.set(h.match, h);
+  }
+  const terms = [...byMatch.keys()].toSorted((a, b) => b.length - a.length);
+  if (terms.length === 0) return [];
+
+  const matches: { start: number; end: number; label: string; tip: string; text: string }[] = [];
+  const re = new RegExp(terms.map(escapeRegExp).join('|'), 'g');
+  let found: RegExpExecArray | null;
+  while ((found = re.exec(code)) !== null) {
+    const h = byMatch.get(found[0]);
+    if (!h) continue;
+    matches.push({
+      start: found.index,
+      end: found.index + found[0].length,
+      label: h.label,
+      tip: h.tip,
+      text: h.match,
+    });
   }
 
-  matches.sort((a, b) => a.start - b.start || b.end - a.end);
+  const sorted = matches.toSorted((a, b) => a.start - b.start || b.end - a.end);
 
   const taken: typeof matches = [];
   let cursor = 0;
-  for (const match of matches) {
+  for (const match of sorted) {
     if (match.start < cursor) continue;
     taken.push(match);
     cursor = match.end;

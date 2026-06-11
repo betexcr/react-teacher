@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   type DeckProgress,
   defaultDeckProgress,
@@ -11,13 +11,15 @@ import {
 export type { DeckProgress } from '../utils/deckProgress';
 
 export function useDeckProgress(deckId: string | undefined, totalCards = 0) {
+  const [trackedDeckId, setTrackedDeckId] = useState(deckId);
   const [progress, setProgress] = useState<DeckProgress>(() =>
     deckId ? readDeckProgress(deckId) : defaultDeckProgress()
   );
 
-  useEffect(() => {
-    if (deckId) setProgress(readDeckProgress(deckId));
-  }, [deckId]);
+  if (deckId !== trackedDeckId) {
+    setTrackedDeckId(deckId);
+    setProgress(deckId ? readDeckProgress(deckId) : defaultDeckProgress());
+  }
 
   const persist = useCallback(
     (next: DeckProgress) => {
