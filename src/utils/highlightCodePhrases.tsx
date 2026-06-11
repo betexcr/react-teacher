@@ -7,7 +7,7 @@ function escapeRegExp(value: string): string {
 }
 
 function findPhraseSpans(code: string, phrases: string[]): Span[] {
-  const unique = [...new Set(phrases.filter(Boolean))].sort((a, b) => b.length - a.length);
+  const unique = [...new Set(phrases.filter(Boolean))].toSorted((a, b) => b.length - a.length);
   if (unique.length === 0) return [];
 
   const spans: Span[] = [];

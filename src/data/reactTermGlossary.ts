@@ -95,8 +95,6 @@ const CODE_PATTERNS: { id: ReactTermId; pattern: RegExp }[] = [
   { id: 'onClick', pattern: /\bon[A-Z][a-zA-Z]*=/g },
 ];
 
-export const REACT_TERM_PHRASES = PROSE_PATTERNS;
-
 function findTermIds(text: string, patterns: { id: ReactTermId; pattern: RegExp }[]): ReactTermId[] {
   const found = new Set<ReactTermId>();
   for (const { id, pattern } of patterns) {

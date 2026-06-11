@@ -15,7 +15,7 @@
     "build": "npm run generate && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "doctor": "npx react-doctor@latest"
+    "doctor": "react-doctor --verbose"
   },
   "dependencies": {
     "react": "^19.2.6",

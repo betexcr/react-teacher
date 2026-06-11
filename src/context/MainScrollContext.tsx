@@ -1,7 +1,7 @@
-import { createContext, useContext, type RefObject } from 'react';
+import { createContext, use, type RefObject } from 'react';
 
 export const MainScrollContext = createContext<RefObject<HTMLElement | null> | null>(null);
 
 export function useMainScrollRef() {
-  return useContext(MainScrollContext);
+  return use(MainScrollContext);
 }

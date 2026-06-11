@@ -6,7 +6,7 @@
 const a = (summary, detail) => ({ summary, detail });
 
 /** @type {Record<string, { summary: string; detail: string }[]>} */
-export const CHALLENGE_ACCEPTANCE = {
+const CHALLENGE_ACCEPTANCE = {
   // —— Easy ——
   'easy/01-counter-component': [
     a(

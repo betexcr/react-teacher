@@ -36,13 +36,13 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
   const mainRef = useMainScrollRef();
   const [stepIndex, setStepIndex] = useState(0);
   const [spotlight, setSpotlight] = useState<SpotlightRect | null>(null);
-  const [prevOpen, setPrevOpen] = useState(open);
+  const prevOpenRef = useRef(open);
   const dialogRef = useRef<HTMLDivElement>(null);
 
   const step = jsBasicsTutorialSteps[stepIndex];
 
-  if (open !== prevOpen) {
-    setPrevOpen(open);
+  if (open !== prevOpenRef.current) {
+    prevOpenRef.current = open;
     if (open) {
       setStepIndex(0);
     }

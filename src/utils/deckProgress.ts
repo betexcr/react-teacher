@@ -4,7 +4,7 @@ export type DeckProgress = {
 };
 
 /** localStorage keys use `reactprep-*` prefix for backward compatibility with saved progress. */
-export const deckProgressKey = (deckId: string) => `reactprep-deck:${deckId}`;
+const deckProgressKey = (deckId: string) => `reactprep-deck:${deckId}`;
 
 export function defaultDeckProgress(): DeckProgress {
   return { lastIndex: 0, completedCardIndices: [] };
@@ -33,7 +33,7 @@ export function getProgressVersion() {
   return progressVersion;
 }
 
-export function notifyProgressChange() {
+function notifyProgressChange() {
   progressVersion += 1;
   // Event name unchanged so progress listeners keep working across rebrand.
   window.dispatchEvent(new Event('reactprep-progress'));

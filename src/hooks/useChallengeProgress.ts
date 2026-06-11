@@ -9,7 +9,7 @@ export type ChallengeProgress = {
 const storageKey = (difficulty: string, slug: string) =>
   `reactprep-challenge:${difficulty}/${slug}`;
 
-export function readChallengeProgress(
+function readChallengeProgress(
   difficulty: string,
   slug: string
 ): ChallengeProgress {

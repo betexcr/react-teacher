@@ -1,4 +1,4 @@
-export function titleFromUrl(url) {
+function titleFromUrl(url) {
   try {
     const u = new URL(url);
     const host = u.hostname.replace(/^www\./, '');
@@ -14,7 +14,7 @@ export function titleFromUrl(url) {
 import { getAcceptanceCriteria } from './acceptance.mjs';
 import { getChallengeResources } from './resources.mjs';
 
-export function normalizeAcceptance(acceptance, difficulty, slug) {
+function normalizeAcceptance(acceptance, difficulty, slug) {
   const curated = getAcceptanceCriteria(difficulty, slug);
   const list = curated?.length ? curated : acceptance;
   return list.map((item) => {

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CodeBlock } from '../components/CodeBlock';
 import { HiddenCardsTooltip } from '../components/HiddenCardsTooltip';
@@ -39,8 +39,8 @@ export function FlashcardStudyPage() {
   const [index, setLocalIndex] = useState(0);
   const [explanationOpen, setExplanationOpen] = useState(false);
   const [uncompletedOnly, setUncompletedOnly] = useState(() => readUncompletedOnlyFilter());
-  const [trackedDeckId, setTrackedDeckId] = useState<string | undefined>(deck?.id);
-  const [explanationIndex, setExplanationIndex] = useState(0);
+  const trackedDeckIdRef = useRef<string | undefined>(deck?.id);
+  const explanationIndexRef = useRef(0);
 
   const uncompletedIndices = useMemo(
     () => getUncompletedIndices(total, isCardComplete),
@@ -76,14 +76,14 @@ export function FlashcardStudyPage() {
     [total, isCardComplete, index, setIndex]
   );
 
-  if (deck?.id && deck.id !== trackedDeckId) {
-    setTrackedDeckId(deck.id);
+  if (deck?.id && deck.id !== trackedDeckIdRef.current) {
+    trackedDeckIdRef.current = deck.id;
     const savedIndex = progress.lastIndex > 0 ? progress.lastIndex : 0;
     setLocalIndex(savedIndex);
   }
 
-  if (index !== explanationIndex) {
-    setExplanationIndex(index);
+  if (index !== explanationIndexRef.current) {
+    explanationIndexRef.current = index;
     setExplanationOpen(false);
   }
 

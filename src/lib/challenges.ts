@@ -32,14 +32,7 @@ export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
   'very-hard': 'Very Hard',
 }
 
-export const DIFFICULTIES: { id: Difficulty; label: string; count: number }[] = [
-  { id: 'easy', label: 'Easy', count: index.easy.length },
-  { id: 'medium', label: 'Medium', count: index.medium.length },
-  { id: 'hard', label: 'Hard', count: index.hard.length },
-  { id: 'very-hard', label: 'Very Hard', count: index['very-hard'].length },
-]
-
-export const challengeIndex = index as Record<Difficulty, ChallengeMeta[]>
+const challengeIndex = index as Record<Difficulty, ChallengeMeta[]>
 
 const challengeModules = import.meta.glob('../../challenges/**/CHALLENGE.md', {
   query: '?raw',
@@ -67,8 +60,4 @@ export function getSolutionMarkdown(difficulty: Difficulty, slug: string) {
 
 export function findChallenge(difficulty: Difficulty, slug: string) {
   return challengeIndex[difficulty]?.find((c) => c.slug === slug)
-}
-
-export function totalChallenges() {
-  return DIFFICULTIES.reduce((n, d) => n + d.count, 0)
 }

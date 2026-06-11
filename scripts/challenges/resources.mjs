@@ -4,7 +4,7 @@
  */
 
 /** @type {Record<string, { title: string; url: string }[]>} */
-export const CHALLENGE_RESOURCES = {
+const CHALLENGE_RESOURCES = {
   // —— Easy ——
   'easy/01-counter-component': [
     { title: 'Adding Interactivity', url: 'https://react.dev/learn/adding-interactivity' },

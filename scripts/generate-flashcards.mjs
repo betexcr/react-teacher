@@ -498,10 +498,6 @@ export const flashcardDecks = [
 ${registry}
 ];
 
-export function getDeckById(id: string) {
-  return flashcardDecks.find((d) => d.id === id);
-}
-
 export function getDeckBySlug(slug: string) {
   return flashcardDecks.find((d) => d.slug === slug);
 }

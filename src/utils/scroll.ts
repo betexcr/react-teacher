@@ -1,4 +1,4 @@
-export const MAIN_CONTENT_SELECTOR = '.main-content';
+const MAIN_CONTENT_SELECTOR = '.main-content';
 
 let scrollRestorationConfigured = false;
 

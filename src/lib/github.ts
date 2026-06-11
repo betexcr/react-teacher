@@ -1,15 +1,15 @@
 /** Public source repo (matches package.json). */
-export const GITHUB_REPO = 'https://github.com/betexcr/react-teacher';
-export const GITHUB_DEFAULT_BRANCH = 'main';
-export const GITHUB_TREE = `${GITHUB_REPO}/tree/${GITHUB_DEFAULT_BRANCH}`;
+const GITHUB_REPO = 'https://github.com/betexcr/react-teacher';
+const GITHUB_DEFAULT_BRANCH = 'main';
+const GITHUB_TREE = `${GITHUB_REPO}/tree/${GITHUB_DEFAULT_BRANCH}`;
 
 /** Folder of challenge write-ups in the repo. */
-export function githubChallengeTreeUrl(difficulty: string, slug: string) {
+function githubChallengeTreeUrl(difficulty: string, slug: string) {
   return `${GITHUB_TREE}/challenges/${difficulty}/${slug}`;
 }
 
 /** Single file in a challenge folder (e.g. CHALLENGE.md). */
-export function githubChallengeBlobUrl(difficulty: string, slug: string, file: string) {
+function githubChallengeBlobUrl(difficulty: string, slug: string, file: string) {
   return `${GITHUB_REPO}/blob/${GITHUB_DEFAULT_BRANCH}/challenges/${difficulty}/${slug}/${file}`;
 }
 
@@ -20,7 +20,7 @@ const PATH_IN_BACKTICKS =
  * Turn `src/practice/...` or `challenges/...` paths into GitHub links.
  * Local practice paths point at the matching challenges/ folder in the repo.
  */
-export function githubUrlForRepoPath(difficulty: string, slug: string, file?: string) {
+function githubUrlForRepoPath(difficulty: string, slug: string, file?: string) {
   if (file) {
     return githubChallengeBlobUrl(difficulty, slug, file);
   }
