@@ -432,7 +432,7 @@ const bySlug: Record<string, SolutionHighlight[]> = {
 };
 
 function sortByMatchLength(highlights: SolutionHighlight[]): SolutionHighlight[] {
-  return [...highlights].sort((a, b) => b.match.length - a.match.length);
+  return highlights.toSorted((a, b) => b.match.length - a.match.length);
 }
 
 export function getReactPatternHighlights(slug: string): SolutionHighlight[] {

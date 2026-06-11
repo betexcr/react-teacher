@@ -44,7 +44,7 @@ export function useDeckProgress(deckId: string | undefined, totalCards = 0) {
       else set.add(cardIndex);
       persist({
         ...current,
-        completedCardIndices: [...set].sort((a, b) => a - b),
+        completedCardIndices: [...set].toSorted((a, b) => a - b),
       });
     },
     [deckId, persist]

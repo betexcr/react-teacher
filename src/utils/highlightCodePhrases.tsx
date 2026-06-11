@@ -4,7 +4,7 @@ type Span = { start: number; end: number };
 
 function mergeSpans(spans: Span[]): Span[] {
   if (spans.length === 0) return [];
-  const sorted = [...spans].sort((a, b) => a.start - b.start || b.end - a.end);
+  const sorted = spans.toSorted((a, b) => a.start - b.start || b.end - a.end);
   const merged: Span[] = [sorted[0]];
   for (let i = 1; i < sorted.length; i++) {
     const prev = merged[merged.length - 1];

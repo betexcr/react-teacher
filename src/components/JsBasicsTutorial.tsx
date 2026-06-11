@@ -1,6 +1,7 @@
 import {
   useCallback,
   useEffect,
+  useEffectEvent,
   useLayoutEffect,
   useRef,
   useState,
@@ -35,17 +36,17 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
   const mainRef = useMainScrollRef();
   const [stepIndex, setStepIndex] = useState(0);
   const [spotlight, setSpotlight] = useState<SpotlightRect | null>(null);
+  const [prevOpen, setPrevOpen] = useState(open);
   const dialogRef = useRef<HTMLDivElement>(null);
-  const wasOpen = useRef(false);
 
   const step = jsBasicsTutorialSteps[stepIndex];
 
-  useEffect(() => {
-    if (open && !wasOpen.current) {
+  if (open !== prevOpen) {
+    setPrevOpen(open);
+    if (open) {
       setStepIndex(0);
     }
-    wasOpen.current = open;
-  }, [open]);
+  }
 
   useEffect(() => {
     if (!open) return;
@@ -69,6 +70,9 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
     });
   }, [step]);
 
+  const onMeasureSpotlight = useEffectEvent(measureSpotlight);
+  const onCloseEvent = useEffectEvent(onClose);
+
   useLayoutEffect(() => {
     if (!open) return;
 
@@ -89,7 +93,7 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
   useEffect(() => {
     if (!open) return;
 
-    const onResize = () => measureSpotlight();
+    const onResize = () => onMeasureSpotlight();
     window.addEventListener('resize', onResize);
     const scroller = mainRef?.current;
     scroller?.addEventListener('scroll', onResize, { passive: true });
@@ -97,7 +101,7 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
       window.removeEventListener('resize', onResize);
       scroller?.removeEventListener('scroll', onResize);
     };
-  }, [open, measureSpotlight, mainRef]);
+  }, [open, mainRef]);
 
   useEffect(() => {
     if (!open) return;
@@ -105,7 +109,7 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault();
-        onClose();
+        onCloseEvent();
         return;
       }
       if (e.key === 'ArrowRight' || e.key === 'Enter') {
@@ -125,7 +129,7 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [open, stepIndex, onClose]);
+  }, [open, stepIndex]);
 
   useEffect(() => {
     if (!open) return;
