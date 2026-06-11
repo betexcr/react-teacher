@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CodeBlock } from '../components/CodeBlock';
 import { JsBasicsTutorial } from '../components/JsBasicsTutorial';
@@ -9,8 +9,8 @@ import {
   type JsBasicsTopic,
 } from '../data/jsBasicsTopics';
 import {
+  jsBasicsTutorialSteps,
   tutorialTargetId,
-  type JsBasicsTutorialStep,
 } from '../data/jsBasicsTutorialSteps';
 import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
 import { formatJsBasicsProse } from '../utils/formatJsBasicsProse';
@@ -82,18 +82,23 @@ function JsBasicsTopicList({
 export function JsBasicsPage() {
   useRouteScrollTop();
   const [tutorialOpen, setTutorialOpen] = useState(false);
-  const [activeTutorial, setActiveTutorial] = useState<{
-    step: JsBasicsTutorialStep;
-    index: number;
-  } | null>(null);
+  const [tutorialStepIndex, setTutorialStepIndex] = useState(0);
 
-  const handleActiveStepChange = useCallback((step: JsBasicsTutorialStep, index: number) => {
-    setActiveTutorial({ step, index });
-  }, []);
+  const activeStep = tutorialOpen ? jsBasicsTutorialSteps[tutorialStepIndex] : null;
+  const activeTargetId = activeStep ? tutorialTargetId(activeStep) : null;
+  const codeHighlights = activeStep?.codeHighlights;
+  const activeTopicIndex = activeStep?.topicIndex;
 
-  const activeTargetId = activeTutorial ? tutorialTargetId(activeTutorial.step) : null;
-  const codeHighlights = activeTutorial?.step.codeHighlights;
-  const activeTopicIndex = activeTutorial?.step.topicIndex;
+  const openTutorial = () => {
+    document.body.classList.add('js-basics-tutorial-open');
+    setTutorialStepIndex(0);
+    setTutorialOpen(true);
+  };
+
+  const closeTutorial = () => {
+    document.body.classList.remove('js-basics-tutorial-open');
+    setTutorialOpen(false);
+  };
 
   return (
     <article className="get-started js-basics">
@@ -113,7 +118,7 @@ export function JsBasicsPage() {
           <button
             type="button"
             className="js-basics-tutorial-launch"
-            onClick={() => setTutorialOpen(true)}
+            onClick={openTutorial}
           >
             <span className="js-basics-tutorial-launch-icon" aria-hidden>
               ▶
@@ -172,11 +177,9 @@ export function JsBasicsPage() {
 
       <JsBasicsTutorial
         open={tutorialOpen}
-        onClose={() => {
-          setTutorialOpen(false);
-          setActiveTutorial(null);
-        }}
-        onActiveStepChange={handleActiveStepChange}
+        stepIndex={tutorialStepIndex}
+        setStepIndex={setTutorialStepIndex}
+        onClose={closeTutorial}
       />
     </article>
   );

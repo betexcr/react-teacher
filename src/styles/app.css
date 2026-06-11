@@ -597,6 +597,7 @@ body.js-basics-tutorial-open {
   width: min(32rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2.5rem);
   overflow: hidden;
+  margin: 0;
   padding: 1rem 1.15rem 0.85rem;
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -604,6 +605,10 @@ body.js-basics-tutorial-open {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
   pointer-events: auto;
   box-sizing: border-box;
+}
+
+.js-basics-tutorial-dialog::backdrop {
+  background: transparent;
 }
 
 .js-basics-tutorial-dialog .react-term-tip {
@@ -1406,6 +1411,7 @@ body.js-basics-tutorial-open {
 }
 
 .flashcard-study-empty {
+  display: block;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);

@@ -6,14 +6,12 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type Dispatch,
+  type SetStateAction,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { JS_BASICS_TOPIC_COUNT } from '../data/jsBasicsTopics';
-import {
-  jsBasicsTutorialSteps,
-  tutorialTargetId,
-  type JsBasicsTutorialStep,
-} from '../data/jsBasicsTutorialSteps';
+import { jsBasicsTutorialSteps, tutorialTargetId } from '../data/jsBasicsTutorialSteps';
 import { useMainScrollRef } from '../context/MainScrollContext';
 import { formatJsBasicsProse } from '../utils/formatJsBasicsProse';
 
@@ -26,32 +24,19 @@ type SpotlightRect = {
 
 type JsBasicsTutorialProps = {
   open: boolean;
+  stepIndex: number;
+  setStepIndex: Dispatch<SetStateAction<number>>;
   onClose: () => void;
-  onActiveStepChange: (step: JsBasicsTutorialStep, index: number) => void;
 };
 
 const TOTAL = jsBasicsTutorialSteps.length;
 
-export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasicsTutorialProps) {
+export function JsBasicsTutorial({ open, stepIndex, setStepIndex, onClose }: JsBasicsTutorialProps) {
   const mainRef = useMainScrollRef();
-  const [stepIndex, setStepIndex] = useState(0);
   const [spotlight, setSpotlight] = useState<SpotlightRect | null>(null);
-  const prevOpenRef = useRef(open);
-  const dialogRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const step = jsBasicsTutorialSteps[stepIndex];
-
-  if (open !== prevOpenRef.current) {
-    prevOpenRef.current = open;
-    if (open) {
-      setStepIndex(0);
-    }
-  }
-
-  useEffect(() => {
-    if (!open) return;
-    onActiveStepChange(step, stepIndex);
-  }, [open, step, stepIndex, onActiveStepChange]);
 
   const measureSpotlight = useCallback(() => {
     const id = tutorialTargetId(step);
@@ -71,7 +56,6 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
   }, [step]);
 
   const onMeasureSpotlight = useEffectEvent(measureSpotlight);
-  const onCloseEvent = useEffectEvent(onClose);
 
   useLayoutEffect(() => {
     if (!open) return;
@@ -107,11 +91,6 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
     if (!open) return;
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        onCloseEvent();
-        return;
-      }
       if (e.key === 'ArrowRight' || e.key === 'Enter') {
         if (stepIndex < TOTAL - 1) {
           e.preventDefault();
@@ -129,18 +108,15 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [open, stepIndex]);
+  }, [open, stepIndex, setStepIndex]);
 
-  useEffect(() => {
-    if (!open) return;
-    document.body.classList.add('js-basics-tutorial-open');
-    return () => document.body.classList.remove('js-basics-tutorial-open');
+  useLayoutEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (open && !dialog.open) {
+      dialog.showModal();
+    }
   }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-    dialogRef.current?.focus();
-  }, [open, stepIndex]);
 
   const goNext = () => {
     if (stepIndex < TOTAL - 1) setStepIndex((i) => i + 1);
@@ -185,14 +161,12 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
         />
       )}
 
-      <div
+      <dialog
         ref={dialogRef}
         className="js-basics-tutorial-dialog"
-        role="dialog"
-        aria-modal="true"
         aria-labelledby="js-basics-tutorial-title"
         aria-describedby="js-basics-tutorial-body"
-        tabIndex={-1}
+        onClose={onClose}
       >
         <div className="js-basics-tutorial-progress" aria-hidden>
           <div
@@ -250,7 +224,7 @@ export function JsBasicsTutorial({ open, onClose, onActiveStepChange }: JsBasics
         <p className="js-basics-tutorial-hint">
           Arrow keys · Enter for next · Esc to exit
         </p>
-      </div>
+      </dialog>
     </div>,
     document.body,
   );

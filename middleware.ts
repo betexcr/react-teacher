@@ -1,4 +1,47 @@
-import { buildOgHeadHtml, getPageMeta } from './src/data/seo.js';
+import {
+  getPageMeta,
+  ogImageUrl,
+  SITE_NAME,
+  SITE_URL,
+  type PageMeta,
+} from './src/data/seo.js';
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function normalizePathname(pathname: string): string {
+  if (pathname === '/') return '/get-started';
+  return pathname.replace(/\/+$/, '') || '/get-started';
+}
+
+/** HTML snippet injected for social crawlers (edge middleware only). */
+function buildOgHeadHtml(meta: PageMeta, pathname: string): string {
+  const image = ogImageUrl(meta.ogImageId);
+  const url = `${SITE_URL}${normalizePathname(pathname)}`;
+
+  return `
+    <title>${escapeHtml(meta.title)}</title>
+    <meta name="description" content="${escapeHtml(meta.description)}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />
+    <meta property="og:title" content="${escapeHtml(meta.title)}" />
+    <meta property="og:description" content="${escapeHtml(meta.description)}" />
+    <meta property="og:url" content="${escapeHtml(url)}" />
+    <meta property="og:image" content="${escapeHtml(image)}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="${escapeHtml(meta.title)}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(meta.title)}" />
+    <meta name="twitter:description" content="${escapeHtml(meta.description)}" />
+    <meta name="twitter:image" content="${escapeHtml(image)}" />
+  `.trim();
+}
 
 const BOT_UA =
   /bot|crawl|spider|slurp|facebookexternalhit|Facebot|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Pinterest|Embedly/i;

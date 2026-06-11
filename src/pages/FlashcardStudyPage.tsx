@@ -156,7 +156,7 @@ export function FlashcardStudyPage() {
         <header className="flashcard-study-header">
           <h1 className="flashcard-study-title">{deck.title}</h1>
         </header>
-        <div className="flashcard-study-empty" role="status">
+        <output className="flashcard-study-empty">
           <p>You&apos;ve completed every card in this section.</p>
           <p className="flashcard-study-empty-hint">
             Turn off &quot;Show uncompleted only&quot; to review completed cards again.
@@ -167,7 +167,7 @@ export function FlashcardStudyPage() {
           <Link to="/flashcards" className="flashcard-back-link flashcard-study-empty-back">
             ← All sections
           </Link>
-        </div>
+        </output>
       </article>
     );
   }
