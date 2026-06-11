@@ -5,8 +5,9 @@ import { scrollMainToTop } from '../utils/scroll';
 
 /** Scrolls the main content pane (and window) to top on every route change. */
 export function ScrollToTop() {
-  const location = useLocation();
+  const { pathname, search, hash } = useLocation();
   const mainRef = useMainScrollRef();
+  const routeScrollKey = `${pathname}${search}${hash}`;
 
   const scroll = useCallback(() => {
     scrollMainToTop(mainRef?.current ?? null);
@@ -14,7 +15,7 @@ export function ScrollToTop() {
 
   useLayoutEffect(() => {
     scroll();
-  }, [location.key, scroll]);
+  }, [routeScrollKey, scroll]);
 
   useEffect(() => {
     scroll();
@@ -27,7 +28,7 @@ export function ScrollToTop() {
       cancelAnimationFrame(raf);
       window.clearTimeout(timeout);
     };
-  }, [location.key, scroll]);
+  }, [routeScrollKey, scroll]);
 
   return null;
 }

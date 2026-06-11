@@ -43,12 +43,12 @@ export function highlightCodePhrases(
 
   const nodes: ReactNode[] = [];
   let cursor = 0;
-  merged.forEach((span, i) => {
+  merged.forEach((span) => {
     if (span.start > cursor) {
       nodes.push(code.slice(cursor, span.start));
     }
     nodes.push(
-      <mark key={`h-${i}`} className={markClassName}>
+      <mark key={`mark-${span.start}-${span.end}`} className={markClassName}>
         {code.slice(span.start, span.end)}
       </mark>,
     );

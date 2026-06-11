@@ -16,11 +16,11 @@ function ExplanationBody({ text }: { text: string }) {
   const blocks = parseFlashcardExplanation(text);
   return (
     <div className="flashcard-explanation-body">
-      {blocks.map((block, i) =>
+      {blocks.map((block) =>
         block.type === 'code' ? (
-          <CodeBlock key={i} code={block.code} className="flashcard-explanation-code" />
+          <CodeBlock key={block.key} code={block.code} className="flashcard-explanation-code" />
         ) : (
-          <p key={i}>{block.text}</p>
+          <p key={block.key}>{block.text}</p>
         )
       )}
     </div>
@@ -49,9 +49,13 @@ export function FlashcardStudyPage() {
 
   const hiddenCards = useMemo(() => {
     if (!deck) return [];
-    return Array.from({ length: total }, (_, i) => i)
-      .filter((i) => isCardComplete(i))
-      .map((i) => ({ index: i, question: deck.cards[i].question }));
+    const items: { index: number; question: string }[] = [];
+    for (let i = 0; i < total; i++) {
+      if (isCardComplete(i)) {
+        items.push({ index: i, question: deck.cards[i].question });
+      }
+    }
+    return items;
   }, [deck, total, isCardComplete, progress.completedCardIndices]);
 
   const positionInActive = activeIndices.indexOf(index);

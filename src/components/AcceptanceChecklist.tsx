@@ -38,7 +38,7 @@ export function AcceptanceChecklist({
       </p>
       <ul className="challenge-acceptance-list">
         {criteria.map((criterion, index) => (
-          <li key={index}>
+          <li key={`${criterion.summary}-${criterion.detail}`}>
             <label className="challenge-acceptance-item">
               <input
                 type="checkbox"

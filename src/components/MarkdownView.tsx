@@ -5,12 +5,12 @@ import { SolutionCodeLegend } from './SolutionCodeLegend'
 import { annotateSolutionCode as wrapSolutionCodeTokens } from '../utils/annotateSolutionCode'
 
 type Block =
-  | { type: 'h1' | 'h2' | 'h3'; text: string }
-  | { type: 'p'; text: string }
-  | { type: 'ul'; items: string[] }
-  | { type: 'ol'; items: string[] }
-  | { type: 'code'; text: string; lang?: string }
-  | { type: 'table'; header: string[]; rows: string[][] }
+  | { key: string; type: 'h1' | 'h2' | 'h3'; text: string }
+  | { key: string; type: 'p'; text: string }
+  | { key: string; type: 'ul'; items: string[] }
+  | { key: string; type: 'ol'; items: string[] }
+  | { key: string; type: 'code'; text: string; lang?: string }
+  | { key: string; type: 'table'; header: string[]; rows: string[][] }
 
 function isTableRow(line: string): boolean {
   const trimmed = line.trim()
@@ -46,11 +46,16 @@ function parseTableBlock(lines: string[], start: number): { block: Block; next: 
     bodyStart = 2
   }
 
-  const rows = tableLines.slice(bodyStart).filter((line) => !isTableSeparatorRow(line)).map(parseTableRow)
+  const rows: string[][] = []
+  for (const line of tableLines.slice(bodyStart)) {
+    if (!isTableSeparatorRow(line)) {
+      rows.push(parseTableRow(line))
+    }
+  }
   if (rows.length === 0) return null
 
   return {
-    block: { type: 'table', header, rows },
+    block: { key: `table-${start}`, type: 'table', header, rows },
     next: i,
   }
 }
@@ -66,7 +71,12 @@ function parseMarkdown(source: string): Block[] {
 
   const flushCode = () => {
     if (codeBuf.length) {
-      blocks.push({ type: 'code', text: codeBuf.join('\n'), lang: codeLang })
+      blocks.push({
+        key: `code-${blocks.length}-${codeLang ?? 'plain'}-${codeBuf.length}`,
+        type: 'code',
+        text: codeBuf.join('\n'),
+        lang: codeLang,
+      })
       codeBuf = []
       codeLang = undefined
     }
@@ -96,22 +106,22 @@ function parseMarkdown(source: string): Block[] {
     }
 
     if (line.startsWith('#### ')) {
-      blocks.push({ type: 'h3', text: line.slice(5) })
+      blocks.push({ key: `h3-${i}`, type: 'h3', text: line.slice(5) })
       i++
       continue
     }
     if (line.startsWith('### ')) {
-      blocks.push({ type: 'h3', text: line.slice(4) })
+      blocks.push({ key: `h3-${i}`, type: 'h3', text: line.slice(4) })
       i++
       continue
     }
     if (line.startsWith('## ')) {
-      blocks.push({ type: 'h2', text: line.slice(3) })
+      blocks.push({ key: `h2-${i}`, type: 'h2', text: line.slice(3) })
       i++
       continue
     }
     if (line.startsWith('# ')) {
-      blocks.push({ type: 'h1', text: line.slice(2) })
+      blocks.push({ key: `h1-${i}`, type: 'h1', text: line.slice(2) })
       i++
       continue
     }
@@ -122,7 +132,7 @@ function parseMarkdown(source: string): Block[] {
         items.push(lines[i].slice(2))
         i++
       }
-      blocks.push({ type: 'ul', items })
+      blocks.push({ key: `ul-${i - items.length}`, type: 'ul', items })
       continue
     }
 
@@ -132,7 +142,7 @@ function parseMarkdown(source: string): Block[] {
         items.push(lines[i].replace(/^\d+\.\s/, ''))
         i++
       }
-      blocks.push({ type: 'ol', items })
+      blocks.push({ key: `ol-${i - items.length}`, type: 'ol', items })
       continue
     }
 
@@ -150,7 +160,7 @@ function parseMarkdown(source: string): Block[] {
       continue
     }
 
-    blocks.push({ type: 'p', text: line })
+    blocks.push({ key: `p-${i}`, type: 'p', text: line })
     i++
   }
 
@@ -186,48 +196,48 @@ export function MarkdownView({
 
   return (
     <article className={`markdown${annotateCode ? ' markdown--solution' : ''}`}>
-      {blocks.map((block, i) => {
+      {blocks.map((block) => {
         switch (block.type) {
           case 'h1':
-            return <h1 key={i}>{inlineFormat(block.text)}</h1>
+            return <h1 key={block.key}>{inlineFormat(block.text)}</h1>
           case 'h2':
-            return <h2 key={i}>{inlineFormat(block.text)}</h2>
+            return <h2 key={block.key}>{inlineFormat(block.text)}</h2>
           case 'h3':
-            return <h3 key={i}>{inlineFormat(block.text)}</h3>
+            return <h3 key={block.key}>{inlineFormat(block.text)}</h3>
           case 'p':
-            return <p key={i}>{inlineFormat(block.text)}</p>
+            return <p key={block.key}>{inlineFormat(block.text)}</p>
           case 'ul':
             return (
-              <ul key={i}>
-                {block.items.map((item, j) => (
-                  <li key={j}>{inlineFormat(item)}</li>
+              <ul key={block.key}>
+                {block.items.map((item) => (
+                  <li key={`${block.key}-${item}`}>{inlineFormat(item)}</li>
                 ))}
               </ul>
             )
           case 'ol':
             return (
-              <ol key={i}>
-                {block.items.map((item, j) => (
-                  <li key={j}>{inlineFormat(item)}</li>
+              <ol key={block.key}>
+                {block.items.map((item) => (
+                  <li key={`${block.key}-${item}`}>{inlineFormat(item)}</li>
                 ))}
               </ol>
             )
           case 'table':
             return (
-              <div key={i} className="markdown-table-wrap">
+              <div key={block.key} className="markdown-table-wrap">
                 <table>
                   <thead>
                     <tr>
-                      {block.header.map((cell, j) => (
-                        <th key={j}>{inlineFormat(cell)}</th>
+                      {block.header.map((cell) => (
+                        <th key={`${block.key}-th-${cell}`}>{inlineFormat(cell)}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
-                    {block.rows.map((row, j) => (
-                      <tr key={j}>
-                        {row.map((cell, k) => (
-                          <td key={k}>{inlineFormat(cell)}</td>
+                    {block.rows.map((row) => (
+                      <tr key={`${block.key}-tr-${row.join('\0')}`}>
+                        {row.map((cell) => (
+                          <td key={`${block.key}-td-${row.join('\0')}-${cell}`}>{inlineFormat(cell)}</td>
                         ))}
                       </tr>
                     ))}
@@ -242,10 +252,10 @@ export function MarkdownView({
               codeBlockSupportsTooltips(block.lang)
             if (useTooltips) {
               return (
-                <div key={i} className="solution-code-block-wrap">
+                <div key={block.key} className="solution-code-block-wrap">
                   <pre className="solution-code-pre">
                     <code>
-                      {wrapSolutionCodeTokens(block.text, solutionHighlights, `code-${i}`)}
+                      {wrapSolutionCodeTokens(block.text, solutionHighlights, block.key)}
                     </code>
                   </pre>
                   <SolutionCodeLegend
@@ -257,7 +267,7 @@ export function MarkdownView({
               )
             }
             return (
-              <pre key={i}>
+              <pre key={block.key}>
                 <code>{block.text}</code>
               </pre>
             )

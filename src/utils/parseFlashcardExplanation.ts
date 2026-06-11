@@ -1,12 +1,17 @@
 export type ExplanationBlock =
-  | { type: 'paragraph'; text: string }
-  | { type: 'code'; code: string };
+  | { key: string; type: 'paragraph'; text: string }
+  | { key: string; type: 'code'; code: string };
 
 const FENCE_RE = /```(?:\w+)?\n([\s\S]*?)```/g;
 
-function pushParagraphs(blocks: ExplanationBlock[], text: string) {
+function pushParagraphs(blocks: ExplanationBlock[], text: string, keyPrefix: string) {
   for (const para of text.split(/\n\n+/).filter((p) => p.trim())) {
-    blocks.push({ type: 'paragraph', text: para.trim() });
+    const trimmed = para.trim();
+    blocks.push({
+      key: `${keyPrefix}-p-${trimmed.slice(0, 48)}-${blocks.length}`,
+      type: 'paragraph',
+      text: trimmed,
+    });
   }
 }
 
@@ -17,11 +22,16 @@ export function parseFlashcardExplanation(text: string): ExplanationBlock[] {
 
   for (const match of text.matchAll(FENCE_RE)) {
     const index = match.index ?? 0;
-    pushParagraphs(blocks, text.slice(lastIndex, index));
-    blocks.push({ type: 'code', code: match[1].trimEnd() });
+    pushParagraphs(blocks, text.slice(lastIndex, index), `pre-${index}`);
+    const code = match[1].trimEnd();
+    blocks.push({
+      key: `code-${index}-${code.slice(0, 48)}-${code.length}`,
+      type: 'code',
+      code,
+    });
     lastIndex = index + match[0].length;
   }
 
-  pushParagraphs(blocks, text.slice(lastIndex));
+  pushParagraphs(blocks, text.slice(lastIndex), `tail-${lastIndex}`);
   return blocks;
 }
