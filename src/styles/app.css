@@ -617,8 +617,14 @@ body.js-basics-tutorial-open .js-basics-item--tutorial-active {
   background: transparent;
 }
 
+.js-basics-tutorial-dialog .react-term-trigger {
+  white-space: nowrap;
+  word-break: normal;
+}
+
+/* Glossary popovers use a narrow inline parent; hide them inside the tour dialog. */
 .js-basics-tutorial-dialog .react-term-tip {
-  max-width: min(16rem, calc(100% - 0.5rem));
+  display: none;
 }
 
 .js-basics-tutorial-progress {
@@ -658,7 +664,6 @@ body.js-basics-tutorial-open .js-basics-item--tutorial-active {
   line-height: 1.5;
   color: var(--text-muted);
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .js-basics-tutorial-body code {
@@ -675,7 +680,6 @@ body.js-basics-tutorial-open .js-basics-item--tutorial-active {
   line-height: 1.4;
   color: var(--text-muted);
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .js-basics-tutorial-tip-label {
