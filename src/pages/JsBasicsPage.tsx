@@ -103,7 +103,7 @@ export function JsBasicsPage() {
   return (
     <article className="get-started js-basics">
       <header
-        className="get-started-hero"
+        className={`get-started-hero${activeTargetId === 'js-basics-welcome' ? ' js-basics-tutorial-target-active' : ''}`}
         data-tutorial-target="js-basics-welcome"
       >
         <h1 className="page-title">JS Basics</h1>
@@ -141,7 +141,7 @@ export function JsBasicsPage() {
       />
 
       <section
-        className="get-started-section js-basics-skip"
+        className={`get-started-section js-basics-skip${activeTargetId === 'js-basics-finish' ? ' js-basics-tutorial-target-active' : ''}`}
         data-tutorial-target="js-basics-finish"
       >
         <h2>What you can skip for now</h2>

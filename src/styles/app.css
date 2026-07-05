@@ -553,6 +553,12 @@ body.js-basics-tutorial-open {
   overflow: hidden;
 }
 
+body.js-basics-tutorial-open .js-basics-tutorial-target-active,
+body.js-basics-tutorial-open .js-basics-item--tutorial-active {
+  position: relative;
+  z-index: 1001;
+}
+
 .js-basics-tutorial-root {
   position: fixed;
   inset: 0;
@@ -563,7 +569,7 @@ body.js-basics-tutorial-open {
 .js-basics-tutorial-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: transparent;
   pointer-events: auto;
 }
 
