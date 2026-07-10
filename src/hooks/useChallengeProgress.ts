@@ -1,13 +1,14 @@
 import { useCallback, useState } from 'react';
+import { STORAGE_PREFIX } from '../config/brand';
+import { notifyProgressChange } from '../utils/deckProgress';
 
 export type ChallengeProgress = {
   checked: number[];
   completed: boolean;
 };
 
-// Key prefix kept as reactprep-* so existing localStorage progress is preserved after rebrand.
 const storageKey = (difficulty: string, slug: string) =>
-  `reactprep-challenge:${difficulty}/${slug}`;
+  `${STORAGE_PREFIX}-challenge:${difficulty}/${slug}`;
 
 function readChallengeProgress(
   difficulty: string,
@@ -70,6 +71,7 @@ export function useChallengeProgress(
           acceptanceCount > 0 && checked.length >= acceptanceCount;
         const next = { checked, completed };
         localStorage.setItem(storageKey(difficulty, slug), JSON.stringify(next));
+        notifyProgressChange();
         return next;
       });
     },

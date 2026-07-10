@@ -1,0 +1,16 @@
+# ReactTeacher
+
+> Free React interview prep: coding challenges, flashcards, patterns, and system design guides.
+
+- Site: https://reactteacher.vercel.app
+- Get started: https://reactteacher.vercel.app/get-started
+- Challenges: https://reactteacher.vercel.app/challenges
+- Flashcards: https://reactteacher.vercel.app/flashcards
+- Patterns: https://reactteacher.vercel.app/react-patterns
+- System design: https://reactteacher.vercel.app/system-design
+- FAQ: https://reactteacher.vercel.app/faq
+- About: https://reactteacher.vercel.app/about
+- Blog: https://reactteacher.vercel.app/blog
+- Sitemap: https://reactteacher.vercel.app/sitemap.xml
+
+Also see: PythonTeacher (pythonprep.vercel.app), NodeTeacher (nodeprep.vercel.app), ReactTeacher (reactteacher.vercel.app).

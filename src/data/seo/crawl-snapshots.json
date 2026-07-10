@@ -1,0 +1,304 @@
+{
+  "snapshots": [
+    {
+      "path": "/get-started",
+      "title": "Get Started · ReactTeacher",
+      "description": "Setup, study paths, and how to get the most from ReactTeacher.",
+      "body": "Setup, study paths, and how to get the most from ReactTeacher."
+    },
+    {
+      "path": "/challenges",
+      "title": "React Challenges · ReactTeacher",
+      "description": "Hands-on React coding challenges from easy to very hard with acceptance criteria.",
+      "body": "Hands-on React coding challenges from easy to very hard with acceptance criteria."
+    },
+    {
+      "path": "/flashcards",
+      "title": "Flashcards · ReactTeacher",
+      "description": "Quick-review flashcards for hooks, patterns, performance, Next.js, and more.",
+      "body": "Quick-review flashcards for hooks, patterns, performance, Next.js, and more."
+    },
+    {
+      "path": "/js-basics",
+      "title": "JS Basics · ReactTeacher",
+      "description": "JavaScript from zero: types, operators, if/for/while, arrays, then React-ready patterns.",
+      "body": "JavaScript from zero: types, operators, if/for/while, arrays, then React-ready patterns."
+    },
+    {
+      "path": "/react-patterns",
+      "title": "React Patterns · ReactTeacher",
+      "description": "React component and state patterns with examples for interviews and production code.",
+      "body": "React component and state patterns with examples for interviews and production code."
+    },
+    {
+      "path": "/system-design",
+      "title": "System Design · ReactTeacher",
+      "description": "Frontend system design problems and interview walkthroughs.",
+      "body": "Frontend system design problems and interview walkthroughs."
+    },
+    {
+      "path": "/flashcards/accessibility",
+      "title": "Accessibility · Flashcards",
+      "description": "Study 15 flashcards on Accessibility for React interviews.",
+      "body": "Study 15 flashcards on Accessibility for React interviews."
+    },
+    {
+      "path": "/flashcards/architecture",
+      "title": "Application Architecture · Flashcards",
+      "description": "Study 15 flashcards on Application Architecture for React interviews.",
+      "body": "Study 15 flashcards on Application Architecture for React interviews."
+    },
+    {
+      "path": "/flashcards/lifecycle",
+      "title": "Component Lifecycle · Flashcards",
+      "description": "Study 10 flashcards on Component Lifecycle for React interviews.",
+      "body": "Study 10 flashcards on Component Lifecycle for React interviews."
+    },
+    {
+      "path": "/flashcards/data-fetching",
+      "title": "Data Fetching & Management · Flashcards",
+      "description": "Study 15 flashcards on Data Fetching & Management for React interviews.",
+      "body": "Study 15 flashcards on Data Fetching & Management for React interviews."
+    },
+    {
+      "path": "/flashcards/design-patterns",
+      "title": "Design Patterns · Flashcards",
+      "description": "Study 15 flashcards on Design Patterns for React interviews.",
+      "body": "Study 15 flashcards on Design Patterns for React interviews."
+    },
+    {
+      "path": "/flashcards/forms",
+      "title": "Forms & Validation · Flashcards",
+      "description": "Study 14 flashcards on Forms & Validation for React interviews.",
+      "body": "Study 14 flashcards on Forms & Validation for React interviews."
+    },
+    {
+      "path": "/flashcards/hooks",
+      "title": "Hooks · Flashcards",
+      "description": "Study 14 flashcards on Hooks for React interviews.",
+      "body": "Study 14 flashcards on Hooks for React interviews."
+    },
+    {
+      "path": "/flashcards/nextjs",
+      "title": "Next Framework · Flashcards",
+      "description": "Study 15 flashcards on Next Framework for React interviews.",
+      "body": "Study 15 flashcards on Next Framework for React interviews."
+    },
+    {
+      "path": "/flashcards/performance",
+      "title": "Performance Optimization · Flashcards",
+      "description": "Study 15 flashcards on Performance Optimization for React interviews.",
+      "body": "Study 15 flashcards on Performance Optimization for React interviews."
+    },
+    {
+      "path": "/flashcards/react-19",
+      "title": "React 19 · Flashcards",
+      "description": "Study 15 flashcards on React 19 for React interviews.",
+      "body": "Study 15 flashcards on React 19 for React interviews."
+    },
+    {
+      "path": "/flashcards/ecosystem",
+      "title": "React Ecosystem & Integration · Flashcards",
+      "description": "Study 14 flashcards on React Ecosystem & Integration for React interviews.",
+      "body": "Study 14 flashcards on React Ecosystem & Integration for React interviews."
+    },
+    {
+      "path": "/flashcards/fundamentals",
+      "title": "React Fundamentals · Flashcards",
+      "description": "Study 15 flashcards on React Fundamentals for React interviews.",
+      "body": "Study 15 flashcards on React Fundamentals for React interviews."
+    },
+    {
+      "path": "/flashcards/internals",
+      "title": "React Internals · Flashcards",
+      "description": "Study 14 flashcards on React Internals for React interviews.",
+      "body": "Study 14 flashcards on React Internals for React interviews."
+    },
+    {
+      "path": "/flashcards/routing",
+      "title": "Routing & Navigation · Flashcards",
+      "description": "Study 15 flashcards on Routing & Navigation for React interviews.",
+      "body": "Study 15 flashcards on Routing & Navigation for React interviews."
+    },
+    {
+      "path": "/flashcards/security",
+      "title": "Security Best Practices · Flashcards",
+      "description": "Study 15 flashcards on Security Best Practices for React interviews.",
+      "body": "Study 15 flashcards on Security Best Practices for React interviews."
+    },
+    {
+      "path": "/flashcards/server-components",
+      "title": "Server Components & SSR · Flashcards",
+      "description": "Study 15 flashcards on Server Components & SSR for React interviews.",
+      "body": "Study 15 flashcards on Server Components & SSR for React interviews."
+    },
+    {
+      "path": "/flashcards/styling",
+      "title": "Styling in React · Flashcards",
+      "description": "Study 15 flashcards on Styling in React for React interviews.",
+      "body": "Study 15 flashcards on Styling in React for React interviews."
+    },
+    {
+      "path": "/flashcards/testing",
+      "title": "Testing React Applications · Flashcards",
+      "description": "Study 15 flashcards on Testing React Applications for React interviews.",
+      "body": "Study 15 flashcards on Testing React Applications for React interviews."
+    },
+    {
+      "path": "/flashcards/tools",
+      "title": "Tools & Build Pipeline · Flashcards",
+      "description": "Study 15 flashcards on Tools & Build Pipeline for React interviews.",
+      "body": "Study 15 flashcards on Tools & Build Pipeline for React interviews."
+    },
+    {
+      "path": "/flashcards/typescript",
+      "title": "TypeScript in React · Flashcards",
+      "description": "Study 15 flashcards on TypeScript in React for React interviews.",
+      "body": "Study 15 flashcards on TypeScript in React for React interviews."
+    },
+    {
+      "path": "/challenges/easy",
+      "title": "Easy Challenges · ReactTeacher",
+      "description": "19 easy React coding challenges with acceptance criteria and solutions.",
+      "body": "19 easy React coding challenges with acceptance criteria and solutions."
+    },
+    {
+      "path": "/challenges/easy/01-counter-component",
+      "title": "Counter Component · Easy",
+      "description": "Easy React challenge: Counter Component. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Counter Component. Practice with acceptance criteria and a solution walkthrough.\n\nCounter Component\n\nDifficulty: easy  \nTopics: useState, events\n\nLearning goals\n\n- Manage numeric state with useState\n- Wire button clicks to state updates\n\nChallenge\n\nBuild a counter that displays a number and has Increment, Decrement, and Reset buttons. The count must never go below zero unless you add an optional \"allow negative\" mode.\n\nRequirements\n\n1. Display the current count prominently\n2. Increment adds 1; Decrement subtracts 1\n3. Reset sets count back to 0\n4. Disable Decrement at 0 (default behavior)\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/01-counter-component/. Reference write-ups in this repo live under challenges/easy/01-counter-component/ (not loaded by the app).\n\nHints\n\n1. useState(0) returns [count, setCount]\n2. Use functional updates setCount(c => c + 1) when the next state depends on the previous\n\nAcceptance criteria\n\n- [ ] Count updates on each click\n  Click the increment button several times and confirm the number on screen goes up by one each time. This shows your state updates correctly when the user interacts with the app.\n\n- [ ] Reset works from any value\n  Set the count to a non-zero number,"
+    },
+    {
+      "path": "/challenges/easy/02-shopping-cart-state",
+      "title": "Shopping Cart State · Easy",
+      "description": "Easy React challenge: Shopping Cart State. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Shopping Cart State. Practice with acceptance criteria and a solution walkthrough.\n\nShopping Cart State\n\nDifficulty: easy  \nTopics: useState, arrays, immutability\n\nLearning goals\n\n- Update array state immutably\n- Derive totals from state\n\nChallenge\n\nModel a mini cart: each item has id, name, price, and quantity. Users can add items, change quantity, and remove items. Show item subtotals and a cart total.\n\nRequirements\n\n1. Add product increases quantity if id exists, else adds new line\n2. Remove deletes the line entirely\n3. Quantity cannot go below 1 (or remove item at 0)\n4. Display formatted total price\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/02-shopping-cart-state/. Reference write-ups in this repo live under challenges/easy/02-shopping-cart-state/ (not loaded by the app).\n\nHints\n\n1. Never mutate items with push or items[i].qty++\n2. Use map/filter to produce new arrays\n3. total = items.reduce((sum, i) => sum + i.price * i.qty, 0)\n\nAcceptance criteria\n\n- [ ] Add/merge works\n  Add the same product twice and confirm the cart shows one line with quantity 2 instead of two duplicate rows. Merging by product id keeps the cart easy to read.\n\n- [ ] Totals correct\n  Add a few items with different prices a"
+    },
+    {
+      "path": "/challenges/easy/03-use-previous-hook",
+      "title": "usePrevious Hook · Easy",
+      "description": "Easy React challenge: usePrevious Hook. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: usePrevious Hook. Practice with acceptance criteria and a solution walkthrough.\n\nusePrevious Hook\n\nDifficulty: easy  \nTopics: useRef, useEffect, custom hooks\n\nLearning goals\n\n- Store values across renders without triggering re-renders\n- Build a reusable custom hook\n\nChallenge\n\nImplement usePrevious(value) that returns the value from the previous render (undefined on first render). Use it to show \"was X, now Y\" for a changing prop or state.\n\nRequirements\n\n1. Hook signature: function usePrevious<T>(value: T): T | undefined\n2. Return undefined on first render\n3. After updates, return the prior value\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/03-use-previous-hook/. Reference write-ups in this repo live under challenges/easy/03-use-previous-hook/ (not loaded by the app).\n\nHints\n\n1. useRef can hold mutable .current without causing re-renders\n2. Update ref.current in useEffect after paint so render still sees old value\n\nAcceptance criteria\n\n- [ ] First render shows no previous value\n  On the very first paint, usePrevious has nothing stored yet, so it should return undefined. If your UI has a \"before\" line, it should show empty, a dash, or \"none\" — not a number. That is expected, not a bug.\n\n- [ ] Later "
+    },
+    {
+      "path": "/challenges/easy/04-event-handling",
+      "title": "Event Handling · Easy",
+      "description": "Easy React challenge: Event Handling. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Event Handling. Practice with acceptance criteria and a solution walkthrough.\n\nEvent Handling\n\nDifficulty: easy  \nTopics: SyntheticEvent, handlers\n\nLearning goals\n\n- Use React synthetic events\n- Pass parameters to handlers safely\n\nChallenge\n\nBuild a keypad UI: clicking digits appends to a display; Clear wipes it; Backspace removes one character. Support both click and keyboard (optional).\n\nRequirements\n\n1. Use onClick handlers\n2. Prevent default only when needed\n3. Display builds a string buffer\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/04-event-handling/. Reference write-ups in this repo live under challenges/easy/04-event-handling/ (not loaded by the app).\n\nHints\n\n1. React events are SyntheticEvent wrappers\n2. Use e.preventDefault() for form-like behavior inside forms\n\nAcceptance criteria\n\n- [ ] Digits append\n  Click digit buttons and confirm the display builds the number left to right, like a calculator. Each new digit should attach to the end without clearing what was already there.\n\n- [ ] Clear and backspace work\n  Clear should reset the display to empty or zero. Backspace should remove only the last digit. Try both after entering several digits so you know undo and reset behave correctly"
+    },
+    {
+      "path": "/challenges/easy/05-controlled-input-field",
+      "title": "Controlled Input Field · Easy",
+      "description": "Easy React challenge: Controlled Input Field. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Controlled Input Field. Practice with acceptance criteria and a solution walkthrough.\n\nControlled Input Field\n\nDifficulty: easy  \nTopics: controlled components, forms\n\nLearning goals\n\n- Bind input value to React state\n- Handle onChange correctly\n\nChallenge\n\nCreate a profile form with controlled inputs: name, email, and bio (textarea). Show a live preview card as the user types. Include basic validation messages.\n\nRequirements\n\n1. All fields controlled (value + onChange)\n2. Email shows error if missing @\n3. Submit logs JSON (preventDefault)\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/05-controlled-input-field/. Reference write-ups in this repo live under challenges/easy/05-controlled-input-field/ (not loaded by the app).\n\nHints\n\n1. value={state} onChange={e => setState(e.target.value)}\n2. textarea uses same pattern as input\n\nAcceptance criteria\n\n- [ ] Preview mirrors inputs\n  Type in the form fields and confirm the live preview updates as you type with the same text. In a controlled input, React state is the single source of truth for what appears on screen.\n\n- [ ] Validation visible\n  Enter invalid data (for example too short a name or a bad email) and confirm error messages appear near the fields. User"
+    },
+    {
+      "path": "/challenges/easy/06-fetching-data",
+      "title": "Fetching Data · Easy",
+      "description": "Easy React challenge: Fetching Data. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Fetching Data. Practice with acceptance criteria and a solution walkthrough.\n\nFetching Data\n\nDifficulty: easy  \nTopics: useEffect, fetch, loading states\n\nLearning goals\n\n- Fetch on mount\n- Model loading / error / success UI\n\nChallenge\n\nFetch a list of users from https://jsonplaceholder.typicode.com/users (or mock). Show loading spinner, error message, and a list on success.\n\nRequirements\n\n1. useEffect with cleanup (AbortController)\n2. Three UI states: loading, error, data\n3. Refetch button\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/06-fetching-data/. Reference write-ups in this repo live under challenges/easy/06-fetching-data/ (not loaded by the app).\n\nHints\n\n1. Abort fetch in cleanup to avoid setState on unmounted component\n2. Empty dependency array = run once on mount\n\nAcceptance criteria\n\n- [ ] Loading shows first\n  When data is being fetched, you should see a loading message or spinner before results appear. That tells users the app is working, not broken.\n\n- [ ] Errors readable\n  Trigger a failed request (wrong URL or offline) and confirm a clear error message appears instead of a blank screen. Beginners should understand what went wrong without opening the console.\n\n- [ ] Refetch works\n "
+    },
+    {
+      "path": "/challenges/easy/07-dynamic-list-rendering",
+      "title": "Dynamic List Rendering · Easy",
+      "description": "Easy React challenge: Dynamic List Rendering. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Dynamic List Rendering. Practice with acceptance criteria and a solution walkthrough.\n\nDynamic List Rendering\n\nDifficulty: easy  \nTopics: lists, keys\n\nLearning goals\n\n- Render arrays with map\n- Choose stable keys\n\nChallenge\n\nBuild a tag editor: input + Add button creates tags; each tag has remove; list renders dynamically. Animate new tags optionally.\n\nRequirements\n\n1. Use map to render\n2. Keys must be stable (id, not index)\n3. No duplicate tags (case-insensitive)\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/07-dynamic-list-rendering/. Reference write-ups in this repo live under challenges/easy/07-dynamic-list-rendering/ (not loaded by the app).\n\nHints\n\n1. crypto.randomUUID() or incremental id for keys\n2. Filter duplicates before setState\n\nAcceptance criteria\n\n- [ ] Add/remove work\n  Add several items and remove one; the list should update immediately with no stale rows left behind. Each action should change only what you expect.\n\n- [ ] Stable keys\n  Each list item should use a unique, stable key (like an id), not the array index alone. Add and remove items and confirm inputs or checkboxes stay tied to the correct row.\n\n- [ ] Duplicate prevention\n  Try adding the same item twice when duplicates are not a"
+    },
+    {
+      "path": "/challenges/easy/08-use-interval-hook",
+      "title": "useInterval Hook · Easy",
+      "description": "Easy React challenge: useInterval Hook. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: useInterval Hook. Practice with acceptance criteria and a solution walkthrough.\n\nuseInterval Hook\n\nDifficulty: easy  \nTopics: useEffect, useRef, custom hooks\n\nLearning goals\n\n- Encapsulate setInterval logic\n- Keep callback fresh without resetting interval unnecessarily\n\nChallenge\n\nImplement useInterval(callback, delayMs | null). When delay is null, pause. Use it to flip a boolean every second.\n\nRequirements\n\n1. Pauses when delay is null\n2. Clears interval on unmount\n3. Callback may change without leaking stale closures (use ref pattern)\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/08-use-interval-hook/. Reference write-ups in this repo live under challenges/easy/08-use-interval-hook/ (not loaded by the app).\n\nHints\n\n1. Store latest callback in ref updated each render\n2. Effect depends on delay only\n\nAcceptance criteria\n\n- [ ] Ticks regularly\n  Start the timer or counter and confirm it updates on a steady schedule (for example every second). The interval callback should fire repeatedly while running.\n\n- [ ] Pause works\n  Pause the timer and confirm the value stops changing until you resume. Pause should clear or stop the interval without resetting the count unless you ask for that.\n\n- [ ] No memory "
+    },
+    {
+      "path": "/challenges/easy/09-component-composition",
+      "title": "Component Composition · Easy",
+      "description": "Easy React challenge: Component Composition. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Component Composition. Practice with acceptance criteria and a solution walkthrough.\n\nComponent Composition\n\nDifficulty: easy  \nTopics: children, composition\n\nLearning goals\n\n- Use children and slots pattern\n- Avoid prop drilling for layout\n\nChallenge\n\nBuild a Card with Card.Header, Card.Body, and Card.Footer using composition (compound components or named exports). Consume it to show an article preview.\n\nRequirements\n\n1. Flexible layout via children\n2. Card applies shared border/padding\n3. Subcomponents optional\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/09-component-composition/. Reference write-ups in this repo live under challenges/easy/09-component-composition/ (not loaded by the app).\n\nHints\n\n1. Attach static properties: Card.Header = function Header...\n2. Or pass slots: header={<.../>}\n\nAcceptance criteria\n\n- [ ] Composable API\n  Build small pieces (like Card, Card.Header, Card.Body) that fit together in JSX the way the challenge describes. Parents should pass children or slots instead of one giant component with dozens of props.\n\n- [ ] Article example renders\n  Render the sample article layout from the challenge and confirm title, body, and optional footer all show in the right places. If the "
+    },
+    {
+      "path": "/challenges/easy/10-focus-input-useref",
+      "title": "Focus an Input with useRef · Easy",
+      "description": "Easy React challenge: Focus an Input with useRef. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Focus an Input with useRef. Practice with acceptance criteria and a solution walkthrough.\n\nFocus an Input with useRef\n\nDifficulty: easy  \nTopics: useRef, DOM\n\nLearning goals\n\n- Access DOM nodes imperatively\n- Focus inputs programmatically\n\nChallenge\n\nLogin form: autofocus email on mount; \"Forgot password?\" focuses email; successful validation focuses password field.\n\nRequirements\n\n1. useRef<HTMLInputElement>(null)\n2. Call .focus() in handlers or useEffect\n3. Do not store DOM in useState\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/10-focus-input-useref/. Reference write-ups in this repo live under challenges/easy/10-focus-input-useref/ (not loaded by the app).\n\nHints\n\n1. ref={emailRef} on input\n2. Optional: useEffect(() => emailRef.current?.focus(), [])\n\nAcceptance criteria\n\n- [ ] Mount focus works\n  When the page first loads, the intended input should already have focus (cursor blinking inside it). useRef lets you call focus on the real DOM node after mount.\n\n- [ ] Button focuses correct field\n  Click a \"focus name\" or \"focus email\" button and confirm the matching field receives focus, not the other one. Each button should target the ref you wired to that input.\n\nResources\n\n- Manipulating the DOM with Refs\n"
+    },
+    {
+      "path": "/challenges/easy/11-refactor-to-props",
+      "title": "Refactor to Props · Easy",
+      "description": "Easy React challenge: Refactor to Props. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Refactor to Props. Practice with acceptance criteria and a solution walkthrough.\n\nRefactor to Props\n\nDifficulty: easy  \nTopics: props, lifting state\n\nLearning goals\n\n- Identify hardcoded data\n- Make components reusable via props\n\nChallenge\n\nYou are given a monolithic UserCard with hardcoded name/avatar/role. Refactor into presentational UserCard + container that passes props. Add optional onFollow callback.\n\nRequirements\n\n1. No hardcoded user data inside UserCard\n2. Prop types for name, avatarUrl, role\n3. onFollow optional\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/11-refactor-to-props/. Reference write-ups in this repo live under challenges/easy/11-refactor-to-props/ (not loaded by the app).\n\nHints\n\n1. Split data (container) from UI (presentational)\n2. Default props for optional fields\n\nAcceptance criteria\n\n- [ ] Two users render from array\n  Map over a users array and confirm two (or more) profile cards render with the correct names and avatars from data. Lists of components should come from data, not copy-pasted JSX.\n\n- [ ] Follow button calls callback\n  Click Follow on a user card and confirm the parent receives the user id or name (console log or updated parent state is fine). The child shoul"
+    },
+    {
+      "path": "/challenges/easy/12-build-a-clock",
+      "title": "Build a Clock · Easy",
+      "description": "Easy React challenge: Build a Clock. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Build a Clock. Practice with acceptance criteria and a solution walkthrough.\n\nBuild a Clock\n\nDifficulty: easy  \nTopics: useEffect, setInterval, Date\n\nLearning goals\n\n- Update UI on a timer\n- Format time for display\n\nChallenge\n\nAnalog or digital clock that updates every second. Toggle 12h/24h format. Show date optionally.\n\nRequirements\n\n1. Tick every second with cleanup\n2. Format hours/minutes/seconds\n3. Toggle format button\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/12-build-a-clock/. Reference write-ups in this repo live under challenges/easy/12-build-a-clock/ (not loaded by the app).\n\nHints\n\n1. useEffect + setInterval 1000\n2. Intl.DateTimeFormat for locale-aware formatting\n\nAcceptance criteria\n\n- [ ] Updates live\n  Leave the clock open and confirm the time changes every second without refreshing the page. An interval or effect should keep the display in sync with real time.\n\n- [ ] Format toggle works\n  Switch between 12-hour and 24-hour (or similar) and confirm the display format changes while the time stays correct. Toggle is just state driving how you format the same Date.\n\n- [ ] Interval cleared on unmount\n  Navigate away or unmount the clock and confirm no console warnings about setState"
+    },
+    {
+      "path": "/challenges/easy/13-progress-bar-component",
+      "title": "Progress Bar Component · Easy",
+      "description": "Easy React challenge: Progress Bar Component. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Progress Bar Component. Practice with acceptance criteria and a solution walkthrough.\n\nProgress Bar Component\n\nDifficulty: easy  \nTopics: props, a11y\n\nLearning goals\n\n- Build accessible progress UI\n- Clamp values 0–100\n\nChallenge\n\nReusable ProgressBar with value, max, optional label. Animate width changes. Support indeterminate mode (loading unknown duration).\n\nRequirements\n\n1. role=\"progressbar\" with aria-valuenow/min/max\n2. Clamp value between 0 and max\n3. Indeterminate CSS animation when value is null\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/13-progress-bar-component/. Reference write-ups in this repo live under challenges/easy/13-progress-bar-component/ (not loaded by the app).\n\nHints\n\n1. percent = (value / max) * 100\n2. aria-busy for indeterminate\n\nAcceptance criteria\n\n- [ ] Determinate and indeterminate modes\n  With a percent prop, the bar should fill to match (for example 50% half full). In indeterminate mode, show a moving or pulsing animation when progress is unknown. Both modes should look distinct.\n\n- [ ] Accessible\n  Inspect the bar in devtools or a screen reader and confirm role=\"progressbar\", aria-valuenow (when determinate), and aria-valuemin/max or aria-busy (when indeterminate) are s"
+    },
+    {
+      "path": "/challenges/easy/14-performance-monitoring",
+      "title": "Performance Monitoring · Easy",
+      "description": "Easy React challenge: Performance Monitoring. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Performance Monitoring. Practice with acceptance criteria and a solution walkthrough.\n\nPerformance Monitoring\n\nDifficulty: easy  \nTopics: Profiler API, useEffect\n\nLearning goals\n\n- Measure render cost\n- Log slow renders in dev\n\nChallenge\n\nWrap a heavy child tree with React <Profiler> and log phases where duration exceeds a threshold (e.g. 16ms). Display last commit time in UI.\n\nRequirements\n\n1. onRender callback\n2. Track last duration in state\n3. Only log in development\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/14-performance-monitoring/. Reference write-ups in this repo live under challenges/easy/14-performance-monitoring/ (not loaded by the app).\n\nHints\n\n1. onRender(id, phase, actualDuration, ...)\n2. phase is mount or update\n\nAcceptance criteria\n\n- [ ] Profiler wired\n  Wrap the slow part of your tree in React Profiler with an onRender callback. When the child renders, your callback should run so you can measure render time.\n\n- [ ] Threshold logging\n  When a render takes longer than your threshold (for example 16ms), log a warning to the console. This mimics how teams spot slow components in development.\n\n- [ ] UI shows metric\n  Show the last render duration (or similar) on screen so you can see it c"
+    },
+    {
+      "path": "/challenges/easy/15-mouse-tracker",
+      "title": "MouseTracker · Easy",
+      "description": "Easy React challenge: MouseTracker. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: MouseTracker. Practice with acceptance criteria and a solution walkthrough.\n\nMouseTracker\n\nDifficulty: easy  \nTopics: events, useEffect\n\nLearning goals\n\n- Listen to window events\n- Clean up listeners\n\nChallenge\n\nTrack cursor position relative to a box. Show coordinates and whether pointer is inside the box.\n\nRequirements\n\n1. mousemove on window or container\n2. Cleanup on unmount\n3. Visual dot follows cursor inside box\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/15-mouse-tracker/. Reference write-ups in this repo live under challenges/easy/15-mouse-tracker/ (not loaded by the app).\n\nHints\n\n1. getBoundingClientRect for relative coords\n2. onMouseMove on div vs window\n\nAcceptance criteria\n\n- [ ] Coords accurate\n  Move the mouse inside the tracked area and confirm x and y update and roughly match the pointer position. Coordinates should feel responsive, not stuck.\n\n- [ ] Inside/outside indicator\n  Move the pointer in and out of the box and confirm the UI clearly says whether the mouse is inside or outside. This proves your hit area matches the element bounds.\n\n- [ ] Listener removed\n  Unmount the component or toggle tracking off and confirm listeners are removed (no duplicate updates, no errors aft"
+    },
+    {
+      "path": "/challenges/easy/16-simple-theme-switcher",
+      "title": "Simple Theme Switcher · Easy",
+      "description": "Easy React challenge: Simple Theme Switcher. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Simple Theme Switcher. Practice with acceptance criteria and a solution walkthrough.\n\nSimple Theme Switcher\n\nDifficulty: easy  \nTopics: useState, CSS variables\n\nLearning goals\n\n- Toggle light/dark with state\n- Apply theme via class or data attribute\n\nChallenge\n\nApp shell with theme toggle. Persist choice in localStorage. Apply data-theme on document root.\n\nRequirements\n\n1. Two themes minimum\n2. Persist to localStorage\n3. Initial read avoids flash when possible\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/16-simple-theme-switcher/. Reference write-ups in this repo live under challenges/easy/16-simple-theme-switcher/ (not loaded by the app).\n\nHints\n\n1. useEffect sync document.documentElement.dataset.theme\n2. Read localStorage in lazy useState initializer\n\nAcceptance criteria\n\n- [ ] Toggle works\n  Click the theme control and confirm light and dark (or similar) switch immediately on screen. State should drive which theme class or variables are active.\n\n- [ ] Persists across refresh\n  Pick a theme, refresh the browser, and confirm the same theme is still active. Save the choice in localStorage (or similar) so users do not lose their preference.\n\n- [ ] Styles change globally\n  Confirm background, text, and ot"
+    },
+    {
+      "path": "/challenges/easy/17-temperature-converter",
+      "title": "Temperature Converter · Easy",
+      "description": "Easy React challenge: Temperature Converter. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Temperature Converter. Practice with acceptance criteria and a solution walkthrough.\n\nTemperature Converter\n\nDifficulty: easy  \nTopics: controlled inputs, derived state\n\nLearning goals\n\n- Keep single source of truth\n- Convert C ↔ F bidirectionally\n\nChallenge\n\nTwo linked inputs: Celsius and Fahrenheit. Editing one updates the other using conversion formulas. Handle empty input gracefully.\n\nRequirements\n\n1. F = C * 9/5 + 32\n2. Editing C updates F and vice versa\n3. Allow temporary empty field without NaN display\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/17-temperature-converter/. Reference write-ups in this repo live under challenges/easy/17-temperature-converter/ (not loaded by the app).\n\nHints\n\n1. Store { value: string, unit: \"C\" | \"F\" } for last edited field\n2. Or store celsius number | null and derive fahrenheit\n\nAcceptance criteria\n\n- [ ] Bidirectional sync\n  Type Celsius and confirm Fahrenheit updates, then type Fahrenheit and confirm Celsius updates. Only one field should be the \"source\" per edit so both stay mathematically consistent.\n\n- [ ] No infinite loops\n  Edit either field quickly and confirm the app does not freeze or flicker from endless updates. Guard conversions so updating one field d"
+    },
+    {
+      "path": "/challenges/easy/18-theme-toggle",
+      "title": "Theme Toggle · Easy",
+      "description": "Easy React challenge: Theme Toggle. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: Theme Toggle. Practice with acceptance criteria and a solution walkthrough.\n\nTheme Toggle\n\nDifficulty: easy  \nTopics: useState, toggle UI\n\nLearning goals\n\n- Binary toggle pattern\n- Accessible switch semantics\n\nChallenge\n\nBuild an accessible theme toggle switch (not just a button) using role=\"switch\" and aria-checked. Pair with icon sun/moon.\n\nRequirements\n\n1. Keyboard operable (Space/Enter)\n2. aria-checked reflects state\n3. Visual switch animation\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/18-theme-toggle/. Reference write-ups in this repo live under challenges/easy/18-theme-toggle/ (not loaded by the app).\n\nHints\n\n1. onKeyDown for Space\n2. Toggle with click\n\nAcceptance criteria\n\n- [ ] ARIA correct\n  The toggle should expose accessible name and state (for example aria-pressed or aria-checked) so screen readers know whether dark mode is on. Check attributes in devtools.\n\n- [ ] Keyboard works\n  Tab to the control and activate it with Space or Enter. Keyboard users should get the same theme change as mouse users without needing to click.\n\n- [ ] Theme applies\n  After toggling, confirm visual styles (background, text color, etc.) update across the UI. ARIA and keyboard only matter if the theme act"
+    },
+    {
+      "path": "/challenges/easy/19-use-toggle-hook",
+      "title": "useToggle Hook · Easy",
+      "description": "Easy React challenge: useToggle Hook. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Easy React challenge: useToggle Hook. Practice with acceptance criteria and a solution walkthrough.\n\nuseToggle Hook\n\nDifficulty: easy  \nTopics: custom hooks, useState, useCallback\n\nLearning goals\n\n- Return stable API for boolean toggling\n- Support imperative set/on/off\n\nChallenge\n\nImplement useToggle(initial) returning [value, { toggle, set, on, off }]. Use it in a panel show/hide demo.\n\nRequirements\n\n1. toggle flips boolean\n2. on sets true, off sets false\n3. set accepts boolean directly\n4. Memoize handlers with useCallback\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/easy/19-use-toggle-hook/. Reference write-ups in this repo live under challenges/easy/19-use-toggle-hook/ (not loaded by the app).\n\nHints\n\n1. useCallback depends on [] if using functional setState\n2. Return tuple or object—document API\n\nAcceptance criteria\n\n- [ ] All methods work\n  Test toggle, setTrue, and setFalse (or the API your challenge defines) and confirm the boolean state matches each call. The hook should encapsulate all ways to change the flag.\n\n- [ ] Handlers stable across renders\n  Log or compare function identity between renders; toggle/set handlers from useToggle should stay the same reference when using useCallback inside the hook. Stable hand"
+    },
+    {
+      "path": "/challenges/medium",
+      "title": "Medium Challenges · ReactTeacher",
+      "description": "26 medium React coding challenges with acceptance criteria and solutions.",
+      "body": "26 medium React coding challenges with acceptance criteria and solutions."
+    },
+    {
+      "path": "/challenges/medium/01-todo-list-manager",
+      "title": "Todo List Manager · Medium",
+      "description": "Medium React challenge: Todo List Manager. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Medium React challenge: Todo List Manager. Practice with acceptance criteria and a solution walkthrough.\n\nTodo List Manager\n\nDifficulty: medium  \nTopics: useState, filtering, CRUD\n\nLearning goals\n\n- CRUD on a collection\n- Filter tabs (all/active/done)\n\nChallenge\n\nFull todo app: add, toggle complete, delete, filter All/Active/Completed, and show remaining count.\n\nRequirements\n\n1. Unique id per todo\n2. Filters work\n3. Footer shows items left\n4. Clear completed button\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/medium/01-todo-list-manager/. Reference write-ups in this repo live under challenges/medium/01-todo-list-manager/ (not loaded by the app).\n\nHints\n\n1. Derive filtered list: todos.filter(...)\n2. Toggle with map immutably\n\nAcceptance criteria\n\n- [ ] All CRUD works\n  Add todos, mark them complete, edit them, and delete them. Every action should update the list immediately with no ghost items.\n\n- [ ] Filters correct\n  Switch between All, Active, and Completed and confirm only the right todos show. Filtering should read from state, not hide items in the DOM only.\n\n- [ ] Clear completed\n  Mark several todos done, run Clear completed, and confirm finished items disappear while active ones remain. Bulk actions should update state i"
+    },
+    {
+      "path": "/challenges/medium/02-image-carousel",
+      "title": "Image Carousel · Medium",
+      "description": "Medium React challenge: Image Carousel. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Medium React challenge: Image Carousel. Practice with acceptance criteria and a solution walkthrough.\n\nImage Carousel\n\nDifficulty: medium  \nTopics: state, effects, a11y\n\nLearning goals\n\n- Cycle slides with prev/next\n- Optional autoplay with pause on hover\n\nChallenge\n\nCarousel with images, indicators, prev/next, keyboard arrows, and autoplay every 5s (pause on hover/focus).\n\nRequirements\n\n1. Wrap index with modulo\n2. aria-live polite for slide title\n3. Autoplay cleanup\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/medium/02-image-carousel/. Reference write-ups in this repo live under challenges/medium/02-image-carousel/ (not loaded by the app).\n\nHints\n\n1. index = (index + 1) % slides.length\n2. useEffect interval when autoplay enabled\n\nAcceptance criteria\n\n- [ ] Navigation works\n  Use next/previous buttons or dots and confirm the visible slide changes with the correct image and caption. Index state should wrap or clamp per the spec.\n\n- [ ] Autoplay pauses\n  When autoplay runs, hover or focus the carousel (or press pause if provided) and confirm slides stop advancing until you resume. Users need control over motion.\n\n- [ ] Keyboard support\n  Use arrow keys (and Home/End if required) to change slides when the carousel is focused."
+    },
+    {
+      "path": "/challenges/medium/03-event-delegation",
+      "title": "Event Delegation · Medium",
+      "description": "Medium React challenge: Event Delegation. Practice with acceptance criteria and a solution walkthrough.",
+      "body": "Medium React challenge: Event Delegation. Practice with acceptance criteria and a solution walkthrough.\n\nEvent Delegation\n\nDifficulty: medium  \nTopics: events, DOM\n\nLearning goals\n\n- Handle events on parent for dynamic children\n- Use data attributes to identify targets\n\nChallenge\n\nRender a dynamic list of buttons (add/remove). Use one click handler on <ul> to detect which item was clicked via event.target and data-id.\n\nRequirements\n\n1. Single listener on list container\n2. Works for newly added items without rebinding\n3. Delete vs select actions\n\nStarter hint\n\nImplement in your own React project (Vite, Next.js, etc.) or a sandbox—e.g. src/practice/medium/03-event-delegation/. Reference write-ups in this repo live under challenges/medium/03-event-delegation/ (not loaded by the app).\n\nHints\n\n1. if (!(e.target instanceof HTMLElement)) return\n2. const id = target.closest(\"[data-id]\")?.getAttribute(\"data-id\")\n\nAcceptance criteria\n\n- [ ] One delegated handler\n  Attach a single click handler on the list container instead of one per row. Click different rows and confirm the handler still identifies which item was clicked via event.target or closest.\n\n- [ ] Dynamic items work\n  Add a new row after load and click it; the same delegated handler should work without rebinding listeners. Delegation "
+    }
+  ]
+}

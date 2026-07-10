@@ -1,10 +1,11 @@
+import { STORAGE_PREFIX } from '../config/brand';
+
 export type DeckProgress = {
   lastIndex: number;
   completedCardIndices: number[];
 };
 
-/** localStorage keys use `reactprep-*` prefix for backward compatibility with saved progress. */
-const deckProgressKey = (deckId: string) => `reactprep-deck:${deckId}`;
+const deckProgressKey = (deckId: string) => `${STORAGE_PREFIX}-deck:${deckId}`;
 
 export function defaultDeckProgress(): DeckProgress {
   return { lastIndex: 0, completedCardIndices: [] };
@@ -35,9 +36,10 @@ export function getProgressVersion() {
 
 function notifyProgressChange() {
   progressVersion += 1;
-  // Event name unchanged so progress listeners keep working across rebrand.
-  window.dispatchEvent(new Event('reactprep-progress'));
+  window.dispatchEvent(new Event(`${STORAGE_PREFIX}-progress`));
 }
+
+export { notifyProgressChange };
 
 export function writeDeckProgress(deckId: string, progress: DeckProgress) {
   localStorage.setItem(deckProgressKey(deckId), JSON.stringify(progress));

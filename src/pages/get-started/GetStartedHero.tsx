@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom';
+import { SITE_NAME } from '../../config/brand';
+import { SEO_STATS } from '../../config/seo-content';
 
 export function GetStartedHero() {
   return (
     <header className="get-started-hero">
-      <h1 className="page-title">Get Started</h1>
+      <h1 className="page-title">
+        Free React Interview Prep: Challenges, Flashcards &amp; System Design
+      </h1>
       <p className="get-started-lead">
-        <strong>ReactTeacher</strong> is React interview prep you can start immediately — challenges,
-        flashcards, React patterns, and system design walkthroughs, no install required. Your progress saves in this
-        browser; no account needed.
+        Master React fundamentals, component patterns, and frontend system design for your next
+        interview — free, in-browser, no signup. <strong>{SITE_NAME}</strong> includes{' '}
+        {SEO_STATS.challenges} challenges, {SEO_STATS.flashcards}+ flashcards, and guided
+        walkthroughs. Progress saves in this browser.
       </p>
       <p className="get-started-lead get-started-lead--secondary">
         New to React or JavaScript? Skim <Link to="/js-basics">JS Basics</Link> first, then try the{' '}

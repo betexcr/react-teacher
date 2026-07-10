@@ -1,14 +1,17 @@
 import { useSyncExternalStore } from 'react';
 import { Link } from 'react-router-dom';
+import { STORAGE_PREFIX } from '../config/brand';
 import { flashcardDecks } from '../data/flashcards';
 import { getProgressVersion, isDeckFullyComplete } from '../utils/deckProgress';
 
+const PROGRESS_EVENT = `${STORAGE_PREFIX}-progress`;
+
 function subscribeProgress(callback: () => void) {
   window.addEventListener('storage', callback);
-  window.addEventListener('reactprep-progress', callback);
+  window.addEventListener(PROGRESS_EVENT, callback);
   return () => {
     window.removeEventListener('storage', callback);
-    window.removeEventListener('reactprep-progress', callback);
+    window.removeEventListener(PROGRESS_EVENT, callback);
   };
 }
 

@@ -13,6 +13,7 @@ import {
   tutorialTargetId,
 } from '../data/jsBasicsTutorialSteps';
 import { useRouteScrollTop } from '../hooks/useRouteScrollTop';
+import { useTutorialPersistence } from '../hooks/useTutorialPersistence';
 import { formatJsBasicsProse } from '../utils/formatJsBasicsProse';
 
 type TopicListProps = {
@@ -82,7 +83,7 @@ function JsBasicsTopicList({
 export function JsBasicsPage() {
   useRouteScrollTop();
   const [tutorialOpen, setTutorialOpen] = useState(false);
-  const [tutorialStepIndex, setTutorialStepIndex] = useState(0);
+  const { stepIndex: tutorialStepIndex, setStepIndex: setTutorialStepIndex } = useTutorialPersistence();
 
   const activeStep = tutorialOpen ? jsBasicsTutorialSteps[tutorialStepIndex] : null;
   const activeTargetId = activeStep ? tutorialTargetId(activeStep) : null;

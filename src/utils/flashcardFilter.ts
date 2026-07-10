@@ -1,5 +1,6 @@
-/** Kept as reactprep-* so filter preference survives the ReactTeacher rebrand. */
-const FILTER_KEY = 'reactprep-flashcards:uncompletedOnly';
+import { STORAGE_PREFIX } from '../config/brand';
+
+const FILTER_KEY = `${STORAGE_PREFIX}-flashcards:uncompletedOnly`;
 
 export function readUncompletedOnlyFilter(): boolean {
   try {

@@ -1,0 +1,270 @@
+{
+  "generated": "2026-07-10",
+  "items": [
+    {
+      "path": "/interview-questions/01-counter-component",
+      "difficulty": "easy",
+      "title": "Counter Component"
+    },
+    {
+      "path": "/interview-questions/02-shopping-cart-state",
+      "difficulty": "easy",
+      "title": "Shopping Cart State"
+    },
+    {
+      "path": "/interview-questions/03-use-previous-hook",
+      "difficulty": "easy",
+      "title": "usePrevious Hook"
+    },
+    {
+      "path": "/interview-questions/04-event-handling",
+      "difficulty": "easy",
+      "title": "Event Handling"
+    },
+    {
+      "path": "/interview-questions/05-controlled-input-field",
+      "difficulty": "easy",
+      "title": "Controlled Input Field"
+    },
+    {
+      "path": "/interview-questions/06-fetching-data",
+      "difficulty": "easy",
+      "title": "Fetching Data"
+    },
+    {
+      "path": "/interview-questions/07-dynamic-list-rendering",
+      "difficulty": "easy",
+      "title": "Dynamic List Rendering"
+    },
+    {
+      "path": "/interview-questions/08-use-interval-hook",
+      "difficulty": "easy",
+      "title": "useInterval Hook"
+    },
+    {
+      "path": "/interview-questions/09-component-composition",
+      "difficulty": "easy",
+      "title": "Component Composition"
+    },
+    {
+      "path": "/interview-questions/10-focus-input-useref",
+      "difficulty": "easy",
+      "title": "Focus an Input with useRef"
+    },
+    {
+      "path": "/interview-questions/11-refactor-to-props",
+      "difficulty": "easy",
+      "title": "Refactor to Props"
+    },
+    {
+      "path": "/interview-questions/12-build-a-clock",
+      "difficulty": "easy",
+      "title": "Build a Clock"
+    },
+    {
+      "path": "/interview-questions/13-progress-bar-component",
+      "difficulty": "easy",
+      "title": "Progress Bar Component"
+    },
+    {
+      "path": "/interview-questions/14-performance-monitoring",
+      "difficulty": "easy",
+      "title": "Performance Monitoring"
+    },
+    {
+      "path": "/interview-questions/15-mouse-tracker",
+      "difficulty": "easy",
+      "title": "MouseTracker"
+    },
+    {
+      "path": "/interview-questions/16-simple-theme-switcher",
+      "difficulty": "easy",
+      "title": "Simple Theme Switcher"
+    },
+    {
+      "path": "/interview-questions/17-temperature-converter",
+      "difficulty": "easy",
+      "title": "Temperature Converter"
+    },
+    {
+      "path": "/interview-questions/18-theme-toggle",
+      "difficulty": "easy",
+      "title": "Theme Toggle"
+    },
+    {
+      "path": "/interview-questions/19-use-toggle-hook",
+      "difficulty": "easy",
+      "title": "useToggle Hook"
+    },
+    {
+      "path": "/interview-questions/01-todo-list-manager",
+      "difficulty": "medium",
+      "title": "Todo List Manager"
+    },
+    {
+      "path": "/interview-questions/02-image-carousel",
+      "difficulty": "medium",
+      "title": "Image Carousel"
+    },
+    {
+      "path": "/interview-questions/03-event-delegation",
+      "difficulty": "medium",
+      "title": "Event Delegation"
+    },
+    {
+      "path": "/interview-questions/04-memoizing-expensive-calculation",
+      "difficulty": "medium",
+      "title": "Memoizing Expensive Calculation"
+    },
+    {
+      "path": "/interview-questions/05-form-validation",
+      "difficulty": "medium",
+      "title": "Form Validation"
+    },
+    {
+      "path": "/interview-questions/06-nested-state-manager",
+      "difficulty": "medium",
+      "title": "Nested State Manager"
+    },
+    {
+      "path": "/interview-questions/07-state-history-manager",
+      "difficulty": "medium",
+      "title": "State History Manager"
+    },
+    {
+      "path": "/interview-questions/08-advanced-theme-manager",
+      "difficulty": "medium",
+      "title": "Advanced Theme Manager"
+    },
+    {
+      "path": "/interview-questions/09-use-async-hook",
+      "difficulty": "medium",
+      "title": "useAsync Hook"
+    },
+    {
+      "path": "/interview-questions/10-use-reducer-implementation",
+      "difficulty": "medium",
+      "title": "useReducer Implementation"
+    },
+    {
+      "path": "/interview-questions/11-pagination-implementation",
+      "difficulty": "medium",
+      "title": "Pagination Implementation"
+    },
+    {
+      "path": "/interview-questions/12-theme-context",
+      "difficulty": "medium",
+      "title": "Theme Context"
+    },
+    {
+      "path": "/interview-questions/13-radiogroup-component",
+      "difficulty": "medium",
+      "title": "RadioGroup Component"
+    },
+    {
+      "path": "/interview-questions/14-fallback-ui-class-components",
+      "difficulty": "medium",
+      "title": "Fallback UI (Error Boundaries)"
+    },
+    {
+      "path": "/interview-questions/15-handling-api-errors",
+      "difficulty": "medium",
+      "title": "Handling API Errors"
+    },
+    {
+      "path": "/interview-questions/16-cache-management",
+      "difficulty": "medium",
+      "title": "Cache Management"
+    },
+    {
+      "path": "/interview-questions/17-reusable-tabs-component",
+      "difficulty": "medium",
+      "title": "Build a Reusable Tabs Component"
+    },
+    {
+      "path": "/interview-questions/18-share-state-with-context",
+      "difficulty": "medium",
+      "title": "Share State with Context"
+    },
+    {
+      "path": "/interview-questions/19-memo-prevent-rerenders",
+      "difficulty": "medium",
+      "title": "Memo Usage: Prevent Unnecessary Re-renders"
+    },
+    {
+      "path": "/interview-questions/20-multi-step-form-persistent-state",
+      "difficulty": "medium",
+      "title": "Multi-step Form with Persistent State"
+    },
+    {
+      "path": "/interview-questions/21-multiple-contexts",
+      "difficulty": "medium",
+      "title": "Multiple Contexts"
+    },
+    {
+      "path": "/interview-questions/22-reusable-input-component",
+      "difficulty": "medium",
+      "title": "Build a Reusable Input Component"
+    },
+    {
+      "path": "/interview-questions/23-reusable-button-component",
+      "difficulty": "medium",
+      "title": "Build a Reusable Button Component"
+    },
+    {
+      "path": "/interview-questions/24-reusable-drawer-component",
+      "difficulty": "medium",
+      "title": "Build a Reusable Drawer Component"
+    },
+    {
+      "path": "/interview-questions/25-tic-tac-toe-game",
+      "difficulty": "medium",
+      "title": "Build a Tic-Tac-Toe Game"
+    },
+    {
+      "path": "/interview-questions/26-multi-theme-manager",
+      "difficulty": "medium",
+      "title": "Multi-Theme Manager"
+    },
+    {
+      "path": "/interview-questions/01-timer-controls",
+      "difficulty": "hard",
+      "title": "Timer Controls"
+    },
+    {
+      "path": "/interview-questions/02-multi-step-form-branching",
+      "difficulty": "hard",
+      "title": "Multi-step Form with Branching Logic"
+    },
+    {
+      "path": "/interview-questions/03-prevent-unnecessary-rerenders",
+      "difficulty": "hard",
+      "title": "Prevent Unnecessary Re-renders"
+    },
+    {
+      "path": "/interview-questions/04-dynamic-form-fields",
+      "difficulty": "hard",
+      "title": "Dynamic Form Fields"
+    },
+    {
+      "path": "/interview-questions/05-art-drawing-tool",
+      "difficulty": "hard",
+      "title": "Art Drawing Tool"
+    },
+    {
+      "path": "/interview-questions/01-connect-four",
+      "difficulty": "very-hard",
+      "title": "Connect Four"
+    },
+    {
+      "path": "/interview-questions/02-advanced-custom-hooks",
+      "difficulty": "very-hard",
+      "title": "Advanced Custom Hooks"
+    },
+    {
+      "path": "/interview-questions/03-list-virtualization",
+      "difficulty": "very-hard",
+      "title": "List Virtualization: Manual Virtual Scrolling"
+    }
+  ]
+}
