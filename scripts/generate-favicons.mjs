@@ -1,7 +1,8 @@
 import sharp from 'sharp';
 import fs from 'fs';
 
-const src = 'public/mascot.png';
+/** Use mascot-full.png (full React orbits) or mascot-cropped.png via MASCOT_SRC env. */
+const src = process.env.MASCOT_SRC ?? 'public/mascot-full.png';
 
 const jobs = [
   { out: 'public/favicon-16.png', size: 16, bg: { r: 13, g: 17, b: 23, alpha: 1 } },

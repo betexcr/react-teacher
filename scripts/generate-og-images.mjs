@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const outDir = join(root, 'public/og');
 const manifestPath = join(root, 'src/data/og-manifest.ts');
-const mascotPath = join(root, 'public/mascot.png');
+const mascotPath = join(root, process.env.MASCOT_SRC ?? 'public/mascot-full.png');
 
 mkdirSync(outDir, { recursive: true });
 mkdirSync(join(outDir, 'challenges'), { recursive: true });
