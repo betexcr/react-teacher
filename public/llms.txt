@@ -11,6 +11,6 @@
 - FAQ: https://reactteacher.vercel.app/faq
 - About: https://reactteacher.vercel.app/about
 - Blog: https://reactteacher.vercel.app/blog
-- Sitemap: https://reactteacher.vercel.app/sitemap.xml
+- Sitemap: https://reactteacher.vercel.app/sitemap/sitemap.xml
 
 Also see: PythonTeacher (pythonprep.vercel.app), NodeTeacher (nodeprep.vercel.app), ReactTeacher (reactteacher.vercel.app).
